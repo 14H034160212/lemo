@@ -80,6 +80,47 @@ def generate_base(name):
     return facts, rules, questions, answers, (color1, color2)
 
 
+def generate_negative_samples(name, facts, rules, color_pair):
+    """
+    基于正样本构建负样本：
+    1. 对已知为真的属性加否定词（如 "Bob is NOT cold"）
+    2. 询问无法推导出的属性（如 "Bob is happy"）
+    """
+    c1, c2 = color_pair
+
+    # 无法推导的属性（没有规则支持）
+    unrelated_props = ["happy", "sad", "kind", "mean", "tall", "short"]
+
+    # 构建多种类型的负样本
+    neg_questions = []
+    neg_answers = []
+
+    # 类型1: 对推导为真的属性加否定（应该是False）
+    neg_questions.append(f"Q1: {name} is not cold.")
+    neg_answers.append("F")
+
+    neg_questions.append(f"Q2: {name} is not rough.")
+    neg_answers.append("F")
+
+    # 类型2: 询问无关属性（无法从规则推导，应该是False）
+    random_prop1 = random.choice(unrelated_props)
+    neg_questions.append(f"Q3: {name} is {random_prop1}.")
+    neg_answers.append("F")
+
+    # 类型3: 询问错误的颜色（应该是False）
+    other_colors = [c for c in COLORS if c not in [c1, c2]]
+    if other_colors:
+        wrong_color = random.choice(other_colors)
+        neg_questions.append(f"Q4: {name} is {wrong_color}.")
+        neg_answers.append("F")
+    else:
+        random_prop2 = random.choice([p for p in unrelated_props if p != random_prop1])
+        neg_questions.append(f"Q4: {name} is {random_prop2}.")
+        neg_answers.append("F")
+
+    return facts, rules, neg_questions, neg_answers
+
+
 # =========================================================
 # ORIGINAL VARIANTS (1–3)
 # =========================================================
@@ -239,6 +280,10 @@ test_part = base_examples[split:]
 
 
 def write_rows(path, rows, header):
+    # Create parent directory if it doesn't exist
+    import os
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=header)
         w.writeheader()
@@ -249,14 +294,28 @@ def write_rows(path, rows, header):
 header = ["group_id","type","facts","rules","questions","answers","equiv_laws_used"]
 
 # base train / test
+# MODIFIED: Add positive and negative samples for balanced training
 for gid,name,facts,rules,q,a,cp in train_part:
+    # Add positive sample (base with all T answers)
     train_rows.append({
         "group_id": gid,
-        "type": "base",
+        "type": "base_positive",
         "facts": " | ".join(facts),
         "rules": " | ".join(rules),
         "questions": " | ".join(q),
         "answers": " | ".join(a),
+        "equiv_laws_used": "",
+    })
+
+    # Add negative sample (constructed from base, all F answers)
+    neg_facts, neg_rules, neg_q, neg_a = generate_negative_samples(name, facts, rules, cp)
+    train_rows.append({
+        "group_id": gid,
+        "type": "base_negative",
+        "facts": " | ".join(neg_facts),
+        "rules": " | ".join(neg_rules),
+        "questions": " | ".join(neg_q),
+        "answers": " | ".join(neg_a),
         "equiv_laws_used": "",
     })
 
@@ -333,18 +392,23 @@ for gid,name,facts,rules,q,a,cp in base_examples:
         "equiv_laws_used": laws_used,
     })
 
+# Create data directory
+import os
+DATA_DIR = "data"
+os.makedirs(DATA_DIR, exist_ok=True)
+
 # write core files
-write_rows("train.csv", train_rows, header)
-write_rows("test_base.csv", test_base_rows, header)
-write_rows("test_variant1.csv", variant1_rows, header)
-write_rows("test_variant2.csv", variant2_rows, header)
-write_rows("test_variant3.csv", variant3_rows, header)
+write_rows(f"{DATA_DIR}/train.csv", train_rows, header)
+write_rows(f"{DATA_DIR}/test_base.csv", test_base_rows, header)
+write_rows(f"{DATA_DIR}/test_variant1.csv", variant1_rows, header)
+write_rows(f"{DATA_DIR}/test_variant2.csv", variant2_rows, header)
+write_rows(f"{DATA_DIR}/test_variant3.csv", variant3_rows, header)
 
 # single-law variant4 files
 for law, rows in equiv_rows_single.items():
-    write_rows(f"test_variant4_equiv_{law}.csv", rows, header)
+    write_rows(f"{DATA_DIR}/test_variant4_equiv_{law}.csv", rows, header)
 
 # multi-law variant4 file
-write_rows("test_variant4_equiv_multi.csv", equiv_rows_multi, header)
+write_rows(f"{DATA_DIR}/test_variant4_equiv_multi.csv", equiv_rows_multi, header)
 
-print("✔ Data generation complete!")
+print(f"✔ Data generation complete! Files saved to '{DATA_DIR}/' directory")

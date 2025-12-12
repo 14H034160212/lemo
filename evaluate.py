@@ -15,17 +15,17 @@ MODEL_LIST = {
 
 # All test splits, including multi-law variant4
 DEFAULT_TEST_FILES = {
-    "base": "test_base.csv",
-    "variant1": "test_variant1.csv",
-    "variant2": "test_variant2.csv",
-    "variant3": "test_variant3.csv",
-    "variant4_equiv_contrapositive": "test_variant4_equiv_contrapositive.csv",
-    "variant4_equiv_double_negation": "test_variant4_equiv_double_negation.csv",
-    "variant4_equiv_implication": "test_variant4_equiv_implication.csv",
-    "variant4_equiv_demorgan": "test_variant4_equiv_demorgan.csv",
-    "variant4_equiv_identity": "test_variant4_equiv_identity.csv",
-    "variant4_equiv_commutativity": "test_variant4_equiv_commutativity.csv",
-    "variant4_equiv_multi": "test_variant4_equiv_multi.csv",
+    "base": "data/test_base.csv",
+    "variant1": "data/test_variant1.csv",
+    "variant2": "data/test_variant2.csv",
+    "variant3": "data/test_variant3.csv",
+    "variant4_equiv_contrapositive": "data/test_variant4_equiv_contrapositive.csv",
+    "variant4_equiv_double_negation": "data/test_variant4_equiv_double_negation.csv",
+    "variant4_equiv_implication": "data/test_variant4_equiv_implication.csv",
+    "variant4_equiv_demorgan": "data/test_variant4_equiv_demorgan.csv",
+    "variant4_equiv_identity": "data/test_variant4_equiv_identity.csv",
+    "variant4_equiv_commutativity": "data/test_variant4_equiv_commutativity.csv",
+    "variant4_equiv_multi": "data/test_variant4_equiv_multi.csv",
 }
 
 

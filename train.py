@@ -21,24 +21,31 @@ MODEL_LIST = {
 
 def encode(sample, tokenizer):
     """
-    把一行样本转成模型输入：
-    输入 = facts + rules + questions
-    label = 如果 answers 里面包含 'T' 就设为 1，否则 0
-    你可以按需要修改这个逻辑。
+    FIXED: 将每行的多个问题-答案对拆分成独立的训练样本
+    每个问题对应一个标签（T=1, F=0）
     """
-    text = sample["facts"] + " " + sample["rules"] + " " + sample["questions"]
-    enc = tokenizer(
-        text,
-        truncation=True,
-        padding="max_length",
-        max_length=512,
-    )
-    sample["input_ids"] = enc["input_ids"]
-    sample["attention_mask"] = enc["attention_mask"]
+    facts = sample["facts"]
+    rules = sample["rules"]
+    questions = sample["questions"].split(" | ")
+    answers = sample["answers"].split(" | ")
 
-    # 这里是一个简单示例：只要有 T 就算 True
-    sample["labels"] = 1 if "T" in sample["answers"] else 0
-    return sample
+    # 创建多个训练样本（每个问题一个）
+    expanded_samples = []
+    for q, a in zip(questions, answers):
+        text = facts + " " + rules + " " + q
+        enc = tokenizer(
+            text,
+            truncation=True,
+            padding="max_length",
+            max_length=512,
+        )
+        expanded_samples.append({
+            "input_ids": enc["input_ids"],
+            "attention_mask": enc["attention_mask"],
+            "labels": 1 if a.strip() == "T" else 0,
+        })
+
+    return expanded_samples
 
 
 def build_lora_config(model_name: str) -> LoraConfig:
@@ -78,12 +85,17 @@ def train(model_key: str = "bert"):
         print(f"⚠️ pad_token was missing, set pad_token = eos_token = {tokenizer.pad_token}")
 
     # ------------------ dataset ------------------
-    dataset = load_dataset("csv", data_files="train.csv")["train"]
+    dataset = load_dataset("csv", data_files="data/train.csv")["train"]
 
-    dataset = dataset.map(
-        lambda x: encode(x, tokenizer),
-        remove_columns=dataset.column_names,
-    )
+    # FIXED: Expand each row into multiple samples (one per question)
+    expanded_data = []
+    for sample in dataset:
+        expanded_samples = encode(sample, tokenizer)
+        expanded_data.extend(expanded_samples)
+
+    # Convert back to HuggingFace Dataset
+    from datasets import Dataset
+    dataset = Dataset.from_list(expanded_data)
 
     # ------------------ model ------------------
     model = AutoModelForSequenceClassification.from_pretrained(

@@ -243,6 +243,10 @@ Produces an accuracy table:
 
 <img width="580" height="300" alt="image" src="https://github.com/user-attachments/assets/d62c11a0-0c90-4962-89d2-280166def15e" />
 
+We also submit the varitent 3 test set to the human last exam benchmark and all the state-of-the-art models are failed in this test including claude-sonnet-4-5, gpt-4.1, gpt-5.2, claude-opus-4-5 and gemini-3-pro-preview.
+<img width="2333" height="1619" alt="image" src="https://github.com/user-attachments/assets/1dbb3195-cf47-46b1-9a75-b3525a6465fd" />
+
+
 **Prediction CSV includes:**
 |Column|Description|
 |:---|:---|

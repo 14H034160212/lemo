@@ -241,7 +241,7 @@ trained_models/{model}/predictions/{model}_{split}_predictions.csv
 
 Produces an accuracy table:
 
-<img width="304" height="157" alt="image" src="https://github.com/user-attachments/assets/d62c11a0-0c90-4962-89d2-280166def15e" />
+<img width="580" height="300" alt="image" src="https://github.com/user-attachments/assets/d62c11a0-0c90-4962-89d2-280166def15e" />
 
 **Prediction CSV includes:**
 |Column|Description|

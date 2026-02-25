@@ -1,0 +1,1048 @@
+input_text,target_text,type
+"Facts: This site includes a list of all award winners and a searchable database of Government Executive articles.
+Question: The Government Executive articles housed on the website are not able to be searched.
+Think step by step.",False,contradiction
+"Facts: uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him
+Question: I like him for the most part, but would still enjoy seeing someone beat him.
+Think step by step.",True,entailment
+"Facts: yeah i i think my favorite restaurant is always been the one closest  you know the closest as long as it's it meets the minimum criteria you know of good food
+Question: My favorite restaurants are always at least a hundred miles away from my house. 
+Think step by step.",False,contradiction
+"Facts: i don't know um do you do a lot of camping
+Question: I know exactly.
+Think step by step.",False,contradiction
+"Facts: well that would be a help i wish they would do that here we have got so little landfill space left that we're going to run out before the end of this decade and it's really going to be
+Question: We have plenty of space in the landfill.
+Think step by step.",False,contradiction
+"Facts: yeah i know and i did that all through college and it worked too
+Question: I did that all through college but it never worked 
+Think step by step.",False,contradiction
+"Facts: If that investor were willing to pay extra for the security of limited downside, she could buy put options with a strike price of $98, which would lock in her profit on the shares at $18, less whatever the options cost.
+Question: THe strike price could be $8.
+Think step by step.",False,contradiction
+"Facts: The most important directions are simply up and up leads eventually to the cathedral and fortress commanding the hilltop, and down inevitably leads to one of three gates through the wall to the new town.
+Question: Go downwards to one of the gates, all of which will lead you into the cathedral.
+Think step by step.",False,contradiction
+"Facts: The bhakti movement of the Tamils brought a new warmth to the hitherto rigid Brahmanic ritual of Hinduism.
+Question: The Tamils' bhakti movement froze the previously warm ritual of Hinduism.
+Think step by step.",False,contradiction
+"Facts: see now in a situation like that the boys are only sixteen years old and they were sexually involved with her and i think like at that particular point she was twenty three you know so she wasn't really that much older than them and being a boy at that age i think that they're very um you know let's face it that's at a point in your life when you you're just starting to realize all the things of life
+Question: Everyone involved was the same age.
+Think step by step.",False,contradiction
+"Facts: You and your friends are not welcome here, said Severn.
+Question: Severn said the people were not welcome there.
+Think step by step.",True,entailment
+"Facts: i'm not sure what the overnight low was
+Question: I don't know how cold it got last night.
+Think step by step.",True,entailment
+"Facts: so i have to find a way to supplement that
+Question: I need a way to add something extra.
+Think step by step.",True,entailment
+"Facts: the hologram makes up all these things and uh i mean sometimes  sometimes it's funny sometimes it's not but uh you know it's something to pass the time until we do and then and then we watch football
+Question: Sometimes it is amusing to see what the hologram creates.
+Think step by step.",True,entailment
+"Facts: So far, however, the number of mail pieces lost to alternative bill-paying methods is too small to have any material impact on First-Class volume.
+Question: The amount of lost mail is huge and really impacts mail volume
+Think step by step.",False,contradiction
+"Facts: Buffet and a  la carte available.
+Question: It has a buffet.
+Think step by step.",True,entailment
+"Facts: Sorry but that's how it is.
+Question: This is how things are and there are no apologies about it.
+Think step by step.",False,contradiction
+"Facts: The tourist industry continued to expand, and though it became one of the top two income earners in Spain, a realization that unrestricted mass tourism was leading to damaging long-term consequences also began to grow.
+Question: Tourism is not very big in Spain.
+Think step by step.",False,contradiction
+"Facts: The census of 1931 served as an alarm signal for the Malay national consciousness.
+Question: The 1931 Malay census was an alarm bell.
+Think step by step.",True,entailment
+"Facts: Mortifyingly enough, it is all  the difficulty, the laziness, the pathetic formlessness in youth, the round peg in the square hole, the whatever do you want?
+Question: Many youth are lazy.
+Think step by step.",True,entailment
+"Facts: Conversely, an increase in government saving adds to the supply of resources available for investment and may put downward pressure on interest rates.
+Question: Interest rates should increase to increase saving.
+Think step by step.",False,contradiction
+"Facts: Britain's best-selling tabloid, the Sun , announced as a front-page world exclusive Friday that Texan model Jerry Hall has started divorce proceedings against aging rock star Mick Jagger at the High Court in London.
+Question: There is a British publication called the Sun.
+Think step by step.",True,entailment
+"Facts: He was of two minds, one reveled in the peace of this village.
+Question: He loved how peaceful the village was.
+Think step by step.",True,entailment
+"Facts: Rouen is the ancient center of Normandy's thriving textile industry, and the place of Joan of Arc's martyrdom ' a national symbol of resistance to tyranny.
+Question: Joan of Arc sacrificed her life at Rouen, which became an enduring symbol of opposition to tyranny.
+Think step by step.",True,entailment
+"Facts: Table 2: Examples of BLM's, FHWA's, IRS's, and VBA's Customer Satisfaction Expectations for Senior Executive Performance
+Question: Senior Executive's have been studies on various aspects to reach the expectations.
+Think step by step.",True,entailment
+"Facts: In Hong Kong you can have a plate, or even a whole dinner service, hand-painted to your own design.
+Question: It's impossible to have a plate hand-painted to your own design in Hong Kong.
+Think step by step.",False,contradiction
+"Facts: What's truly striking, though, is that Jobs has never really let this idea go.
+Question: Jobs never held onto an idea for long.
+Think step by step.",False,contradiction
+"Facts: While it's probably true that democracies are unlikely to go to war unless they're attacked, sometimes they are the first to take the offensive.
+Question: Democracies probably won't go to war unless someone attacks them on their soil
+Think step by step.",True,entailment
+"Facts: But to you, who know the truth, I propose to read certain passages which will throw some light on the extraordinary mentality of this great man."" He opened the book, and turned the thin pages.
+Question: There is no information on the mentality of the man, extraordinary or not, contained within the thin-paged book. 
+Think step by step.",False,contradiction
+"Facts: yeah i mean just when uh the they military paid for her education
+Question: The military didn't pay for her education.
+Think step by step.",False,contradiction
+"Facts: but uh these guys were actually on the road uh two thousand miles from from home when they had to file their uh their final exams and send them in
+Question: These men filed their midterm exams from home. 
+Think step by step.",False,contradiction
+"Facts: But you have to have money to save it, and not many couples with young children have the luxury of tucking away $2,000 apiece annually for their Golden Years.
+Question: Not many couples with kids can save up for retirement.
+Think step by step.",True,entailment
+"Facts: and uh as a matter of fact he's a draft dodger
+Question: They dodged the draft, I'll have you know.
+Think step by step.",True,entailment
+"Facts: 'Publicity.' Lincoln removed his great hat, making a small show of dusting it off.
+Question: Lincoln took his hat off.
+Think step by step.",True,entailment
+"Facts: In the stock market, however, the damage can get much worse.
+Question: The stock market can experience much worse damage. 
+Think step by step.",True,entailment
+"Facts: He hadn't seen even pictures of such things since the few silent movies run in some of the little art theaters.
+Question: He had recently seen pictures depicting those things.
+Think step by step.",False,contradiction
+"Facts: Look, there's a legend here.
+Question: See, there is a well known hero here.
+Think step by step.",True,entailment
+"Facts: yeah and how about how about like on the weekends do you do sports or do you go out
+Question: No one plays sports on the weekend.
+Think step by step.",False,contradiction
+"Facts: But when the cushion is spent in a year or two, or when the next recession arrives, the disintermediating voters will find themselves playing the roles of budget analysts and tax wonks.
+Question: The cushion will likely be spent in under two years.
+Think step by step.",True,entailment
+"Facts: Oh, what a fool I feel! 
+Question: I am beyond proud.
+Think step by step.",False,contradiction
+"Facts: She has exchanged a hollow life for a heightened life, and has tried to comprehend all its turns, get its possibilities.
+Question: She has chose to live a hollow life.
+Think step by step.",False,contradiction
+"Facts: The campaigns seem to reach a new pool of contributors.
+Question: New people chose to donate to the cause 
+Think step by step.",True,entailment
+"Facts: the net cost of operations.
+Question: The gross cost.
+Think step by step.",False,contradiction
+"Facts: Credibility is a vital factor, and Jim Lehrer does, indeed, have it.
+Question: Jim Lehrer has no credibility whatsoever.
+Think step by step.",False,contradiction
+"Facts: From the corner of his eye he saw Jamus look over the broken mare.
+Question: Jamus looked over the mare.
+Think step by step.",True,entailment
+"Facts: Even if you're the kind of traveler who likes to improvise and be adventurous, don't turn your nose up at the tourist offices.
+Question: There's nothing worth seeing in the tourist offices.
+Think step by step.",False,contradiction
+"Facts: Similarly, OIM revised the electronic Grant Renewal Application to accommodate new information sought by LSC and to ensure greater ease for users.
+Question: Changes were made to the Grant Renewal Application to provide extra information to the LSC.
+Think step by step.",True,entailment
+"Facts: 'Dave Hanson, to whom nothing was impossible.' Well, we have a nearly impossible task: a task of engineering and building.
+Question: This building job will be very difficult to complete.
+Think step by step.",True,entailment
+"Facts: Still, it would be interesting to know. 109 Poirot looked at me very earnestly, and again shook his head. 
+Question: Poirot did not look at me.
+Think step by step.",False,contradiction
+"Facts: But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!""
+Question: I want you to follow him, so watch for the signal that I give.
+Think step by step.",True,entailment
+"Facts: There are no shares of a stock that might someday come back, just piles of options as worthless as those shares of Cook's American Business Alliance.
+Question:  Cook's American Business Alliance caused shares of stock to come back.
+Think step by step.",False,contradiction
+"Facts: One thing was worrying me dreadfully, but my heart gave a great throb of relief when I saw my ulster lying carelessly over the back of a chair.
+Question: I was dreadfully worried about many things. 
+Think step by step.",False,contradiction
+"Facts: Do you think Mrs. Inglethorp made a will leaving all her money to Miss Howard? I asked in a low voice, with some curiosity. 
+Question: I yelled at the top of my lungs.
+Think step by step.",False,contradiction
+"Facts: that your approach is is is right you can actually go out and sub it if even if you don't wanna get hands on you can even just sub it out the concrete and those kind of things and and that's kind of the plan i have so um uh everyone i talk to uh i've
+Question: You can sub it even if you do not want to get your hands on it.
+Think step by step.",True,entailment
+"Facts: oh i don't know either the other growing up all i knew was
+Question: I know because I learned it growing up
+Think step by step.",False,contradiction
+"Facts: WHOLE LIFE POLICIES - Policies that provide insurance over the insured's entire life and the proceeds (face amount) are paid only upon death of the insured.
+Question: Whole life policies are a type of life insurance that only cover the insured person until retirement from the workforce.
+Think step by step.",False,contradiction
+"Facts: Justice Kennedy does not care what law librarians across the country do with all the Supreme Court Reporters from 1790 through 1998.
+Question: Justice Kennedy doesn't care if the Supreme Court Reporters from 1790 to 1998 are thrown away.
+Think step by step.",True,entailment
+"Facts: The entire city was surrounded by open countryside with a scattering of small villages.
+Question: The whole countryside is scattered with small villages. 
+Think step by step.",True,entailment
+"Facts: it's actually there well Iraq has had uh designs on that place since nineteen twenty two so you know it wasn't like something that just suddenly popped up
+Question: The weird thing is that Iraq was never interested in that place until now.
+Think step by step.",False,contradiction
+"Facts: Prototyping, for example, may act as part of the requirements definition process, helping the agency identify and control areas of high uncertainty and technical risk.
+Question: Prototyping is not important, testing with the actual finished product is better.
+Think step by step.",False,contradiction
+"Facts: The regime's response of ferocious repression plus numerous other ineptitudes led to a third revolution in 1848, with the Bonapartists, led by Napoleon's nephew, emerging triumphant.
+Question: France was ruled by Napoleon's nephew after they won a revolution in 1848.
+Think step by step.",True,entailment
+"Facts: so i guess my experience is is just with what we did and and so they didn't really go through the child care route they were able to be home together
+Question: They were able to be home rather than having to worry about getting child care.
+Think step by step.",True,entailment
+"Facts: DOD's common practice for managing this environment has been to create aggressive risk reduction efforts in its programs.
+Question: Creating risk reduction efforts is common practice.
+Think step by step.",True,entailment
+"Facts: if the United States had used full conventional power.
+Question: The United States has no power to use.
+Think step by step.",False,contradiction
+"Facts: yeah really no kidding
+Question: Really? No kidding! 
+Think step by step.",True,entailment
+"Facts: Visit at sundown or out of season to get the full flavor of the setting.
+Question: The setting is better to visit at sundown or during low season.
+Think step by step.",True,entailment
+"Facts: All of the islands are now officially and proudly part of France, not colonies as they were for some three centuries.
+Question: The islands are part of France now instead of just colonies.
+Think step by step.",True,entailment
+"Facts: (For more information on BLM's senior executive performance plans, see app.
+Question: BLM's performance plans are visible online.
+Think step by step.",True,entailment
+"Facts: Taking an ecumenical tack, nation officials in Chicago recently issued edicts commanding preachers to back off their anti-Semitic rhetoric.
+Question: Nation officials in Chicago are involved in religious issues.
+Think step by step.",True,entailment
+"Facts: To savour the full effect of the architect's skill, enter the courtyard through the gate which opens onto the Hippodrome.
+Question: The gate to the Hippodrome is an example of the architect's skill.
+Think step by step.",True,entailment
+"Facts: There is nothing more to be done here, I think, unless, he stared earnestly and long at the dead ashes in the grate. 
+Question: There isn't anything left to do. 
+Think step by step.",True,entailment
+"Facts: In Texas, the legislature was instrumental in effecting changes to the state's benefit programs through provisions in several pieces of legislation.
+Question: The legislature was instrumental in effecting changes to the benefit program.
+Think step by step.",True,entailment
+"Facts: Around 1500 b.c. , a massive volcanic eruption at Santorini destroyed not only Akrotiri under feet of ash and pumice but the whole Minoan civilization.
+Question: The entire Minoan civilization was destroyed by a volcanic eruption.
+Think step by step.",True,entailment
+"Facts: The great thing is to keep calm."" Julius groaned.
+Question: Julius made a groaning sound.
+Think step by step.",True,entailment
+"Facts: June 21, 1995, provides the specific requirements for assessing and reporting on controls.
+Question: There are no specific requirements for assessment.
+Think step by step.",False,contradiction
+"Facts: This is especially true on Menorca, where cold winter winds limit the season's length.
+Question: This is especially untrue on Menorca, where warm summer weather extends the season's length.
+Think step by step.",False,contradiction
+"Facts: Over most of the 1980s and 1990s, the U.S. was able to invest more than it saved by attracting financing from abroad.
+Question: The US could save more than it invested in the 1980's and 90's.
+Think step by step.",False,contradiction
+"Facts: The sacred is not mysterious to her.
+Question: The woman is familiar with the sacred.
+Think step by step.",True,entailment
+"Facts: If you land by boat, Caravelle beach is yours for the using; otherwise you'll have to pay a nominal charge to the vacation club that owns the acreage.
+Question: There is a charge for people arriving at Caravelle beach by land.
+Think step by step.",True,entailment
+"Facts: Behind the cathedral, croseover the Rue de la R??publique to the 15th-century Eglise Saint-Maclou, the richest example of Flam?­boy?­ant Gothic in the country.
+Question: Eglise Saint-Michel is built in a flamboyant Gothic style.
+Think step by step.",True,entailment
+"Facts: Julius before the safe in the flat, her own question and the pause before his reply, ""Nothing."" Was there really nothing? 
+Question: Julius paused for a while, before answering her.
+Think step by step.",True,entailment
+"Facts: GAO recommends that the Secretary of Defense revise policy and guidance
+Question: GAO recommends that the Secretary of Defense revise policy and guidance
+Think step by step.",True,entailment
+"Facts: The Kal tangled both of Adrin's arms, keeping the blades far away.
+Question: Adrin's arms were tangled, keeping his blades away from Kal.
+Think step by step.",True,entailment
+"Facts: The primary screen must be integrated into the standard intake procedure of the emergency setting and must be the responsibility of the staff to administer to all patients.
+Question: The primary screen is the responsibility of the staff to be given to all patients.
+Think step by step.",True,entailment
+"Facts: I have been visiting an old woman in the village, she explained, ""and as Lawrence told me you were with Monsieur Poirot I thought I would call for you.""
+Question: There is an old woman in the village that I have been visiting. 
+Think step by step.",True,entailment
+"Facts: Slate 's Joseph Nocera.
+Question: Nocera works for Slate.
+Think step by step.",True,entailment
+"Facts: This town, which flourished between 6500 and 5500 b.c. , had flat-roofed houses of mud and timber decorated with wall-paintings, some of which show patterns that still appear on Anatolian kilims.
+Question: This town is over 8000 years old.
+Think step by step.",True,entailment
+"Facts: Candidates must submit a set of fingerprints for review by the FBI.
+Question: People that want the job have to have their fingerprints sent to the FBI.
+Think step by step.",True,entailment
+"Facts: In 1998, Cesar Chavez fasted for 36 days in California to underscore the dangers of pesticides to farm workers and their children.
+Question: Cesar Chavez was not concerned about the dangers of pesticide use.
+Think step by step.",False,contradiction
+"Facts: The red moon made her skin glow.
+Question: Her skin was glowing from the red moon.
+Think step by step.",True,entailment
+"Facts: However, in the off-field (sentimental) tournament, the Falcons and Jets have more appealing story lines.
+Question: The Jets and Falcons have boring stories.
+Think step by step.",False,contradiction
+"Facts: right after the war
+Question: Just after the war ended.
+Think step by step.",True,entailment
+"Facts: i'm kind of familiar with the weather out that way in west Texas but not in not in Lewisville
+Question: I do not know the weather conditions in Lewisville.  
+Think step by step.",True,entailment
+"Facts: In the moment of victory, Tuppence betrayed a somewhat unsportsmanlike triumph.
+Question: Tuppence was triumphant.
+Think step by step.",True,entailment
+"Facts: The central features of the Results Act-strategic planning, performance measurement, and public reporting and accountability-can serve as powerful tools to help change the basic culture of government.
+Question: The Results Act has strategic planning as a central feature. 
+Think step by step.",True,entailment
+"Facts: They made little effort, despite the Jesuit presence in Asia, to convert local inhabitants to Christianity or to expand their territory into the interior.
+Question: The Jesuit presence in Asia helped to convert local residents to Christianity, allowing them to expand their territory. 
+Think step by step.",False,contradiction
+"Facts: Dirt mounds surrounded the pit so that the spectators stood five or six people deep around the edge of the pit.
+Question: The ground is totally flat.
+Think step by step.",False,contradiction
+"Facts: i think it's real good anyway it's it's been it was nice meeting you
+Question: It was nice meeting you
+Think step by step.",True,entailment
+"Facts: um-hum  right do where are you at what state
+Question: Where are you located?
+Think step by step.",True,entailment
+"Facts: Small towns like Louisian lay scattered all over the Oil Fields; the main train line branched between them.
+Question: There were a lot of small towns in the oil fields.
+Think step by step.",True,entailment
+"Facts: There's only one thing for me to do.""
+Question: There's a few things left for me to do.
+Think step by step.",False,contradiction
+"Facts: The  liberation  of these old European colonies created the basis for postwar independence movements proclaiming the Japanese slogan  Asia for the Asians.  
+Question: Old European colonies were liberated.
+Think step by step.",True,entailment
+"Facts: But those that are manufactured for sale in in Europe and so forth are quite the other way around
+Question: The ones that are made to sell in Europe are different.
+Think step by step.",True,entailment
+"Facts: Sometimes it flattens entire neighbourhoods to make life easier for them.
+Question: All neighborhoods are perfectly safe in their pursuit of an easier life.
+Think step by step.",False,contradiction
+"Facts: Then I considered.
+Question: Afterwards, I thought about it.
+Think step by step.",True,entailment
+"Facts: You will find two principal  fino and olorose
+Question: You won't find any fino or olorose.
+Think step by step.",False,contradiction
+"Facts: The sooner we strike the better."" He turned to Tuppence.
+Question: He convinced Tuppence to hold off on their action plan. 
+Think step by step.",False,contradiction
+"Facts: yeah that's where i got to too the first i got chills up and down when i heard the on the radio and the first time they started doing the bombing
+Question: When I heard that on the radio I got chills and the beginning of the bombing.
+Think step by step.",True,entailment
+"Facts: This having come to his stepmother's ears, she taxed him with it on the afternoon before her death, and a quarrel ensued, part of which was overheard. 
+Question: A fight broke out between the stepmother and the man before her death.
+Think step by step.",True,entailment
+"Facts: Next, you enter the vast and splendid Imperial Hall, with three handsome marble fountains, and a canopied throne from which the sultan would enjoy the music and dancing of his concubines.
+Question: The Imperial Hall houses three marble fountains.  
+Think step by step.",True,entailment
+"Facts: at least i'm going to give it a try cause you can see i mean the oil filters i mean you can touch it it's right there
+Question: It seems like it's worth trying to get the oil filter out.
+Think step by step.",True,entailment
+"Facts: Tracking down the tiger is a subtle affair, and requires a degree of dedication, calm, and stealth.
+Question: You must be very silent when tracking tigers.
+Think step by step.",True,entailment
+"Facts: Adrin nodded.
+Question: Adrin nodded his head.
+Think step by step.",True,entailment
+"Facts: The WP runs a piece inside reporting that during a church service last Sunday, Cardinal John O'Connor of New York criticized President Clinton from the pulpit for taking Catholic communion while in South Africa.
+Question: The WP runs a piece outside reporting 
+Think step by step.",False,contradiction
+"Facts: For big Raj-buffs, the supreme example of Indo-Gothic style is the Victoria Terminus, affectionately abbreviated to VT nowadays, once the railway station that launched adventures inland, now handling mostly suburban traffic.
+Question: The Victoria Terminus is still the main departure point for travelers heading deeper into the country.
+Think step by step.",False,contradiction
+"Facts: Cop  Bud White (Crowe) and Ed Exley (Pearce) almost mix it up (59 seconds) :
+Question: Bud White and Ed Exley almost mix it up.
+Think step by step.",True,entailment
+"Facts: The only drawback is, of course, the large crowds in summer.
+Question: It is pretty much deserted in July.
+Think step by step.",False,contradiction
+"Facts: were sort of a double sign with a a big miles per hour and a little kilometers per hour type uh marking on the side
+Question: A sign that only displays mph.
+Think step by step.",False,contradiction
+"Facts: The Tunnel of Eupalinos can be explored but it's not for the claustrophobic.
+Question: Claustrophobics will not enjoy the tunnel of Eupalinos.
+Think step by step.",True,entailment
+"Facts: Another alternative is that our heroes were pursuing the noble goal of academics everywhere--tenure.
+Question: Our heroes aren't going for any academic goals. 
+Think step by step.",False,contradiction
+"Facts: By then, the program had added Carroll and Grayson counties and the city of Galax and had five attorneys.
+Question: The program had only one single attorney.
+Think step by step.",False,contradiction
+"Facts: Well? cried Tommy eagerly.
+Question: Tommy didn't speak.
+Think step by step.",False,contradiction
+"Facts: Even the lower limit of that differential compounds to a hefty sum over time.
+Question: The differential will not grow.
+Think step by step.",False,contradiction
+"Facts: He had forgotten about Adrin.
+Question: He didn't remember Adrin.
+Think step by step.",True,entailment
+"Facts: Reportedly the biggest payment made in such a case, it is hardly a nick in Texaco's annual revenue of more than $30 billion.
+Question: The biggest payment they made barely hurt their profits.
+Think step by step.",True,entailment
+"Facts: The flame or whatever it was had enough heat, but it was hard to control.
+Question: The flame was easy to control, but lacked heat. 
+Think step by step.",False,contradiction
+"Facts: um pardon me
+Question: I don't apologize.
+Think step by step.",False,contradiction
+"Facts: We hate them because they are smarter, or more studious, or more focused than we are.
+Question: We hate them out of jealousy for being smarter than us. 
+Think step by step.",True,entailment
+"Facts: These alone could have valuable uses.
+Question: These by themselves could prove valueable. 
+Think step by step.",True,entailment
+"Facts: Near Jerusalem
+Question: It is close to Jerusalem.
+Think step by step.",True,entailment
+"Facts: Tell me, how did those scribbled words on the envelope help you to discover that a will was made yesterday afternoon?"" Poirot smiled. 
+Question: How could you not figure out that there was a will written yesterday?
+Think step by step.",False,contradiction
+"Facts: Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said.
+Question: Raccoons, if they are abandoned, tend to damage things- this is what has been happening for the past 20 years.
+Think step by step.",True,entailment
+"Facts: 32 Under the RSA proposal, a worker between the ages of 25 and 60 with family earnings of at least $5,000 could contribute up to $1,000 annually through either an employer-sponsored saving plan or a tax-deferred individual account.
+Question: Most workers could contribute up to $1,000 each year.
+Think step by step.",True,entailment
+"Facts: of course you could annex Cuba but they wouldn't like that a bit
+Question: Annexing Cuba is a great idea.
+Think step by step.",False,contradiction
+"Facts: ( sums up the millennium coverage from around the globe, and  examines whether the Y2K preparations were a waste.)
+Question: (The millennium coverage from around the globe is summed up and examined).
+Think step by step.",True,entailment
+"Facts: They are levied through the power of the Government to compel payment, and the person or entity that pays these fees does not receive anything of value from the Government in exchange.
+Question: They are not levied through the power of the Government to compel payment.
+Think step by step.",False,contradiction
+"Facts: Moreover, Las Vegas has recently started to show signs of maturity in its cultural status as well.
+Question: The culture of Las Vegas has recently matured.
+Think step by step.",True,entailment
+"Facts: so Eric what do you think um
+Question: How do you feel about it, Eric?
+Think step by step.",True,entailment
+"Facts: Sir James's presence in Manchester was not accidental.
+Question: Manchester was not the place that Sir James had intended to go.
+Think step by step.",False,contradiction
+"Facts: Such multicolored reef dwellers as the parrotfish and French angelfish, along with weirdly shaped coral, crawfish, or turtles hiding in crevices, can be yours for the viewing in these clear waters where visibility of 30 m (100 ft) is common.
+Question: Because visibility is so good, you can see French angelfish, crawfish, and other reef dwellers.
+Think step by step.",True,entailment
+"Facts: Benchmarked by U.S.
+Question: Benchmark in America.
+Think step by step.",True,entailment
+"Facts: External Validity The extent to which a finding applies (or can be generalized) to persons, objects, settings, or times other than those that were the subject of study.
+Question: External Validity gets its name from the fact that what's being studied are people, things, and individuals who are outside of the study.
+Think step by step.",True,entailment
+"Facts: No, indeed, said Cynthia. 
+Question: Certainly not, said Cynthia.
+Think step by step.",True,entailment
+"Facts: In the other bracket, the Broncos beat the New York Jets.
+Question: The Broncos beat the New York Jets. 
+Think step by step.",True,entailment
+"Facts: We were playing all sorts of sports, and you were not, so shut up and stop twitching,' the microbe's tone of voice changed, it was lower and more resounding.
+Question: We have played football, basketball, baseball and soccer and you haven't played anything so shut your mouth. 
+Think step by step.",True,entailment
+"Facts: To help identify solutions to this problem, Senators Fred Thompson and John Glenn, Chairman and Ranking Minority Member, respectively, of the Senate Committee on Governmental Affairs, requested that we study organizations with superior security programs to identify management practices that could benefit federal agencies.
+Question: Senators Fred Thompson requested the study to benefit federal agencies.
+Think step by step.",True,entailment
+"Facts: well i think i got to agree with you there
+Question: I could not agree with you.
+Think step by step.",False,contradiction
+"Facts: yeah well Rochester's like right on the shores isn't it
+Question: Rochester is right on the shores.
+Think step by step.",True,entailment
+"Facts: The Balanced Scorecard Institute is a web clearinghouse for managers to exchange information, ideas, and lessons learned in building strategic management systems using the balanced scorecard approach.
+Question: The Balanced Scorecard has recently closed due to a lack of interest.
+Think step by step.",False,contradiction
+"Facts: There are no shares of a stock that might someday come back, just piles of options as worthless as those shares of Cook's American Business Alliance.
+Question: Those shares of stocks will never come back.
+Think step by step.",True,entailment
+"Facts: Say, man, don't you know you've been given up for dead? 
+Question: You were thought to be dead!
+Think step by step.",True,entailment
+"Facts: Even us if you needed,"" said Jon.
+Question: He told them not to ask him to lift a finger.
+Think step by step.",False,contradiction
+"Facts: News berates computer users for picking obvious, easily cracked passwords and chastises system administrators for ignoring basic security precautions.
+Question: News outlets do not blame users or system administrators for security breaches. 
+Think step by step.",False,contradiction
+"Facts: In its submission, HCFA did not identify any other statute or executive order imposing procedural requirements relevant to the rule.
+Question: HCFA didn't identify any other executive order.
+Think step by step.",True,entailment
+"Facts: No one was there, no bones at all.
+Question: There were many bones in a pile.
+Think step by step.",False,contradiction
+"Facts: well that's uh i agree with you there i mean he didn't have the surrounding cast that Montana had there's no doubt about that
+Question: I don't agree when you say that he didn't have as much support as Montana.
+Think step by step.",False,contradiction
+"Facts: As with other types of internal controls, this is a cycle of activity, not an exercise with a defined beginning and end.
+Question: There is no clear beginning and end, it's a continuous cycle.
+Think step by step.",True,entailment
+"Facts: There are many such at the present time.
+Question: There are none at all.
+Think step by step.",False,contradiction
+"Facts: With their fluent Vietnamese and Mandarin, they help Tran understand her family's eligibility for Medi-Cal and food stamps, assist the 70-year-old woman in finding a place to live and advise abused women how they can stay in the country while staying away from their husbands.
+Question: Tran spoke Mandarin. 
+Think step by step.",True,entailment
+"Facts: It was planned in the 1820s as a symbol of Scottish national pride and designed as a mini-Parthenon, in deference to the neoclassical style popular at the time.
+Question: It was designed to look just like the White House.  
+Think step by step.",False,contradiction
+"Facts: Scotland became little more than an English county.
+Question: Scotland was hardly better than an English county. 
+Think step by step.",True,entailment
+"Facts: He works himself into a fake froth; does some calculated, halfhearted gonzo writing; then collects a fat check.
+Question: He collects a big check for pretending to be outraged.
+Think step by step.",True,entailment
+"Facts: the the Iranian borders are still open uh from what i understand understand um
+Question: From what I know the borders of Iran are still open.
+Think step by step.",True,entailment
+"Facts: A re-created street of colonial Macau is lined with traditional Chinese shops.
+Question: This street, formerly a colonial site, is now home to modern high-rise development.
+Think step by step.",False,contradiction
+"Facts: Something may be better than nothing . If trials compared low-cost therapy to the complete AZT regimen it's likely that the new regimens will prove less effective.
+Question: It is better to have little than to have none at all.
+Think step by step.",True,entailment
+"Facts: it would probably be a lot more work and probably not turn out as good
+Question: Oh that way sounds great, it could turn out even better
+Think step by step.",False,contradiction
+"Facts: Territorial rights, in the form of a deck chair, can be assured for a nominal sum.
+Question: A deck chair can be used to show territorial rights.
+Think step by step.",True,entailment
+"Facts: During the half-century of its existence, Israel has absorbed approximately 2.5 million Jewish immigrants, displaced persons, refugees, and survivors of the Nazi Holocaust.
+Question: Israel shunned the Jewish people from entering to escape the Nazi Holocaust.
+Think step by step.",False,contradiction
+"Facts: A new guideline, for example, may tell us to send heart surgery patients home earlier.
+Question: A new rule may advice us to discharge heart surgery patients earlier.
+Think step by step.",True,entailment
+"Facts: Also, under credit reform, the credit subsidy cost is recorded as an outlay when a direct or guaranteed loan is disbursed.
+Question: The credit subsidy cost is never recorded as an outlay under any circumstances.
+Think step by step.",False,contradiction
+"Facts: OMB has approved the information collection contained on the Form ADV and has
+Question: OMB staunchly opposed the information collection contained on the Form ADV.
+Think step by step.",False,contradiction
+"Facts: Finally, the FDA will conduct workshops, issue guidance manuals and videotapes, and hold teleconferences to aid small entities in complying with the rule.
+Question: The FDA will only issue videotapes.
+Think step by step.",False,contradiction
+"Facts: The analysis concluded that, because the rule relaxed the hog cholera-related restrictions imposed on the importation of live swine and prepared pork products from Sonora, Mexico, the proposed rule could have a significant economic impact on a substantial number of small entities in the United States.
+Question: The analysis stated that the rule might have a large impact on small entities in the US.
+Think step by step.",True,entailment
+"Facts: Cave 31 tries to emulate the style of the great Hindu temple on a much smaller scale, but the artists here were working on much harder rock and so abandoned their effort.
+Question: Cave 31 ran into problems because it was made of harder rock. 
+Think step by step.",True,entailment
+"Facts: uh-huh well maybe well i've enjoyed talking to you okay bye-bye
+Question: I hated talking to you.
+Think step by step.",False,contradiction
+"Facts: Tom is the winner of a year's supply of Turtle Wax, and he will receive his prize just as soon as the Shopping Avenger figures out how much Turtle Wax actually constitutes a year's supply.
+Question: There are no winners of the one year supply of Turtle wax.
+Think step by step.",False,contradiction
+"Facts: I feel that you probably underestimate the danger, and therefore warn you again that I can promise you no protection.
+Question: I warn you again, that I can promise you no protection, as I feel that you probably underestimate the danger.
+Think step by step.",True,entailment
+"Facts: A good time to visit is just at the end of the monsoon in October when you can see flocks of storks, egrets, and cormorants and it is ideally combined with a full-moon trip to the Taj, but there's plenty to see all year round.
+Question: The monsoon season ends in the month of October.
+Think step by step.",True,entailment
+"Facts: That is well. 
+Question: That is unwell.
+Think step by step.",False,contradiction
+"Facts: Divers can explore the deeps but you can also snorkel here, or take a glass-bottom boat or submarine tour to get a glimpse of this watery world.
+Question: Divers do not like to explore the deeps here.  
+Think step by step.",False,contradiction
+"Facts: 2. Receiving Water Samples
+Question: The water samples should be received.
+Think step by step.",True,entailment
+"Facts: The man shifted slightly and cut the spear out of the air.
+Question: The man moved near a flying spear. 
+Think step by step.",True,entailment
+"Facts: Why blame her because she had been true to her creed? 
+Question: She was not faithful to her own belief system.
+Think step by step.",False,contradiction
+"Facts: Oh, my friend, have I not said to you all along that I have no proofs. 
+Question: I've always had the proof that he did it.
+Think step by step.",False,contradiction
+"Facts: Companies that were foreign had to accept Indian financial participation and management.
+Question: Foreign companies had to take Italian money.
+Think step by step.",False,contradiction
+"Facts: When the next modernist revolution comes around, he'll be ready.
+Question: The man will be prepared.
+Think step by step.",True,entailment
+"Facts: 'I don't suppose you could forget I ever said that?'
+Question: It's not likely you'll forget that, right?
+Think step by step.",True,entailment
+"Facts: And really it's a great relief to think he's going, Hastings, continued my honest friend. 
+Question: ""Are you sure we can't do anything to keep him here?,"" admitted my long-time nemesis.
+Think step by step.",False,contradiction
+"Facts: 'Not entirely,' I snapped, harsher than intended.
+Question: I spoke more harshly than I wanted to. 
+Think step by step.",True,entailment
+"Facts: It features over 50 outlets for discounted designer fashions, from Armani to DKNY.
+Question: It has over 50 discount stores for designer fashion brands.
+Think step by step.",True,entailment
+"Facts: This is a powerful and evocative museum.
+Question: The museum is powerful.
+Think step by step.",True,entailment
+"Facts: sometimes well there's definitely a lot more hitting
+Question: The person says that there's definitely a lot more hitting.
+Think step by step.",True,entailment
+"Facts: Like the Japanese, Chinese, and Portuguese before them, many of the new peoples would stay on in Hawaii, adding to the ethnic and racial mix that has become a hallmark of the islands.
+Question: Hawaii was homogenous. 
+Think step by step.",False,contradiction
+"Facts: It was other-worldly.
+Question: It was grounded in reality.
+Think step by step.",False,contradiction
+"Facts: Voluntariness of risks is evaluated.
+Question: No evaluation is being done of risks.
+Think step by step.",False,contradiction
+"Facts: Most pundits side with bushy-headed George Stephanopoulos ( This Week ), arguing that only air strikes would be politically palatable.
+Question: Mr. Stephanopoulos has a very large pundit following due to his stance on air strikes only being politically palatable.
+Think step by step.",True,entailment
+"Facts: Thus, the net scale benefit is initially positive, whether or not we adjust for the wage premium.
+Question: Initial net scale benefits are negative when adjusted for the wage premium.
+Think step by step.",False,contradiction
+"Facts: The stuff was strong, but somewhat brittle.
+Question: It was incredibly strong and not brittle at all.
+Think step by step.",False,contradiction
+"Facts: The best beach in Europe ' at least that's the verdict of its regulars.
+Question: Regular beachgoers say that it is the best in Europe.
+Think step by step.",True,entailment
+"Facts: Don't remember. 
+Question: I do not remember.
+Think step by step.",True,entailment
+"Facts: probably you probably got everybody on you because they were probably all going to law school
+Question: It is possible that they were going to law school.
+Think step by step.",True,entailment
+"Facts: uh-huh how about any matching programs
+Question: What about matching programs? 
+Think step by step.",True,entailment
+"Facts: 2) This particular instance of it stinks.
+Question: It is a terrible situation. 
+Think step by step.",True,entailment
+"Facts: oh for heaven sakes for the drugs yeah uh-huh
+Question: For drugs.
+Think step by step.",True,entailment
+"Facts: yeah because being a student i'm doing it for the money
+Question: I'm no longer a student, so I don't need the money anymore.
+Think step by step.",False,contradiction
+"Facts: well i think of uh you mean as far as retirement
+Question: You never discuss retirement.
+Think step by step.",False,contradiction
+"Facts: If you have any questions about this report, please contact Henry R. Wray, Senior Associate General Counsel, at (202) 512-8581.
+Question: Henry R. Wray can be reached at (555) 512-8581.
+Think step by step.",False,contradiction
+"Facts: Your speeches are inflammatory.
+Question: Your speeches are so calming.
+Think step by step.",False,contradiction
+"Facts: Given the limits on the WTO's jurisdiction, it was probably unreasonable of Kodak to expect a real victory.
+Question: Kodak was totally justified in expecting a victory.
+Think step by step.",False,contradiction
+"Facts: Back to the subject of celebrity interviews, British magazines have published a huge number with actress Kate Winslet, the star of Titanic , to promote a new British film she has made.
+Question: British magazines boycotted Kate Winslet.
+Think step by step.",False,contradiction
+"Facts: aChange in personal saving depends on how much of the $4,000 IRA contribution represents new saving.
+Question: The IRA contributes nothing to saving
+Think step by step.",False,contradiction
+"Facts: Although all four categories of emissions are down substantially, they only achieve 50-75% of the proposed cap by 2007 (shown as the dotted horizontal line in each of the above figures).
+Question: There has been a substantial decrease in each of the emission categories.
+Think step by step.",True,entailment
+"Facts: hi Mary have you gone visiting uh any new restaurants lately
+Question: Hello, Mary, have you gone anywhere recently, such as restaurants? 
+Think step by step.",True,entailment
+"Facts: Black professionals braid their hair to display their ethnic pride.
+Question: Blacks proudly braid their hair.
+Think step by step.",True,entailment
+"Facts: As of last week he charges $50 an hour minimum instead of $25 for the services of his yearling Northern Utah Legal Aid Foundation.
+Question: His charges went down.
+Think step by step.",False,contradiction
+"Facts: 7) Nonautomated First-Class and Standard-A mailers have the option of requesting that their mail be processed manually, even though the costs for such processing are substantially higher than mechanized processing.
+Question: Nonautomated First-Class and Standard-A mailers cannot ask for their mail to be processed by hand because it costs the postal service more.
+Think step by step.",False,contradiction
+"Facts: The formal splendor of the grounds testify to the 18th-century desire to tame nature, but it is done with such superlative results that one can only be thankful that the work was undertaken.
+Question: The grounds were really beautiful.
+Think step by step.",True,entailment
+"Facts: um-hum yeah right uh is yours a is it a a slab foundation or pier and beam
+Question: Your foundation is being beamed away.
+Think step by step.",False,contradiction
+"Facts: Although all four categories of emissions are down substantially, they only achieve 50-75% of the proposed cap by 2007 (shown as the dotted horizontal line in each of the above figures).
+Question: All of the emission categories experienced a downturn except for one.
+Think step by step.",False,contradiction
+"Facts: i don't know i i do i can think of all the uh the biblical things about it too where what did they say to uh i can't think of the scripture Render unto Caesar's what is Caesar's so
+Question: I do not know about the bible or its scriptures.
+Think step by step.",False,contradiction
+"Facts: Others love to see it in the middle of the heaviest monsoon, its marble translucent, its image blurred in the rain-stippled water channels of its gardens.
+Question: None of the visitors like to see it during the monsoon.
+Think step by step.",False,contradiction
+"Facts: Previously, at the request of the Republican Ranking Minority Member of the House Committee on Government Operations, GAO reviewed activities of President Clintonas Task Force on Health Care Reform and was provided with an extensive listing of working group participants drawn from the government and from outside organizations.
+Question: GAO solely investigated the activities of President Clinton's Task Force on their own accord.
+Think step by step.",False,contradiction
+"Facts: This testing of the marketplace may range from written or telephone contacts with knowledgeable federal and non-federal experts regarding similar or duplicate requirements and the results of any market test recently undertaken, to the more formal sources-sought announcements in pertinent publications (e.g.
+Question: This marketplace testing ranges from informal to formal surveys.
+Think step by step.",True,entailment
+"Facts: Crosethe Rue de Rivoli to the Palais-Royal, built for Car?­di?­nal Richelieu as his Paris residence in 1639, and originally named Palais-Cardinal.
+Question: Crosethe Rue De Rivoli to the Palais-Royal was built for King Louis XVI.
+Think step by step.",False,contradiction
+"Facts:  There was food for all, and houses had been conjured hastily to shelter the people.
+Question: There was not enough food for all sadly.
+Think step by step.",False,contradiction
+"Facts: After the second course I began to feel slightly at ease, although I couldn't help being disturbed by the way they just stared at me.
+Question: I felt at ease around them.
+Think step by step.",False,contradiction
+"Facts: Try a selection at the Whisky Heritage Centre (they have over 100 for you to sample), where you can then buy a bottle or two of your personal favorite in the shop or in stores around the city.
+Question: There are at least 100 things to sample at Whisky Heritage Centre.
+Think step by step.",True,entailment
+"Facts: They made little effort, despite the Jesuit presence in Asia, to convert local inhabitants to Christianity or to expand their territory into the interior.
+Question: The Jesuit thought that by converting the Asian people to Christianity, it would help them to expand their territory. 
+Think step by step.",False,contradiction
+"Facts: And, could it not result in a decline in Postal Service volumes across--the--board?
+Question: Nothing will affect Postal Service volumes across--the--board.
+Think step by step.",False,contradiction
+"Facts: To the south, the former fishing villages of Sorrento and Positano spill down the craggy cliffs of the serpentine Amalfi coast, justifiably tauted as one of the world's most beautiful drives.
+Question: Sorrento used to be a fishing village.
+Think step by step.",True,entailment
+"Facts: If the company makes money on the policy, other insurers are expected to follow.
+Question: If the company loses money on the policy then other insurers will copy them. 
+Think step by step.",False,contradiction
+"Facts: The tomb of Job Charnock, the Company official who founded the city of Caletta, is in the church cemetery.
+Question: The Tomb of Job Charnock is not in the church cemetery.
+Think step by step.",False,contradiction
+"Facts: Because GAO's primary function is to support the Congress in carrying out its decision-making and oversight responsibilities, the number of times our experts testify before congressional panels each year is an indicator of our responsiveness and reflects the impact, importance, and value of our work.
+Question: They refused to provide any support to the Congress.
+Think step by step.",False,contradiction
+"Facts: The two programs are currently housed in buildings about a block apart.
+Question: The two buildings are on opposite sides of the city.
+Think step by step.",False,contradiction
+"Facts: The results of the sheepshead minnow, Cyprinodon variegatus, inland silverside, Menidia beryllina, or mysid, Mysidopsis bahia, tests are acceptable if survival in the controls is 80 percent or greater.
+Question: Tests are only acceptable when survival rates during controls come to at least 70 percent.
+Think step by step.",False,contradiction
+"Facts: Now suppose there is a private delivery firm in Cleveland that is competing with the postal service.
+Question: Imagine a state-run delivery firm trying to phase out the postal service.
+Think step by step.",False,contradiction
+"Facts: We need to look at the implications that these differing roles have for a range of issues, such as SES core competencies, performance standards, recruitment sources, mobility, and training and development programs.
+Question: It is very important for us to consider the implications of the these distinct roles on the issues.
+Think step by step.",True,entailment
+"Facts: yeah well that's not really immigration
+Question: That is the focus of immigration.
+Think step by step.",False,contradiction
+"Facts: no no not at all it
+Question: Not all of it
+Think step by step.",True,entailment
+"Facts: My unborn children will never appear on the Today show.
+Question: My sons and daughter will be anchors on the Today show.
+Think step by step.",False,contradiction
+"Facts: An organization's activities, core processes, and resources must be aligned to support its mission and help it achieve its goals.
+Question: A company's mission can be realized even without the alignment of resources.
+Think step by step.",False,contradiction
+"Facts: need the car the next day type deal so
+Question: You need the car several weeks later.
+Think step by step.",False,contradiction
+"Facts: In fact, the sloping shoulder was the noticeable feature of the new clothes of the Dior era, coming as it did immediately in the wake of the Joan Crawford/Rosalind Russell period and its vigorous shoulder padding.
+Question: Dior era was known for sloping shoulders after the period of shoulder padding.
+Think step by step.",True,entailment
+"Facts: It was still night.
+Question: The sun was blazing in the sky, darkness nowhere to be seen.
+Think step by step.",False,contradiction
+"Facts: It's an interesting account of the violent history of modern Israel, and ends in the Scafeld Room where nine Jews were executed.
+Question: It's a fascinating explanation modern Israel's violent past and at the end is the Scafelf Room where executions took place.
+Think step by step.",True,entailment
+"Facts: i don't understand that i thought that he was always a good player
+Question: I always considered him to be a good player.
+Think step by step.",True,entailment
+"Facts: but West Texas now was a hundred and ten and i didn't mind that at all you know because it was so dry
+Question: It was one hundred ten degrees in West Texas.  
+Think step by step.",True,entailment
+"Facts: Indeed, 58 percent of Columbia/HCA's beds lie empty, compared with 35 percent of nonprofit beds.
+Question: 58% of Columbia/HCA's beds are empty, said the report.
+Think step by step.",True,entailment
+"Facts: The library is the largest of any plantation in Jamaica, with over 300 volumes, including three first editions; the books would have been used to while away the long humid days.
+Question: The library has over 300 volumes, including 3 first editions. 
+Think step by step.",True,entailment
+"Facts: The long-sought, the mysterious, the elusive Jane Finn! 
+Question: Jane Finn is easily found but not often looked for.
+Think step by step.",False,contradiction
+"Facts: in Asia yeah i spent
+Question: In Asia I spent
+Think step by step.",True,entailment
+"Facts: It's easy to overdose on the many temples, palaces, and museums in India.
+Question: You'll find a scarcity of palaces and temples across India.
+Think step by step.",False,contradiction
+"Facts: uh i really i miss college i had a good time
+Question: College was horrible and I hated it. 
+Think step by step.",False,contradiction
+"Facts: 'No one in Large would ever try to harm us.
+Question: They're out to get us there in Large, you know.
+Think step by step.",False,contradiction
+"Facts: True to his word to his faithful mare, Ca'daan left Whitebelly in Fena Dim and borrowed Gray Cloud from his uncle.
+Question: Ca'daan kept his word to Gray Cloud and borrowed Whitebelly from his uncle. 
+Think step by step.",False,contradiction
+"Facts: The central features of the Results Act-strategic planning, performance measurement, and public reporting and accountability-can serve as powerful tools to help change the basic culture of government.
+Question: The Results Act has strategic planning as a deleted feature. 
+Think step by step.",False,contradiction
+"Facts: And two- the personal pronoun problems were going to get serious.
+Question: There were going to be problems with the personal pronoun.
+Think step by step.",True,entailment
+"Facts: Today it is possible to buy cheap papyrus printed with gaudy Egyptian scenes in almost every souvenir shop in the country, but some of the most authentic are sold at The Pharaonic Village in Cairo where the papyrus is grown, processed, and hand-painted on site.
+Question: The Pharaonic Village in Cairo does not sell papyrus.
+Think step by step.",False,contradiction
+"Facts: In reviewing this history, it's important to make some crucial distinctions.
+Question: Making certain distinctions is imperative in looking back on the past.
+Think step by step.",True,entailment
+"Facts: Jon drew it out and stabbed again in the man's throat.
+Question: Jon stabbed the man's throat multiple times.
+Think step by step.",True,entailment
+"Facts: Or to judge by the  Failing to nurse at night can lead to painful engorgement or even breast infection.
+Question: Mothers should nurse at night.
+Think step by step.",True,entailment
+"Facts: Now it's my turn, and even if I'm walking in a dead man's shoes, I can make my way afresh.
+Question: It's your turn.
+Think step by step.",False,contradiction
+"Facts: we wouldn't be expected to cast a ballet on the subject
+Question: We have been asked to vote on the subject.
+Think step by step.",False,contradiction
+"Facts: As recent events illustrate, trust takes years to gain but can be lost in an instant.
+Question: Trust, once built, is hard to lose.
+Think step by step.",False,contradiction
+"Facts: But when he was persuaded by divers means to help us, he gave up after one week, declaring it beyond his powers.
+Question: He solved the issue within seven days, because he was so smart.
+Think step by step.",False,contradiction
+"Facts: She gave the girl clothes and gifts and took her to her Connecticut estate for weekend pony rides, according to the Star . How was I supposed to compete with that?
+Question: She gave the boy clothes, gifts and pony rides. That's hard to compete with.
+Think step by step.",False,contradiction
+"Facts: There may be a small savings at the factory showrooms in Manacor, where you'll have the biggest choice.
+Question: The factory showrooms are only for vendors.
+Think step by step.",False,contradiction
+"Facts: we only have to get up for you know for the daytime feedings
+Question: We can sleep all day, since we don't have any daytime feedings.
+Think step by step.",False,contradiction
+"Facts: One opportunist who stayed was Octavius Decatur Gass.
+Question: Octavius Decatur Gass refers to four people. 
+Think step by step.",False,contradiction
+"Facts: These gardens used to belong to the governor's mountain lodge, but the building was demolished by the Japanese during the occupation of Hong Kong.
+Question: These gardens belong to the governor's mountain lodge.
+Think step by step.",False,contradiction
+"Facts: He seemed a trifle embarrassed.
+Question: He wasn't embarrassed at all.
+Think step by step.",False,contradiction
+"Facts: But employers are still driving, and that's all that counts.
+Question: Employers have continued to operate motor vehicles, and that's all that matters.
+Think step by step.",True,entailment
+"Facts: They consolidated programs to increase efficiency and deploy resources more effectively
+Question: Programs to increase efficiency were consolidated.
+Think step by step.",True,entailment
+"Facts: and they're more independent and there's things to do then it's good for them to go to different i mean it he goes to a a mother's day out program now once a week both of my kids do
+Question: Independence does not grant anymore options for them.
+Think step by step.",False,contradiction
+"Facts: no North Carolina State
+Question: North Carolina is a county
+Think step by step.",False,contradiction
+"Facts: As for the divisive issue of whether the Mass is a sacrifice for the remission of sins, the statement affirms that Christ's death upon the cross ...
+Question: The matter of whether or not the Mass is a sacrifice for the remission of sins is controversial.
+Think step by step.",True,entailment
+"Facts: But Fish is not an upbeat pragmatist.
+Question: Fish is an upbeat pragmatist. 
+Think step by step.",False,contradiction
+"Facts: so i really i really don't have heart burn at all with doing it myself over four nights tie i tied the car up if four days but we're fortunate we didn't need it
+Question: I tied the car up for four nights but I had heartburn the entire time.
+Think step by step.",False,contradiction
+"Facts: In general, six elements appear  purpose, type of data collected, method of data collection, design, method of data analysis, and reporting.
+Question: Purpose is not one of the six elements listed here.
+Think step by step.",False,contradiction
+"Facts: He's been mean-spirited and vicious for so long that editors and reporters are tired of hearing about it.
+Question: Editors and reporters are tired of hearing about it since he has been vicious for long.
+Think step by step.",True,entailment
+"Facts: Every August young women convene to light joss sticks and some even climb the nine-meter (30-ft) rock to pray for good husbands.
+Question: Women converge on this place to light joss sticks and climb the rock.  
+Think step by step.",True,entailment
+"Facts: A button on the Chatterbox page will make this easy, so please do join in.
+Question: There is a button on the page that is easy to use.
+Think step by step.",True,entailment
+"Facts: i wonder how they kept up with them though it seemed like the buffaloes were moving so fast i guess they graze though that wouldn't have been a problem
+Question: It seemed difficult, keeping up with the buffaloes.
+Think step by step.",True,entailment
+"Facts: The Gaiety Theatre in South King Street is worth visiting for its ornate d??cor.
+Question: The Gaiety Theatre is decorated very ornately.
+Think step by step.",True,entailment
+"Facts: maybe adult literacy maybe you know composition writing maybe you know uh volunteering you know on a tutor line or though the even through the elementary schools for help with homework or the other part of me says is God i've had enough kids  do i really
+Question: maybe I could volunteer to help with adult literacy or homework help for elementary schools but on the other hand, I've already had children
+Think step by step.",True,entailment
+"Facts: oh yeah IBM uh i mean uh a lot of people use human factors folks but IBM is what i'm looking at right now
+Question: No one thinks about human factors and I'm not interested in IBM.
+Think step by step.",False,contradiction
+"Facts: Cybernetics had always been Derry's passion.
+Question: Derry knew nothing of cybernetics.
+Think step by step.",False,contradiction
+"Facts: To the northwest of the chateau, the Grand Trianon palace, surrounded by pleasantly unpompous gardens, was the home of Louis XIV's mistress, Madame de Maintenon, where the aging king increasingly took refuge.
+Question: Grand Trianon palace was the residence of Louis XIV.
+Think step by step.",False,contradiction
+"Facts: You're crazed, Beresford.
+Question: You are a sane genius, Beresford.
+Think step by step.",False,contradiction
+"Facts: so are can i just ask you are you Canadian
+Question: Are you from the U.S.?
+Think step by step.",False,contradiction
+"Facts: In the meantime, the philosophy is to seize present-day opportunities in the thriving economy.
+Question: The philosophy was to seize opportunities when the economy is doing poorly.
+Think step by step.",False,contradiction
+"Facts: Case Studies in Science Education.
+Question: Education about science.
+Think step by step.",True,entailment
+"Facts: uh-huh i i thought they did an excellent job of actually aging the person you know from when he was a little kid to little older to little older to except the last the very last you know the last person the last actor that played the kid
+Question: Yeah they did an amazing job of making that person age through the years, except that last part.
+Think step by step.",True,entailment
+"Facts: When asked about the Bible's literal account of creation, as opposed to the attractive concept of divine creation, every major Republican presidential candidate--even Bauer--has squirmed, ducked, and tried to steer the discussion back to faith, morals, and the general idea that humans were created in the image of God.
+Question: Every republican presidential candidate has tried to avoid the question of creation.
+Think step by step.",True,entailment
+"Facts: In Japan, Mainichi Shimbun criticized the new Liberal Democratic Party leader Keizo Obuchi for being devoid of fresh ideas for reviving the Japanese economy.
+Question: Mainichi Shimbun was critical of Keizo Obuchi, the new Liberal Democratic Party Leader.
+Think step by step.",True,entailment
+"Facts: The Women's Haven, which provides shelter and outreach to domestic-violence victims, already has a full-time attorney.
+Question: There is a full-time attorney at the Women's Haven already.
+Think step by step.",True,entailment
+"Facts: hi Cynthia what did you wear to work today
+Question: You did not go to work today. 
+Think step by step.",False,contradiction
+"Facts: The purpose of the Diwan-i-Khas is hotly disputed; it is not necessarily the hall of private audience that its name implies.
+Question: The name suggest that it is open to the public.
+Think step by step.",False,contradiction
+"Facts: 4 million homes watch the evening news on CBS, ABC, and NBC.
+Question: No one watches nbc.
+Think step by step.",False,contradiction
+"Facts: Palestrina , by Hans Pfitzner, performed by the Royal Opera (Metropolitan Opera House, New York).
+Question: Hans Pfitzner did not write Palestrina, which will be performed in New York. 
+Think step by step.",False,contradiction
+"Facts: and ancient coins
+Question: And really old coins.
+Think step by step.",True,entailment
+"Facts: Behind the cathedral, croseover the Rue de la R??publique to the 15th-century Eglise Saint-Maclou, the richest example of Flam?­boy?­ant Gothic in the country.
+Question: The Eglise Saint-Michel was built in the 8th century.
+Think step by step.",False,contradiction
+"Facts: Many had to leave their birthplaces, fleeing to Lesvos, Chios, and Samos, the Greek-ruled islands just offshore.
+Question: Everyone was able to remain in their homeland. 
+Think step by step.",False,contradiction
+"Facts: Montmartre is lively at night, with famous clubs such as Au Lapin Agile.
+Question: Montmartre has no life at night.
+Think step by step.",False,contradiction
+"Facts: well uh normally i like to to go out fishing in a boat and uh rather than like bank fishing and just like you try and catch anything that's swimming because i've had such problems of trying to catch any type of fish that uh i just really enjoy doing the boat type fishing
+Question: I fish in the boat and try catching any fish because I have trouble catching certain types.
+Think step by step.",True,entailment
+"Facts: and these poor guys out there uh trying to uphold the law um i don't know i kind of think they should bring back capital punishment
+Question: I think that capital punishment should remain illegal.
+Think step by step.",False,contradiction
+"Facts: When asked about the Bible's literal account of creation, as opposed to the attractive concept of divine creation, every major Republican presidential candidate--even Bauer--has squirmed, ducked, and tried to steer the discussion back to faith, morals, and the general idea that humans were created in the image of God.
+Question: Every republican presidential candidate answered the question of creation openly.
+Think step by step.",False,contradiction
+"Facts: (Never mind the strictest reading, which supposes that creation took a week.)
+Question: The creation apparently took a week, supposes the reading.
+Think step by step.",True,entailment
+"Facts: (Cohen 1999) Although many observers would view this as an extreme step it could reduce costs and allow increased efficiencies.
+Question: Many observers view it an extreme step to lower costs and increase efficiencies. 
+Think step by step.",True,entailment
+"Facts: uh-huh so do you have to get a shade tolerant grass is that what you're
+Question: Do you have to get shade tolerant grass?
+Think step by step.",True,entailment
+"Facts: This is especially true on Menorca, where cold winter winds limit the season's length.
+Question: On Menorca, where cold winter winds limit the season's length, this is especially true.
+Think step by step.",True,entailment
+"Facts: yeah although i do worry that how easy this one was might be a bad lesson uh to the to the younger people um you know than there is the other generation
+Question: I do worry that it might be a bad lesson for the kids.
+Think step by step.",True,entailment
+"Facts: 'I see.'
+Question: I was blind.
+Think step by step.",False,contradiction
+"Facts: and you know if i know that they're gonna be there you know you you i try to really watch it and like you say you know really dress up and if i know they're not you know i i've been doing a lot of reorganization you know the last couple of months the same way you are you know and it's just so it's just impossible to crawl down on the floor and dig through boxes in a dress you know it is so
+Question: I never try to watch it.
+Think step by step.",False,contradiction
+"Facts: yeah i mean this this Escort even when the head gasket went i mean it would start first time every time
+Question: The Ford Escort worked even with a blown head gasket.
+Think step by step.",True,entailment
+"Facts: I don't know all the answers, fella.
+Question: I know everything there is to know about it.
+Think step by step.",False,contradiction
+"Facts: you know even even into major things just to keep our car longer because i don't think we get the money that we put into them out of them in two years or three years and of course i was never in a position where i could trade my car off every two years
+Question: I get a brand new car every couple of years.
+Think step by step.",False,contradiction
+"Facts: Once they know their Social Security benefits promised under current law, workers can calculate how much they can expect from employer-sponsored pension plans and how much they need to save on their own for retirement.
+Question: Social Security benefits are useful for the worker in securing their retirement and financial freedom when they reach seniority.
+Think step by step.",True,entailment
+"Facts: At the top of the hill is the imposing medieval fortress of Kadifekale.
+Question: The church Kadifekale is located at the bottom of the hill.
+Think step by step.",False,contradiction
+"Facts: I'm not sentimental, you know."" She paused.
+Question: She claimed not to be sentimental. 
+Think step by step.",True,entailment
+"Facts: yeah exactly right it really is because they're gonna get them one way or another they will always have a way look at drugs they always have a way to get that so
+Question: They will never get drugs, because the government passed a bill that prohobits all of them.
+Think step by step.",False,contradiction
+"Facts: ooh it's kind of tough to think of some of the others although i do watch some of some of those frivolous things uh like on Thursday nights at nine o'clock when i get home from aerobics i will watch uh Knots Landing
+Question: I've never been to an aerobics class before.
+Think step by step.",False,contradiction
+"Facts: right yeah that's it's always handy to have that that credit card for whatever it is that you might need it for
+Question: It is not necessary to have a credit card.
+Think step by step.",False,contradiction
+"Facts: To address these concerns, we supplement our Base Estimate of benefits with a series of sensitivity calculations that make use of other sources of concentration-response and valuation data for key benefits categories.
+Question: Some scenarios allow for supplemental data to be used in lieu of primary data.
+Think step by step.",True,entailment
+"Facts: If you need to use the mail, it would be helpful if you sent your comments both in writing and on diskette (in Word or ASCII format).
+Question: We don't need more than one copy of your comments, either a diskette or writing will do.
+Think step by step.",False,contradiction
+"Facts: Were you in company with anyone?
+Question: Were you awake?
+Think step by step.",False,contradiction
+"Facts: If you still want to join, it might be worked.
+Question: You can try to do it if you'd like to join.
+Think step by step.",True,entailment
+"Facts: A student visa overstayer is not going to be a high priority for pro bono assistance.
+Question: A student visa overstayer will be high priority.
+Think step by step.",False,contradiction
+"Facts: She buried his remains to spare her mother the gruesome sight.
+Question: She quickly ate his remains to steal all the nutrients for herself.
+Think step by step.",False,contradiction
+"Facts: There are two challengers to these top dogs.
+Question: These top dogs face two challenges.
+Think step by step.",True,entailment
+"Facts: This is one of the reasons we're growing too weak to fight the Satheri.  ""What's wrong with a ceremony of worship, if you must worship your eggshell?"" Dave asked.
+Question: ""We shouldn't worship our eggshells, why do we even have ceremonies at all?"" asked Dave.
+Think step by step.",False,contradiction
+"Facts: Where are you going?
+Question: I'm curious as to where you're going.
+Think step by step.",True,entailment
+"Facts: Yes, you've done very well, young man.
+Question: No, you have not done very well.
+Think step by step.",False,contradiction
+"Facts: How do you propose to get in touch with your would-be employers?
+Question: How will you destroy your potential employers' gardens?
+Think step by step.",False,contradiction
+"Facts: What seems to be a special bargain price for just  one week only  could turn out to be a year-round con.
+Question: Some weekly store sales turn out to be a year-round sale scams.
+Think step by step.",True,entailment
+"Facts: The entire economy received a massive jump-start with the outbreak of the Korean War, with Japan ironically becoming the chief local supplier for an army it had battled so furiously just a few years earlier.
+Question: Japan became the local supplier for Korea.
+Think step by step.",True,entailment
+"Facts: You're the Desert Ghost.
+Question: You're a living desert camel.
+Think step by step.",False,contradiction
+"Facts: For this report, we provide an overview of the major theories about why people save and describe various factors associated with the decline in personal saving.
+Question: There are several major theories about why people save.
+Think step by step.",True,entailment
+"Facts: Punditus Interruptus, The Final 
+Question: The Last Punditus Interruptus
+Think step by step.",True,entailment
+"Facts: NONFEDERAL PHYSICAL PROPERTY ANNUAL STEWARDSHIP INFORMATION For the Fiscal Year Ended September
+Question: The report details federal physical property
+Think step by step.",False,contradiction
+"Facts: because i don't want to my mother was also a domineering type of personality because she had to take over the things that my dad fell short in
+Question: My mother was domineering since she filled in my father's shoes.
+Think step by step.",True,entailment
+"Facts: Favored by the Ancient Egyptians as a source of turquoise, the Sinai was, until recently, famed for only one event but certainly an important one.
+Question: The Ancient Egyptians found nothing of use in the Sinai.  
+Think step by step.",False,contradiction
+"Facts: You name it L.A.'s got it.
+Question: L.A. doesn't offer much of anything.
+Think step by step.",False,contradiction
+"Facts: This points to a final press-friendly quality of McCain' brilliant flattery.
+Question: This does not lead to a final press-friendly quality of McCain' brilliant flattery.
+Think step by step.",False,contradiction
+"Facts: Several of its beaches are officially designated for nudism (known locally as naturisme) the most popular being Pointe Tarare and a functionary who is a Chevalier de la L??gion d'Honneur has been appointed to supervise all aspects of sunning in the buff.
+Question: There are a number of nude beaches.
+Think step by step.",True,entailment
+"Facts: On the left of the entrance ramp is the open space once occupied by the Temple of Athena, close to which are the remains of the Pergamene library.
+Question: There are no remains visible from the ramp.
+Think step by step.",False,contradiction
+"Facts: Managing better requires that agencies have, and rely upon, sound financial and program information.
+Question: Agencies need sound financial and program information for good management.
+Think step by step.",True,entailment
+"Facts: But he said he thought the Ledfords understood they could qualify only if he put down a stated income, typically an undocumented business income that raises the borrower's interest rate. 
+Question: He thought he didn't need anything to qualify.
+Think step by step.",False,contradiction
+"Facts: Another White House murder mystery and a chance to bash the genre.
+Question: White House murder mystery has other works before this one.
+Think step by step.",True,entailment

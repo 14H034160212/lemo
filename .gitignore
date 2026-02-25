@@ -1,0 +1,26 @@
+# Cache directories
+.cache/
+
+# Temporary files
+tmp/
+
+# Log files
+*.log
+
+# External repositories
+openai_evals_repo/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+venv/
+.venv/

@@ -3,6 +3,11 @@ import argparse
 import os
 import csv
 
+# Set HuggingFace cache to avoid disk space issues
+os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
+os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+
 import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -150,12 +155,16 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
     return acc, total, correct
 
 
-def main(model_key: str):
-    model_dir = f"./trained_models/{model_key}"
-    base_model_name = MODEL_LIST[model_key]
+def main(model_key: str, model_dir: str = None):
+    # Allow custom model directory or use default
+    if model_dir is None:
+        model_dir = f"./trained_models/{model_key}"
+    base_model_name = MODEL_LIST.get(model_key, "unknown")
 
     print(f"▶ Loading model from: {model_dir}")
-    print(f"▶ Base model: {base_model_name}")
+    print(f"▶ Base model type: {model_key}")
+    if base_model_name != "unknown":
+        print(f"▶ Base model: {base_model_name}")
 
     device = build_device()
     print(f"▶ Device: {device}")
@@ -170,11 +179,48 @@ def main(model_key: str):
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
     predictions_dir = os.path.join(model_dir, "predictions")
-    results = {}
+    results = []
 
     print("\n===== Detailed Evaluation Per Split =====")
 
     for split_name, filename in DEFAULT_TEST_FILES.items():
+        output_csv = os.path.join(predictions_dir, f"{model_key}_{split_name}_predictions.csv")
+        
+        # Load ground truth dataset
+        ds = load_dataset("csv", data_files=filename)["train"]
+        
+        # Calculate total EXPECTED predictions (sum of questions in each row)
+        expected_total = 0
+        for row in ds:
+             questions = row["questions"].split(" | ")
+             expected_total += len(questions)
+        
+        # Check if predictions already exist and are complete
+        if os.path.exists(output_csv):
+            print(f"\n[{split_name}] Found existing predictions: {output_csv}")
+            try:
+                with open(output_csv, "r", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    rows = list(reader)
+                
+                if len(rows) == expected_total:
+                    print(f"  ✅ File is complete ({len(rows)} predictions). Calculating accuracy from existing file...")
+                    correct = sum(1 for r in rows if r["prediction"] == r["ground_truth"])
+                    acc = correct / expected_total if expected_total > 0 else 0.0
+                    results.append({
+                        "split": split_name,
+                        "accuracy": acc,
+                        "correct": correct,
+                        "total": expected_total
+                    })
+                    print(f"  accuracy: {acc:.4f}")
+                    continue
+                else:
+                    print(f"  ⚠️ File incomplete ({len(rows)}/{expected_total}). Re-running evaluation...")
+            except Exception as e:
+                print(f"  ⚠️ Error reading file: {e}. Re-running evaluation...")
+
+        print(f"\n[{split_name}] Evaluating {filename}...")
         acc, total, correct = eval_and_save(
             model,
             tokenizer,
@@ -184,8 +230,12 @@ def main(model_key: str):
             device,
             predictions_dir,
         )
-        results[split_name] = acc
-        print(f"[{split_name}] {filename}")
+        results.append({
+            "split": split_name,
+            "accuracy": acc,
+            "correct": correct,
+            "total": total
+        })
         print(f"  samples (questions): {total}")
         print(f"  correct: {correct}")
         print(f"  accuracy: {acc:.4f}")
@@ -193,40 +243,68 @@ def main(model_key: str):
 
     # ------- summary table -------
     print("\n===== Base vs Variants Accuracy Table =====")
-    base_acc = results.get("base", 0.0)
+    base_acc = next((r["accuracy"] for r in results if r["split"] == "base"), 0.0)
 
     header = f"{'Split':<35} | {'Accuracy':>9} | {'Δ vs base':>9}"
     print(header)
     print("-" * len(header))
+    
+    summary_csv_path = os.path.join(model_dir, "accuracy_summary.csv")
+    with open(summary_csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total"])
+        writer.writeheader()
 
-    ordered_splits = [
-        "base",
-        "variant1",
-        "variant2",
-        "variant3",
-        "variant4_equiv_contrapositive",
-        "variant4_equiv_double_negation",
-        "variant4_equiv_implication",
-        "variant4_equiv_demorgan",
-        "variant4_equiv_identity",
-        "variant4_equiv_commutativity",
-        "variant4_equiv_multi",
-    ]
+        ordered_splits = [
+            "base",
+            "variant1",
+            "variant2",
+            "variant3",
+            "variant4_equiv_contrapositive",
+            "variant4_equiv_double_negation",
+            "variant4_equiv_implication",
+            "variant4_equiv_demorgan",
+            "variant4_equiv_identity",
+            "variant4_equiv_commutativity",
+            "variant4_equiv_multi",
+        ]
 
-    for split in ordered_splits:
-        if split not in results:
-            continue
-        acc = results[split]
-        delta = acc - base_acc
-        delta_str = f"{delta:+.3f}" if split != "base" else "0.000"
-        print(f"{split:<35} | {acc:>9.4f} | {delta_str:>9}")
+        for split in ordered_splits:
+            res = next((r for r in results if r["split"] == split), None)
+            if not res:
+                continue
+                
+            acc = res["accuracy"]
+            delta = acc - base_acc
+            delta_str = f"{delta:+.3f}" if split != "base" else "0.000"
+            print(f"{split:<35} | {acc:>9.4f} | {delta_str:>9}")
+            
+            writer.writerow({
+                "split": split,
+                "accuracy": acc,
+                "delta_vs_base": delta,
+                "correct": res["correct"],
+                "total": res["total"]
+            })
+
+    print(f"\n📄 Accuracy summary saved to: {summary_csv_path}")
 
     print("\n✅ Evaluation FINISHED.\n")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", required=True, choices=["bert", "qwen", "llama"])
+    parser.add_argument("--model", required=True, choices=["bert", "qwen", "llama"],
+                        help="Model type (bert, qwen, llama)")
+    parser.add_argument("--model_dir", type=str, default=None,
+                        help="Custom model directory (default: trained_models/{model})")
+    parser.add_argument("--stage", type=str, default=None, choices=["stage1", "stage2", "stage2_mixed"],
+                        help="Shortcut to evaluate stage models (overrides model_dir)")
     args = parser.parse_args()
 
-    main(args.model)
+    # Handle stage shortcuts
+    if args.stage:
+        model_dir = f"./trained_models/{args.model}_{args.stage}"
+    else:
+        model_dir = args.model_dir
+
+    main(args.model, model_dir=model_dir)

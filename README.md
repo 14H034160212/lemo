@@ -3,10 +3,11 @@ This repository provides a fully reproducible pipeline for evaluating whether la
 
 It includes:
 1. Synthetic data generation (base reasoning tasks + multiple controlled variants)
-2. LoRA-based model training (BERT / Qwen2 / TinyLlama)
+2. LoRA-based model training (BERT / Qwen2 / TinyLlama) with multiple training strategies
 3. Detailed evaluation with prediction logging
 4. Logical equivalence stress tests (single-law & multi-law)
 5. Built-in annotations describing exactly what was changed per variant
+6. Advanced training pipelines: CoT, DPO, Fusion, RA-CoT
 
 This framework allows you to measure how models behave when:
 1. Rules are removed
@@ -23,35 +24,72 @@ conda activate logic
 
 ### 1.2 Install dependencies
 ```
-pip install torch transformers datasets peft accelerate sentencepiece pandas numpy tqdm
+pip install -r requirements.txt
 ```
-(Install CUDA packages depending on GPU setup if needed.)
 
 ## 2. Repository Structure
 ```
 .
+├── train.py                         # Main LoRA training script (bert / qwen / llama)
+├── evaluate.py                      # Main evaluation suite
 ├── data_gen.py                      # Data generator for all variants
-├── train.py                         # LoRA model training (bert / qwen / llama)
-├── evaluate.py                      # Full evaluation suite
-├── train.csv                        # Auto-generated (base, 80%)
-├── test_base.csv                    # Base test set (base, 20%)
-├── test_variant1.csv                # Remove redundant rule
-├── test_variant2.csv                # Remove key rule
-├── test_variant3.csv                # Contradictory facts
-├── test_variant4_equiv_contrapositive.csv
-├── test_variant4_equiv_double_negation.csv
-├── test_variant4_equiv_implication.csv
-├── test_variant4_equiv_demorgan.csv
-├── test_variant4_equiv_identity.csv
-├── test_variant4_equiv_commutativity.csv
-├── test_variant4_equiv_multi.csv    # 2–5 logical equivalence rules combined
-└── trained_models/
-    ├── bert/
-    │   └── predictions/*.csv
-    ├── qwen/
-    │   └── predictions/*.csv
-    └── llama/
-        └── predictions/*.csv
+├── requirements.txt
+│
+├── data/
+│   ├── train.csv                    # Base training set (80%)
+│   ├── test_base.csv                # Base test set (20%)
+│   ├── test_variant1.csv            # Remove redundant rule
+│   ├── test_variant2.csv            # Remove key rule
+│   ├── test_variant3.csv            # Contradictory facts
+│   ├── test_variant4_equiv_*.csv    # Logical equivalence variants
+│   ├── train_cot.csv                # CoT training data
+│   ├── train_dpo.jsonl              # DPO training pairs
+│   ├── train_fusion.csv             # Fusion training data
+│   ├── train_mixed.csv              # Mixed training data
+│   ├── train_ra_cot.csv             # RA-CoT training data
+│   └── real_world/                  # Real-world NLI evaluation data
+│
+├── scripts/
+│   ├── data_generation/             # Data generation scripts
+│   │   ├── stage1_data_gen.py
+│   │   ├── stage1_data_gen_v2.py
+│   │   ├── generate_cot_data.py
+│   │   ├── generate_dpo_data.py
+│   │   ├── generate_fusion_data.py
+│   │   ├── generate_mixed_data.py
+│   │   ├── generate_ra_cot_data.py
+│   │   └── prepare_real_world_data.py
+│   │
+│   ├── training/                    # Advanced training scripts
+│   │   ├── stage1_train.py          # Stage-1 SFT
+│   │   ├── stage2_train.py          # Stage-2 SFT
+│   │   ├── stage2_train_cot.py      # Chain-of-Thought fine-tuning
+│   │   ├── stage2_train_dpo.py      # DPO fine-tuning
+│   │   ├── stage2_train_fusion.py   # Fusion training
+│   │   ├── stage2_train_ra_cot.py   # Retrieval-Augmented CoT
+│   │   └── train_real_world.py      # Real-world NLI training
+│   │
+│   ├── evaluation/                  # Extended evaluation scripts
+│   │   ├── evaluate_direct.py       # Direct answer evaluation
+│   │   ├── evaluate_cot.py          # CoT evaluation
+│   │   ├── evaluate_generative.py   # Generative model evaluation
+│   │   ├── evaluate_optimized.py    # Optimized evaluation
+│   │   └── evaluate_real_world.py   # Real-world NLI evaluation
+│   │
+│   └── utils/                       # Utility scripts
+│       ├── summarize_results.py
+│       ├── generate_final_report.py
+│       ├── convert_to_evals.py
+│       └── verify_template_adherence.py
+│
+├── evals_data/                      # OpenAI Evals format test data
+├── evals_submission/                # OpenAI Evals submission files
+├── results/                         # Evaluation summary CSVs
+└── docs/                            # Documentation, paper, reports
+    ├── QUICKSTART.md
+    ├── TRAINING_GUIDE.md
+    ├── TRAINING_GUIDE_V2.md
+    └── paper.tex
 ```
 
 ## 3. Data Generation
@@ -63,18 +101,18 @@ This will generate:
 
 ### 3.1 Training Set
 ```
-train.csv — base examples (80%)
+data/train.csv — base examples (80%)
 ```
 
-### 3.2 Test set
+### 3.2 Test Sets
 ```
-test_base.csv — original reasoning chain
+data/test_base.csv — original reasoning chain
 
-test_variant1.csv — redundant rule removed
+data/test_variant1.csv — redundant rule removed
 
-test_variant2.csv — critical rule removed
+data/test_variant2.csv — critical rule removed
 
-test_variant3.csv — contradictory facts added
+data/test_variant3.csv — contradictory facts added
 
 Variant 4 — logical equivalence tests:
 1. test_variant4_equiv_contrapositive.csv
@@ -96,8 +134,7 @@ Each CSV contains:
 |type|base / variantX / logical_equiv|
 |facts|Natural-language facts|
 |rules|Rules used for inference|
-|facts|Natural-language facts|
-|questions|All 4 questions separated by|
+|questions|All 4 questions separated by \||
 |answers|Corresponding "T" / "F" truth values|
 |equiv_laws_used|For logical equivalence cases only|
 
@@ -139,7 +176,7 @@ Removed:
 If someone is cold then they are rough.
 ```
 
-|Question|Base|Varient2|
+|Question|Base|Variant2|
 |:---|:---|:--|
 |Q1 cold|T|T|
 |Q2 rough|T|F|
@@ -197,6 +234,9 @@ equiv_law_count=3
 ```
 
 ## 5. Model Training
+
+### 5.1 Basic Training (LoRA fine-tuning)
+
 Train BERT:
 ```
 python train.py --model bert
@@ -222,8 +262,28 @@ Trained models saved to:
 trained_models/{model}/
 ```
 
+### 5.2 Advanced Training Strategies
+
+For extended training pipelines, see `scripts/training/`:
+
+| Script | Strategy |
+|:---|:---|
+| `stage1_train.py` | Stage-1 SFT on base data |
+| `stage2_train_cot.py` | Chain-of-Thought fine-tuning |
+| `stage2_train_dpo.py` | Direct Preference Optimization |
+| `stage2_train_fusion.py` | Fusion of SFT + CoT |
+| `stage2_train_ra_cot.py` | Retrieval-Augmented CoT |
+
+Generate training data for advanced strategies:
+```
+python scripts/data_generation/generate_cot_data.py
+python scripts/data_generation/generate_dpo_data.py
+python scripts/data_generation/generate_fusion_data.py
+```
+
 ## 6. Evaluation
-Run evaluation:
+
+### 6.1 Standard Evaluation
 ```
 python evaluate.py --model bert
 python evaluate.py --model qwen
@@ -231,19 +291,23 @@ python evaluate.py --model llama
 ```
 
 The evaluation script:
+- Evaluates all 11 test sets
+- Saves predictions under `trained_models/{model}/predictions/`
 
-Evaluates all 11 test sets
+### 6.2 Extended Evaluation
 
-Saves predictions under:
-```
-trained_models/{model}/predictions/{model}_{split}_predictions.csv
-```
+| Script | Description |
+|:---|:---|
+| `scripts/evaluation/evaluate_direct.py` | Direct answer evaluation |
+| `scripts/evaluation/evaluate_cot.py` | Chain-of-Thought evaluation |
+| `scripts/evaluation/evaluate_generative.py` | Generative model evaluation |
+| `scripts/evaluation/evaluate_real_world.py` | Real-world NLI (LogicNLI / MNLI) |
 
 Produces an accuracy table:
 
 <img width="580" height="300" alt="image" src="https://github.com/user-attachments/assets/d62c11a0-0c90-4962-89d2-280166def15e" />
 
-We also submit the varitent 3 test set to the human last exam benchmark and all the state-of-the-art models are failed in this test including claude-sonnet-4-5, gpt-4.1, gpt-5.2, claude-opus-4-5 and gemini-3-pro-preview.
+We also submit the variant 3 test set to the Human Last Exam benchmark — all state-of-the-art models fail, including claude-sonnet-4-5, gpt-4.1, gpt-5.2, claude-opus-4-5, and gemini-3-pro-preview.
 <img width="2333" height="1619" alt="image" src="https://github.com/user-attachments/assets/1dbb3195-cf47-46b1-9a75-b3525a6465fd" />
 
 
@@ -274,4 +338,3 @@ This reveals:
 2. Contradictions confuse them
 3. Logical equivalence does not break reasoning
 4. Redundant rule clutter does not harm performance
-

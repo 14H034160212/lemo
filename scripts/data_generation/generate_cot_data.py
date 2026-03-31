@@ -7,96 +7,131 @@ INPUT_FILE = "data/train.csv"
 OUTPUT_FILE = "data/train_cot.csv"
 
 def generate_reasoning(row):
+    row_type = row.get('type', 'base_positive')
     facts = row['facts']
     rules = row['rules'].split(' | ')
     questions = row['questions'].split(' | ')
     answers = row['answers'].split(' | ')
-    
-    # Simple semantic parsing for this specific dataset structure
-    # Fact: "Name is color1 or color2"
+
     name = facts.split()[0]
-    
-    # We assume the standard chain:
-    # Color -> Cold -> Rough -> Young -> Nice
-    # And Rule 5: Young -> Cold (back loop)
-    # Rule 3: not Young -> not Rough (contrapositive)
-    
+
     samples = []
-    
+
     for q, a in zip(questions, answers):
-        # q: "Name is attribute."
-        # Extract attribute
         parts = q.strip(".").split()
-        target_attr = parts[-1] # cold, rough, young, nice, green, etc.
-        is_negated = "not" in q
-        
-        chain = []
-        chain.append(f"Fact: {facts}.")
-        
-        # Step 1: Colors imply Cold
-        chain.append(f"Rule: If {name} is {rules[0].split()[3]} then {name} is cold.") # Green->Cold
-        chain.append(f"Rule: If {name} is {rules[1].split()[3]} then {name} is cold.") # Blue->Cold
-        chain.append(f"Therefore, {name} is cold.")
-        
-        # Step 2: Cold -> Rough
-        chain.append(f"Rule: If {name} is cold then {name} is rough.")
-        chain.append(f"Therefore, {name} is rough.")
-        
-        # Step 3: Rough -> Young
-        chain.append(f"Rule: If {name} is rough then {name} is young.")
-        chain.append(f"Therefore, {name} is young.")
-        
-        # Step 4: Young -> Nice
-        chain.append(f"Rule: If {name} is young then {name} is nice.")
-        chain.append(f"Therefore, {name} is nice.")
-        
-        reasoning = " ".join(chain)
-        
-        # Determine Answer
-        # Valid attributes: cold, rough, young, nice
-        valid_attrs = ["cold", "rough", "young", "nice"]
-        
-        final_answer = "False"
-        if a.strip() == "T":
-            final_answer = "True"
-            # For True samples, the reasoning supports it.
-            # We can cut the reasoning chain short if we want, but full chain is fine.
+        is_negated = "not" in parts
+        target_attr = parts[-1]
+
+        final_answer = "True" if a.strip() == "T" else "False"
+
+        if row_type in ('base_positive',):
+            # Full chain: color → cold → rough → young → nice
+            chain = []
+            chain.append(f"Fact: {facts}.")
+            chain.append(f"By the color rules, {name} is cold.")
+            chain.append(f"Since cold → rough, {name} is rough.")
+            chain.append(f"Since rough → young (contrapositive of not-young → not-rough), {name} is young.")
+            chain.append(f"Since young → nice, {name} is nice.")
+            chain.append(f"Therefore '{q}' is {final_answer}.")
+            reasoning = " ".join(chain)
+
+        elif row_type == 'base_negative':
+            chain = []
+            chain.append(f"Fact: {facts}.")
+            chain.append(f"By the color rules, {name} is cold.")
+            chain.append(f"Since cold → rough, {name} is rough.")
+            chain.append(f"Since rough → young, {name} is young.")
+            chain.append(f"Since young → nice, {name} is nice.")
+            if "not cold" in q:
+                chain.append(f"But we derived cold=True, so '{q}' is False.")
+            elif "not rough" in q:
+                chain.append(f"But we derived rough=True, so '{q}' is False.")
+            else:
+                chain.append(f"The property in '{q}' is not derivable from given facts and rules, so it is False.")
+            chain.append(f"Therefore '{q}' is {final_answer}.")
+            reasoning = " ".join(chain)
+
+        elif row_type in ('variant2',):
+            # One critical rule is missing; determine which and reason accordingly
+            rules_list = row['rules'].split(' | ')
+            has_cold_rough = any("cold" in r and "rough" in r and "not" not in r for r in rules_list)
+            has_rough_young = any("not young" in r and "not rough" in r for r in rules_list)
+            has_young_nice = any("young" in r and "nice" in r and "not" not in r for r in rules_list)
+            chain = []
+            chain.append(f"Fact: {facts}.")
+            chain.append(f"By the color rules, {name} is cold. cold=True.")
+            if not has_cold_rough:
+                chain.append(f"The rule 'cold → rough' is absent. rough cannot be derived. rough=False.")
+                chain.append(f"Without rough, young cannot be derived. young=False. nice=False.")
+            elif not has_rough_young:
+                chain.append(f"cold → rough applies: rough=True.")
+                chain.append(f"The rule 'not young → not rough' is absent, so rough → young fails. young=False. nice=False.")
+            else:
+                chain.append(f"cold → rough: rough=True. rough → young (via contrapositive): young=True.")
+                chain.append(f"The rule 'young → nice' is absent. nice=False.")
+            chain.append(f"Therefore '{q}' is {final_answer}.")
+            reasoning = " ".join(chain)
+
+        elif row_type in ('variant3',):
+            # A contradicting fact was added; determine which one and reason accordingly
+            facts_str = facts
+            chain = []
+            chain.append(f"Fact: {facts_str}.")
+            if "not cold" in facts_str and "not nice" not in facts_str:
+                chain.append(f"An explicit fact states {name} is not cold. cold=False.")
+                chain.append(f"Without cold, rough cannot be derived. rough=False. young=False. nice=False.")
+            elif "not rough" in facts_str:
+                chain.append(f"An explicit fact states {name} is not rough. rough=False.")
+                chain.append(f"Without rough, young cannot be derived. young=False. nice=False.")
+                chain.append(f"Note: cold is still derivable from color rules. cold=True.")
+            elif "not nice" in facts_str:
+                chain.append(f"An explicit fact states {name} is not nice. nice=False.")
+                chain.append(f"The chain still holds: cold=True, rough=True, young=True; only nice is directly negated.")
+            else:
+                chain.append(f"A contradicting fact overrides the normal chain.")
+            chain.append(f"Therefore '{q}' is {final_answer}.")
+            reasoning = " ".join(chain)
+
         else:
-            # False sample.
-            # E.g. "Anne is not cold" (False)
-            # Reasoning proves Anne IS cold. So "Anne is not cold" is False.
-            # E.g. "Anne is green" (False/Unknown - actually Unknown in strict logic if "Green or Blue", but dataset might label F?)
-            # Let's trust the GT 'a'.
-            pass
+            # hard_mixed or other types: simple answer based on GT
+            chain = []
+            chain.append(f"Fact: {facts}. Rules: {row['rules']}.")
+            chain.append(f"After applying the rules carefully, the answer for '{q}' is {final_answer}.")
+            reasoning = " ".join(chain)
 
         full_output = f"Reasoning: {reasoning} Answer: {final_answer}"
-        
+
         samples.append({
             "input_text": f"Facts: {facts}\nRules: {row['rules']}\nQuestion: {q}\nThink step by step.",
             "target_text": full_output
         })
-        
+
     return samples
+
 
 def generate_cot_data():
     print(f"Reading {INPUT_FILE}...")
     with open(INPUT_FILE, "r") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
-        
+
     cot_samples = []
+    type_counts = {}
     for row in rows:
-        if row['type'] in ['base_positive', 'base_negative']:
-            cot_samples.extend(generate_reasoning(row))
-            
-    print(f"Generated {len(cot_samples)} CoT samples.")
-    
-    # Save as CSV with input_text, target_text (compatible with stage2_train script)
+        t = row.get('type', 'unknown')
+        samples = generate_reasoning(row)
+        cot_samples.extend(samples)
+        type_counts[t] = type_counts.get(t, 0) + 1
+
+    print(f"Generated {len(cot_samples)} CoT samples from {len(rows)} rows.")
+    print("  Types included:", dict(sorted(type_counts.items())))
+
     with open(OUTPUT_FILE, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["input_text", "target_text"])
         writer.writeheader()
         writer.writerows(cot_samples)
     print(f"Saved to {OUTPUT_FILE}")
+
 
 if __name__ == "__main__":
     generate_cot_data()

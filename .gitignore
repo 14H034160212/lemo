@@ -1,6 +1,21 @@
 # Cache directories
 .cache/
 
+# Trained model weights (too large for git)
+trained_models/
+
+# Claude AI assistant internal data
+.claude/
+
+# Runtime monitoring / one-off scripts
+auto_monitor*.sh
+monitor_and_launch.sh
+watch_progress.sh
+experiment_controller.sh
+handoff_to_controller.sh
+collect_results.py
+collect_all_results.py
+
 # Temporary files
 tmp/
 

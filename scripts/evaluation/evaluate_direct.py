@@ -6,7 +6,8 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
+_HF_CACHE = os.environ.get('HF_HOME', '/data/qbao775/lemo/.cache/huggingface')
+os.environ['HF_HOME'] = _HF_CACHE
 
 def evaluate_direct(model_path, split="variant3"):
     print(f"Loading model from {model_path}...")

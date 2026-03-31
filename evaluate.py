@@ -4,9 +4,10 @@ import os
 import csv
 
 # Set HuggingFace cache to avoid disk space issues
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+_HF_CACHE = os.environ.get('HF_HOME', '/data/qbao775/lemo/.cache/huggingface')
+os.environ['HF_HOME'] = _HF_CACHE
+os.environ['HF_DATASETS_CACHE'] = os.path.join(_HF_CACHE, 'datasets')
+os.environ['TRANSFORMERS_CACHE'] = os.path.join(_HF_CACHE, 'transformers')
 
 import torch
 from datasets import load_dataset
@@ -21,6 +22,7 @@ MODEL_LIST = {
 # All test splits, including multi-law variant4
 DEFAULT_TEST_FILES = {
     "base": "data/test_base.csv",
+    "hard_mixed": "data/test_hard_mixed.csv",
     "variant1": "data/test_variant1.csv",
     "variant2": "data/test_variant2.csv",
     "variant3": "data/test_variant3.csv",
@@ -64,6 +66,8 @@ def describe_change(split_name: str, laws_used: str, law_count: int) -> str:
     """
     if split_name == "base":
         return "none"
+    if split_name == "hard_mixed":
+        return "mixed T/F answer patterns: partial reasoning chains with distractors"
     if split_name == "variant1":
         return "removed redundant rule: 'If someone is young then they are cold.'"
     if split_name == "variant2":
@@ -256,6 +260,7 @@ def main(model_key: str, model_dir: str = None):
 
         ordered_splits = [
             "base",
+            "hard_mixed",
             "variant1",
             "variant2",
             "variant3",

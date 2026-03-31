@@ -12,9 +12,10 @@ import argparse
 import os
 
 # Set HuggingFace cache to avoid disk space issues
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+_HF_CACHE = os.environ.get('HF_HOME', '/data/qbao775/lemo/.cache/huggingface')
+os.environ['HF_HOME'] = _HF_CACHE
+os.environ['HF_DATASETS_CACHE'] = os.path.join(_HF_CACHE, 'datasets')
+os.environ['TRANSFORMERS_CACHE'] = os.path.join(_HF_CACHE, 'transformers')
 
 from datasets import load_dataset, Dataset, concatenate_datasets
 from transformers import (
@@ -237,7 +238,7 @@ def train_stage2_generative(
         # Load base model first
         base_model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+            torch_dtype=torch.bfloat16 if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()) else (torch.float16 if torch.cuda.is_available() else torch.float32),
             device_map="auto" if torch.cuda.is_available() else None,
         )
         # Load PEFT adapter on top
@@ -247,7 +248,7 @@ def train_stage2_generative(
         print(f"\n▶ Loading base model: {model_name}")
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+            torch_dtype=torch.bfloat16 if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()) else (torch.float16 if torch.cuda.is_available() else torch.float32),
             device_map="auto" if torch.cuda.is_available() else None,
         )
 
@@ -300,7 +301,8 @@ def train_stage2_generative(
         logging_steps=20,
         remove_unused_columns=False,
         report_to="none",
-        fp16=torch.cuda.is_available(),
+        bf16=torch.cuda.is_available() and torch.cuda.is_bf16_supported(),
+        fp16=torch.cuda.is_available() and not torch.cuda.is_bf16_supported(),
         gradient_accumulation_steps=2,
     )
 

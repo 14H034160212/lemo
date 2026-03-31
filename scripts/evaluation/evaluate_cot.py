@@ -6,8 +6,9 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
+_HF_CACHE = os.environ.get('HF_HOME', '/data/qbao775/lemo/.cache/huggingface')
+os.environ['HF_HOME'] = _HF_CACHE
+os.environ['HF_DATASETS_CACHE'] = os.path.join(_HF_CACHE, 'datasets')
 
 DEFAULT_TEST_FILES = {
     "base": "data/test_base.csv",

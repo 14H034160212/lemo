@@ -8,16 +8,19 @@ import os
 import csv
 
 # Set HuggingFace cache to avoid disk space issues
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+_HF_CACHE = os.environ.get('HF_HOME', '/data/qbao775/lemo/.cache/huggingface')
+os.environ['HF_HOME'] = _HF_CACHE
+os.environ['HF_DATASETS_CACHE'] = os.path.join(_HF_CACHE, 'datasets')
+os.environ['TRANSFORMERS_CACHE'] = os.path.join(_HF_CACHE, 'transformers')
 
 import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from peft import AutoPeftModelForCausalLM
 
 MODEL_LIST = {
     "qwen": "Qwen/Qwen2-1.5B",
+    "qwen3": "/data/shared/qwen3/Qwen3-8B",
     "llama": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
 }
 
@@ -47,20 +50,11 @@ def build_device():
 
 def format_question_prompt(facts, rules, question):
     """
-    Format a question into the prompt format used during training.
+    Format a question into the prompt format used during training (generate_cot_data.py).
+    Training input format: "Facts: {facts}\nRules: {rules}\nQuestion: {q}\nThink step by step."
+    Training target format: "Reasoning: {chain} Answer: True/False"
     """
-    prompt = f"""Given the following information:
-
-Facts: {facts}
-
-Rules:
-{chr(10).join(f"- {rule}" for rule in rules.split(' | '))}
-
-Question: {question}
-
-Based on the facts and rules above, is this statement true or false?
-
-Answer:"""
+    prompt = f"Facts: {facts}\nRules: {rules}\nQuestion: {question}\nThink step by step."
     return prompt
 
 
@@ -94,41 +88,52 @@ def parse_answer(generated_text):
     """
     Parse generated text to extract T or F.
 
-    Handles variations like "True", "true", "T", "False", "false", "F"
-    looking specifically for the first or last occurrences if reasoning is present.
+    Training target format: "Reasoning: {chain} Answer: True/False"
+    Prioritizes "Answer: X" pattern, then falls back to last-line and containment checks.
     """
-    # Clean up the text
+    import re
     text = generated_text.strip()
-    
-    # Check if text starts with True/False (our intended format)
     text_lower = text.lower()
-    
-    # Priority 1: Check start of string for direct answer
+
+    # Priority 1: Look for "Answer: True/False" pattern (matches training target format)
+    match = re.search(r'\banswer:\s*(true|false)\b', text_lower)
+    if match:
+        return "T" if match.group(1) == "true" else "F"
+
+    # Priority 2: Check start of string for direct answer
     if text_lower.startswith("true"):
         return "T"
     if text_lower.startswith("false"):
         return "F"
-    
-    # Priority 2: Look for 'true' or 'false' words explicitly (handling reasoning)
-    # Often models end with "Therefore the answer is True." or similar.
-    # We'll check for the word 'false' first because it's the more common "correct" answer in tricky variants.
-    if "false" in text_lower:
+
+    # Priority 3: Check last non-empty line
+    lines = [ln.strip() for ln in text.split('\n') if ln.strip()]
+    if lines:
+        last = lines[-1].lower()
+        if last.startswith("true") or last == "t":
+            return "T"
+        if last.startswith("false") or last == "f":
+            return "F"
+        if "answer is true" in last or "statement is true" in last:
+            return "T"
+        if "answer is false" in last or "statement is false" in last:
+            return "F"
+
+    # Priority 4: Scan lines in reverse for answer-like statements
+    for line in reversed(lines):
+        line_l = line.lower()
+        if re.search(r'\b(answer|therefore|thus|so|result)\b.*\btrue\b', line_l):
+            return "T"
+        if re.search(r'\b(answer|therefore|thus|so|result)\b.*\bfalse\b', line_l):
+            return "F"
+
+    # Priority 5: Last occurrence of true/false in text
+    last_true = text_lower.rfind("true")
+    last_false = text_lower.rfind("false")
+    if last_true > last_false:
+        return "T"
+    if last_false > last_true:
         return "F"
-    if "true" in text_lower:
-        # Check if "true" is used as an answer or just in rules discussion
-        # Models often say "Step 1: If someone is blue then they are true..." (Wait, rules use 'cold')
-        # Let's be smarter: split by lines and look for "Answer:" or "Therefore"
-        lines = text.split('\n')
-        for line in reversed(lines):
-            line_l = line.lower()
-            if "answer is true" in line_l or "statement is true" in line_l or (line_l.strip().startswith("true")):
-                return "T"
-            if "answer is false" in line_l or "statement is false" in line_l or (line_l.strip().startswith("false")):
-                return "F"
-                
-    # Fallback to general containment check if still unsure
-    if "true" in text_lower: return "T"
-    if "false" in text_lower: return "F"
 
     return "F"
 
@@ -207,6 +212,9 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
                 correct += 1
             total += 1
 
+            if total % 200 == 0:
+                print(f"  [{split_name}] {total} done, acc so far: {correct/total:.4f}", flush=True)
+
     acc = correct / total if total > 0 else 0.0
 
     # Save prediction CSV
@@ -256,12 +264,25 @@ def main(model_key: str, model_dir: str = None):
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
-    # Load model
-    model = AutoModelForCausalLM.from_pretrained(
-        model_dir,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-        device_map="auto" if torch.cuda.is_available() else None,
-    )
+    # Use bfloat16 for Qwen3; float16 for others
+    _dtype = torch.bfloat16 if (model_key == "qwen3" and torch.cuda.is_available()) else \
+             (torch.float16 if torch.cuda.is_available() else torch.float32)
+
+    # Load model — use AutoPeftModelForCausalLM to correctly load LoRA adapters
+    import os as _os
+    if _os.path.exists(_os.path.join(model_dir, "adapter_config.json")):
+        print("  Detected PEFT adapter — loading with AutoPeftModelForCausalLM")
+        model = AutoPeftModelForCausalLM.from_pretrained(
+            model_dir,
+            torch_dtype=_dtype,
+            device_map="auto" if torch.cuda.is_available() else None,
+        )
+    else:
+        model = AutoModelForCausalLM.from_pretrained(
+            model_dir,
+            torch_dtype=_dtype,
+            device_map="auto" if torch.cuda.is_available() else None,
+        )
     model.eval()
 
     predictions_dir = os.path.join(model_dir, "predictions")
@@ -379,8 +400,8 @@ def main(model_key: str, model_dir: str = None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", required=True, choices=["qwen", "llama"],
-                        help="Model type (qwen or llama)")
+    parser.add_argument("--model", required=True, choices=["qwen", "qwen3", "llama"],
+                        help="Model type (qwen, qwen3, or llama)")
     parser.add_argument("--model_dir", type=str, default=None,
                         help="Custom model directory")
     parser.add_argument("--stage", type=str, default=None,

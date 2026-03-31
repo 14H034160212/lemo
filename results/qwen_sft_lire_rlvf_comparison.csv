@@ -1,0 +1,13 @@
+split,SFT,LIRE,RLVF
+base,1.0,0.8116666666666666,1.0
+hard_mixed,1.0,0.7792,1.0
+variant1,0.999,1.0,1.0
+variant2,1.0,0.59,1.0
+variant3,1.0,0.34375,1.0
+variant4_equiv_contrapositive,0.86675,1.0,1.0
+variant4_equiv_double_negation,0.515,1.0,1.0
+variant4_equiv_implication,0.85,1.0,1.0
+variant4_equiv_demorgan,0.32675,1.0,1.0
+variant4_equiv_identity,1.0,1.0,1.0
+variant4_equiv_commutativity,0.99325,1.0,1.0
+variant4_equiv_multi,0.63525,0.99325,0.77275

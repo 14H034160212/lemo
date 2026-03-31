@@ -9,9 +9,9 @@ import argparse
 import os
 
 # Set HuggingFace cache to avoid disk space issues
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+os.environ['HF_HOME'] = '/data/qbao775/lemo/.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '/data/qbao775/lemo/.cache/huggingface/datasets'
+os.environ['TRANSFORMERS_CACHE'] = '/data/qbao775/lemo/.cache/huggingface/transformers'
 
 from datasets import load_dataset, Dataset
 from transformers import (
@@ -27,6 +27,7 @@ import torch
 # Model configurations
 MODEL_LIST = {
     "qwen": "Qwen/Qwen2-1.5B",
+    "qwen3": "/data/shared/qwen3/Qwen3-8B",
     "llama": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
 }
 
@@ -90,14 +91,20 @@ def encode_sample(sample, tokenizer, max_length=512):
     }
 
 
-def build_lora_config() -> LoraConfig:
+def build_lora_config(model_key: str = "qwen") -> LoraConfig:
     """
     Build LoRA configuration for decoder-only models.
+    Qwen3 has q_norm/k_norm layers that conflict with LoRA on q_proj/k_proj,
+    so we use v/o/gate/up/down projections instead.
     """
+    if model_key == "qwen3":
+        target_modules = ["v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    else:
+        target_modules = ["q_proj", "k_proj", "v_proj", "o_proj"]
     lora = LoraConfig(
         r=8,
         lora_alpha=16,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+        target_modules=target_modules,
         lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM",
@@ -170,7 +177,7 @@ def train_stage1_generative(
     print(f"\n▶ Loading model: {model_name}")
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+        torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
         device_map="auto" if torch.cuda.is_available() else None,
     )
 
@@ -179,7 +186,7 @@ def train_stage1_generative(
 
     # ------------------ LoRA ------------------
     print(f"▶ Applying LoRA...")
-    lora_config = build_lora_config()
+    lora_config = build_lora_config(model_key)
     model = get_peft_model(model, lora_config)
     print(f"  LoRA config: {lora_config}")
     model.print_trainable_parameters()
@@ -223,15 +230,16 @@ def train_stage1_generative(
         logging_steps=20,
         remove_unused_columns=False,
         report_to="none",
-        fp16=torch.cuda.is_available(),  # Use mixed precision if GPU available
-        gradient_accumulation_steps=2,  # Accumulate gradients to simulate larger batch
+        fp16=False,
+        bf16=torch.cuda.is_available() and torch.cuda.is_bf16_supported(),
+        gradient_accumulation_steps=2,
     )
 
     # ------------------ trainer ------------------
     trainer = Trainer(
         model=model,
         args=args,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         train_dataset=dataset,
         data_collator=data_collator,
     )
@@ -252,7 +260,7 @@ if __name__ == "__main__":
         "--model",
         type=str,
         default="qwen",
-        choices=["qwen", "llama"],
+        choices=["qwen", "qwen3", "llama"],
         help="Generative model to fine-tune",
     )
     parser.add_argument(

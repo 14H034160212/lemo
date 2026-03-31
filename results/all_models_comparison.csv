@@ -1,0 +1,7 @@
+model,base,variant1,variant2,variant3,variant4_equiv_contrapositive,variant4_equiv_double_negation,variant4_equiv_implication,variant4_equiv_demorgan,variant4_equiv_identity,variant4_equiv_commutativity,variant4_equiv_multi
+bert,0.9325,0.25,0.87925,0.921,0.44675,0.0395,1.0,0.278,0.4895,0.45375,0.90975
+llama,1.0,0.98375,0.9765,0.50475,0.95175,1.0,0.94525,0.8865,1.0,0.9785,0.7735
+qwen,1.0,0.999,1.0,1.0,0.86675,0.515,0.85,0.32675,1.0,0.99325,0.63525
+qwen_lire,0.8116666666666666,1.0,0.59,0.34375,1.0,1.0,1.0,1.0,1.0,1.0,0.99325
+qwen_rlvf,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.77275
+qwen_stage2_cot,0.4920833333333333,0.1425,0.5285,0.5745,0.16975,0.0765,,,,,

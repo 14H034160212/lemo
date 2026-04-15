@@ -1,35 +1,34 @@
-\PassOptionsToPackage{hyphens}{url}
-\documentclass{article} % For LaTeX2e
-\usepackage{iclr2026_conference,times}
+\documentclass{article}
 
-% Optional math commands from https://github.com/goodfeli/dlbook_notation.
-\input{math_commands.tex}
-\usepackage{times}  % DO NOT CHANGE THIS
-\usepackage{helvet}  % DO NOT CHANGE THIS
-\usepackage{courier}  % DO NOT CHANGE THIS
-\usepackage{hyperref}  % DO NOT CHANGE THIS
+% For submission (anonymous, with line numbers):
+\usepackage{neurips_2026}
+% For camera-ready: \usepackage[main, final]{neurips_2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{microtype}
 \usepackage[table]{xcolor}
-\def\UrlFont{\rm}  % DO NOT CHANGE THIS
-\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
-\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
 \usepackage{algorithm}
 \usepackage{algorithmicx}
-\usepackage{amsmath} 
-\usepackage{amssymb} 
-\usepackage{amsthm}
-\usepackage{booktabs}
+\usepackage{algpseudocode}
 \usepackage{tabularx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 \usetikzlibrary{shapes,arrows,positioning,calc}
 \usetikzlibrary{positioning,fit,backgrounds}
-\usepackage{algpseudocode}
 
 \title{Conflict-Aware Fusion: Mitigating Logic Inertia in Large Language Models via Structured Cognitive Priors}
 
-% Authors must not appear in the submitted version. They should be hidden
-% as long as the \iclrfinalcopy macro remains commented out below.
-% Non-anonymous submissions will be rejected without review.
+% The \author macro works with any number of authors. Use \And and \AND
+% to separate names. For anonymous submission, authors are hidden automatically.
 
 \author{Qiming Bao \\
 Xtracta \& Strong AI Lab, University of Auckland\\
@@ -59,7 +58,6 @@ Auckland, New Zealand \\
 \newcommand{\fix}{\marginpar{FIX}}
 \newcommand{\new}{\marginpar{NEW}}
 
-\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
 \begin{document}
 
 
@@ -92,13 +90,13 @@ More broadly, our findings challenge the prevailing assumption that scaling data
 \section{Related Work}
 
 \paragraph{Fragility of Logical Reasoning in LLMs}
-Research on logical reasoning in Large Language Models (LLMs) encompasses a broad spectrum, including multi-step deduction, abductive explanation, and abstract reasoning assessment \cite{berglund2023reversal, ijcai2024p693, Cheng2025Em, xiong2025deliberate, cheng2026sapp}. While early studies suggested that transformers could act as ``soft reasoners" capable of multi-step inference \cite{transformerClark}, subsequent work has revealed significant structural weaknesses. For instance, the ``Reversal Curse'' refers to a failure of bidirectional generalization: when a model learns facts in the form “A is B,” it often cannot infer the logically equivalent reverse fact “B is A.” For example, even though “A is the mother of B” logically implies “B is the child (or son/daughter) of A,” models trained on only one direction struggle to make this inference in the reverse direction.~\cite{berglund2023reversal}. Furthermore, Bao et al. \cite{bao2022multi} demonstrate that LLMs struggle with compositional generalization, often failing to extrapolate beyond the reasoning depths or structural patterns encountered during training.
+Research on logical reasoning in Large Language Models (LLMs) encompasses a broad spectrum, including multi-step deduction, abductive explanation, and abstract reasoning assessment \cite{berglund2023reversal, ijcai2024p693, Cheng2025Em, xiong2025deliberate, cheng2026sapp}. While early studies suggested that transformers could act as ``soft reasoners" capable of multi-step inference \cite{transformerClark}, subsequent work has revealed significant structural weaknesses. For instance, the ``Reversal Curse'' refers to a failure of bidirectional generalization: when a model learns facts in the form "A is B," it often cannot infer the logically equivalent reverse fact "B is A." For example, even though "A is the mother of B" logically implies "B is the child (or son/daughter) of A," models trained on only one direction struggle to make this inference in the reverse direction.~\cite{berglund2023reversal}. Furthermore, Bao et al. \cite{bao2022multi} demonstrate that LLMs struggle with compositional generalization, often failing to extrapolate beyond the reasoning depths or structural patterns encountered during training.
 
 \paragraph{Logic-Driven Augmentation and Neuro-Symbolic Methods}
 To address these deficiencies, a parallel line of research explores logic-driven data augmentation and hybrid architectures. \cite{wang-etal-2022-logic} proposed a symbolic context-extension framework utilizing equivalence laws to augment training sets, while Bao et al. \cite{bao2024} leveraged Abstract Meaning Representation (AMR) to generate semantically grounded logical variants. Beyond data-centric approaches, neuro-symbolic methods like \textit{ChatLogic}, \cite{10650138} integrate LLMs with external Prolog-style engines to ensure deductive validity. However, these solutions primarily focus on expanding seen distributions or relying on external symbolic scaffolds, rather than addressing the model's intrinsic sensitivity to minimal structural changes in the input.
 
 \paragraph{Generalisation under Structured Perturbations.}
-Recent investigations have pivoted toward analyzing model behavior under controlled perturbations, such as reordering, compressing, or restructuring premises \cite{baoAccess, young-etal-2022-abductionrules,xiong2026scaling}. These studies indicate that reasoning fidelity degrades sharply when the surface form of a problem is altered, even if the underlying logic remains invariant. Building on this, Bao’s unified perspective on out-of-distribution generalization \cite{bao2025thesis} identifies architecture-agnostic failure modes across premise deletion, contradiction injection, and logical rewrites. 
+Recent investigations have pivoted toward analyzing model behavior under controlled perturbations, such as reordering, compressing, or restructuring premises \cite{baoAccess, young-etal-2022-abductionrules,xiong2026scaling}. These studies indicate that reasoning fidelity degrades sharply when the surface form of a problem is altered, even if the underlying logic remains invariant. Building on this, Bao's unified perspective on out-of-distribution generalization \cite{bao2025thesis} identifies architecture-agnostic failure modes across premise deletion, contradiction injection, and logical rewrites.
 
 \paragraph{Logical Reasoning and Self-Correction.} Recent work has focused on improving the logical consistency of LLMs through iterative prompting or training-time interventions. \citet{xiong2025deliberate} propose deliberative reasoning chains, while \citet{huang2023large} explore self-correction capabilities. However, these methods often assume valid premises. In the context of false premises, \citet{vericot2026} introduce neuro-symbolic verification layers to prune invalid reasoning paths, and \citet{multihoax2025} demonstrate the vulnerability of multi-hop reasoning to adversarial premise injection. Our work builds on these insights by formalizing the failure as \textit{Logic Inertia}—a specific deductive momentum that overrides premise verification. This is distinct from the \textit{Cognitive Inertia} discussed by \citet{lee2026cognitive}, which refers to latent state dynamics and prior adherence in general sequence modeling; our focus is specifically on the failure to propagate structural invalidity through a deductive chain. Furthermore, while \citet{ares2024} propose automated evaluation for RAG faithfulness, we address the architectural root cause of unfaithful propagation.
 
@@ -106,10 +104,10 @@ Despite these advances, there remains a critical need for a framework capable of
 
 \section{Methodology}
 \label{sec:method}
-We introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, a structurally guided reasoning approach that enforces an explicit separation between premise verification and deductive execution. Guided by the \textbf{Cognitive Structure Hypothesis}, our methodology integrates three interdependent components: 
-(1) a structural robustness benchmark for controlled evaluation, 
-(2) a dual-process reasoning architecture that enforces verification-before-deduction, and 
-(3) a structure-aligned optimization pipeline. 
+We introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, a structurally guided reasoning approach that enforces an explicit separation between premise verification and deductive execution. Guided by the \textbf{Cognitive Structure Hypothesis}, our methodology integrates three interdependent components:
+(1) a structural robustness benchmark for controlled evaluation,
+(2) a dual-process reasoning architecture that enforces verification-before-deduction, and
+(3) a structure-aligned optimization pipeline.
 Together, these components operationalize reasoning as a structurally constrained process rather than a purely data-driven behavior.
 
 \subsection{Logic Inertia as a Design Constraint}
@@ -150,22 +148,22 @@ All splits are serialized into a unified CSV schema containing \texttt{facts}, \
 Other variants are deferred to the Appendix.
 
 \paragraph{Contradiction Semantics.}
-In this work we adopt a \textit{conservative reasoning semantics} for 
-handling inconsistent premises. When a contradiction exists in the 
-premise set, the reasoning process is considered logically invalid and 
-deduction must halt. Consequently, all queries associated with that 
+In this work we adopt a \textit{conservative reasoning semantics} for
+handling inconsistent premises. When a contradiction exists in the
+premise set, the reasoning process is considered logically invalid and
+deduction must halt. Consequently, all queries associated with that
 instance are labeled \texttt{False}.
 
-Formally, let $\Gamma$ denote the set of premises and $Q$ the set of 
-queries. If the premises entail a contradiction ($\Gamma \vdash \bot$), 
+Formally, let $\Gamma$ denote the set of premises and $Q$ the set of
+queries. If the premises entail a contradiction ($\Gamma \vdash \bot$),
 then for every query $q \in Q$ we define
 
 \[
 \text{Label}(q) = \text{False}.
 \]
 
-This design enables contradiction detection to be evaluated using a 
-standard binary classification metric while maintaining a clear and 
+This design enables contradiction detection to be evaluated using a
+standard binary classification metric while maintaining a clear and
 consistent reasoning semantics.
 
 % In your preamble:
@@ -202,7 +200,7 @@ consistent reasoning semantics.
 Although all instances are derived from a shared canonical template, the compositional variation in rule structures and query combinations induces diverse reasoning paths, preventing trivial memorisation of fixed patterns.
 
 \subsection{Architectural Overview: Dual-Process Reasoning}
-Guided by the structural failures identified above, we introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} architecture. The core innovation is the imposition of a dual-process reasoning structure within the Chain-of-Thought (CoT) generation path. 
+Guided by the structural failures identified above, we introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} architecture. The core innovation is the imposition of a dual-process reasoning structure within the Chain-of-Thought (CoT) generation path.
 
 As illustrated in Figure~\ref{fig:fusion_structure}, the reasoning process is constrained such that deductive rules cannot be applied until the model has explicitly validated the logical consistency of the premises. This design converts verification from an optional behavior into a required structural step. When contradictions or missing dependencies are detected, the model halts or revises reasoning rather than continuing forward deduction. The four-stage optimization pipeline that trains this behavior is detailed in \S\ref{sec:pipeline}.
 
@@ -456,7 +454,7 @@ The primary objective of our evaluation is to assess whether the proposed framew
 \small
 \begin{tabular}{lcccccc}
 \toprule
-& \multicolumn{2}{c}{\textbf{BERT}} & 
+& \multicolumn{2}{c}{\textbf{BERT}} &
   \multicolumn{2}{c}{\textbf{Qwen2}} &
   \multicolumn{2}{c}{\textbf{TinyLlama}} \\
 \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
@@ -566,7 +564,7 @@ To understand the evolution of our methodology, we track the performance of inte
 \toprule
 \multicolumn{7}{c}{\textbf{Ablation: Effect of Stage 1 Pre-training on Generalisation}} \\
 \midrule
-& \multicolumn{2}{c}{\textbf{BERT}} & 
+& \multicolumn{2}{c}{\textbf{BERT}} &
   \multicolumn{2}{c}{\textbf{Qwen2}} &
   \multicolumn{2}{c}{\textbf{TinyLlama}} \\
 \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
@@ -610,7 +608,7 @@ In contrast, \textbf{Fusion-Conflict} (SFT + DPO) pushes the Variant 3 accuracy 
 \section{Discussion and Implications}
 
 \subsection{Comparative Analysis of Robustness Strategies}
-Our experimental results, summarized in Table \ref{tab:comparison_results}, reveal a clear evolutionary path from baseline models to the proposed \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework. 
+Our experimental results, summarized in Table \ref{tab:comparison_results}, reveal a clear evolutionary path from baseline models to the proposed \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework.
 
 Initially, baseline models (Stage 1) demonstrated high task proficiency but were essentially "logic-blind" to contradictions, scoring near 0.210 on Variant 3. While \textbf{Mixed-Aug} specialized in identifying contradictions (reaching 0.972), it failed to scale to complex reasoning chains. The \textbf{RA-CoT} framework introduced more rigor but suffered from an "over-conservatism" trap, where the model preferred to output "False" for nearly everything, causing Base Accuracy to plummet to 0.263.
 
@@ -622,7 +620,7 @@ The decisive performance of Conflict-Aware Fusion (Fusion-Conflict) provides str
 This suggests that for LLMs, "Reasoning" is not just a statistical continuation of tokens, but a process that can be steered by structural inductive biases. The "Step 1: Verify facts" preamble acts as a \textit{functional circuit breaker}, preventing the model's System 1 (intuition/pattern matching) from overriding the factual reality of the premises.
 
 \subsection{Generalisation and Sensitivity}
-Variants 1--3 isolate model sensitivity to perturbations that preserve versus disrupt derivability. In Variant 1 (redundant rule deletion), our Fusion model maintains Acc=1.000, confirming that the internal contradiction detection does not introduce fragility to noise. 
+Variants 1--3 isolate model sensitivity to perturbations that preserve versus disrupt derivability. In Variant 1 (redundant rule deletion), our Fusion model maintains Acc=1.000, confirming that the internal contradiction detection does not introduce fragility to noise.
 
 However, \textbf{Variant 2 (Essential Rule Removal)} remains the most challenging stress test. While Fusion-Conflict achieves a high score of 0.735, it still shows a delta compared to the base set. This indicates that while the model is excellent at detecting explicit contradictions (V3), it is still slightly prone to "logical leaps" when an inferential link is missing but the overall pattern looks familiar. This diagnostic highlights a future research direction: enhancing the model's sensitivity to \textit{logical gaps} as much as it is now sensitive to \textit{logical conflicts}.
 
@@ -635,10 +633,10 @@ The transition from RA-CoT's over-conservatism to Fusion-Conflict's precision ha
 \end{enumerate}
 
 \subsection{Real-World Validation: LogicNLI \& MNLI}
-To address concerns regarding potential overfitting to the synthetic benchmark, we further evaluate our \textbf{Cognitive Structure Hypothesis} on real-world datasets, specifically \textbf{LogicNLI}~\cite{tian-etal-2021-diagnosing} (a First-Order Logic NLI benchmark) and the contradiction subset of \textbf{MNLI}~\cite{N18-1101}. 
+To address concerns regarding potential overfitting to the synthetic benchmark, we further evaluate our \textbf{Cognitive Structure Hypothesis} on real-world datasets, specifically \textbf{LogicNLI}~\cite{tian-etal-2021-diagnosing} (a First-Order Logic NLI benchmark) and the contradiction subset of \textbf{MNLI}~\cite{N18-1101}.
 Unlike synthetic rules, these datasets feature diverse linguistic patterns and implicit logical structures, providing a stringent test of generalisation beyond the controlled benchmark. Importantly, no labeled LogicNLI or MNLI examples were used when
 constructing the synthetic benchmark. The model is fine-tuned only on
-the structurally generated reasoning tasks described in Section~\ref{sec:method}. 
+the structurally generated reasoning tasks described in Section~\ref{sec:method}.
 This ensures that performance on LogicNLI and MNLI reflects genuine out-of-distribution generalisation rather than memorisation. Evaluation on LogicNLI and MNLI therefore tests whether the learned
 verification-before-deduction reasoning structure transfers to natural
 language inference tasks.
@@ -671,8 +669,8 @@ In this work, we present a controlled framework for analyzing and enhancing the 
 To address this limitation, we introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, which enforces an explicit separation between premise verification and deductive execution within the reasoning trajectory. Empirical results show that this structural intervention substantially improves robustness under rule deletion and substantially mitigates contradiction-induced failure, achieving \textbf{1.0000 accuracy} in contradiction handling while preserving base-task performance. These findings provide direct empirical support for the \textbf{Cognitive Structure Hypothesis}: reliable multi-step reasoning depends not only on data exposure but also on the structural organization of the reasoning process. Beyond these technical results, our work demonstrates that the gap between semantic-form invariance and logical-content reliability can be systematically bridged through architectural priors in Chain-of-Thought prompts. By operationalizing explicit premise verification, \textbf{Conflict-Aware Fusion (Fusion-Conflict)} offers a scalable blueprint for \emph{doubt-aware} AI systems capable of disciplined, evidence-driven inference. Overall, this work contributes both a diagnostic benchmark and a constructive methodology for developing LLMs that reason with verifiable logical rigor rather than surface-level pattern completion.
 
 
-\bibliography{iclr2026_conference}
-\bibliographystyle{iclr2026_conference}
+\bibliography{references}
+\bibliographystyle{plainnat}
 
 \appendix
 \section{Appendix}
@@ -687,7 +685,7 @@ We begin with a comprehensive example that establishes the core reasoning patter
         \item Anne is green or blue
         %\item Anne is not cold or not nice [contradiction fact]
     \end{itemize}
-    
+
     \item \textbf{Rules:}
     \begin{itemize}
         \item Rule 1: If someone is green then they are cold. $\forall x \, (\text{Green}(x) \rightarrow \text{Cold}(x))$
@@ -698,11 +696,11 @@ We begin with a comprehensive example that establishes the core reasoning patter
         \item Rule 6: If someone is young then they are nice. $\forall x \, (\text{Young}(x) \rightarrow \text{Nice}(x))$
         %\item $(\neg p \rightarrow \neg r)\wedge (\neg q \rightarrow \neg r)\wedge (\neg p \vee \neg q)\vdash \neg r $
     \end{itemize}
-    
+
     \item \textbf{Questions:}
     \begin{itemize}
         \item Q1: Anne is cold. True/False? [Answer: T]
-        \item Q2: Anne is rough. True/False? [Answer: T]  
+        \item Q2: Anne is rough. True/False? [Answer: T]
         \item Q3: Anne is young. True/False? [Answer: T]
         \item Q4: Anne is nice. True/False? [Answer: T]
     \end{itemize}
@@ -731,7 +729,7 @@ This variation demonstrates that removing redundant rules preserves the AI's abi
     \begin{itemize}
         \item Anne is green or blue
     \end{itemize}
-    
+
     \item \textbf{Rules:}
     \begin{itemize}
         \item Rule 1: If someone is green then they are cold. $\forall x \, (\text{Green}(x) \rightarrow \text{Cold}(x))$
@@ -741,7 +739,7 @@ This variation demonstrates that removing redundant rules preserves the AI's abi
         \item Rule 6: If someone is young then they are nice. $\forall x \, (\text{Young}(x) \rightarrow \text{Nice}(x))$
         % Rule 5 removed - redundant
     \end{itemize}
-    
+
     \item \textbf{Questions:}
     \begin{itemize}
         \item Q1: Anne is cold. True/False? [Answer: T]
@@ -794,7 +792,7 @@ This variation replaces multiple rules with logically equivalent fewer rules, bu
         %\item Anne is a person
         \item Anne is green or blue
     \end{itemize}
-    
+
     \item \textbf{Rules:}
     \begin{itemize}
         \item Rule A: If someone is green or blue then they are cold. $\forall x \, ((\text{Green}(x) \lor \text{Blue}(x)) \rightarrow \text{Cold}(x))$
@@ -802,13 +800,13 @@ This variation replaces multiple rules with logically equivalent fewer rules, bu
         \item Rule 4: If someone is rough then they are young. $\forall x \, (\text{Rough}(x) \rightarrow \text{Young}(x))$
         % Rules 5 and 6 removed
     \end{itemize}
-    
+
     \item \textbf{Questions:}
     \begin{itemize}
         \item Q1: Anne is cold. True/False? [Answer: T]
         \item Q2: Anne is rough. True/False? [Answer: T]
         \item Q3: Anne is young. True/False? [Answer: T]
-        \item Q4: Anne is nice. True/False? [Answer: F]  
+        \item Q4: Anne is nice. True/False? [Answer: F]
     \end{itemize}
 \end{itemize}
 
@@ -819,7 +817,7 @@ Rule A directly captures the dilemma of Rules 1 and 2, leading to ``Anne is cold
 The logical equivalence can be shown as:
 \[
 (\forall x \, (G_x \rightarrow C_x) \land \forall x \, (B_x \rightarrow C_x))
-\equiv 
+\equiv
 \forall x \, ((G_x \lor B_x) \rightarrow C_x)
 \]
 
@@ -843,7 +841,7 @@ This variation adds distracting and potentially contradictory rules, testing the
         \item Anne is green or blue
         \item Anne is not cold or not nice
     \end{itemize}
-    
+
     \item \textbf{Rules:}
     \begin{itemize}
         \item Rule 1: If someone is green then they are cold. $\forall x \, (\text{Green}(x) \rightarrow \text{Cold}(x))$
@@ -852,23 +850,23 @@ This variation adds distracting and potentially contradictory rules, testing the
         \item Rule 4: If someone is rough then they are young. $\forall x \, (\text{Rough}(x) \rightarrow \text{Young}(x))$
         \item Rule 5: If someone is young then they are cold. $\forall x \, (\text{Young}(x) \rightarrow \text{Cold}(x))$
         \item Rule 6: If someone is young then they are nice. $\forall x \, (\text{Young}(x) \rightarrow \text{Nice}(x))$
-        %\item Rule 7: If someone is nice then they are not cold. $\forall x \, (\text{Nice}(x) \rightarrow \neg \text{Cold}(x))$ \quad \text{// 
-        
+        %\item Rule 7: If someone is nice then they are not cold. $\forall x \, (\text{Nice}(x) \rightarrow \neg \text{Cold}(x))$ \quad \text{//
+
     \end{itemize}
-    
+
     \item \textbf{Questions:}
     \begin{itemize}
-        \item Q1: Anne is cold. True/False? [Answer: F] 
-        \item Q2: Anne is rough. True/False? [Answer: F] 
-        \item Q3: Anne is young. True/False? [Answer: F] 
-        \item Q4: Anne is nice. True/False? [Answer: F] 
+        \item Q1: Anne is cold. True/False? [Answer: F]
+        \item Q2: Anne is rough. True/False? [Answer: F]
+        \item Q3: Anne is young. True/False? [Answer: F]
+        \item Q4: Anne is nice. True/False? [Answer: F]
     \end{itemize}
 \end{itemize}
 
 
 \subsection{Reasoning Process and Analysis}
 
-    This variation introduces \textit{contradictory interference}, which challenges the AI’s ability to address conflicts within the logical structure. The fact ``Anne is green or blue," combined with the original chain of reasoning (Rules 1-6), leads to the conclusions that Anne is cold, rough, young, and nice. However, the fact ``Anne is not cold or not nice" introduces a conflict, as it implies that being nice would mean Anne is not cold. This creates an contradiction that different AI systems might address differently:
+    This variation introduces \textit{contradictory interference}, which challenges the AI's ability to address conflicts within the logical structure. The fact ``Anne is green or blue," combined with the original chain of reasoning (Rules 1-6), leads to the conclusions that Anne is cold, rough, young, and nice. However, the fact ``Anne is not cold or not nice" introduces a conflict, as it implies that being nice would mean Anne is not cold. This creates an contradiction that different AI systems might address differently:
 
 \paragraph{Contradiction Handling Strategy.}
 
@@ -961,14 +959,15 @@ to missing inferential links. Injecting explicit contradictory facts
 suggesting that the models do not reliably revise conclusions in the presence
 of inconsistency.
 
+% TODO: add human_last_exam_example.png to this directory
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.9\linewidth]{human_last_exam_example.png}
+  \fbox{\parbox{0.85\linewidth}{\centering\vspace{2cm}\textit{[Human Last Exam screenshot --- add human\_last\_exam\_example.png]}\vspace{2cm}}}
   \caption{An example where all top-tier models failed the Human Last Exam.}
   \label{fig:human_last_exam}
 \end{figure}
 
-Figure~\ref{fig:human_last_exam} shows a screenshot of the AGI Safe AI dashboard under the section “II. AI Answers”, where multiple state-of-the-art language models (including Claude Sonnet 4.5, GPT-4.1, GPT-5.2, Claude Opus 4.5, and Gemini 3 Pro Preview) are evaluated on a logical reasoning question involving a set of premises about “Anne” and four sub-questions (Q1–Q4).
+Figure~\ref{fig:human_last_exam} shows a screenshot of the AGI Safe AI dashboard under the section "II. AI Answers", where multiple state-of-the-art language models (including Claude Sonnet 4.5, GPT-4.1, GPT-5.2, Claude Opus 4.5, and Gemini 3 Pro Preview) are evaluated on a logical reasoning question involving a set of premises about "Anne" and four sub-questions (Q1–Q4).
 
 This example~\ref{fig:human_last_exam} evaluates reasoning with a disjunctive color premise and a conflicting constraint. From the fact ``Anne is green or blue'' and the rules stating that being green or being blue implies being cold, it follows that Anne is cold in either case. Applying the rule ``if someone is cold then they are rough,'' we can further derive that Anne is rough.
 
@@ -991,7 +990,6 @@ C_a \land (\neg C_a \lor \neg N_a) \vdash \neg N_a
 
 Each model's output is displayed in separate panels with its predicted answers and reasoning. The results indicate that the models produce inconsistent and conflicting conclusions, with some models claiming all statements are true while others detect inconsistency in the premises. At the bottom, the evaluation summary reports that 0 out of 5 models answered correctly, suggesting that this example is challenging even for top-tier models and highlights their limitations in formal logical reasoning and consistency checking.
 
+\newpage\input{checklist.tex}
+
 \end{document}
-
-
-

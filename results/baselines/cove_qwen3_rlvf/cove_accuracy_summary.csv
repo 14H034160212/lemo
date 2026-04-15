@@ -1,0 +1,4 @@
+split,standard_accuracy,cove_accuracy,delta
+base,0.4242,0.4242,+0.0000
+variant3,0.1970,0.1970,+0.0000
+hard_mixed,0.4658,0.4658,+0.0000

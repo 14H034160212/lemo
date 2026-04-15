@@ -1,0 +1,6 @@
+Qwen2-SFT: base=1.0000 v2=1.0000 v4_avg=0.7410 overall=0.8488
+Qwen2-RLVF: base=1.0000 v2=1.0000 v4_avg=0.9675 overall=0.9811
+Qwen3-RLVF: not found
+Qwen2-SFT: base=1.0000 v2=1.0000 v4_avg=0.7410 overall=0.8488
+Qwen2-RLVF: base=0.6133 v2=0.5229 v4_avg=0.2420 overall=0.3539
+Qwen3-RLVF: base=1.0000 v2=1.0000 v4_avg=1.0000 overall=1.0000

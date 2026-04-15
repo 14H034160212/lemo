@@ -1,0 +1,13 @@
+split,accuracy,correct,total
+base,0.935962,4867,5200
+hard_mixed,0.792250,19014,24000
+variant1,1.000000,8000,8000
+variant2,0.891625,7133,8000
+variant3,0.341500,2732,8000
+variant4_equiv_double_negation,1.000000,8000,8000
+variant4_equiv_contrapositive,1.000000,8000,8000
+variant4_equiv_implication,1.000000,8000,8000
+variant4_equiv_demorgan,1.000000,8000,8000
+variant4_equiv_identity,1.000000,8000,8000
+variant4_equiv_commutativity,1.000000,8000,8000
+variant4_equiv_multi,1.000000,8000,8000

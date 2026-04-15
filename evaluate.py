@@ -16,6 +16,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 MODEL_LIST = {
     "bert": "bert-base-uncased",
     "qwen": "Qwen/Qwen2-1.5B",
+    "qwen3": "/data/shared/qwen3/Qwen3-8B",
     "llama": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
 }
 
@@ -253,7 +254,8 @@ def main(model_key: str, model_dir: str = None):
     print(header)
     print("-" * len(header))
     
-    summary_csv_path = os.path.join(model_dir, "accuracy_summary.csv")
+    _suffix = getattr(main, "_output_suffix", "")
+    summary_csv_path = os.path.join(model_dir, f"accuracy_summary{_suffix}.csv")
     with open(summary_csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total"])
         writer.writeheader()
@@ -298,12 +300,16 @@ def main(model_key: str, model_dir: str = None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", required=True, choices=["bert", "qwen", "llama"],
-                        help="Model type (bert, qwen, llama)")
+    parser.add_argument("--model", required=True, choices=["bert", "qwen", "qwen3", "llama"],
+                        help="Model type (bert, qwen, qwen3, llama)")
     parser.add_argument("--model_dir", type=str, default=None,
                         help="Custom model directory (default: trained_models/{model})")
     parser.add_argument("--stage", type=str, default=None, choices=["stage1", "stage2", "stage2_mixed"],
                         help="Shortcut to evaluate stage models (overrides model_dir)")
+    parser.add_argument("--data_dir", type=str, default=None,
+                        help="Custom data directory containing test_*.csv files (default: data/)")
+    parser.add_argument("--output_suffix", type=str, default="",
+                        help="Suffix for accuracy_summary filename, e.g. '_v2' → accuracy_summary_v2.csv")
     args = parser.parse_args()
 
     # Handle stage shortcuts
@@ -311,5 +317,16 @@ if __name__ == "__main__":
         model_dir = f"./trained_models/{args.model}_{args.stage}"
     else:
         model_dir = args.model_dir
+
+    # Pass output suffix to main via function attribute
+    main._output_suffix = args.output_suffix
+
+    # Override DEFAULT_TEST_FILES if custom data_dir provided
+    if args.data_dir:
+        import glob as _glob
+        for split_name, old_path in list(DEFAULT_TEST_FILES.items()):
+            new_path = os.path.join(args.data_dir, os.path.basename(old_path))
+            if os.path.exists(new_path):
+                DEFAULT_TEST_FILES[split_name] = new_path
 
     main(args.model, model_dir=model_dir)

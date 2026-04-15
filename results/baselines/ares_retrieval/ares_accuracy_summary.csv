@@ -1,0 +1,13 @@
+split,ares_majority_vote,ares_hybrid,symbolic_vericot,total
+base,0.632115,0.632115,0.935962,5200
+hard_mixed,0.666417,0.666417,0.792250,24000
+variant1,1.000000,1.000000,1.000000,8000
+variant2,0.584125,0.584125,0.891625,8000
+variant3,0.487000,0.487000,0.341500,8000
+variant4_equiv_double_negation,0.744500,0.744500,1.000000,8000
+variant4_equiv_contrapositive,0.744875,0.744875,1.000000,8000
+variant4_equiv_implication,0.744500,0.744500,1.000000,8000
+variant4_equiv_demorgan,1.000000,1.000000,1.000000,8000
+variant4_equiv_identity,0.744500,0.744500,1.000000,8000
+variant4_equiv_commutativity,0.744500,0.744500,1.000000,8000
+variant4_equiv_multi,0.897875,0.897875,1.000000,8000

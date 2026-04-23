@@ -1,0 +1,9 @@
+trace_id,category,expected_reward,actual_reward,match,time_seconds,n_tactics
+T1-halt-minimal,correct_halt,1,1,True,0.36,2
+T2-halt-direct,correct_halt,1,1,True,0.38,1
+T3-halt-contradiction-tactic,correct_halt,1,1,True,0.36,2
+T4-naive-stops-early,naive_continue,-1,-1,True,0.37,2
+T5-naive-wrong-goal,naive_continue,-1,-1,True,0.35,1
+T6-naive-empty,naive_continue,-1,-1,True,0.36,1
+T7-syntax-error,malformed,-1,-1,True,0.36,1
+T8-misspelled-lemma,malformed,-1,-1,True,0.36,1

@@ -774,8 +774,8 @@ in two ways: (i) add a closed-world axiom (CWA) schema that converts
 oracle for F-verdicts and use Lean only for T-verdict step-level reward. Our
 current pipeline implements option (ii), retaining the best of both verifiers.
 
-\paragraph{Connection to Davis's commonsense reasoning agenda.}
-This direction directly engages the long-standing argument of~\citet{marcus2019rebooting,davis2024benchmarks,davis2024mathematics}: that robust reasoning requires an explicit symbolic substrate rather than distributional pattern completion alone. Our Logic Inertia phenomenon is an empirical instance of the failure modes they predict; \textbf{RLVF-Lean} is a constructive response, showing how a symbolic verifier can be integrated into an RL pipeline to \emph{learn} the discipline of premise verification, rather than simply \emph{prompt} for it. We leave a full large-scale evaluation of RLVF-Lean on mathematical and multi-step logical benchmarks to future work.
+\paragraph{Positioning relative to neuro-symbolic reasoning.}
+A line of prior work argues that robust multi-step reasoning requires an explicit symbolic substrate, rather than distributional pattern completion alone~\citep{marcus2019rebooting,davis2024benchmarks,davis2024mathematics,davis2024gpt4o1}. Logic Inertia, as documented in Section~\ref{sec:introduction}, constitutes an empirical instance of the failure modes characterized in that literature. RLVF-Lean operationalizes the neuro-symbolic position within an RL training loop: the Lean kernel supplies step-level verification signals, which are incorporated into the gradient update (Eq.~\ref{eq:lean-reward}), so that premise verification is learned as part of the policy rather than elicited through inference-time prompting. A full empirical evaluation of RLVF-Lean on mathematical and multi-step logical benchmarks is left to future work.
 
 \section{Conclusion}
 

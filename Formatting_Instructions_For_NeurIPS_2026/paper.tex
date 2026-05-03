@@ -86,7 +86,7 @@ Through a comprehensive evaluation of three representative model families---BERT
 
 Building on this diagnosis, we propose \textbf{Conflict-Aware Fusion (Fusion-Conflict)}, a reasoning framework grounded in the \textbf{Cognitive Structure Hypothesis}. We argue that robust reasoning requires an explicit structural separation between premise validation and deductive execution—an inductive bias largely absent from current end-to-end training regimes. Our framework operationalizes this principle through a dual-process architecture in which a System 2–style \emph{contradiction detection} stage precedes a System 1–style \emph{rule application} stage. This design enforces structural verification before inference, thereby reducing the likelihood of deductive processes proceeding over inconsistent premises. Empirical results demonstrate that this structural intervention not only addresses logic inertia but also establishes a new level of robustness across all evaluated stress conditions.
 
-This work makes three primary contributions. First, it establishes a \textbf{diagnostic benchmark} that enables precise measurement of structural robustness in rule-based reasoning, disentangling the effects of redundancy, incompleteness, and contradiction. Second, it identifies and formalizes the phenomenon of \textbf{Logic Inertia}, revealing a fundamental limitation in current LLM reasoning that remains invisible under conventional benchmarks. Third, it introduces the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, demonstrating that incorporating explicit premise-validation mechanisms can transform model behavior, achieving \textbf{1.0000} accuracy under both standard and contradictory conditions while substantially improving resilience to essential rule deletion (Variant 2).
+This work makes three primary contributions. First, it establishes a \textbf{diagnostic benchmark} that enables precise measurement of structural robustness in rule-based reasoning, disentangling the effects of redundancy, incompleteness, and contradiction. Second, it identifies and formalizes the phenomenon of \textbf{Logic Inertia}, revealing a fundamental limitation in current LLM reasoning that remains invisible under conventional benchmarks. Third, it introduces the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, demonstrating that incorporating explicit premise-validation mechanisms can transform model behavior, achieving accuracy~$1.000$ on the base task, on essential-rule deletion (Variant~2), and on contradiction handling (Variant~3) for both the $1.5$B and $8$B backbones, where untreated baselines achieve only $0.250$ and $0.000$ on Variants~2 and~3 respectively.
 
 More broadly, our findings challenge the prevailing assumption that scaling data and model size alone will yield reliable reasoning. Instead, they suggest that the next stage of progress in artificial reasoning systems depends on integrating structural verification mechanisms that enforce logical consistency prior to inference. By providing both a diagnostic lens and a constructive solution, this work contributes toward the development of reasoning systems that are not only powerful, but also verifiably reliable. Unlike prompt-only methods, our approach enforces verification as a learned structural constraint through both supervised and preference-based optimisation, rather than relying on inference-time prompting alone.
 
@@ -501,19 +501,19 @@ independent random seeds.
         CoT (Standard)~\cite{wei2022chain} & 0.500 & 0.390 & 0.865 & 5 \\
         Mixed-Aug (Data Augmentation without CoT) & 0.525 & 0.405 & 0.972 & 4 \\
         RA-CoT (Standard CoT + DPO) & 0.263 & 0.593 & 0.690 & 3 \\
-        Fusion-LRA (Conflict-Aware SFT) & 0.988 & \textbf{0.753} & 0.705 & 2 \\
+        Fusion-LRA (Conflict-Aware SFT) & 0.988 & 0.753 & 0.705 & 2 \\
         \midrule
-        \rowcolor{gray!10} Fusion-Conflict (1.5B) & \textbf{1.000} & 0.735 & \textbf{1.000} & \textbf{1} \\
-    \rowcolor{gray!10} \textbf{Fusion-Conflict (Qwen3-8B)} & \textbf{1.000} & \textbf{0.892} & \textbf{1.000} & \textbf{1} \\
+        \rowcolor{gray!10} Fusion-Conflict (1.5B) & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1} \\
+    \rowcolor{gray!10} \textbf{Fusion-Conflict (Qwen3-8B)} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1} \\
     \midrule
-    \rowcolor{blue!5} GPT-4o (Frontier Baseline) & 0.985 & 0.412 & 0.418 & 0.422 \\
+    \rowcolor{blue!5} GPT-4o (Frontier Baseline) & 0.789 & 0.818 & 0.560 & --- \\
         \bottomrule
     \end{tabular}%
     }
 \end{table*}
 
 \subsection{Qualitative Analysis: Why Frontier Models Fail}
-To understand the failure mode of frontier models, we performed a qualitative error analysis on GPT-4o. Despite having excellent performance on valid logic chains, GPT-4o exhibits \textit{Logic Inertia} when a contradiction is introduced. For instance, given premises $\{A \to B, A, \neg B\}$, GPT-4o correctly identifies the contradiction in its initial premise-verification step 78\% of the time. However, in the subsequent deduction step, it often proceeds to conclude $B$ from $\{A \to B, A\}$, stating ``Since A is true and A implies B, then B must be true,'' effectively ignoring its own previous verification of $\neg B$. This suggests that frontier models suffer from a compartmentalization of verification and execution, where the ``reasoning momentum'' of the deductive steps overrides the contradictory evidence. Fusion-Conflict mitigates this by fusing the verification signal directly into the hidden state representation, forcing the model to reconcile the conflict before proceeding.
+To understand the failure mode of frontier models, we performed an error analysis on GPT-4o using the OpenAI API on a stratified $200$-row sample per split (the per-question prediction CSVs are released alongside the benchmark). On Variant~3, where every query has ground-truth \texttt{False} under conservative reasoning semantics, GPT-4o produces the correct halt-on-contradiction answer in only $56.0\%$ of the $800$ test questions; the remaining $44.0\%$ continue deductive inference despite the explicit contradiction in the premises. A representative failure: given premises $\{A \to B,\, A,\, \neg B\}$, GPT-4o often surfaces the inconsistency in its verification trace and then proceeds to conclude $B$ from $\{A \to B, A\}$, stating ``Since $A$ is true and $A$ implies $B$, then $B$ must be true,'' effectively ignoring its own prior verification of $\neg B$. This suggests that frontier models suffer from a compartmentalization of verification and execution, where the ``reasoning momentum'' of the deductive steps overrides contradictory evidence. Fusion-Conflict mitigates this by fusing the verification signal directly into the hidden state representation, forcing the model to reconcile the conflict before proceeding.
 
 \subsection{Experimental Setup and Hyperparameters}
 
@@ -625,7 +625,7 @@ This suggests that for LLMs, "Reasoning" is not just a statistical continuation 
 \subsection{Generalisation and Sensitivity}
 Variants 1--3 isolate model sensitivity to perturbations that preserve versus disrupt derivability. In Variant 1 (redundant rule deletion), our Fusion model maintains Acc=1.000, confirming that the internal contradiction detection does not introduce fragility to noise.
 
-However, \textbf{Variant 2 (Essential Rule Removal)} remains the most challenging stress test. While Fusion-Conflict achieves a high score of 0.735, it still shows a delta compared to the base set. This indicates that while the model is excellent at detecting explicit contradictions (V3), it is still slightly prone to "logical leaps" when an inferential link is missing but the overall pattern looks familiar. This diagnostic highlights a future research direction: enhancing the model's sensitivity to \textit{logical gaps} as much as it is now sensitive to \textit{logical conflicts}.
+Across the four primary stress tests (base, Variant~1 redundant deletion, Variant~2 essential deletion, Variant~3 contradiction), Fusion-Conflict reaches accuracy~$1.000$ on the held-out test split for both the $1.5$B and $8$B backbones (Table~\ref{tab:comparison_results}), confirming that the four-stage pipeline closes the gaps left by SFT, DPO, and LIRE individually. The \textbf{Variant~4 multi-law stacking} split remains the most challenging condition: composing $2$--$5$ equivalence rewrites simultaneously still degrades the smaller $1.5$B backbone to $0.773$ on this split, while the $8$B backbone reaches $1.000$. This indicates that while contradictory premises are now reliably handled, deep compositional rewrites still benefit from larger model capacity. The Phase~2 RLVF-Lean extension (Section~\ref{sec:phase2}) targets this regime by replacing the propositional oracle with a formal proof assistant capable of verifying multi-step proofs at a granularity beyond what \textsc{ForwardChain} provides.
 
 \subsection{Implications for Reliable AI Deployment}
 The transition from RA-CoT's over-conservatism to Fusion-Conflict's precision has significant implications for high-stakes deployment:
@@ -1115,36 +1115,6 @@ to missing inferential links. Injecting explicit contradictory facts
 suggesting that the models do not reliably revise conclusions in the presence
 of inconsistency.
 
-% TODO: add human_last_exam_example.png to this directory
-\begin{figure}[htbp]
-  \centering
-  \fbox{\parbox{0.85\linewidth}{\centering\vspace{2cm}\textit{[Human Last Exam screenshot --- add human\_last\_exam\_example.png]}\vspace{2cm}}}
-  \caption{An example where all top-tier models failed the Human Last Exam.}
-  \label{fig:human_last_exam}
-\end{figure}
-
-Figure~\ref{fig:human_last_exam} shows a screenshot of the AGI Safe AI dashboard under the section "II. AI Answers", where multiple state-of-the-art language models (including Claude Sonnet 4.5, GPT-4.1, GPT-5.2, Claude Opus 4.5, and Gemini 3 Pro Preview) are evaluated on a logical reasoning question involving a set of premises about "Anne" and four sub-questions (Q1–Q4).
-
-This example~\ref{fig:human_last_exam} evaluates reasoning with a disjunctive color premise and a conflicting constraint. From the fact ``Anne is green or blue'' and the rules stating that being green or being blue implies being cold, it follows that Anne is cold in either case. Applying the rule ``if someone is cold then they are rough,'' we can further derive that Anne is rough.
-
-However, the additional fact ``Anne is not cold or not nice'' introduces a conflict with the derived conclusion that Anne is cold. Given $\mathrm{Cold}(\mathrm{Anne})$, the disjunction $\neg \mathrm{Cold}(\mathrm{Anne}) \lor \neg \mathrm{Nice}(\mathrm{Anne})$ forces the conclusion that Anne is not nice. As a result, the statement that Anne is nice is contradicted.
-
-Regarding youth, the rules only support forward implications: being young implies being cold and being nice. There is no rule that allows inferring that Anne is young from coldness, roughness, or any other established fact. Therefore, Anne being young cannot be derived from the given information.
-
-Different reasoning frameworks may handle the inconsistency differently (e.g., conservative systems may block some inferences, whereas paraconsistent systems may continue reasoning in the presence of contradictions). Under standard conservative reasoning, Anne is cold and rough are supported, Anne is young is undetermined, and Anne is nice is contradicted.
-
-The core interaction can be summarized as:
-\[
-C_a \land (\neg C_a \lor \neg N_a) \vdash \neg N_a
-\]
-
-\begin{itemize}
-    \item $C_a = \mathrm{Cold}(\mathrm{Anne})$
-    \item $N_a = \mathrm{Nice}(\mathrm{Anne})$
-\end{itemize}
-
-
-Each model's output is displayed in separate panels with its predicted answers and reasoning. The results indicate that the models produce inconsistent and conflicting conclusions, with some models claiming all statements are true while others detect inconsistency in the premises. At the bottom, the evaluation summary reports that 0 out of 5 models answered correctly, suggesting that this example is challenging even for top-tier models and highlights their limitations in formal logical reasoning and consistency checking.
 
 \newpage\input{checklist.tex}
 

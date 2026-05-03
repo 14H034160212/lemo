@@ -1,0 +1,637 @@
+group_id,type,question,ground_truth,prediction,correct
+5467bb95-feca-4104-9359-c57919a7c170,variant2,Q1: Eastport is industrial.,T,T,1
+5467bb95-feca-4104-9359-c57919a7c170,variant2,Q2: Eastport is polluted.,F,F,1
+5467bb95-feca-4104-9359-c57919a7c170,variant2,Q3: Eastport is regulated.,F,F,1
+e235cd07-0739-4a6e-b903-14bc0d5c1506,variant2,Q1: Oakwood is industrial.,T,T,1
+e235cd07-0739-4a6e-b903-14bc0d5c1506,variant2,Q2: Oakwood is polluted.,F,F,1
+e235cd07-0739-4a6e-b903-14bc0d5c1506,variant2,Q3: Oakwood is regulated.,F,F,1
+14930fe8-ef80-401d-9c8a-a979d292fbbf,variant2,Q1: the hawk is predatory.,T,T,1
+14930fe8-ef80-401d-9c8a-a979d292fbbf,variant2,Q2: the hawk is fast.,F,F,1
+14930fe8-ef80-401d-9c8a-a979d292fbbf,variant2,Q3: the hawk is domesticated.,F,F,1
+f69b99e9-c565-4c99-8c3f-d8878f4645fc,variant2,Q1: the jasmine is blooming.,T,T,1
+f69b99e9-c565-4c99-8c3f-d8878f4645fc,variant2,Q2: the jasmine is fruitful.,T,T,1
+f69b99e9-c565-4c99-8c3f-d8878f4645fc,variant2,Q3: the jasmine is medicinal.,F,T,0
+b470551e-0018-40f9-8f4a-2239533ad5d0,variant2,Q1: the poppy is blooming.,T,T,1
+b470551e-0018-40f9-8f4a-2239533ad5d0,variant2,Q2: the poppy is fruitful.,F,F,1
+b470551e-0018-40f9-8f4a-2239533ad5d0,variant2,Q3: the poppy is medicinal.,F,F,1
+81bda889-114f-495e-b6d3-6e28af100316,variant2,Q1: the bison is predatory.,T,T,1
+81bda889-114f-495e-b6d3-6e28af100316,variant2,Q2: the bison is fast.,T,T,1
+81bda889-114f-495e-b6d3-6e28af100316,variant2,Q3: the bison is domesticated.,F,F,1
+5d63611a-9223-4c10-810a-6447182b8571,variant2,Q1: the wolf is predatory.,T,T,1
+5d63611a-9223-4c10-810a-6447182b8571,variant2,Q2: the wolf is fast.,T,T,1
+5d63611a-9223-4c10-810a-6447182b8571,variant2,Q3: the wolf is domesticated.,F,F,1
+e30a9e66-6b40-483e-baf7-1d2dc01a3965,variant2,Q1: the bamboo is blooming.,T,T,1
+e30a9e66-6b40-483e-baf7-1d2dc01a3965,variant2,Q2: the bamboo is fruitful.,T,T,1
+e30a9e66-6b40-483e-baf7-1d2dc01a3965,variant2,Q3: the bamboo is medicinal.,F,T,0
+84879f12-f4c8-4598-b5bd-7706c0cf863f,variant2,Q1: the wolf is predatory.,T,T,1
+84879f12-f4c8-4598-b5bd-7706c0cf863f,variant2,Q2: the wolf is fast.,T,T,1
+84879f12-f4c8-4598-b5bd-7706c0cf863f,variant2,Q3: the wolf is domesticated.,F,T,0
+4244dba9-9655-4571-bb44-743d68c4fd13,variant2,Q1: the rosemary is blooming.,T,T,1
+4244dba9-9655-4571-bb44-743d68c4fd13,variant2,Q2: the rosemary is fruitful.,F,F,1
+4244dba9-9655-4571-bb44-743d68c4fd13,variant2,Q3: the rosemary is medicinal.,F,T,0
+2f569f4a-a292-4cb8-a05b-c98daa5e513b,variant2,Q1: the rabbit is predatory.,T,T,1
+2f569f4a-a292-4cb8-a05b-c98daa5e513b,variant2,Q2: the rabbit is fast.,F,F,1
+2f569f4a-a292-4cb8-a05b-c98daa5e513b,variant2,Q3: the rabbit is domesticated.,F,F,1
+1cdef196-07af-4d0f-9b66-27cd2af93b50,variant2,Q1: Eastport is industrial.,T,T,1
+1cdef196-07af-4d0f-9b66-27cd2af93b50,variant2,Q2: Eastport is polluted.,T,T,1
+1cdef196-07af-4d0f-9b66-27cd2af93b50,variant2,Q3: Eastport is regulated.,F,T,0
+ad61b31c-c43e-4e20-9b14-4e43624edb99,variant2,Q1: the otter is predatory.,T,T,1
+ad61b31c-c43e-4e20-9b14-4e43624edb99,variant2,Q2: the otter is fast.,F,F,1
+ad61b31c-c43e-4e20-9b14-4e43624edb99,variant2,Q3: the otter is domesticated.,F,F,1
+6786daee-1b55-4ff4-9876-e5575c012a33,variant2,Q1: Julia is cold.,T,T,1
+6786daee-1b55-4ff4-9876-e5575c012a33,variant2,Q2: Julia is rough.,F,F,1
+6786daee-1b55-4ff4-9876-e5575c012a33,variant2,Q3: Julia is young.,F,F,1
+6786daee-1b55-4ff4-9876-e5575c012a33,variant2,Q4: Julia is nice.,F,F,1
+0c502a77-ab03-436d-80ba-16fec230eced,variant2,Q1: Sage is studious.,T,T,1
+0c502a77-ab03-436d-80ba-16fec230eced,variant2,Q2: Sage is skilled.,T,T,1
+0c502a77-ab03-436d-80ba-16fec230eced,variant2,Q3: Sage is employed.,F,T,0
+88b0011a-fa90-4acf-b9bf-eb91ae7caa92,variant2,Q1: the bamboo is blooming.,T,T,1
+88b0011a-fa90-4acf-b9bf-eb91ae7caa92,variant2,Q2: the bamboo is fruitful.,T,T,1
+88b0011a-fa90-4acf-b9bf-eb91ae7caa92,variant2,Q3: the bamboo is medicinal.,F,T,0
+d156c1d2-0068-4f72-b726-dcf7a50c4566,variant2,Q1: the finch is predatory.,T,T,1
+d156c1d2-0068-4f72-b726-dcf7a50c4566,variant2,Q2: the finch is fast.,T,T,1
+d156c1d2-0068-4f72-b726-dcf7a50c4566,variant2,Q3: the finch is domesticated.,F,F,1
+fc7c059e-0797-4014-b5da-aaa4a413278f,variant2,Q1: the badger is predatory.,T,T,1
+fc7c059e-0797-4014-b5da-aaa4a413278f,variant2,Q2: the badger is fast.,F,F,1
+fc7c059e-0797-4014-b5da-aaa4a413278f,variant2,Q3: the badger is domesticated.,F,F,1
+c3c6b582-542f-4095-982a-cfc90a49c968,variant2,Q1: Riverdale is industrial.,T,T,1
+c3c6b582-542f-4095-982a-cfc90a49c968,variant2,Q2: Riverdale is polluted.,F,F,1
+c3c6b582-542f-4095-982a-cfc90a49c968,variant2,Q3: Riverdale is regulated.,F,F,1
+c205a204-63ec-4af1-b062-0d0d031291d4,variant2,Q1: the mint is blooming.,T,T,1
+c205a204-63ec-4af1-b062-0d0d031291d4,variant2,Q2: the mint is fruitful.,T,T,1
+c205a204-63ec-4af1-b062-0d0d031291d4,variant2,Q3: the mint is medicinal.,F,F,1
+7377293c-c231-4a4a-a987-a7ac45c528f1,variant2,Q1: Blake is studious.,T,T,1
+7377293c-c231-4a4a-a987-a7ac45c528f1,variant2,Q2: Blake is skilled.,T,T,1
+7377293c-c231-4a4a-a987-a7ac45c528f1,variant2,Q3: Blake is employed.,F,?,0
+2b454d54-c2af-4d79-b3d7-889e7aa445ea,variant2,Q1: Kevin is cold.,T,T,1
+2b454d54-c2af-4d79-b3d7-889e7aa445ea,variant2,Q2: Kevin is rough.,F,F,1
+2b454d54-c2af-4d79-b3d7-889e7aa445ea,variant2,Q3: Kevin is young.,F,F,1
+2b454d54-c2af-4d79-b3d7-889e7aa445ea,variant2,Q4: Kevin is nice.,F,F,1
+fdfe3388-b365-4c03-b59f-bdc319756280,variant2,Q1: the seal is predatory.,T,T,1
+fdfe3388-b365-4c03-b59f-bdc319756280,variant2,Q2: the seal is fast.,F,F,1
+fdfe3388-b365-4c03-b59f-bdc319756280,variant2,Q3: the seal is domesticated.,F,F,1
+51932345-b0ba-4dab-9e93-3808bfeaf988,variant2,Q1: Southfield is industrial.,T,T,1
+51932345-b0ba-4dab-9e93-3808bfeaf988,variant2,Q2: Southfield is polluted.,T,T,1
+51932345-b0ba-4dab-9e93-3808bfeaf988,variant2,Q3: Southfield is regulated.,F,T,0
+94523dc7-b10d-445f-bb92-d44167d128e2,variant2,Q1: the lion is predatory.,T,T,1
+94523dc7-b10d-445f-bb92-d44167d128e2,variant2,Q2: the lion is fast.,T,T,1
+94523dc7-b10d-445f-bb92-d44167d128e2,variant2,Q3: the lion is domesticated.,F,F,1
+00095403-641b-4abb-a978-f1fb9d3b310c,variant2,Q1: Steve is cold.,T,T,1
+00095403-641b-4abb-a978-f1fb9d3b310c,variant2,Q2: Steve is rough.,T,T,1
+00095403-641b-4abb-a978-f1fb9d3b310c,variant2,Q3: Steve is young.,F,F,1
+00095403-641b-4abb-a978-f1fb9d3b310c,variant2,Q4: Steve is nice.,F,F,1
+7c7d73d7-2204-40eb-9210-557a0f1c13d0,variant2,Q1: the moose is predatory.,T,T,1
+7c7d73d7-2204-40eb-9210-557a0f1c13d0,variant2,Q2: the moose is fast.,T,T,1
+7c7d73d7-2204-40eb-9210-557a0f1c13d0,variant2,Q3: the moose is domesticated.,F,F,1
+ba15da98-9d83-4222-be24-4c0985e5bce7,variant2,Q1: Elmwood is industrial.,T,T,1
+ba15da98-9d83-4222-be24-4c0985e5bce7,variant2,Q2: Elmwood is polluted.,T,T,1
+ba15da98-9d83-4222-be24-4c0985e5bce7,variant2,Q3: Elmwood is regulated.,F,T,0
+305637a3-4687-4587-a903-fdcab757edf7,variant2,Q1: the nettle is blooming.,T,T,1
+305637a3-4687-4587-a903-fdcab757edf7,variant2,Q2: the nettle is fruitful.,T,T,1
+305637a3-4687-4587-a903-fdcab757edf7,variant2,Q3: the nettle is medicinal.,F,T,0
+c9cbe2ac-ec90-4029-866e-5ba7342d8eeb,variant2,Q1: Fairfield is industrial.,T,T,1
+c9cbe2ac-ec90-4029-866e-5ba7342d8eeb,variant2,Q2: Fairfield is polluted.,T,T,1
+c9cbe2ac-ec90-4029-866e-5ba7342d8eeb,variant2,Q3: Fairfield is regulated.,F,T,0
+136094e9-cc94-4dc1-ad91-08c7a655c167,variant2,Q1: Pinecrest is industrial.,T,T,1
+136094e9-cc94-4dc1-ad91-08c7a655c167,variant2,Q2: Pinecrest is polluted.,T,T,1
+136094e9-cc94-4dc1-ad91-08c7a655c167,variant2,Q3: Pinecrest is regulated.,F,T,0
+fbe8fc3c-d182-4da5-bb40-cedbd4f6e7c4,variant2,Q1: the wolf is predatory.,T,T,1
+fbe8fc3c-d182-4da5-bb40-cedbd4f6e7c4,variant2,Q2: the wolf is fast.,T,T,1
+fbe8fc3c-d182-4da5-bb40-cedbd4f6e7c4,variant2,Q3: the wolf is domesticated.,F,F,1
+a55e076b-d431-41c6-9e83-e280bfb8c30b,variant2,Q1: the bear is predatory.,T,T,1
+a55e076b-d431-41c6-9e83-e280bfb8c30b,variant2,Q2: the bear is fast.,T,T,1
+a55e076b-d431-41c6-9e83-e280bfb8c30b,variant2,Q3: the bear is domesticated.,F,F,1
+302fc687-e1b7-4077-872a-0cd7802b33f8,variant2,Q1: the raven is predatory.,T,T,1
+302fc687-e1b7-4077-872a-0cd7802b33f8,variant2,Q2: the raven is fast.,F,F,1
+302fc687-e1b7-4077-872a-0cd7802b33f8,variant2,Q3: the raven is domesticated.,F,F,1
+0ee85f2e-1f45-4f96-b999-6942582410ec,variant2,Q1: Brookhaven is industrial.,T,T,1
+0ee85f2e-1f45-4f96-b999-6942582410ec,variant2,Q2: Brookhaven is polluted.,T,T,1
+0ee85f2e-1f45-4f96-b999-6942582410ec,variant2,Q3: Brookhaven is regulated.,F,T,0
+1671ed4f-1072-47dd-beaf-c650e72eb004,variant2,Q1: Wendy is cold.,T,T,1
+1671ed4f-1072-47dd-beaf-c650e72eb004,variant2,Q2: Wendy is rough.,T,T,1
+1671ed4f-1072-47dd-beaf-c650e72eb004,variant2,Q3: Wendy is young.,F,F,1
+1671ed4f-1072-47dd-beaf-c650e72eb004,variant2,Q4: Wendy is nice.,F,F,1
+9563cb74-286d-4012-9171-5a6ff20a6573,variant2,Q1: Claire is cold.,T,T,1
+9563cb74-286d-4012-9171-5a6ff20a6573,variant2,Q2: Claire is rough.,T,T,1
+9563cb74-286d-4012-9171-5a6ff20a6573,variant2,Q3: Claire is young.,T,T,1
+9563cb74-286d-4012-9171-5a6ff20a6573,variant2,Q4: Claire is nice.,F,T,0
+5c842ead-c320-4b79-a43a-db1ded656d1f,variant2,Q1: Emma is cold.,T,T,1
+5c842ead-c320-4b79-a43a-db1ded656d1f,variant2,Q2: Emma is rough.,F,F,1
+5c842ead-c320-4b79-a43a-db1ded656d1f,variant2,Q3: Emma is young.,F,F,1
+5c842ead-c320-4b79-a43a-db1ded656d1f,variant2,Q4: Emma is nice.,F,F,1
+060d0dd1-657f-408b-9c69-0d27f6f6f633,variant2,Q1: Alex is studious.,T,T,1
+060d0dd1-657f-408b-9c69-0d27f6f6f633,variant2,Q2: Alex is skilled.,F,F,1
+060d0dd1-657f-408b-9c69-0d27f6f6f633,variant2,Q3: Alex is employed.,F,F,1
+0feaa841-4906-48b7-acae-2c3a5e2a4e35,variant2,Q1: Linda is cold.,T,T,1
+0feaa841-4906-48b7-acae-2c3a5e2a4e35,variant2,Q2: Linda is rough.,F,F,1
+0feaa841-4906-48b7-acae-2c3a5e2a4e35,variant2,Q3: Linda is young.,F,F,1
+0feaa841-4906-48b7-acae-2c3a5e2a4e35,variant2,Q4: Linda is nice.,F,F,1
+697d35f3-98f0-47ea-92db-1ce15081a836,variant2,Q1: Alex is studious.,T,T,1
+697d35f3-98f0-47ea-92db-1ce15081a836,variant2,Q2: Alex is skilled.,T,T,1
+697d35f3-98f0-47ea-92db-1ce15081a836,variant2,Q3: Alex is employed.,F,T,0
+a51d2865-f12f-4ef1-bded-00fb40976247,variant2,Q1: the nettle is blooming.,T,T,1
+a51d2865-f12f-4ef1-bded-00fb40976247,variant2,Q2: the nettle is fruitful.,T,T,1
+a51d2865-f12f-4ef1-bded-00fb40976247,variant2,Q3: the nettle is medicinal.,F,T,0
+bda02620-852c-4433-837e-c6421e287efc,variant2,Q1: Finn is studious.,T,T,1
+bda02620-852c-4433-837e-c6421e287efc,variant2,Q2: Finn is skilled.,T,T,1
+bda02620-852c-4433-837e-c6421e287efc,variant2,Q3: Finn is employed.,F,T,0
+ccfb600a-76c1-46a0-9b7f-3e77bdddb5e1,variant2,Q1: Jordan is studious.,T,T,1
+ccfb600a-76c1-46a0-9b7f-3e77bdddb5e1,variant2,Q2: Jordan is skilled.,T,T,1
+ccfb600a-76c1-46a0-9b7f-3e77bdddb5e1,variant2,Q3: Jordan is employed.,F,T,0
+4f391c76-1683-4633-b1c9-5f2bf55cf9fb,variant2,Q1: Drew is studious.,T,T,1
+4f391c76-1683-4633-b1c9-5f2bf55cf9fb,variant2,Q2: Drew is skilled.,T,T,1
+4f391c76-1683-4633-b1c9-5f2bf55cf9fb,variant2,Q3: Drew is employed.,F,T,0
+17e964e9-684e-4d81-a30f-8abe80ad5ea9,variant2,Q1: Millford is industrial.,T,T,1
+17e964e9-684e-4d81-a30f-8abe80ad5ea9,variant2,Q2: Millford is polluted.,F,F,1
+17e964e9-684e-4d81-a30f-8abe80ad5ea9,variant2,Q3: Millford is regulated.,F,F,1
+e5bd863a-1e40-43bc-ba0b-bfc9a69b0abb,variant2,Q1: Brookhaven is industrial.,T,T,1
+e5bd863a-1e40-43bc-ba0b-bfc9a69b0abb,variant2,Q2: Brookhaven is polluted.,F,F,1
+e5bd863a-1e40-43bc-ba0b-bfc9a69b0abb,variant2,Q3: Brookhaven is regulated.,F,F,1
+55111bc3-f66b-4a22-80f3-854c4869630a,variant2,Q1: Pinecrest is industrial.,T,T,1
+55111bc3-f66b-4a22-80f3-854c4869630a,variant2,Q2: Pinecrest is polluted.,T,T,1
+55111bc3-f66b-4a22-80f3-854c4869630a,variant2,Q3: Pinecrest is regulated.,F,T,0
+f7ed56c5-7367-4709-988c-34cddc4a3524,variant2,Q1: Millford is industrial.,T,T,1
+f7ed56c5-7367-4709-988c-34cddc4a3524,variant2,Q2: Millford is polluted.,F,F,1
+f7ed56c5-7367-4709-988c-34cddc4a3524,variant2,Q3: Millford is regulated.,F,F,1
+906a7459-68c4-414c-b8f6-d557b8efd027,variant2,Q1: the rabbit is predatory.,T,T,1
+906a7459-68c4-414c-b8f6-d557b8efd027,variant2,Q2: the rabbit is fast.,F,F,1
+906a7459-68c4-414c-b8f6-d557b8efd027,variant2,Q3: the rabbit is domesticated.,F,F,1
+0501f37d-e960-4bbf-bc54-241a5a686495,variant2,Q1: Northgate is industrial.,T,T,1
+0501f37d-e960-4bbf-bc54-241a5a686495,variant2,Q2: Northgate is polluted.,T,T,1
+0501f37d-e960-4bbf-bc54-241a5a686495,variant2,Q3: Northgate is regulated.,F,T,0
+12b9edcd-5530-491d-b24f-07382c957cca,variant2,Q1: the nettle is blooming.,T,T,1
+12b9edcd-5530-491d-b24f-07382c957cca,variant2,Q2: the nettle is fruitful.,T,T,1
+12b9edcd-5530-491d-b24f-07382c957cca,variant2,Q3: the nettle is medicinal.,F,T,0
+7374f159-b08f-48e1-959c-7dd958991526,variant2,Q1: Kendall is studious.,T,T,1
+7374f159-b08f-48e1-959c-7dd958991526,variant2,Q2: Kendall is skilled.,F,F,1
+7374f159-b08f-48e1-959c-7dd958991526,variant2,Q3: Kendall is employed.,F,T,0
+78d6b505-81cc-4472-8811-eda62d3d59c5,variant2,Q1: Drew is studious.,T,T,1
+78d6b505-81cc-4472-8811-eda62d3d59c5,variant2,Q2: Drew is skilled.,T,T,1
+78d6b505-81cc-4472-8811-eda62d3d59c5,variant2,Q3: Drew is employed.,F,T,0
+cf05ef7f-ff11-4fa4-bb19-5cd13ce57268,variant2,Q1: Southfield is industrial.,T,T,1
+cf05ef7f-ff11-4fa4-bb19-5cd13ce57268,variant2,Q2: Southfield is polluted.,T,T,1
+cf05ef7f-ff11-4fa4-bb19-5cd13ce57268,variant2,Q3: Southfield is regulated.,F,T,0
+4dbac321-ff97-42e4-85b0-e7ca38e14a54,variant2,Q1: Harborview is industrial.,T,T,1
+4dbac321-ff97-42e4-85b0-e7ca38e14a54,variant2,Q2: Harborview is polluted.,T,T,1
+4dbac321-ff97-42e4-85b0-e7ca38e14a54,variant2,Q3: Harborview is regulated.,F,T,0
+3519f698-5b42-4783-ad97-c2b6976679bb,variant2,Q1: Ellis is studious.,T,T,1
+3519f698-5b42-4783-ad97-c2b6976679bb,variant2,Q2: Ellis is skilled.,T,T,1
+3519f698-5b42-4783-ad97-c2b6976679bb,variant2,Q3: Ellis is employed.,F,T,0
+12fa55a9-a12d-4139-9782-696726e0da59,variant2,Q1: Mike is cold.,T,T,1
+12fa55a9-a12d-4139-9782-696726e0da59,variant2,Q2: Mike is rough.,F,F,1
+12fa55a9-a12d-4139-9782-696726e0da59,variant2,Q3: Mike is young.,F,F,1
+12fa55a9-a12d-4139-9782-696726e0da59,variant2,Q4: Mike is nice.,F,F,1
+49014c9e-6f6b-4d08-94f5-8b0b5e5dac36,variant2,Q1: the lynx is predatory.,T,T,1
+49014c9e-6f6b-4d08-94f5-8b0b5e5dac36,variant2,Q2: the lynx is fast.,T,T,1
+49014c9e-6f6b-4d08-94f5-8b0b5e5dac36,variant2,Q3: the lynx is domesticated.,F,F,1
+7dc77141-5cf7-480a-b058-c8309a898dc3,variant2,Q1: Fairfield is industrial.,T,T,1
+7dc77141-5cf7-480a-b058-c8309a898dc3,variant2,Q2: Fairfield is polluted.,F,F,1
+7dc77141-5cf7-480a-b058-c8309a898dc3,variant2,Q3: Fairfield is regulated.,F,F,1
+1b12c351-78cd-4952-9856-94da3664c365,variant2,Q1: the orchid is blooming.,T,T,1
+1b12c351-78cd-4952-9856-94da3664c365,variant2,Q2: the orchid is fruitful.,T,T,1
+1b12c351-78cd-4952-9856-94da3664c365,variant2,Q3: the orchid is medicinal.,F,T,0
+4656fadb-6910-466e-bd8a-0db9e431999a,variant2,Q1: Springfield is industrial.,T,T,1
+4656fadb-6910-466e-bd8a-0db9e431999a,variant2,Q2: Springfield is polluted.,T,T,1
+4656fadb-6910-466e-bd8a-0db9e431999a,variant2,Q3: Springfield is regulated.,F,T,0
+691b5c28-1ba9-4663-b775-5ee27b8a9b64,variant2,Q1: Kevin is cold.,T,T,1
+691b5c28-1ba9-4663-b775-5ee27b8a9b64,variant2,Q2: Kevin is rough.,T,T,1
+691b5c28-1ba9-4663-b775-5ee27b8a9b64,variant2,Q3: Kevin is young.,F,F,1
+691b5c28-1ba9-4663-b775-5ee27b8a9b64,variant2,Q4: Kevin is nice.,F,F,1
+542352c9-717e-4fe0-b3be-a1d147a4796f,variant2,Q1: the deer is predatory.,T,T,1
+542352c9-717e-4fe0-b3be-a1d147a4796f,variant2,Q2: the deer is fast.,T,T,1
+542352c9-717e-4fe0-b3be-a1d147a4796f,variant2,Q3: the deer is domesticated.,F,F,1
+8443387c-4799-457e-be63-cbb4de29dd7d,variant2,Q1: Brookhaven is industrial.,T,T,1
+8443387c-4799-457e-be63-cbb4de29dd7d,variant2,Q2: Brookhaven is polluted.,F,F,1
+8443387c-4799-457e-be63-cbb4de29dd7d,variant2,Q3: Brookhaven is regulated.,F,F,1
+66ac2334-40ab-4f3c-83fa-e7e88f931789,variant2,Q1: Helen is cold.,T,T,1
+66ac2334-40ab-4f3c-83fa-e7e88f931789,variant2,Q2: Helen is rough.,F,F,1
+66ac2334-40ab-4f3c-83fa-e7e88f931789,variant2,Q3: Helen is young.,F,F,1
+66ac2334-40ab-4f3c-83fa-e7e88f931789,variant2,Q4: Helen is nice.,F,F,1
+8be45da5-eb6b-42ae-8abb-57e9467c27c0,variant2,Q1: Pinecrest is industrial.,T,T,1
+8be45da5-eb6b-42ae-8abb-57e9467c27c0,variant2,Q2: Pinecrest is polluted.,T,T,1
+8be45da5-eb6b-42ae-8abb-57e9467c27c0,variant2,Q3: Pinecrest is regulated.,F,T,0
+56de609c-c44c-4524-bffa-db74ba3f61c2,variant2,Q1: the hawk is predatory.,T,T,1
+56de609c-c44c-4524-bffa-db74ba3f61c2,variant2,Q2: the hawk is fast.,T,T,1
+56de609c-c44c-4524-bffa-db74ba3f61c2,variant2,Q3: the hawk is domesticated.,F,T,0
+00c866ed-7984-4091-9e82-15d3037a8e06,variant2,Q1: Midvale is industrial.,T,T,1
+00c866ed-7984-4091-9e82-15d3037a8e06,variant2,Q2: Midvale is polluted.,T,T,1
+00c866ed-7984-4091-9e82-15d3037a8e06,variant2,Q3: Midvale is regulated.,F,T,0
+bc8ec50e-c562-4049-bfbf-b98e967b9ad4,variant2,Q1: the puma is predatory.,T,T,1
+bc8ec50e-c562-4049-bfbf-b98e967b9ad4,variant2,Q2: the puma is fast.,F,F,1
+bc8ec50e-c562-4049-bfbf-b98e967b9ad4,variant2,Q3: the puma is domesticated.,F,F,1
+c9dd100c-31a5-4926-8fbb-60bd4428f844,variant2,Q1: Reese is studious.,T,T,1
+c9dd100c-31a5-4926-8fbb-60bd4428f844,variant2,Q2: Reese is skilled.,F,F,1
+c9dd100c-31a5-4926-8fbb-60bd4428f844,variant2,Q3: Reese is employed.,F,F,1
+28e45498-674e-4d77-840d-9af67dedd913,variant2,Q1: the cedar is blooming.,T,T,1
+28e45498-674e-4d77-840d-9af67dedd913,variant2,Q2: the cedar is fruitful.,F,F,1
+28e45498-674e-4d77-840d-9af67dedd913,variant2,Q3: the cedar is medicinal.,F,T,0
+226b5db8-e953-4398-8c73-f195328cb232,variant2,Q1: Springfield is industrial.,T,T,1
+226b5db8-e953-4398-8c73-f195328cb232,variant2,Q2: Springfield is polluted.,F,F,1
+226b5db8-e953-4398-8c73-f195328cb232,variant2,Q3: Springfield is regulated.,F,F,1
+e7cf6a92-2cad-4f3e-8f0a-047191c8b8c6,variant2,Q1: Finn is studious.,T,T,1
+e7cf6a92-2cad-4f3e-8f0a-047191c8b8c6,variant2,Q2: Finn is skilled.,T,T,1
+e7cf6a92-2cad-4f3e-8f0a-047191c8b8c6,variant2,Q3: Finn is employed.,F,T,0
+bdbf0c4d-9edf-4caf-8b23-b2defe44cc87,variant2,Q1: the bear is predatory.,T,T,1
+bdbf0c4d-9edf-4caf-8b23-b2defe44cc87,variant2,Q2: the bear is fast.,T,T,1
+bdbf0c4d-9edf-4caf-8b23-b2defe44cc87,variant2,Q3: the bear is domesticated.,F,F,1
+3bc214e5-5f85-476e-87d7-499c12d716ea,variant2,Q1: Kendall is studious.,T,T,1
+3bc214e5-5f85-476e-87d7-499c12d716ea,variant2,Q2: Kendall is skilled.,T,T,1
+3bc214e5-5f85-476e-87d7-499c12d716ea,variant2,Q3: Kendall is employed.,F,T,0
+faf45dde-2e0d-48fd-a3d5-cd8bf9c363b5,variant2,Q1: Reese is studious.,T,T,1
+faf45dde-2e0d-48fd-a3d5-cd8bf9c363b5,variant2,Q2: Reese is skilled.,F,F,1
+faf45dde-2e0d-48fd-a3d5-cd8bf9c363b5,variant2,Q3: Reese is employed.,F,F,1
+e819c176-e247-4aaf-a3c1-376c9ec75bdd,variant2,Q1: the lynx is predatory.,T,T,1
+e819c176-e247-4aaf-a3c1-376c9ec75bdd,variant2,Q2: the lynx is fast.,T,T,1
+e819c176-e247-4aaf-a3c1-376c9ec75bdd,variant2,Q3: the lynx is domesticated.,F,F,1
+57ead93b-cd06-4ca1-b6ff-8355b7862aef,variant2,Q1: the poppy is blooming.,T,T,1
+57ead93b-cd06-4ca1-b6ff-8355b7862aef,variant2,Q2: the poppy is fruitful.,F,F,1
+57ead93b-cd06-4ca1-b6ff-8355b7862aef,variant2,Q3: the poppy is medicinal.,F,F,1
+d4539035-94b2-4510-bc29-f1ed65b74300,variant2,Q1: Reese is studious.,T,T,1
+d4539035-94b2-4510-bc29-f1ed65b74300,variant2,Q2: Reese is skilled.,T,T,1
+d4539035-94b2-4510-bc29-f1ed65b74300,variant2,Q3: Reese is employed.,F,T,0
+97af484d-cabe-45b1-bdd1-ff75101e1a58,variant2,Q1: Indigo is studious.,T,T,1
+97af484d-cabe-45b1-bdd1-ff75101e1a58,variant2,Q2: Indigo is skilled.,T,T,1
+97af484d-cabe-45b1-bdd1-ff75101e1a58,variant2,Q3: Indigo is employed.,F,T,0
+50d727b5-6646-4913-8261-fba508eefaca,variant2,Q1: Julia is cold.,T,T,1
+50d727b5-6646-4913-8261-fba508eefaca,variant2,Q2: Julia is rough.,F,F,1
+50d727b5-6646-4913-8261-fba508eefaca,variant2,Q3: Julia is young.,F,F,1
+50d727b5-6646-4913-8261-fba508eefaca,variant2,Q4: Julia is nice.,F,F,1
+665ccc91-ed9b-4b07-b43b-048b82145adc,variant2,Q1: the wolf is predatory.,T,T,1
+665ccc91-ed9b-4b07-b43b-048b82145adc,variant2,Q2: the wolf is fast.,T,T,1
+665ccc91-ed9b-4b07-b43b-048b82145adc,variant2,Q3: the wolf is domesticated.,F,F,1
+e6e2d8c5-b17e-4879-a505-38f821db6d78,variant2,Q1: Drew is studious.,T,T,1
+e6e2d8c5-b17e-4879-a505-38f821db6d78,variant2,Q2: Drew is skilled.,T,T,1
+e6e2d8c5-b17e-4879-a505-38f821db6d78,variant2,Q3: Drew is employed.,F,T,0
+85b57d7a-02bc-476a-8a67-80c6ff4ffde9,variant2,Q1: the daisy is blooming.,T,T,1
+85b57d7a-02bc-476a-8a67-80c6ff4ffde9,variant2,Q2: the daisy is fruitful.,T,T,1
+85b57d7a-02bc-476a-8a67-80c6ff4ffde9,variant2,Q3: the daisy is medicinal.,F,T,0
+099adb9c-ab68-411c-a9e6-843ae9e0e8ff,variant2,Q1: the hawk is predatory.,T,T,1
+099adb9c-ab68-411c-a9e6-843ae9e0e8ff,variant2,Q2: the hawk is fast.,F,F,1
+099adb9c-ab68-411c-a9e6-843ae9e0e8ff,variant2,Q3: the hawk is domesticated.,F,F,1
+b062b080-2d9a-4c24-9c79-44c1fe29599a,variant2,Q1: the aloe is blooming.,T,T,1
+b062b080-2d9a-4c24-9c79-44c1fe29599a,variant2,Q2: the aloe is fruitful.,T,T,1
+b062b080-2d9a-4c24-9c79-44c1fe29599a,variant2,Q3: the aloe is medicinal.,F,T,0
+bd378e6d-450e-482e-8547-205d73f52a2a,variant2,Q1: Julia is cold.,T,T,1
+bd378e6d-450e-482e-8547-205d73f52a2a,variant2,Q2: Julia is rough.,F,F,1
+bd378e6d-450e-482e-8547-205d73f52a2a,variant2,Q3: Julia is young.,F,F,1
+bd378e6d-450e-482e-8547-205d73f52a2a,variant2,Q4: Julia is nice.,F,F,1
+882896e1-7536-4503-a948-66a8f3a104cc,variant2,Q1: the cedar is blooming.,T,T,1
+882896e1-7536-4503-a948-66a8f3a104cc,variant2,Q2: the cedar is fruitful.,T,T,1
+882896e1-7536-4503-a948-66a8f3a104cc,variant2,Q3: the cedar is medicinal.,F,T,0
+f7d86b4c-2c68-4963-97e8-eee8651474ee,variant2,Q1: the rabbit is predatory.,T,T,1
+f7d86b4c-2c68-4963-97e8-eee8651474ee,variant2,Q2: the rabbit is fast.,T,T,1
+f7d86b4c-2c68-4963-97e8-eee8651474ee,variant2,Q3: the rabbit is domesticated.,F,F,1
+5d04d4d9-f8c4-4c33-a29b-c8fd3f453448,variant2,Q1: Linda is cold.,T,T,1
+5d04d4d9-f8c4-4c33-a29b-c8fd3f453448,variant2,Q2: Linda is rough.,F,F,1
+5d04d4d9-f8c4-4c33-a29b-c8fd3f453448,variant2,Q3: Linda is young.,F,F,1
+5d04d4d9-f8c4-4c33-a29b-c8fd3f453448,variant2,Q4: Linda is nice.,F,F,1
+42ae5fe0-e4f3-496f-b02c-19fe4f06413e,variant2,Q1: Crestview is industrial.,T,T,1
+42ae5fe0-e4f3-496f-b02c-19fe4f06413e,variant2,Q2: Crestview is polluted.,T,T,1
+42ae5fe0-e4f3-496f-b02c-19fe4f06413e,variant2,Q3: Crestview is regulated.,F,T,0
+6b9ce5b6-03f8-49d1-9983-834726378440,variant2,Q1: Logan is studious.,T,T,1
+6b9ce5b6-03f8-49d1-9983-834726378440,variant2,Q2: Logan is skilled.,T,T,1
+6b9ce5b6-03f8-49d1-9983-834726378440,variant2,Q3: Logan is employed.,F,T,0
+7f24de95-04ac-448b-bc83-7e32aeb9148a,variant2,Q1: Ellis is studious.,T,T,1
+7f24de95-04ac-448b-bc83-7e32aeb9148a,variant2,Q2: Ellis is skilled.,T,T,1
+7f24de95-04ac-448b-bc83-7e32aeb9148a,variant2,Q3: Ellis is employed.,F,T,0
+1703e90a-4853-4d56-98bc-dd90d913576a,variant2,Q1: Willowbrook is industrial.,T,T,1
+1703e90a-4853-4d56-98bc-dd90d913576a,variant2,Q2: Willowbrook is polluted.,T,T,1
+1703e90a-4853-4d56-98bc-dd90d913576a,variant2,Q3: Willowbrook is regulated.,F,T,0
+6a45b8a6-f4bf-41c9-89d0-dc998c15eaea,variant2,Q1: the ivy is blooming.,T,T,1
+6a45b8a6-f4bf-41c9-89d0-dc998c15eaea,variant2,Q2: the ivy is fruitful.,T,T,1
+6a45b8a6-f4bf-41c9-89d0-dc998c15eaea,variant2,Q3: the ivy is medicinal.,F,T,0
+73f6d477-d457-4135-82e6-1640fadeaced,variant2,Q1: Mapleton is industrial.,T,T,1
+73f6d477-d457-4135-82e6-1640fadeaced,variant2,Q2: Mapleton is polluted.,T,T,1
+73f6d477-d457-4135-82e6-1640fadeaced,variant2,Q3: Mapleton is regulated.,F,T,0
+4bc376bb-c2c1-4e6c-939a-30be388eda1a,variant2,Q1: the clover is blooming.,T,T,1
+4bc376bb-c2c1-4e6c-939a-30be388eda1a,variant2,Q2: the clover is fruitful.,T,T,1
+4bc376bb-c2c1-4e6c-939a-30be388eda1a,variant2,Q3: the clover is medicinal.,F,T,0
+eef091fe-e802-41fb-a6ad-c3e8f4839b6c,variant2,Q1: Kendall is studious.,T,T,1
+eef091fe-e802-41fb-a6ad-c3e8f4839b6c,variant2,Q2: Kendall is skilled.,F,F,1
+eef091fe-e802-41fb-a6ad-c3e8f4839b6c,variant2,Q3: Kendall is employed.,F,F,1
+b0e8bff1-2218-4d71-8c8a-e736f6466fbf,variant2,Q1: Logan is studious.,T,T,1
+b0e8bff1-2218-4d71-8c8a-e736f6466fbf,variant2,Q2: Logan is skilled.,F,F,1
+b0e8bff1-2218-4d71-8c8a-e736f6466fbf,variant2,Q3: Logan is employed.,F,F,1
+fc663844-2458-47a1-bbd9-24438dd5b50b,variant2,Q1: Anne is cold.,T,T,1
+fc663844-2458-47a1-bbd9-24438dd5b50b,variant2,Q2: Anne is rough.,F,F,1
+fc663844-2458-47a1-bbd9-24438dd5b50b,variant2,Q3: Anne is young.,F,F,1
+fc663844-2458-47a1-bbd9-24438dd5b50b,variant2,Q4: Anne is nice.,F,F,1
+fdb093a5-3f71-4c3d-8d5c-a246e55d496a,variant2,Q1: Victor is cold.,T,T,1
+fdb093a5-3f71-4c3d-8d5c-a246e55d496a,variant2,Q2: Victor is rough.,T,T,1
+fdb093a5-3f71-4c3d-8d5c-a246e55d496a,variant2,Q3: Victor is young.,T,T,1
+fdb093a5-3f71-4c3d-8d5c-a246e55d496a,variant2,Q4: Victor is nice.,F,T,0
+5ce4df3d-a819-4b6a-9859-0b0855f7a8e1,variant2,Q1: the wolf is predatory.,T,T,1
+5ce4df3d-a819-4b6a-9859-0b0855f7a8e1,variant2,Q2: the wolf is fast.,T,T,1
+5ce4df3d-a819-4b6a-9859-0b0855f7a8e1,variant2,Q3: the wolf is domesticated.,F,T,0
+312b313c-a1bb-4be7-961a-c05c7767da24,variant2,Q1: Oakwood is industrial.,T,T,1
+312b313c-a1bb-4be7-961a-c05c7767da24,variant2,Q2: Oakwood is polluted.,T,T,1
+312b313c-a1bb-4be7-961a-c05c7767da24,variant2,Q3: Oakwood is regulated.,F,T,0
+748467ae-f4da-4939-aa85-89620f1c82df,variant2,Q1: the fox is predatory.,T,T,1
+748467ae-f4da-4939-aa85-89620f1c82df,variant2,Q2: the fox is fast.,T,T,1
+748467ae-f4da-4939-aa85-89620f1c82df,variant2,Q3: the fox is domesticated.,F,T,0
+3719ecb8-cdfb-4561-9a8d-64d1cb651fb4,variant2,Q1: the fern is blooming.,T,T,1
+3719ecb8-cdfb-4561-9a8d-64d1cb651fb4,variant2,Q2: the fern is fruitful.,T,T,1
+3719ecb8-cdfb-4561-9a8d-64d1cb651fb4,variant2,Q3: the fern is medicinal.,F,T,0
+65ae25b2-bd4c-41da-938c-c70a6ce4707d,variant2,Q1: Rachel is cold.,T,T,1
+65ae25b2-bd4c-41da-938c-c70a6ce4707d,variant2,Q2: Rachel is rough.,T,T,1
+65ae25b2-bd4c-41da-938c-c70a6ce4707d,variant2,Q3: Rachel is young.,T,T,1
+65ae25b2-bd4c-41da-938c-c70a6ce4707d,variant2,Q4: Rachel is nice.,F,T,0
+0d94e3fa-b068-4ddf-81f3-11edd5c28160,variant2,Q1: Wendy is cold.,T,T,1
+0d94e3fa-b068-4ddf-81f3-11edd5c28160,variant2,Q2: Wendy is rough.,T,T,1
+0d94e3fa-b068-4ddf-81f3-11edd5c28160,variant2,Q3: Wendy is young.,F,F,1
+0d94e3fa-b068-4ddf-81f3-11edd5c28160,variant2,Q4: Wendy is nice.,F,F,1
+32521ecd-d4a0-4831-9533-f8bfc1b9611d,variant2,Q1: the finch is predatory.,T,T,1
+32521ecd-d4a0-4831-9533-f8bfc1b9611d,variant2,Q2: the finch is fast.,T,T,1
+32521ecd-d4a0-4831-9533-f8bfc1b9611d,variant2,Q3: the finch is domesticated.,F,T,0
+3f0c7c5f-ed01-4caf-a04b-bdc4ce90d1ef,variant2,Q1: Logan is studious.,T,T,1
+3f0c7c5f-ed01-4caf-a04b-bdc4ce90d1ef,variant2,Q2: Logan is skilled.,T,T,1
+3f0c7c5f-ed01-4caf-a04b-bdc4ce90d1ef,variant2,Q3: Logan is employed.,F,T,0
+4073caa1-9106-4931-9f18-91d5bfccb792,variant2,Q1: Brookhaven is industrial.,T,T,1
+4073caa1-9106-4931-9f18-91d5bfccb792,variant2,Q2: Brookhaven is polluted.,T,T,1
+4073caa1-9106-4931-9f18-91d5bfccb792,variant2,Q3: Brookhaven is regulated.,F,T,0
+26a9d83a-a9d0-410c-a0cb-271e7d85cfaf,variant2,Q1: the willow is blooming.,T,T,1
+26a9d83a-a9d0-410c-a0cb-271e7d85cfaf,variant2,Q2: the willow is fruitful.,T,T,1
+26a9d83a-a9d0-410c-a0cb-271e7d85cfaf,variant2,Q3: the willow is medicinal.,F,T,0
+1a763913-f5d7-4c30-9543-3f5edc51449b,variant2,Q1: the aloe is blooming.,T,T,1
+1a763913-f5d7-4c30-9543-3f5edc51449b,variant2,Q2: the aloe is fruitful.,F,F,1
+1a763913-f5d7-4c30-9543-3f5edc51449b,variant2,Q3: the aloe is medicinal.,F,F,1
+b6b51de4-24f8-4ac4-bca6-6c8a1b0a7fbd,variant2,Q1: the thyme is blooming.,T,T,1
+b6b51de4-24f8-4ac4-bca6-6c8a1b0a7fbd,variant2,Q2: the thyme is fruitful.,F,F,1
+b6b51de4-24f8-4ac4-bca6-6c8a1b0a7fbd,variant2,Q3: the thyme is medicinal.,F,F,1
+9a510172-613e-47f6-827f-31231345875e,variant2,Q1: the jasmine is blooming.,T,T,1
+9a510172-613e-47f6-827f-31231345875e,variant2,Q2: the jasmine is fruitful.,F,F,1
+9a510172-613e-47f6-827f-31231345875e,variant2,Q3: the jasmine is medicinal.,F,F,1
+6e301f54-3f14-4fcc-b4f6-d276b40f6113,variant2,Q1: Nancy is cold.,T,T,1
+6e301f54-3f14-4fcc-b4f6-d276b40f6113,variant2,Q2: Nancy is rough.,F,F,1
+6e301f54-3f14-4fcc-b4f6-d276b40f6113,variant2,Q3: Nancy is young.,F,F,1
+6e301f54-3f14-4fcc-b4f6-d276b40f6113,variant2,Q4: Nancy is nice.,F,F,1
+96bfb01c-2fdf-4eb6-81bc-681bcc30614e,variant2,Q1: the rabbit is predatory.,T,T,1
+96bfb01c-2fdf-4eb6-81bc-681bcc30614e,variant2,Q2: the rabbit is fast.,T,T,1
+96bfb01c-2fdf-4eb6-81bc-681bcc30614e,variant2,Q3: the rabbit is domesticated.,F,T,0
+d61eeb48-c977-4148-bb10-b7befccfad10,variant2,Q1: Brookhaven is industrial.,T,T,1
+d61eeb48-c977-4148-bb10-b7befccfad10,variant2,Q2: Brookhaven is polluted.,F,F,1
+d61eeb48-c977-4148-bb10-b7befccfad10,variant2,Q3: Brookhaven is regulated.,F,F,1
+0b2ae393-6aff-4fa9-ace9-a14d4501f208,variant2,Q1: the mint is blooming.,T,T,1
+0b2ae393-6aff-4fa9-ace9-a14d4501f208,variant2,Q2: the mint is fruitful.,F,F,1
+0b2ae393-6aff-4fa9-ace9-a14d4501f208,variant2,Q3: the mint is medicinal.,F,F,1
+d8878cd5-c123-4671-90d8-8aec3ebfcee8,variant2,Q1: Crestview is industrial.,T,T,1
+d8878cd5-c123-4671-90d8-8aec3ebfcee8,variant2,Q2: Crestview is polluted.,T,T,1
+d8878cd5-c123-4671-90d8-8aec3ebfcee8,variant2,Q3: Crestview is regulated.,F,T,0
+f21fdd33-0f34-49a8-aa0d-00e5450b9b20,variant2,Q1: Frank is cold.,T,T,1
+f21fdd33-0f34-49a8-aa0d-00e5450b9b20,variant2,Q2: Frank is rough.,T,T,1
+f21fdd33-0f34-49a8-aa0d-00e5450b9b20,variant2,Q3: Frank is young.,T,T,1
+f21fdd33-0f34-49a8-aa0d-00e5450b9b20,variant2,Q4: Frank is nice.,F,T,0
+e75b0263-f9a7-402c-838e-34788e938495,variant2,Q1: Stonegate is industrial.,T,T,1
+e75b0263-f9a7-402c-838e-34788e938495,variant2,Q2: Stonegate is polluted.,T,T,1
+e75b0263-f9a7-402c-838e-34788e938495,variant2,Q3: Stonegate is regulated.,F,T,0
+4ba45db0-8790-4dd3-98c6-1f18da9467a6,variant2,Q1: Cedarvale is industrial.,T,T,1
+4ba45db0-8790-4dd3-98c6-1f18da9467a6,variant2,Q2: Cedarvale is polluted.,T,T,1
+4ba45db0-8790-4dd3-98c6-1f18da9467a6,variant2,Q3: Cedarvale is regulated.,F,T,0
+5089ef9c-f79f-4ec5-9b89-b5dee75a8066,variant2,Q1: Cedarvale is industrial.,T,T,1
+5089ef9c-f79f-4ec5-9b89-b5dee75a8066,variant2,Q2: Cedarvale is polluted.,T,T,1
+5089ef9c-f79f-4ec5-9b89-b5dee75a8066,variant2,Q3: Cedarvale is regulated.,F,T,0
+70814a08-fa6f-4895-b12e-e0a4faa158c4,variant2,Q1: Pinecrest is industrial.,T,T,1
+70814a08-fa6f-4895-b12e-e0a4faa158c4,variant2,Q2: Pinecrest is polluted.,T,T,1
+70814a08-fa6f-4895-b12e-e0a4faa158c4,variant2,Q3: Pinecrest is regulated.,F,T,0
+2c01eb0b-eda5-4359-a235-3e7953beb9c3,variant2,Q1: the sage is blooming.,T,T,1
+2c01eb0b-eda5-4359-a235-3e7953beb9c3,variant2,Q2: the sage is fruitful.,F,F,1
+2c01eb0b-eda5-4359-a235-3e7953beb9c3,variant2,Q3: the sage is medicinal.,F,F,1
+7a60ab47-7918-4540-9fe5-3c06eeb84065,variant2,Q1: Oscar is cold.,T,T,1
+7a60ab47-7918-4540-9fe5-3c06eeb84065,variant2,Q2: Oscar is rough.,T,T,1
+7a60ab47-7918-4540-9fe5-3c06eeb84065,variant2,Q3: Oscar is young.,F,F,1
+7a60ab47-7918-4540-9fe5-3c06eeb84065,variant2,Q4: Oscar is nice.,F,F,1
+a5ff7a2d-da29-4d34-acee-d9a08303cfc6,variant2,Q1: Elmwood is industrial.,T,T,1
+a5ff7a2d-da29-4d34-acee-d9a08303cfc6,variant2,Q2: Elmwood is polluted.,T,T,1
+a5ff7a2d-da29-4d34-acee-d9a08303cfc6,variant2,Q3: Elmwood is regulated.,F,T,0
+d8c5850e-c299-4830-8a66-e29a00dd5824,variant2,Q1: Oakwood is industrial.,T,T,1
+d8c5850e-c299-4830-8a66-e29a00dd5824,variant2,Q2: Oakwood is polluted.,T,T,1
+d8c5850e-c299-4830-8a66-e29a00dd5824,variant2,Q3: Oakwood is regulated.,F,T,0
+c6f29d92-1ac5-4646-842f-c8f8fd5baf44,variant2,Q1: Westlake is industrial.,T,T,1
+c6f29d92-1ac5-4646-842f-c8f8fd5baf44,variant2,Q2: Westlake is polluted.,T,T,1
+c6f29d92-1ac5-4646-842f-c8f8fd5baf44,variant2,Q3: Westlake is regulated.,F,T,0
+9d3bb5dd-d682-40b4-ac9d-6a063d1c3bc0,variant2,Q1: Brookhaven is industrial.,T,T,1
+9d3bb5dd-d682-40b4-ac9d-6a063d1c3bc0,variant2,Q2: Brookhaven is polluted.,F,F,1
+9d3bb5dd-d682-40b4-ac9d-6a063d1c3bc0,variant2,Q3: Brookhaven is regulated.,F,F,1
+d0301bb7-d14d-4244-a33b-92da992f70d0,variant2,Q1: the thyme is blooming.,T,T,1
+d0301bb7-d14d-4244-a33b-92da992f70d0,variant2,Q2: the thyme is fruitful.,T,T,1
+d0301bb7-d14d-4244-a33b-92da992f70d0,variant2,Q3: the thyme is medicinal.,F,T,0
+7ea6bdea-1e81-43f3-a972-59951e34cb62,variant2,Q1: Parker is studious.,T,T,1
+7ea6bdea-1e81-43f3-a972-59951e34cb62,variant2,Q2: Parker is skilled.,F,F,1
+7ea6bdea-1e81-43f3-a972-59951e34cb62,variant2,Q3: Parker is employed.,F,F,1
+412f46e5-f94b-4602-9779-1eee24cb3b70,variant2,Q1: the fox is predatory.,T,T,1
+412f46e5-f94b-4602-9779-1eee24cb3b70,variant2,Q2: the fox is fast.,T,T,1
+412f46e5-f94b-4602-9779-1eee24cb3b70,variant2,Q3: the fox is domesticated.,F,T,0
+ce0b826a-eb5a-4d36-b63d-b8e27d407c54,variant2,Q1: the rabbit is predatory.,T,T,1
+ce0b826a-eb5a-4d36-b63d-b8e27d407c54,variant2,Q2: the rabbit is fast.,F,F,1
+ce0b826a-eb5a-4d36-b63d-b8e27d407c54,variant2,Q3: the rabbit is domesticated.,F,F,1
+9bd3b2db-1b1d-434f-9675-d376e0627f49,variant2,Q1: the bear is predatory.,T,T,1
+9bd3b2db-1b1d-434f-9675-d376e0627f49,variant2,Q2: the bear is fast.,T,T,1
+9bd3b2db-1b1d-434f-9675-d376e0627f49,variant2,Q3: the bear is domesticated.,F,T,0
+ea74f48a-386c-4590-9742-efb6f1da785e,variant2,Q1: the moose is predatory.,T,T,1
+ea74f48a-386c-4590-9742-efb6f1da785e,variant2,Q2: the moose is fast.,T,T,1
+ea74f48a-386c-4590-9742-efb6f1da785e,variant2,Q3: the moose is domesticated.,F,T,0
+fd11f4b0-fa98-4a11-8b32-489f77da78ca,variant2,Q1: Mike is cold.,T,T,1
+fd11f4b0-fa98-4a11-8b32-489f77da78ca,variant2,Q2: Mike is rough.,T,T,1
+fd11f4b0-fa98-4a11-8b32-489f77da78ca,variant2,Q3: Mike is young.,F,F,1
+fd11f4b0-fa98-4a11-8b32-489f77da78ca,variant2,Q4: Mike is nice.,F,F,1
+e1e6fcfb-5757-491f-8910-7e881b22c344,variant2,Q1: the bamboo is blooming.,T,T,1
+e1e6fcfb-5757-491f-8910-7e881b22c344,variant2,Q2: the bamboo is fruitful.,T,T,1
+e1e6fcfb-5757-491f-8910-7e881b22c344,variant2,Q3: the bamboo is medicinal.,F,T,0
+2a0b479d-df24-4301-ac7e-7b3ce72e0acb,variant2,Q1: the finch is predatory.,T,T,1
+2a0b479d-df24-4301-ac7e-7b3ce72e0acb,variant2,Q2: the finch is fast.,F,F,1
+2a0b479d-df24-4301-ac7e-7b3ce72e0acb,variant2,Q3: the finch is domesticated.,F,F,1
+c8603ee4-d40f-4527-a13d-279a8d00641a,variant2,Q1: Westlake is industrial.,T,T,1
+c8603ee4-d40f-4527-a13d-279a8d00641a,variant2,Q2: Westlake is polluted.,T,T,1
+c8603ee4-d40f-4527-a13d-279a8d00641a,variant2,Q3: Westlake is regulated.,F,T,0
+83c1e32f-a66a-48cd-a186-614fa1489270,variant2,Q1: the fox is predatory.,T,T,1
+83c1e32f-a66a-48cd-a186-614fa1489270,variant2,Q2: the fox is fast.,T,T,1
+83c1e32f-a66a-48cd-a186-614fa1489270,variant2,Q3: the fox is domesticated.,F,F,1
+53ae38b2-e186-4375-bed4-abac782c9435,variant2,Q1: Noel is studious.,T,T,1
+53ae38b2-e186-4375-bed4-abac782c9435,variant2,Q2: Noel is skilled.,T,T,1
+53ae38b2-e186-4375-bed4-abac782c9435,variant2,Q3: Noel is employed.,F,T,0
+36c9eb38-1612-4735-85f1-92bd136359b8,variant2,Q1: Springfield is industrial.,T,T,1
+36c9eb38-1612-4735-85f1-92bd136359b8,variant2,Q2: Springfield is polluted.,T,T,1
+36c9eb38-1612-4735-85f1-92bd136359b8,variant2,Q3: Springfield is regulated.,F,T,0
+00066092-5861-46ff-adcf-8f7aef39fcfe,variant2,Q1: Crestview is industrial.,T,T,1
+00066092-5861-46ff-adcf-8f7aef39fcfe,variant2,Q2: Crestview is polluted.,T,T,1
+00066092-5861-46ff-adcf-8f7aef39fcfe,variant2,Q3: Crestview is regulated.,F,T,0
+a0f872e4-8430-48e6-8b47-d3f673d42b55,variant2,Q1: Springfield is industrial.,T,T,1
+a0f872e4-8430-48e6-8b47-d3f673d42b55,variant2,Q2: Springfield is polluted.,T,T,1
+a0f872e4-8430-48e6-8b47-d3f673d42b55,variant2,Q3: Springfield is regulated.,F,T,0
+aea046a8-68ae-459c-b269-a41d88540f06,variant2,Q1: the crane is predatory.,T,T,1
+aea046a8-68ae-459c-b269-a41d88540f06,variant2,Q2: the crane is fast.,T,T,1
+aea046a8-68ae-459c-b269-a41d88540f06,variant2,Q3: the crane is domesticated.,F,F,1
+867dc389-d1ce-42e0-bd5d-33545a043964,variant2,Q1: Willowbrook is industrial.,T,T,1
+867dc389-d1ce-42e0-bd5d-33545a043964,variant2,Q2: Willowbrook is polluted.,F,F,1
+867dc389-d1ce-42e0-bd5d-33545a043964,variant2,Q3: Willowbrook is regulated.,F,F,1
+e165937a-83fe-4015-8139-8342e75fc06f,variant2,Q1: Umber is studious.,T,T,1
+e165937a-83fe-4015-8139-8342e75fc06f,variant2,Q2: Umber is skilled.,T,T,1
+e165937a-83fe-4015-8139-8342e75fc06f,variant2,Q3: Umber is employed.,F,T,0
+605185ce-2a7c-4f6d-9fdd-04dc5e54cd79,variant2,Q1: the clover is blooming.,T,T,1
+605185ce-2a7c-4f6d-9fdd-04dc5e54cd79,variant2,Q2: the clover is fruitful.,T,T,1
+605185ce-2a7c-4f6d-9fdd-04dc5e54cd79,variant2,Q3: the clover is medicinal.,F,T,0
+d43f4255-1a84-49b1-96b1-882002990d57,variant2,Q1: the otter is predatory.,T,T,1
+d43f4255-1a84-49b1-96b1-882002990d57,variant2,Q2: the otter is fast.,T,T,1
+d43f4255-1a84-49b1-96b1-882002990d57,variant2,Q3: the otter is domesticated.,F,F,1
+5dd44926-73e5-4f8d-a7fd-7bd3abf6bc38,variant2,Q1: the bison is predatory.,T,T,1
+5dd44926-73e5-4f8d-a7fd-7bd3abf6bc38,variant2,Q2: the bison is fast.,T,T,1
+5dd44926-73e5-4f8d-a7fd-7bd3abf6bc38,variant2,Q3: the bison is domesticated.,F,T,0
+8876bc23-539c-45cf-b4ff-69b3e50280e2,variant2,Q1: Westlake is industrial.,T,T,1
+8876bc23-539c-45cf-b4ff-69b3e50280e2,variant2,Q2: Westlake is polluted.,T,T,1
+8876bc23-539c-45cf-b4ff-69b3e50280e2,variant2,Q3: Westlake is regulated.,F,T,0
+5bfc2f11-0ae7-4852-8e70-1581fd4ba67e,variant2,Q1: Anne is cold.,T,T,1
+5bfc2f11-0ae7-4852-8e70-1581fd4ba67e,variant2,Q2: Anne is rough.,T,T,1
+5bfc2f11-0ae7-4852-8e70-1581fd4ba67e,variant2,Q3: Anne is young.,F,F,1
+5bfc2f11-0ae7-4852-8e70-1581fd4ba67e,variant2,Q4: Anne is nice.,F,F,1
+2c3b74b6-b4c4-4ed2-9b08-8025a8d22f71,variant2,Q1: the badger is predatory.,T,T,1
+2c3b74b6-b4c4-4ed2-9b08-8025a8d22f71,variant2,Q2: the badger is fast.,F,F,1
+2c3b74b6-b4c4-4ed2-9b08-8025a8d22f71,variant2,Q3: the badger is domesticated.,F,F,1
+e92d0a63-aa96-49dd-9010-7cc13b60c167,variant2,Q1: Grace is cold.,T,T,1
+e92d0a63-aa96-49dd-9010-7cc13b60c167,variant2,Q2: Grace is rough.,T,T,1
+e92d0a63-aa96-49dd-9010-7cc13b60c167,variant2,Q3: Grace is young.,T,T,1
+e92d0a63-aa96-49dd-9010-7cc13b60c167,variant2,Q4: Grace is nice.,F,T,0
+7225baeb-cf0f-4d34-99d9-1330178984f3,variant2,Q1: Uma is cold.,T,T,1
+7225baeb-cf0f-4d34-99d9-1330178984f3,variant2,Q2: Uma is rough.,T,T,1
+7225baeb-cf0f-4d34-99d9-1330178984f3,variant2,Q3: Uma is young.,T,T,1
+7225baeb-cf0f-4d34-99d9-1330178984f3,variant2,Q4: Uma is nice.,F,T,0
+602f94a4-103e-4839-a2e3-70253e317608,variant2,Q1: the sage is blooming.,T,T,1
+602f94a4-103e-4839-a2e3-70253e317608,variant2,Q2: the sage is fruitful.,T,T,1
+602f94a4-103e-4839-a2e3-70253e317608,variant2,Q3: the sage is medicinal.,F,T,0
+8ad08b90-5c1a-47d1-8b84-0411b53a31e5,variant2,Q1: Sage is studious.,T,T,1
+8ad08b90-5c1a-47d1-8b84-0411b53a31e5,variant2,Q2: Sage is skilled.,T,T,1
+8ad08b90-5c1a-47d1-8b84-0411b53a31e5,variant2,Q3: Sage is employed.,F,T,0
+28d21837-be0b-4ee9-8ebf-ab1e0b5fe61f,variant2,Q1: the gecko is predatory.,T,T,1
+28d21837-be0b-4ee9-8ebf-ab1e0b5fe61f,variant2,Q2: the gecko is fast.,T,T,1
+28d21837-be0b-4ee9-8ebf-ab1e0b5fe61f,variant2,Q3: the gecko is domesticated.,F,T,0
+fe5cd10a-424f-487e-ae0b-83d00541a4e8,variant2,Q1: Tina is cold.,T,T,1
+fe5cd10a-424f-487e-ae0b-83d00541a4e8,variant2,Q2: Tina is rough.,F,F,1
+fe5cd10a-424f-487e-ae0b-83d00541a4e8,variant2,Q3: Tina is young.,F,F,1
+fe5cd10a-424f-487e-ae0b-83d00541a4e8,variant2,Q4: Tina is nice.,F,F,1
+131ba92e-52d7-450d-bc75-2bd7ecf7f7c7,variant2,Q1: Uma is cold.,T,T,1
+131ba92e-52d7-450d-bc75-2bd7ecf7f7c7,variant2,Q2: Uma is rough.,T,T,1
+131ba92e-52d7-450d-bc75-2bd7ecf7f7c7,variant2,Q3: Uma is young.,T,T,1
+131ba92e-52d7-450d-bc75-2bd7ecf7f7c7,variant2,Q4: Uma is nice.,F,T,0
+bf1c412b-6052-4131-a80d-b58c5f075a21,variant2,Q1: Drew is studious.,T,T,1
+bf1c412b-6052-4131-a80d-b58c5f075a21,variant2,Q2: Drew is skilled.,T,T,1
+bf1c412b-6052-4131-a80d-b58c5f075a21,variant2,Q3: Drew is employed.,F,T,0
+60ae69e2-7c3e-4ff7-9368-ff13d2c31bd0,variant2,Q1: the basil is blooming.,T,T,1
+60ae69e2-7c3e-4ff7-9368-ff13d2c31bd0,variant2,Q2: the basil is fruitful.,T,T,1
+60ae69e2-7c3e-4ff7-9368-ff13d2c31bd0,variant2,Q3: the basil is medicinal.,F,T,0
+6100c745-b62f-4299-97f0-d837e4b042ac,variant2,Q1: Drew is studious.,T,T,1
+6100c745-b62f-4299-97f0-d837e4b042ac,variant2,Q2: Drew is skilled.,T,T,1
+6100c745-b62f-4299-97f0-d837e4b042ac,variant2,Q3: Drew is employed.,F,T,0
+b60f54e6-905d-4431-a005-6be4b24e2db1,variant2,Q1: the ivy is blooming.,T,T,1
+b60f54e6-905d-4431-a005-6be4b24e2db1,variant2,Q2: the ivy is fruitful.,T,T,1
+b60f54e6-905d-4431-a005-6be4b24e2db1,variant2,Q3: the ivy is medicinal.,F,T,0
+3345e435-68fb-41c8-8dc8-bbb27a700a4c,variant2,Q1: the hawk is predatory.,T,T,1
+3345e435-68fb-41c8-8dc8-bbb27a700a4c,variant2,Q2: the hawk is fast.,T,T,1
+3345e435-68fb-41c8-8dc8-bbb27a700a4c,variant2,Q3: the hawk is domesticated.,F,T,0
+8068b942-b50b-41be-890e-6d4908b82024,variant2,Q1: Millford is industrial.,T,T,1
+8068b942-b50b-41be-890e-6d4908b82024,variant2,Q2: Millford is polluted.,F,F,1
+8068b942-b50b-41be-890e-6d4908b82024,variant2,Q3: Millford is regulated.,F,F,1
+069cefd8-6031-48b9-9bfb-db7f0b842424,variant2,Q1: Sage is studious.,T,T,1
+069cefd8-6031-48b9-9bfb-db7f0b842424,variant2,Q2: Sage is skilled.,T,T,1
+069cefd8-6031-48b9-9bfb-db7f0b842424,variant2,Q3: Sage is employed.,F,T,0
+b40b1087-d8b4-4795-b930-e0acec860363,variant2,Q1: the poppy is blooming.,T,T,1
+b40b1087-d8b4-4795-b930-e0acec860363,variant2,Q2: the poppy is fruitful.,T,T,1
+b40b1087-d8b4-4795-b930-e0acec860363,variant2,Q3: the poppy is medicinal.,F,F,1
+e96f3481-faf6-4915-a8b6-310ae475a8bd,variant2,Q1: the rosemary is blooming.,T,T,1
+e96f3481-faf6-4915-a8b6-310ae475a8bd,variant2,Q2: the rosemary is fruitful.,F,F,1
+e96f3481-faf6-4915-a8b6-310ae475a8bd,variant2,Q3: the rosemary is medicinal.,F,T,0
+ffbbe85a-6f00-4c64-8969-96fcbc463cc5,variant2,Q1: the aloe is blooming.,T,T,1
+ffbbe85a-6f00-4c64-8969-96fcbc463cc5,variant2,Q2: the aloe is fruitful.,T,T,1
+ffbbe85a-6f00-4c64-8969-96fcbc463cc5,variant2,Q3: the aloe is medicinal.,F,T,0
+ea3d331c-03a8-4831-be52-b1780b594981,variant2,Q1: Harper is studious.,T,T,1
+ea3d331c-03a8-4831-be52-b1780b594981,variant2,Q2: Harper is skilled.,T,T,1
+ea3d331c-03a8-4831-be52-b1780b594981,variant2,Q3: Harper is employed.,F,T,0
+5fb8eae5-1a5a-416a-861e-dc8a1adca06b,variant2,Q1: the bear is predatory.,T,T,1
+5fb8eae5-1a5a-416a-861e-dc8a1adca06b,variant2,Q2: the bear is fast.,F,F,1
+5fb8eae5-1a5a-416a-861e-dc8a1adca06b,variant2,Q3: the bear is domesticated.,F,F,1
+219c4e4c-ee74-478d-ad8f-38eaa0cc8280,variant2,Q1: Umber is studious.,T,T,1
+219c4e4c-ee74-478d-ad8f-38eaa0cc8280,variant2,Q2: Umber is skilled.,T,T,1
+219c4e4c-ee74-478d-ad8f-38eaa0cc8280,variant2,Q3: Umber is employed.,F,T,0
+563a8089-ef6b-470b-8632-f2214ee31b1e,variant2,Q1: Noel is studious.,T,T,1
+563a8089-ef6b-470b-8632-f2214ee31b1e,variant2,Q2: Noel is skilled.,F,F,1
+563a8089-ef6b-470b-8632-f2214ee31b1e,variant2,Q3: Noel is employed.,F,F,1
+e09218ee-e7c9-4774-a4c3-a307095dead3,variant2,Q1: Crestview is industrial.,T,T,1
+e09218ee-e7c9-4774-a4c3-a307095dead3,variant2,Q2: Crestview is polluted.,T,T,1
+e09218ee-e7c9-4774-a4c3-a307095dead3,variant2,Q3: Crestview is regulated.,F,T,0
+c96d1a90-b6d9-4a54-9802-8de6a3c5406a,variant2,Q1: Emma is cold.,T,T,1
+c96d1a90-b6d9-4a54-9802-8de6a3c5406a,variant2,Q2: Emma is rough.,T,T,1
+c96d1a90-b6d9-4a54-9802-8de6a3c5406a,variant2,Q3: Emma is young.,T,T,1
+c96d1a90-b6d9-4a54-9802-8de6a3c5406a,variant2,Q4: Emma is nice.,F,T,0
+906427d0-f413-4c78-89a1-2661da85c88a,variant2,Q1: Julia is cold.,T,T,1
+906427d0-f413-4c78-89a1-2661da85c88a,variant2,Q2: Julia is rough.,T,T,1
+906427d0-f413-4c78-89a1-2661da85c88a,variant2,Q3: Julia is young.,T,T,1
+906427d0-f413-4c78-89a1-2661da85c88a,variant2,Q4: Julia is nice.,F,T,0
+010e23e3-e672-4aa4-a65b-7299cabfc02b,variant2,Q1: Oscar is cold.,T,T,1
+010e23e3-e672-4aa4-a65b-7299cabfc02b,variant2,Q2: Oscar is rough.,F,F,1
+010e23e3-e672-4aa4-a65b-7299cabfc02b,variant2,Q3: Oscar is young.,F,F,1
+010e23e3-e672-4aa4-a65b-7299cabfc02b,variant2,Q4: Oscar is nice.,F,F,1
+a4e9575d-f578-4a08-8621-f4ab27f3b681,variant2,Q1: Riverdale is industrial.,T,T,1
+a4e9575d-f578-4a08-8621-f4ab27f3b681,variant2,Q2: Riverdale is polluted.,T,T,1
+a4e9575d-f578-4a08-8621-f4ab27f3b681,variant2,Q3: Riverdale is regulated.,F,T,0
+a3029186-2a45-4541-93ef-d70585106a3b,variant2,Q1: Eastport is industrial.,T,T,1
+a3029186-2a45-4541-93ef-d70585106a3b,variant2,Q2: Eastport is polluted.,T,T,1
+a3029186-2a45-4541-93ef-d70585106a3b,variant2,Q3: Eastport is regulated.,F,T,0
+90a20c14-98a1-423d-9f44-fc3d50e0ae81,variant2,Q1: Drew is studious.,T,T,1
+90a20c14-98a1-423d-9f44-fc3d50e0ae81,variant2,Q2: Drew is skilled.,T,T,1
+90a20c14-98a1-423d-9f44-fc3d50e0ae81,variant2,Q3: Drew is employed.,F,T,0
+c3634830-0517-40fd-9b43-7a60971f971c,variant2,Q1: Quinn is studious.,T,T,1
+c3634830-0517-40fd-9b43-7a60971f971c,variant2,Q2: Quinn is skilled.,F,F,1
+c3634830-0517-40fd-9b43-7a60971f971c,variant2,Q3: Quinn is employed.,F,F,1
+a8bffc23-f3d6-4c40-adda-aca886a33547,variant2,Q1: the holly is blooming.,T,T,1
+a8bffc23-f3d6-4c40-adda-aca886a33547,variant2,Q2: the holly is fruitful.,F,F,1
+a8bffc23-f3d6-4c40-adda-aca886a33547,variant2,Q3: the holly is medicinal.,F,F,1
+f79e8911-1f1f-413d-a9b7-1f9bb96bed14,variant2,Q1: the clover is blooming.,T,T,1
+f79e8911-1f1f-413d-a9b7-1f9bb96bed14,variant2,Q2: the clover is fruitful.,T,T,1
+f79e8911-1f1f-413d-a9b7-1f9bb96bed14,variant2,Q3: the clover is medicinal.,F,T,0
+c81b64a3-a0cb-44ae-b0aa-7b3e7e9ad0f4,variant2,Q1: Alex is studious.,T,T,1
+c81b64a3-a0cb-44ae-b0aa-7b3e7e9ad0f4,variant2,Q2: Alex is skilled.,T,T,1
+c81b64a3-a0cb-44ae-b0aa-7b3e7e9ad0f4,variant2,Q3: Alex is employed.,F,T,0
+16e9bf50-b012-4fd6-9b78-da0163ce9d1d,variant2,Q1: Nancy is cold.,T,T,1
+16e9bf50-b012-4fd6-9b78-da0163ce9d1d,variant2,Q2: Nancy is rough.,T,T,1
+16e9bf50-b012-4fd6-9b78-da0163ce9d1d,variant2,Q3: Nancy is young.,T,T,1
+16e9bf50-b012-4fd6-9b78-da0163ce9d1d,variant2,Q4: Nancy is nice.,F,T,0
+fd2190be-3aea-4c38-9ce9-82b65a0a4d4a,variant2,Q1: Rachel is cold.,T,T,1
+fd2190be-3aea-4c38-9ce9-82b65a0a4d4a,variant2,Q2: Rachel is rough.,T,T,1
+fd2190be-3aea-4c38-9ce9-82b65a0a4d4a,variant2,Q3: Rachel is young.,T,T,1
+fd2190be-3aea-4c38-9ce9-82b65a0a4d4a,variant2,Q4: Rachel is nice.,F,T,0
+129b7779-b27d-4169-886c-ff2e33bec029,variant2,Q1: Tina is cold.,T,T,1
+129b7779-b27d-4169-886c-ff2e33bec029,variant2,Q2: Tina is rough.,T,T,1
+129b7779-b27d-4169-886c-ff2e33bec029,variant2,Q3: Tina is young.,T,T,1
+129b7779-b27d-4169-886c-ff2e33bec029,variant2,Q4: Tina is nice.,F,T,0
+c39d615c-ec4b-472d-af38-d20088e1b4ef,variant2,Q1: the daisy is blooming.,T,T,1
+c39d615c-ec4b-472d-af38-d20088e1b4ef,variant2,Q2: the daisy is fruitful.,T,T,1
+c39d615c-ec4b-472d-af38-d20088e1b4ef,variant2,Q3: the daisy is medicinal.,F,T,0
+d3bf28cc-c59b-4404-9dbe-32d48633e9f0,variant2,Q1: Kevin is cold.,T,T,1
+d3bf28cc-c59b-4404-9dbe-32d48633e9f0,variant2,Q2: Kevin is rough.,F,F,1
+d3bf28cc-c59b-4404-9dbe-32d48633e9f0,variant2,Q3: Kevin is young.,F,F,1
+d3bf28cc-c59b-4404-9dbe-32d48633e9f0,variant2,Q4: Kevin is nice.,F,F,1
+e85a2cf8-7e4b-4efa-bfc5-4852aaf320b8,variant2,Q1: Umber is studious.,T,T,1
+e85a2cf8-7e4b-4efa-bfc5-4852aaf320b8,variant2,Q2: Umber is skilled.,T,T,1
+e85a2cf8-7e4b-4efa-bfc5-4852aaf320b8,variant2,Q3: Umber is employed.,F,T,0
+527a0268-a5ba-4377-90f9-f2586e7efa99,variant2,Q1: Casey is studious.,T,T,1
+527a0268-a5ba-4377-90f9-f2586e7efa99,variant2,Q2: Casey is skilled.,T,T,1
+527a0268-a5ba-4377-90f9-f2586e7efa99,variant2,Q3: Casey is employed.,F,T,0
+9573889e-38ef-4fdc-91ca-d09763d89de9,variant2,Q1: Tina is cold.,T,T,1
+9573889e-38ef-4fdc-91ca-d09763d89de9,variant2,Q2: Tina is rough.,F,F,1
+9573889e-38ef-4fdc-91ca-d09763d89de9,variant2,Q3: Tina is young.,F,F,1
+9573889e-38ef-4fdc-91ca-d09763d89de9,variant2,Q4: Tina is nice.,F,F,1
+995f552c-4163-440f-8c80-f06bebe3bedc,variant2,Q1: Steve is cold.,T,T,1
+995f552c-4163-440f-8c80-f06bebe3bedc,variant2,Q2: Steve is rough.,T,T,1
+995f552c-4163-440f-8c80-f06bebe3bedc,variant2,Q3: Steve is young.,T,T,1
+995f552c-4163-440f-8c80-f06bebe3bedc,variant2,Q4: Steve is nice.,F,T,0
+f1351a64-6124-4c6a-bbc1-e0075122c521,variant2,Q1: Midvale is industrial.,T,T,1
+f1351a64-6124-4c6a-bbc1-e0075122c521,variant2,Q2: Midvale is polluted.,T,T,1
+f1351a64-6124-4c6a-bbc1-e0075122c521,variant2,Q3: Midvale is regulated.,F,T,0
+c08b33b7-f230-47aa-8d17-4a5f3558651b,variant2,Q1: the lion is predatory.,T,T,1
+c08b33b7-f230-47aa-8d17-4a5f3558651b,variant2,Q2: the lion is fast.,T,T,1
+c08b33b7-f230-47aa-8d17-4a5f3558651b,variant2,Q3: the lion is domesticated.,F,T,0
+fd9a1639-466e-4aae-8ad0-2e2a3f6bc64c,variant2,Q1: Emma is cold.,T,T,1
+fd9a1639-466e-4aae-8ad0-2e2a3f6bc64c,variant2,Q2: Emma is rough.,T,T,1
+fd9a1639-466e-4aae-8ad0-2e2a3f6bc64c,variant2,Q3: Emma is young.,F,F,1
+fd9a1639-466e-4aae-8ad0-2e2a3f6bc64c,variant2,Q4: Emma is nice.,F,F,1
+3a73246b-490f-45d3-ad65-fcd18c6d7c32,variant2,Q1: the raven is predatory.,T,T,1
+3a73246b-490f-45d3-ad65-fcd18c6d7c32,variant2,Q2: the raven is fast.,F,F,1
+3a73246b-490f-45d3-ad65-fcd18c6d7c32,variant2,Q3: the raven is domesticated.,F,F,1

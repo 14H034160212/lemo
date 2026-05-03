@@ -1,0 +1,6 @@
+split,correct,total,accuracy
+base,464,800,0.5800
+variant2,288,800,0.3600
+variant3,351,800,0.4387
+hard_mixed,435,800,0.5437
+variant4_equiv_double_negation,200,800,0.2500

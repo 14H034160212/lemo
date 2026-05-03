@@ -1,0 +1,801 @@
+group_id,type,question,ground_truth,prediction,correct
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_positive,Q1: Grace is cold.,T,F,0
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_positive,Q2: Grace is rough.,T,F,0
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_positive,Q3: Grace is young.,T,F,0
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_positive,Q4: Grace is nice.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_negative,Q1: Grace is not cold.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_negative,Q2: Grace is not rough.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_negative,Q3: Grace is happy.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,base_negative,Q4: Grace is green.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,hard_mixed,Q1: Grace is cold.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,hard_mixed,Q2: Grace is rough.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,hard_mixed,Q3: Grace is young.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,hard_mixed,Q4: Grace is nice.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_positive,Q1: Oscar is cold.,T,F,0
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_positive,Q2: Oscar is rough.,T,F,0
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_positive,Q3: Oscar is young.,T,F,0
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_positive,Q4: Oscar is nice.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_negative,Q1: Oscar is not cold.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_negative,Q2: Oscar is not rough.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_negative,Q3: Oscar is tall.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,base_negative,Q4: Oscar is blue.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,hard_mixed,Q1: Oscar is cold.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,hard_mixed,Q2: Oscar is rough.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,hard_mixed,Q3: Oscar is young.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,hard_mixed,Q4: Oscar is nice.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,base_positive,Q1: Oscar is cold.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,base_positive,Q2: Oscar is rough.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,base_positive,Q3: Oscar is young.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,base_positive,Q4: Oscar is nice.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,base_negative,Q1: Oscar is not cold.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,base_negative,Q2: Oscar is not rough.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,base_negative,Q3: Oscar is brave.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,base_negative,Q4: Oscar is purple.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,hard_mixed,Q1: Oscar is cold.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,hard_mixed,Q2: Oscar is rough.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,hard_mixed,Q3: Oscar is young.,T,F,0
+d8649c05-c553-47ff-b398-d95357de0742,hard_mixed,Q4: Oscar is nice.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,base_positive,Q1: Ivan is cold.,T,F,0
+aff912c6-4d50-462a-9dec-1c8299956120,base_positive,Q2: Ivan is rough.,T,F,0
+aff912c6-4d50-462a-9dec-1c8299956120,base_positive,Q3: Ivan is young.,T,F,0
+aff912c6-4d50-462a-9dec-1c8299956120,base_positive,Q4: Ivan is nice.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,base_negative,Q1: Ivan is not cold.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,base_negative,Q2: Ivan is not rough.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,base_negative,Q3: Ivan is funny.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,base_negative,Q4: Ivan is yellow.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,hard_mixed,Q1: Ivan is cold.,T,F,0
+aff912c6-4d50-462a-9dec-1c8299956120,hard_mixed,Q2: Ivan is rough.,T,F,0
+aff912c6-4d50-462a-9dec-1c8299956120,hard_mixed,Q3: Ivan is young.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,hard_mixed,Q4: Ivan is nice.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_positive,Q1: Frank is cold.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_positive,Q2: Frank is rough.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_positive,Q3: Frank is young.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_positive,Q4: Frank is nice.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_negative,Q1: Frank is not cold.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_negative,Q2: Frank is not rough.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_negative,Q3: Frank is tall.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,base_negative,Q4: Frank is green.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,hard_mixed,Q1: Frank is cold.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,hard_mixed,Q2: Frank is rough.,T,F,0
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,hard_mixed,Q3: Frank is young.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,hard_mixed,Q4: Frank is nice.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_positive,Q1: Nancy is cold.,T,F,0
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_positive,Q2: Nancy is rough.,T,F,0
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_positive,Q3: Nancy is young.,T,F,0
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_positive,Q4: Nancy is nice.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_negative,Q1: Nancy is not cold.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_negative,Q2: Nancy is not rough.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_negative,Q3: Nancy is sad.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,base_negative,Q4: Nancy is red.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,hard_mixed,Q1: Nancy is cold.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,hard_mixed,Q2: Nancy is rough.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,hard_mixed,Q3: Nancy is young.,T,F,0
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,hard_mixed,Q4: Nancy is nice.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_positive,Q1: Bob is cold.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_positive,Q2: Bob is rough.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_positive,Q3: Bob is young.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_positive,Q4: Bob is nice.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_negative,Q1: Bob is not cold.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_negative,Q2: Bob is not rough.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_negative,Q3: Bob is sad.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,base_negative,Q4: Bob is blue.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,hard_mixed,Q1: Bob is cold.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,hard_mixed,Q2: Bob is rough.,T,F,0
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,hard_mixed,Q3: Bob is young.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,hard_mixed,Q4: Bob is nice.,F,T,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_positive,Q1: Ivan is cold.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_positive,Q2: Ivan is rough.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_positive,Q3: Ivan is young.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_positive,Q4: Ivan is nice.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_negative,Q1: Ivan is not cold.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_negative,Q2: Ivan is not rough.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_negative,Q3: Ivan is tall.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,base_negative,Q4: Ivan is orange.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,hard_mixed,Q1: Ivan is cold.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,hard_mixed,Q2: Ivan is rough.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,hard_mixed,Q3: Ivan is young.,T,F,0
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,hard_mixed,Q4: Ivan is nice.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,base_positive,Q1: Helen is cold.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,base_positive,Q2: Helen is rough.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,base_positive,Q3: Helen is young.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,base_positive,Q4: Helen is nice.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,base_negative,Q1: Helen is not cold.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,base_negative,Q2: Helen is not rough.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,base_negative,Q3: Helen is short.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,base_negative,Q4: Helen is red.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,hard_mixed,Q1: Helen is cold.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,hard_mixed,Q2: Helen is rough.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,hard_mixed,Q3: Helen is young.,T,F,0
+edd22152-b450-472c-a569-9495c8de5d07,hard_mixed,Q4: Helen is nice.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_positive,Q1: David is cold.,T,F,0
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_positive,Q2: David is rough.,T,F,0
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_positive,Q3: David is young.,T,F,0
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_positive,Q4: David is nice.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_negative,Q1: David is not cold.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_negative,Q2: David is not rough.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_negative,Q3: David is brave.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,base_negative,Q4: David is yellow.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,hard_mixed,Q1: David is cold.,T,F,0
+7991b5a4-b066-4161-a751-45d320a6a3d9,hard_mixed,Q2: David is rough.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,hard_mixed,Q3: David is young.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,hard_mixed,Q4: David is nice.,T,T,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_positive,Q1: Kevin is cold.,T,F,0
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_positive,Q2: Kevin is rough.,T,F,0
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_positive,Q3: Kevin is young.,T,F,0
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_positive,Q4: Kevin is nice.,T,T,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_negative,Q1: Kevin is not cold.,F,F,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_negative,Q2: Kevin is not rough.,F,F,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_negative,Q3: Kevin is short.,F,F,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,base_negative,Q4: Kevin is blue.,F,F,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,hard_mixed,Q1: Kevin is cold.,F,F,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,hard_mixed,Q2: Kevin is rough.,T,T,1
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,hard_mixed,Q3: Kevin is young.,T,F,0
+0b7eacdc-d6d2-4f60-ae47-afb5e755f2f9,hard_mixed,Q4: Kevin is nice.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_positive,Q1: Nancy is cold.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_positive,Q2: Nancy is rough.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_positive,Q3: Nancy is young.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_positive,Q4: Nancy is nice.,T,T,1
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_negative,Q1: Nancy is not cold.,F,F,1
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_negative,Q2: Nancy is not rough.,F,F,1
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_negative,Q3: Nancy is short.,F,F,1
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,base_negative,Q4: Nancy is blue.,F,F,1
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,hard_mixed,Q1: Nancy is cold.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,hard_mixed,Q2: Nancy is rough.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,hard_mixed,Q3: Nancy is young.,T,F,0
+2c89f12d-44bb-4ece-aad3-7be60a791ce4,hard_mixed,Q4: Nancy is nice.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_positive,Q1: Kevin is cold.,T,F,0
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_positive,Q2: Kevin is rough.,T,F,0
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_positive,Q3: Kevin is young.,T,F,0
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_positive,Q4: Kevin is nice.,T,T,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_negative,Q1: Kevin is not cold.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_negative,Q2: Kevin is not rough.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_negative,Q3: Kevin is happy.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,base_negative,Q4: Kevin is purple.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,hard_mixed,Q1: Kevin is cold.,T,T,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,hard_mixed,Q2: Kevin is rough.,F,F,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,hard_mixed,Q3: Kevin is young.,T,T,1
+4ecfeef8-249c-4a2d-891c-d045ee5e0d31,hard_mixed,Q4: Kevin is nice.,T,T,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_positive,Q1: David is cold.,T,F,0
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_positive,Q2: David is rough.,T,F,0
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_positive,Q3: David is young.,T,F,0
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_positive,Q4: David is nice.,T,T,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_negative,Q1: David is not cold.,F,F,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_negative,Q2: David is not rough.,F,F,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_negative,Q3: David is kind.,F,F,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,base_negative,Q4: David is purple.,F,F,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,hard_mixed,Q1: David is cold.,T,F,0
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,hard_mixed,Q2: David is rough.,F,F,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,hard_mixed,Q3: David is young.,T,T,1
+0d763f7f-7486-4daf-b1f6-2bb1a8b75d69,hard_mixed,Q4: David is nice.,T,T,1
+5814363b-fa86-482b-80c6-49972f65f124,base_positive,Q1: Ivan is cold.,T,F,0
+5814363b-fa86-482b-80c6-49972f65f124,base_positive,Q2: Ivan is rough.,T,F,0
+5814363b-fa86-482b-80c6-49972f65f124,base_positive,Q3: Ivan is young.,T,F,0
+5814363b-fa86-482b-80c6-49972f65f124,base_positive,Q4: Ivan is nice.,T,T,1
+5814363b-fa86-482b-80c6-49972f65f124,base_negative,Q1: Ivan is not cold.,F,F,1
+5814363b-fa86-482b-80c6-49972f65f124,base_negative,Q2: Ivan is not rough.,F,F,1
+5814363b-fa86-482b-80c6-49972f65f124,base_negative,Q3: Ivan is funny.,F,F,1
+5814363b-fa86-482b-80c6-49972f65f124,base_negative,Q4: Ivan is green.,F,F,1
+5814363b-fa86-482b-80c6-49972f65f124,hard_mixed,Q1: Ivan is cold.,T,T,1
+5814363b-fa86-482b-80c6-49972f65f124,hard_mixed,Q2: Ivan is rough.,F,F,1
+5814363b-fa86-482b-80c6-49972f65f124,hard_mixed,Q3: Ivan is young.,T,T,1
+5814363b-fa86-482b-80c6-49972f65f124,hard_mixed,Q4: Ivan is nice.,T,T,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_positive,Q1: Claire is cold.,T,F,0
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_positive,Q2: Claire is rough.,T,F,0
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_positive,Q3: Claire is young.,T,F,0
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_positive,Q4: Claire is nice.,T,T,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_negative,Q1: Claire is not cold.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_negative,Q2: Claire is not rough.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_negative,Q3: Claire is happy.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,base_negative,Q4: Claire is orange.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,hard_mixed,Q1: Claire is cold.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,hard_mixed,Q2: Claire is rough.,F,F,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,hard_mixed,Q3: Claire is young.,T,T,1
+6d5ff1da-60af-42a5-a407-64fd9889c234,hard_mixed,Q4: Claire is nice.,T,T,1
+46fff14a-13f6-4bab-86d4-31d03b427182,base_positive,Q1: Helen is cold.,T,F,0
+46fff14a-13f6-4bab-86d4-31d03b427182,base_positive,Q2: Helen is rough.,T,F,0
+46fff14a-13f6-4bab-86d4-31d03b427182,base_positive,Q3: Helen is young.,T,F,0
+46fff14a-13f6-4bab-86d4-31d03b427182,base_positive,Q4: Helen is nice.,T,T,1
+46fff14a-13f6-4bab-86d4-31d03b427182,base_negative,Q1: Helen is not cold.,F,F,1
+46fff14a-13f6-4bab-86d4-31d03b427182,base_negative,Q2: Helen is not rough.,F,F,1
+46fff14a-13f6-4bab-86d4-31d03b427182,base_negative,Q3: Helen is short.,F,F,1
+46fff14a-13f6-4bab-86d4-31d03b427182,base_negative,Q4: Helen is yellow.,F,F,1
+46fff14a-13f6-4bab-86d4-31d03b427182,hard_mixed,Q1: Helen is cold.,T,F,0
+46fff14a-13f6-4bab-86d4-31d03b427182,hard_mixed,Q2: Helen is rough.,T,F,0
+46fff14a-13f6-4bab-86d4-31d03b427182,hard_mixed,Q3: Helen is young.,F,F,1
+46fff14a-13f6-4bab-86d4-31d03b427182,hard_mixed,Q4: Helen is nice.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,base_positive,Q1: Julia is cold.,T,F,0
+182b4b75-e837-4600-989e-6126da4d9e41,base_positive,Q2: Julia is rough.,T,F,0
+182b4b75-e837-4600-989e-6126da4d9e41,base_positive,Q3: Julia is young.,T,F,0
+182b4b75-e837-4600-989e-6126da4d9e41,base_positive,Q4: Julia is nice.,T,T,1
+182b4b75-e837-4600-989e-6126da4d9e41,base_negative,Q1: Julia is not cold.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,base_negative,Q2: Julia is not rough.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,base_negative,Q3: Julia is funny.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,base_negative,Q4: Julia is yellow.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,hard_mixed,Q1: Julia is cold.,F,F,1
+182b4b75-e837-4600-989e-6126da4d9e41,hard_mixed,Q2: Julia is rough.,T,T,1
+182b4b75-e837-4600-989e-6126da4d9e41,hard_mixed,Q3: Julia is young.,T,F,0
+182b4b75-e837-4600-989e-6126da4d9e41,hard_mixed,Q4: Julia is nice.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_positive,Q1: Oscar is cold.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_positive,Q2: Oscar is rough.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_positive,Q3: Oscar is young.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_positive,Q4: Oscar is nice.,T,T,1
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_negative,Q1: Oscar is not cold.,F,F,1
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_negative,Q2: Oscar is not rough.,F,F,1
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_negative,Q3: Oscar is sad.,F,F,1
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,base_negative,Q4: Oscar is orange.,F,F,1
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,hard_mixed,Q1: Oscar is cold.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,hard_mixed,Q2: Oscar is rough.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,hard_mixed,Q3: Oscar is young.,T,F,0
+e4ea6f8b-2d0c-454f-a368-2837afd99e68,hard_mixed,Q4: Oscar is nice.,F,F,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_positive,Q1: Emma is cold.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_positive,Q2: Emma is rough.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_positive,Q3: Emma is young.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_positive,Q4: Emma is nice.,T,T,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_negative,Q1: Emma is not cold.,F,F,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_negative,Q2: Emma is not rough.,F,F,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_negative,Q3: Emma is brave.,F,F,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,base_negative,Q4: Emma is green.,F,F,1
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,hard_mixed,Q1: Emma is cold.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,hard_mixed,Q2: Emma is rough.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,hard_mixed,Q3: Emma is young.,T,F,0
+2e058e7c-5288-4f15-a8a3-6ccfa0914377,hard_mixed,Q4: Emma is nice.,F,F,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_positive,Q1: Helen is cold.,T,F,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_positive,Q2: Helen is rough.,T,F,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_positive,Q3: Helen is young.,T,F,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_positive,Q4: Helen is nice.,T,T,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_negative,Q1: Helen is not cold.,F,F,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_negative,Q2: Helen is not rough.,F,F,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_negative,Q3: Helen is tall.,F,T,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,base_negative,Q4: Helen is yellow.,F,F,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,hard_mixed,Q1: Helen is cold.,F,T,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,hard_mixed,Q2: Helen is rough.,F,T,0
+11d43b41-9ebb-46d1-b430-6fb8c559037e,hard_mixed,Q3: Helen is young.,T,T,1
+11d43b41-9ebb-46d1-b430-6fb8c559037e,hard_mixed,Q4: Helen is nice.,T,T,1
+58744df8-5245-40de-b923-1fe117ab16f3,base_positive,Q1: Nancy is cold.,T,F,0
+58744df8-5245-40de-b923-1fe117ab16f3,base_positive,Q2: Nancy is rough.,T,F,0
+58744df8-5245-40de-b923-1fe117ab16f3,base_positive,Q3: Nancy is young.,T,F,0
+58744df8-5245-40de-b923-1fe117ab16f3,base_positive,Q4: Nancy is nice.,T,T,1
+58744df8-5245-40de-b923-1fe117ab16f3,base_negative,Q1: Nancy is not cold.,F,F,1
+58744df8-5245-40de-b923-1fe117ab16f3,base_negative,Q2: Nancy is not rough.,F,F,1
+58744df8-5245-40de-b923-1fe117ab16f3,base_negative,Q3: Nancy is tall.,F,F,1
+58744df8-5245-40de-b923-1fe117ab16f3,base_negative,Q4: Nancy is blue.,F,F,1
+58744df8-5245-40de-b923-1fe117ab16f3,hard_mixed,Q1: Nancy is cold.,F,F,1
+58744df8-5245-40de-b923-1fe117ab16f3,hard_mixed,Q2: Nancy is rough.,T,T,1
+58744df8-5245-40de-b923-1fe117ab16f3,hard_mixed,Q3: Nancy is young.,T,F,0
+58744df8-5245-40de-b923-1fe117ab16f3,hard_mixed,Q4: Nancy is nice.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_positive,Q1: Grace is cold.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_positive,Q2: Grace is rough.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_positive,Q3: Grace is young.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_positive,Q4: Grace is nice.,T,T,1
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_negative,Q1: Grace is not cold.,F,F,1
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_negative,Q2: Grace is not rough.,F,F,1
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_negative,Q3: Grace is short.,F,F,1
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,base_negative,Q4: Grace is green.,F,F,1
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,hard_mixed,Q1: Grace is cold.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,hard_mixed,Q2: Grace is rough.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,hard_mixed,Q3: Grace is young.,T,F,0
+73e98452-d2c0-4ee2-8b51-1b09114e76eb,hard_mixed,Q4: Grace is nice.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_positive,Q1: Ivan is cold.,T,F,0
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_positive,Q2: Ivan is rough.,T,F,0
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_positive,Q3: Ivan is young.,T,F,0
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_positive,Q4: Ivan is nice.,T,T,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_negative,Q1: Ivan is not cold.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_negative,Q2: Ivan is not rough.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_negative,Q3: Ivan is mean.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,base_negative,Q4: Ivan is blue.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,hard_mixed,Q1: Ivan is cold.,T,F,0
+ca46bf75-b81c-4719-af7e-e0825af1033e,hard_mixed,Q2: Ivan is rough.,T,F,0
+ca46bf75-b81c-4719-af7e-e0825af1033e,hard_mixed,Q3: Ivan is young.,F,F,1
+ca46bf75-b81c-4719-af7e-e0825af1033e,hard_mixed,Q4: Ivan is nice.,F,F,1
+5f04159d-db6b-439f-91ea-330c8726180f,base_positive,Q1: Mike is cold.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,base_positive,Q2: Mike is rough.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,base_positive,Q3: Mike is young.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,base_positive,Q4: Mike is nice.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,base_negative,Q1: Mike is not cold.,F,F,1
+5f04159d-db6b-439f-91ea-330c8726180f,base_negative,Q2: Mike is not rough.,F,F,1
+5f04159d-db6b-439f-91ea-330c8726180f,base_negative,Q3: Mike is sad.,F,F,1
+5f04159d-db6b-439f-91ea-330c8726180f,base_negative,Q4: Mike is purple.,F,F,1
+5f04159d-db6b-439f-91ea-330c8726180f,hard_mixed,Q1: Mike is cold.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,hard_mixed,Q2: Mike is rough.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,hard_mixed,Q3: Mike is young.,T,F,0
+5f04159d-db6b-439f-91ea-330c8726180f,hard_mixed,Q4: Mike is nice.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_positive,Q1: Nancy is cold.,T,F,0
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_positive,Q2: Nancy is rough.,T,F,0
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_positive,Q3: Nancy is young.,T,F,0
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_positive,Q4: Nancy is nice.,T,T,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_negative,Q1: Nancy is not cold.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_negative,Q2: Nancy is not rough.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_negative,Q3: Nancy is brave.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,base_negative,Q4: Nancy is red.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,hard_mixed,Q1: Nancy is cold.,T,F,0
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,hard_mixed,Q2: Nancy is rough.,T,F,0
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,hard_mixed,Q3: Nancy is young.,F,F,1
+9c905b4a-9214-44aa-b2ae-ee0132bdab52,hard_mixed,Q4: Nancy is nice.,F,F,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_positive,Q1: Nancy is cold.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_positive,Q2: Nancy is rough.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_positive,Q3: Nancy is young.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_positive,Q4: Nancy is nice.,T,T,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_negative,Q1: Nancy is not cold.,F,F,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_negative,Q2: Nancy is not rough.,F,F,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_negative,Q3: Nancy is kind.,F,F,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,base_negative,Q4: Nancy is green.,F,F,1
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,hard_mixed,Q1: Nancy is cold.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,hard_mixed,Q2: Nancy is rough.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,hard_mixed,Q3: Nancy is young.,T,F,0
+0d77e042-9d88-4e6d-a5ac-c47f69f0a7c7,hard_mixed,Q4: Nancy is nice.,F,F,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_positive,Q1: Emma is cold.,T,F,0
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_positive,Q2: Emma is rough.,T,F,0
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_positive,Q3: Emma is young.,T,F,0
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_positive,Q4: Emma is nice.,T,T,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_negative,Q1: Emma is not cold.,F,F,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_negative,Q2: Emma is not rough.,F,F,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_negative,Q3: Emma is sad.,F,F,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,base_negative,Q4: Emma is blue.,F,F,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,hard_mixed,Q1: Emma is cold.,F,T,0
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,hard_mixed,Q2: Emma is rough.,F,T,0
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,hard_mixed,Q3: Emma is young.,T,T,1
+5be1f6ec-1348-4b23-b59b-6b04fc20dfed,hard_mixed,Q4: Emma is nice.,T,T,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_positive,Q1: Oscar is cold.,T,F,0
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_positive,Q2: Oscar is rough.,T,F,0
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_positive,Q3: Oscar is young.,T,F,0
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_positive,Q4: Oscar is nice.,T,T,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_negative,Q1: Oscar is not cold.,F,F,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_negative,Q2: Oscar is not rough.,F,F,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_negative,Q3: Oscar is mean.,F,F,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,base_negative,Q4: Oscar is purple.,F,F,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,hard_mixed,Q1: Oscar is cold.,F,F,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,hard_mixed,Q2: Oscar is rough.,T,T,1
+94aef151-bef9-486f-a2c2-d6f86d7495b9,hard_mixed,Q3: Oscar is young.,T,F,0
+94aef151-bef9-486f-a2c2-d6f86d7495b9,hard_mixed,Q4: Oscar is nice.,T,F,0
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_positive,Q1: Frank is cold.,T,F,0
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_positive,Q2: Frank is rough.,T,F,0
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_positive,Q3: Frank is young.,T,F,0
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_positive,Q4: Frank is nice.,T,T,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_negative,Q1: Frank is not cold.,F,F,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_negative,Q2: Frank is not rough.,F,F,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_negative,Q3: Frank is tall.,F,F,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,base_negative,Q4: Frank is orange.,F,F,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,hard_mixed,Q1: Frank is cold.,T,T,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,hard_mixed,Q2: Frank is rough.,F,F,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,hard_mixed,Q3: Frank is young.,T,T,1
+c63c7259-f275-47f2-a153-c0fc74ac584b,hard_mixed,Q4: Frank is nice.,T,T,1
+a08cd595-3291-4691-baca-03d44708270e,base_positive,Q1: David is cold.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,base_positive,Q2: David is rough.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,base_positive,Q3: David is young.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,base_positive,Q4: David is nice.,T,T,1
+a08cd595-3291-4691-baca-03d44708270e,base_negative,Q1: David is not cold.,F,F,1
+a08cd595-3291-4691-baca-03d44708270e,base_negative,Q2: David is not rough.,F,F,1
+a08cd595-3291-4691-baca-03d44708270e,base_negative,Q3: David is happy.,F,F,1
+a08cd595-3291-4691-baca-03d44708270e,base_negative,Q4: David is yellow.,F,F,1
+a08cd595-3291-4691-baca-03d44708270e,hard_mixed,Q1: David is cold.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,hard_mixed,Q2: David is rough.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,hard_mixed,Q3: David is young.,T,F,0
+a08cd595-3291-4691-baca-03d44708270e,hard_mixed,Q4: David is nice.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_positive,Q1: Frank is cold.,T,F,0
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_positive,Q2: Frank is rough.,T,F,0
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_positive,Q3: Frank is young.,T,F,0
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_positive,Q4: Frank is nice.,T,F,0
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_negative,Q1: Frank is not cold.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_negative,Q2: Frank is not rough.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_negative,Q3: Frank is tall.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,base_negative,Q4: Frank is green.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,hard_mixed,Q1: Frank is cold.,T,T,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,hard_mixed,Q2: Frank is rough.,F,F,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,hard_mixed,Q3: Frank is young.,T,T,1
+e9d4e2c8-d20e-4de6-8889-c2a918b896bc,hard_mixed,Q4: Frank is nice.,T,T,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_positive,Q1: Julia is cold.,T,F,0
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_positive,Q2: Julia is rough.,T,F,0
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_positive,Q3: Julia is young.,T,F,0
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_positive,Q4: Julia is nice.,T,T,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_negative,Q1: Julia is not cold.,F,F,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_negative,Q2: Julia is not rough.,F,F,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_negative,Q3: Julia is brave.,F,F,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,base_negative,Q4: Julia is orange.,F,F,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,hard_mixed,Q1: Julia is cold.,T,F,0
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,hard_mixed,Q2: Julia is rough.,T,F,0
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,hard_mixed,Q3: Julia is young.,F,F,1
+5df88b37-d98a-41cf-90b8-d1d231ef43ae,hard_mixed,Q4: Julia is nice.,F,T,0
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_positive,Q1: David is cold.,T,F,0
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_positive,Q2: David is rough.,T,F,0
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_positive,Q3: David is young.,T,F,0
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_positive,Q4: David is nice.,T,T,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_negative,Q1: David is not cold.,F,F,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_negative,Q2: David is not rough.,F,F,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_negative,Q3: David is happy.,F,F,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,base_negative,Q4: David is red.,F,F,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,hard_mixed,Q1: David is cold.,T,T,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,hard_mixed,Q2: David is rough.,F,F,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,hard_mixed,Q3: David is young.,T,T,1
+4d6fd0eb-b512-423e-8b9e-814aa9a01739,hard_mixed,Q4: David is nice.,T,T,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_positive,Q1: Kevin is cold.,T,F,0
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_positive,Q2: Kevin is rough.,T,F,0
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_positive,Q3: Kevin is young.,T,F,0
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_positive,Q4: Kevin is nice.,T,T,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_negative,Q1: Kevin is not cold.,F,F,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_negative,Q2: Kevin is not rough.,F,F,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_negative,Q3: Kevin is funny.,F,F,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,base_negative,Q4: Kevin is purple.,F,F,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,hard_mixed,Q1: Kevin is cold.,T,T,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,hard_mixed,Q2: Kevin is rough.,F,F,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,hard_mixed,Q3: Kevin is young.,T,T,1
+b2e49902-d934-4487-a5da-ccc1f23a78fc,hard_mixed,Q4: Kevin is nice.,T,T,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_positive,Q1: Nancy is cold.,T,F,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_positive,Q2: Nancy is rough.,T,F,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_positive,Q3: Nancy is young.,T,F,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_positive,Q4: Nancy is nice.,T,F,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_negative,Q1: Nancy is not cold.,F,F,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_negative,Q2: Nancy is not rough.,F,F,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_negative,Q3: Nancy is funny.,F,F,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,base_negative,Q4: Nancy is yellow.,F,F,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,hard_mixed,Q1: Nancy is cold.,F,T,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,hard_mixed,Q2: Nancy is rough.,F,T,0
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,hard_mixed,Q3: Nancy is young.,T,T,1
+cb1b6895-cd25-45e7-bb06-cbcb20dd4442,hard_mixed,Q4: Nancy is nice.,T,T,1
+a506e50a-1059-4055-becb-6e3fd662599b,base_positive,Q1: Frank is cold.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,base_positive,Q2: Frank is rough.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,base_positive,Q3: Frank is young.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,base_positive,Q4: Frank is nice.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,base_negative,Q1: Frank is not cold.,F,F,1
+a506e50a-1059-4055-becb-6e3fd662599b,base_negative,Q2: Frank is not rough.,F,F,1
+a506e50a-1059-4055-becb-6e3fd662599b,base_negative,Q3: Frank is happy.,F,F,1
+a506e50a-1059-4055-becb-6e3fd662599b,base_negative,Q4: Frank is blue.,F,F,1
+a506e50a-1059-4055-becb-6e3fd662599b,hard_mixed,Q1: Frank is cold.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,hard_mixed,Q2: Frank is rough.,T,F,0
+a506e50a-1059-4055-becb-6e3fd662599b,hard_mixed,Q3: Frank is young.,F,F,1
+a506e50a-1059-4055-becb-6e3fd662599b,hard_mixed,Q4: Frank is nice.,F,F,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_positive,Q1: Nancy is cold.,T,F,0
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_positive,Q2: Nancy is rough.,T,F,0
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_positive,Q3: Nancy is young.,T,F,0
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_positive,Q4: Nancy is nice.,T,T,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_negative,Q1: Nancy is not cold.,F,F,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_negative,Q2: Nancy is not rough.,F,F,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_negative,Q3: Nancy is sad.,F,F,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,base_negative,Q4: Nancy is blue.,F,F,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,hard_mixed,Q1: Nancy is cold.,F,T,0
+2cfebb76-6509-48e4-96a5-1115dd7bda86,hard_mixed,Q2: Nancy is rough.,F,T,0
+2cfebb76-6509-48e4-96a5-1115dd7bda86,hard_mixed,Q3: Nancy is young.,T,T,1
+2cfebb76-6509-48e4-96a5-1115dd7bda86,hard_mixed,Q4: Nancy is nice.,T,T,1
+d83a19db-315d-469c-b101-dac7c7953c25,base_positive,Q1: Nancy is cold.,T,F,0
+d83a19db-315d-469c-b101-dac7c7953c25,base_positive,Q2: Nancy is rough.,T,F,0
+d83a19db-315d-469c-b101-dac7c7953c25,base_positive,Q3: Nancy is young.,T,F,0
+d83a19db-315d-469c-b101-dac7c7953c25,base_positive,Q4: Nancy is nice.,T,T,1
+d83a19db-315d-469c-b101-dac7c7953c25,base_negative,Q1: Nancy is not cold.,F,F,1
+d83a19db-315d-469c-b101-dac7c7953c25,base_negative,Q2: Nancy is not rough.,F,F,1
+d83a19db-315d-469c-b101-dac7c7953c25,base_negative,Q3: Nancy is short.,F,F,1
+d83a19db-315d-469c-b101-dac7c7953c25,base_negative,Q4: Nancy is yellow.,F,F,1
+d83a19db-315d-469c-b101-dac7c7953c25,hard_mixed,Q1: Nancy is cold.,F,T,0
+d83a19db-315d-469c-b101-dac7c7953c25,hard_mixed,Q2: Nancy is rough.,F,T,0
+d83a19db-315d-469c-b101-dac7c7953c25,hard_mixed,Q3: Nancy is young.,T,T,1
+d83a19db-315d-469c-b101-dac7c7953c25,hard_mixed,Q4: Nancy is nice.,T,T,1
+a3c7cc8f-7982-424f-9461-277475c382c5,base_positive,Q1: Mike is cold.,T,F,0
+a3c7cc8f-7982-424f-9461-277475c382c5,base_positive,Q2: Mike is rough.,T,F,0
+a3c7cc8f-7982-424f-9461-277475c382c5,base_positive,Q3: Mike is young.,T,F,0
+a3c7cc8f-7982-424f-9461-277475c382c5,base_positive,Q4: Mike is nice.,T,F,0
+a3c7cc8f-7982-424f-9461-277475c382c5,base_negative,Q1: Mike is not cold.,F,F,1
+a3c7cc8f-7982-424f-9461-277475c382c5,base_negative,Q2: Mike is not rough.,F,F,1
+a3c7cc8f-7982-424f-9461-277475c382c5,base_negative,Q3: Mike is happy.,F,F,1
+a3c7cc8f-7982-424f-9461-277475c382c5,base_negative,Q4: Mike is yellow.,F,F,1
+a3c7cc8f-7982-424f-9461-277475c382c5,hard_mixed,Q1: Mike is cold.,F,F,1
+a3c7cc8f-7982-424f-9461-277475c382c5,hard_mixed,Q2: Mike is rough.,T,T,1
+a3c7cc8f-7982-424f-9461-277475c382c5,hard_mixed,Q3: Mike is young.,T,F,0
+a3c7cc8f-7982-424f-9461-277475c382c5,hard_mixed,Q4: Mike is nice.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,base_positive,Q1: Julia is cold.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,base_positive,Q2: Julia is rough.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,base_positive,Q3: Julia is young.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,base_positive,Q4: Julia is nice.,T,T,1
+1a322219-7ac5-4048-9051-efafd61c753a,base_negative,Q1: Julia is not cold.,F,F,1
+1a322219-7ac5-4048-9051-efafd61c753a,base_negative,Q2: Julia is not rough.,F,F,1
+1a322219-7ac5-4048-9051-efafd61c753a,base_negative,Q3: Julia is short.,F,F,1
+1a322219-7ac5-4048-9051-efafd61c753a,base_negative,Q4: Julia is yellow.,F,F,1
+1a322219-7ac5-4048-9051-efafd61c753a,hard_mixed,Q1: Julia is cold.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,hard_mixed,Q2: Julia is rough.,T,F,0
+1a322219-7ac5-4048-9051-efafd61c753a,hard_mixed,Q3: Julia is young.,F,F,1
+1a322219-7ac5-4048-9051-efafd61c753a,hard_mixed,Q4: Julia is nice.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_positive,Q1: Emma is cold.,T,F,0
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_positive,Q2: Emma is rough.,T,F,0
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_positive,Q3: Emma is young.,T,F,0
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_positive,Q4: Emma is nice.,T,T,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_negative,Q1: Emma is not cold.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_negative,Q2: Emma is not rough.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_negative,Q3: Emma is brave.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,base_negative,Q4: Emma is red.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,hard_mixed,Q1: Emma is cold.,F,F,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,hard_mixed,Q2: Emma is rough.,T,T,1
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,hard_mixed,Q3: Emma is young.,T,F,0
+fb263cf5-9e11-4e06-8647-9d430ccfbf45,hard_mixed,Q4: Emma is nice.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_positive,Q1: Linda is cold.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_positive,Q2: Linda is rough.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_positive,Q3: Linda is young.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_positive,Q4: Linda is nice.,T,T,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_negative,Q1: Linda is not cold.,F,F,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_negative,Q2: Linda is not rough.,F,F,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_negative,Q3: Linda is short.,F,F,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,base_negative,Q4: Linda is blue.,F,F,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,hard_mixed,Q1: Linda is cold.,F,F,1
+c802939b-0094-4fc6-9d13-8ad0cbd09252,hard_mixed,Q2: Linda is rough.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,hard_mixed,Q3: Linda is young.,T,F,0
+c802939b-0094-4fc6-9d13-8ad0cbd09252,hard_mixed,Q4: Linda is nice.,T,F,0
+974e0ba8-5dc9-474f-8668-11744a041b37,base_positive,Q1: Kevin is cold.,T,F,0
+974e0ba8-5dc9-474f-8668-11744a041b37,base_positive,Q2: Kevin is rough.,T,F,0
+974e0ba8-5dc9-474f-8668-11744a041b37,base_positive,Q3: Kevin is young.,T,F,0
+974e0ba8-5dc9-474f-8668-11744a041b37,base_positive,Q4: Kevin is nice.,T,F,0
+974e0ba8-5dc9-474f-8668-11744a041b37,base_negative,Q1: Kevin is not cold.,F,F,1
+974e0ba8-5dc9-474f-8668-11744a041b37,base_negative,Q2: Kevin is not rough.,F,F,1
+974e0ba8-5dc9-474f-8668-11744a041b37,base_negative,Q3: Kevin is brave.,F,F,1
+974e0ba8-5dc9-474f-8668-11744a041b37,base_negative,Q4: Kevin is green.,F,F,1
+974e0ba8-5dc9-474f-8668-11744a041b37,hard_mixed,Q1: Kevin is cold.,F,T,0
+974e0ba8-5dc9-474f-8668-11744a041b37,hard_mixed,Q2: Kevin is rough.,F,T,0
+974e0ba8-5dc9-474f-8668-11744a041b37,hard_mixed,Q3: Kevin is young.,T,T,1
+974e0ba8-5dc9-474f-8668-11744a041b37,hard_mixed,Q4: Kevin is nice.,T,T,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_positive,Q1: Julia is cold.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_positive,Q2: Julia is rough.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_positive,Q3: Julia is young.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_positive,Q4: Julia is nice.,T,T,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_negative,Q1: Julia is not cold.,F,F,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_negative,Q2: Julia is not rough.,F,F,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_negative,Q3: Julia is sad.,F,F,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,base_negative,Q4: Julia is green.,F,F,1
+a13e4523-51d2-4988-ac86-e22a7de0c347,hard_mixed,Q1: Julia is cold.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,hard_mixed,Q2: Julia is rough.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,hard_mixed,Q3: Julia is young.,T,F,0
+a13e4523-51d2-4988-ac86-e22a7de0c347,hard_mixed,Q4: Julia is nice.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_positive,Q1: Frank is cold.,T,F,0
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_positive,Q2: Frank is rough.,T,F,0
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_positive,Q3: Frank is young.,T,F,0
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_positive,Q4: Frank is nice.,T,T,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_negative,Q1: Frank is not cold.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_negative,Q2: Frank is not rough.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_negative,Q3: Frank is funny.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,base_negative,Q4: Frank is red.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,hard_mixed,Q1: Frank is cold.,T,T,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,hard_mixed,Q2: Frank is rough.,F,F,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,hard_mixed,Q3: Frank is young.,T,T,1
+db8af5b3-1d8b-41c9-abdb-d79b16ce3566,hard_mixed,Q4: Frank is nice.,T,T,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_positive,Q1: Julia is cold.,T,F,0
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_positive,Q2: Julia is rough.,T,F,0
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_positive,Q3: Julia is young.,T,F,0
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_positive,Q4: Julia is nice.,T,T,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_negative,Q1: Julia is not cold.,F,F,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_negative,Q2: Julia is not rough.,F,F,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_negative,Q3: Julia is kind.,F,F,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,base_negative,Q4: Julia is blue.,F,F,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,hard_mixed,Q1: Julia is cold.,T,F,0
+a44c6e78-39b6-4793-ba03-0b1976325a5a,hard_mixed,Q2: Julia is rough.,T,F,0
+a44c6e78-39b6-4793-ba03-0b1976325a5a,hard_mixed,Q3: Julia is young.,F,F,1
+a44c6e78-39b6-4793-ba03-0b1976325a5a,hard_mixed,Q4: Julia is nice.,F,F,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_positive,Q1: Claire is cold.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_positive,Q2: Claire is rough.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_positive,Q3: Claire is young.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_positive,Q4: Claire is nice.,T,T,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_negative,Q1: Claire is not cold.,F,F,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_negative,Q2: Claire is not rough.,F,F,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_negative,Q3: Claire is tall.,F,F,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,base_negative,Q4: Claire is purple.,F,F,1
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,hard_mixed,Q1: Claire is cold.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,hard_mixed,Q2: Claire is rough.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,hard_mixed,Q3: Claire is young.,T,F,0
+652d3490-fbe4-415a-b0b1-4432ee8a1abb,hard_mixed,Q4: Claire is nice.,F,F,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_positive,Q1: Anne is cold.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_positive,Q2: Anne is rough.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_positive,Q3: Anne is young.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_positive,Q4: Anne is nice.,T,T,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_negative,Q1: Anne is not cold.,F,F,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_negative,Q2: Anne is not rough.,F,F,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_negative,Q3: Anne is happy.,F,F,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,base_negative,Q4: Anne is green.,F,F,1
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,hard_mixed,Q1: Anne is cold.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,hard_mixed,Q2: Anne is rough.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,hard_mixed,Q3: Anne is young.,T,F,0
+e8b3cc48-60f8-4030-9e1a-64f8aeb90aeb,hard_mixed,Q4: Anne is nice.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_positive,Q1: Nancy is cold.,T,F,0
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_positive,Q2: Nancy is rough.,T,F,0
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_positive,Q3: Nancy is young.,T,F,0
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_positive,Q4: Nancy is nice.,T,T,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_negative,Q1: Nancy is not cold.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_negative,Q2: Nancy is not rough.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_negative,Q3: Nancy is funny.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,base_negative,Q4: Nancy is blue.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,hard_mixed,Q1: Nancy is cold.,F,F,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,hard_mixed,Q2: Nancy is rough.,T,T,1
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,hard_mixed,Q3: Nancy is young.,T,F,0
+0edb61f4-7435-4d15-be60-9edc94f6d7ee,hard_mixed,Q4: Nancy is nice.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,base_positive,Q1: Bob is cold.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,base_positive,Q2: Bob is rough.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,base_positive,Q3: Bob is young.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,base_positive,Q4: Bob is nice.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,base_negative,Q1: Bob is not cold.,F,F,1
+2a3332ad-dfaa-438b-969b-a39feef53752,base_negative,Q2: Bob is not rough.,F,F,1
+2a3332ad-dfaa-438b-969b-a39feef53752,base_negative,Q3: Bob is mean.,F,F,1
+2a3332ad-dfaa-438b-969b-a39feef53752,base_negative,Q4: Bob is blue.,F,F,1
+2a3332ad-dfaa-438b-969b-a39feef53752,hard_mixed,Q1: Bob is cold.,T,F,0
+2a3332ad-dfaa-438b-969b-a39feef53752,hard_mixed,Q2: Bob is rough.,F,F,1
+2a3332ad-dfaa-438b-969b-a39feef53752,hard_mixed,Q3: Bob is young.,T,T,1
+2a3332ad-dfaa-438b-969b-a39feef53752,hard_mixed,Q4: Bob is nice.,T,T,1
+33da057a-c646-4a5a-8a25-79734b156549,base_positive,Q1: David is cold.,T,F,0
+33da057a-c646-4a5a-8a25-79734b156549,base_positive,Q2: David is rough.,T,F,0
+33da057a-c646-4a5a-8a25-79734b156549,base_positive,Q3: David is young.,T,F,0
+33da057a-c646-4a5a-8a25-79734b156549,base_positive,Q4: David is nice.,T,T,1
+33da057a-c646-4a5a-8a25-79734b156549,base_negative,Q1: David is not cold.,F,F,1
+33da057a-c646-4a5a-8a25-79734b156549,base_negative,Q2: David is not rough.,F,F,1
+33da057a-c646-4a5a-8a25-79734b156549,base_negative,Q3: David is brave.,F,F,1
+33da057a-c646-4a5a-8a25-79734b156549,base_negative,Q4: David is purple.,F,F,1
+33da057a-c646-4a5a-8a25-79734b156549,hard_mixed,Q1: David is cold.,T,F,0
+33da057a-c646-4a5a-8a25-79734b156549,hard_mixed,Q2: David is rough.,F,F,1
+33da057a-c646-4a5a-8a25-79734b156549,hard_mixed,Q3: David is young.,T,T,1
+33da057a-c646-4a5a-8a25-79734b156549,hard_mixed,Q4: David is nice.,T,T,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_positive,Q1: Helen is cold.,T,F,0
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_positive,Q2: Helen is rough.,T,F,0
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_positive,Q3: Helen is young.,T,F,0
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_positive,Q4: Helen is nice.,T,T,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_negative,Q1: Helen is not cold.,F,F,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_negative,Q2: Helen is not rough.,F,F,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_negative,Q3: Helen is sad.,F,F,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,base_negative,Q4: Helen is red.,F,F,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,hard_mixed,Q1: Helen is cold.,T,F,0
+cbd74328-afe1-417e-9351-a18e49dcc5c9,hard_mixed,Q2: Helen is rough.,T,F,0
+cbd74328-afe1-417e-9351-a18e49dcc5c9,hard_mixed,Q3: Helen is young.,F,F,1
+cbd74328-afe1-417e-9351-a18e49dcc5c9,hard_mixed,Q4: Helen is nice.,F,F,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_positive,Q1: Oscar is cold.,T,F,0
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_positive,Q2: Oscar is rough.,T,F,0
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_positive,Q3: Oscar is young.,T,F,0
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_positive,Q4: Oscar is nice.,T,T,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_negative,Q1: Oscar is not cold.,F,F,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_negative,Q2: Oscar is not rough.,F,F,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_negative,Q3: Oscar is brave.,F,F,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,base_negative,Q4: Oscar is yellow.,F,F,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,hard_mixed,Q1: Oscar is cold.,F,T,0
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,hard_mixed,Q2: Oscar is rough.,F,T,0
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,hard_mixed,Q3: Oscar is young.,T,T,1
+83e89c13-ba4f-428c-ad37-1d8b3a46b690,hard_mixed,Q4: Oscar is nice.,T,T,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_positive,Q1: Helen is cold.,T,F,0
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_positive,Q2: Helen is rough.,T,F,0
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_positive,Q3: Helen is young.,T,F,0
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_positive,Q4: Helen is nice.,T,T,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_negative,Q1: Helen is not cold.,F,F,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_negative,Q2: Helen is not rough.,F,F,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_negative,Q3: Helen is sad.,F,F,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,base_negative,Q4: Helen is blue.,F,F,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,hard_mixed,Q1: Helen is cold.,F,F,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,hard_mixed,Q2: Helen is rough.,T,T,1
+617b2a16-78a4-4738-8f43-d24b8e57b170,hard_mixed,Q3: Helen is young.,T,F,0
+617b2a16-78a4-4738-8f43-d24b8e57b170,hard_mixed,Q4: Helen is nice.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_positive,Q1: Anne is cold.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_positive,Q2: Anne is rough.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_positive,Q3: Anne is young.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_positive,Q4: Anne is nice.,T,T,1
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_negative,Q1: Anne is not cold.,F,F,1
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_negative,Q2: Anne is not rough.,F,F,1
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_negative,Q3: Anne is sad.,F,F,1
+c479e993-6a45-42dd-bd4e-1c4760147b82,base_negative,Q4: Anne is red.,F,F,1
+c479e993-6a45-42dd-bd4e-1c4760147b82,hard_mixed,Q1: Anne is cold.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,hard_mixed,Q2: Anne is rough.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,hard_mixed,Q3: Anne is young.,T,F,0
+c479e993-6a45-42dd-bd4e-1c4760147b82,hard_mixed,Q4: Anne is nice.,F,F,1
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_positive,Q1: Bob is cold.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_positive,Q2: Bob is rough.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_positive,Q3: Bob is young.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_positive,Q4: Bob is nice.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_negative,Q1: Bob is not cold.,F,F,1
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_negative,Q2: Bob is not rough.,F,F,1
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_negative,Q3: Bob is tall.,F,F,1
+a0c9cdce-af14-4280-9f2e-32795e3f624c,base_negative,Q4: Bob is purple.,F,F,1
+a0c9cdce-af14-4280-9f2e-32795e3f624c,hard_mixed,Q1: Bob is cold.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,hard_mixed,Q2: Bob is rough.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,hard_mixed,Q3: Bob is young.,T,F,0
+a0c9cdce-af14-4280-9f2e-32795e3f624c,hard_mixed,Q4: Bob is nice.,F,F,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_positive,Q1: Helen is cold.,T,F,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_positive,Q2: Helen is rough.,T,F,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_positive,Q3: Helen is young.,T,F,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_positive,Q4: Helen is nice.,T,F,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_negative,Q1: Helen is not cold.,F,F,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_negative,Q2: Helen is not rough.,F,F,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_negative,Q3: Helen is brave.,F,F,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,base_negative,Q4: Helen is blue.,F,F,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,hard_mixed,Q1: Helen is cold.,F,T,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,hard_mixed,Q2: Helen is rough.,F,T,0
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,hard_mixed,Q3: Helen is young.,T,T,1
+536cc7a3-ee22-4e75-a3a3-c5110f71f9c1,hard_mixed,Q4: Helen is nice.,T,T,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_positive,Q1: Linda is cold.,T,F,0
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_positive,Q2: Linda is rough.,T,F,0
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_positive,Q3: Linda is young.,T,F,0
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_positive,Q4: Linda is nice.,T,T,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_negative,Q1: Linda is not cold.,F,F,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_negative,Q2: Linda is not rough.,F,F,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_negative,Q3: Linda is happy.,F,F,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,base_negative,Q4: Linda is green.,F,F,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,hard_mixed,Q1: Linda is cold.,F,F,1
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,hard_mixed,Q2: Linda is rough.,T,F,0
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,hard_mixed,Q3: Linda is young.,T,F,0
+9c25dbe3-2334-4dd4-b194-be9969fd4baf,hard_mixed,Q4: Linda is nice.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,base_positive,Q1: Linda is cold.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,base_positive,Q2: Linda is rough.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,base_positive,Q3: Linda is young.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,base_positive,Q4: Linda is nice.,T,T,1
+58ae543b-4763-404b-b3b5-04997a6a474c,base_negative,Q1: Linda is not cold.,F,F,1
+58ae543b-4763-404b-b3b5-04997a6a474c,base_negative,Q2: Linda is not rough.,F,F,1
+58ae543b-4763-404b-b3b5-04997a6a474c,base_negative,Q3: Linda is funny.,F,F,1
+58ae543b-4763-404b-b3b5-04997a6a474c,base_negative,Q4: Linda is purple.,F,F,1
+58ae543b-4763-404b-b3b5-04997a6a474c,hard_mixed,Q1: Linda is cold.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,hard_mixed,Q2: Linda is rough.,T,F,0
+58ae543b-4763-404b-b3b5-04997a6a474c,hard_mixed,Q3: Linda is young.,F,F,1
+58ae543b-4763-404b-b3b5-04997a6a474c,hard_mixed,Q4: Linda is nice.,F,T,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_positive,Q1: Emma is cold.,T,F,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_positive,Q2: Emma is rough.,T,F,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_positive,Q3: Emma is young.,T,F,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_positive,Q4: Emma is nice.,T,T,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_negative,Q1: Emma is not cold.,F,F,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_negative,Q2: Emma is not rough.,F,F,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_negative,Q3: Emma is kind.,F,F,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,base_negative,Q4: Emma is red.,F,F,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,hard_mixed,Q1: Emma is cold.,F,T,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,hard_mixed,Q2: Emma is rough.,F,T,0
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,hard_mixed,Q3: Emma is young.,T,T,1
+9f70203c-8ff7-4b3d-8103-c104a092ae7e,hard_mixed,Q4: Emma is nice.,T,T,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_positive,Q1: Ivan is cold.,T,F,0
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_positive,Q2: Ivan is rough.,T,F,0
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_positive,Q3: Ivan is young.,T,F,0
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_positive,Q4: Ivan is nice.,T,F,0
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_negative,Q1: Ivan is not cold.,F,F,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_negative,Q2: Ivan is not rough.,F,F,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_negative,Q3: Ivan is short.,F,F,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,base_negative,Q4: Ivan is purple.,F,F,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,hard_mixed,Q1: Ivan is cold.,T,T,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,hard_mixed,Q2: Ivan is rough.,F,F,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,hard_mixed,Q3: Ivan is young.,T,T,1
+465b1473-5824-4e79-bfd1-2a7403cf47c0,hard_mixed,Q4: Ivan is nice.,T,T,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_positive,Q1: Claire is cold.,T,F,0
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_positive,Q2: Claire is rough.,T,F,0
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_positive,Q3: Claire is young.,T,F,0
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_positive,Q4: Claire is nice.,T,T,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_negative,Q1: Claire is not cold.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_negative,Q2: Claire is not rough.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_negative,Q3: Claire is kind.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,base_negative,Q4: Claire is blue.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,hard_mixed,Q1: Claire is cold.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,hard_mixed,Q2: Claire is rough.,F,F,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,hard_mixed,Q3: Claire is young.,T,T,1
+ffdb9dca-abbc-4bc1-89be-366b357abedd,hard_mixed,Q4: Claire is nice.,T,T,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_positive,Q1: Julia is cold.,T,F,0
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_positive,Q2: Julia is rough.,T,F,0
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_positive,Q3: Julia is young.,T,F,0
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_positive,Q4: Julia is nice.,T,T,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_negative,Q1: Julia is not cold.,F,F,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_negative,Q2: Julia is not rough.,F,F,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_negative,Q3: Julia is happy.,F,F,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,base_negative,Q4: Julia is orange.,F,F,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,hard_mixed,Q1: Julia is cold.,T,T,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,hard_mixed,Q2: Julia is rough.,F,F,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,hard_mixed,Q3: Julia is young.,T,T,1
+0b71ec56-1489-4fc9-a666-7b8effa9dde9,hard_mixed,Q4: Julia is nice.,T,T,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_positive,Q1: Frank is cold.,T,F,0
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_positive,Q2: Frank is rough.,T,F,0
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_positive,Q3: Frank is young.,T,F,0
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_positive,Q4: Frank is nice.,T,F,0
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_negative,Q1: Frank is not cold.,F,F,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_negative,Q2: Frank is not rough.,F,F,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_negative,Q3: Frank is mean.,F,F,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,base_negative,Q4: Frank is red.,F,F,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,hard_mixed,Q1: Frank is cold.,F,F,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,hard_mixed,Q2: Frank is rough.,T,T,1
+4e29b59f-75eb-436a-a75c-aa376c2e0918,hard_mixed,Q3: Frank is young.,T,F,0
+4e29b59f-75eb-436a-a75c-aa376c2e0918,hard_mixed,Q4: Frank is nice.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,base_positive,Q1: Frank is cold.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,base_positive,Q2: Frank is rough.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,base_positive,Q3: Frank is young.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,base_positive,Q4: Frank is nice.,T,T,1
+1e0496e7-b81e-4982-acc5-124e154d851e,base_negative,Q1: Frank is not cold.,F,F,1
+1e0496e7-b81e-4982-acc5-124e154d851e,base_negative,Q2: Frank is not rough.,F,F,1
+1e0496e7-b81e-4982-acc5-124e154d851e,base_negative,Q3: Frank is mean.,F,F,1
+1e0496e7-b81e-4982-acc5-124e154d851e,base_negative,Q4: Frank is yellow.,F,F,1
+1e0496e7-b81e-4982-acc5-124e154d851e,hard_mixed,Q1: Frank is cold.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,hard_mixed,Q2: Frank is rough.,T,F,0
+1e0496e7-b81e-4982-acc5-124e154d851e,hard_mixed,Q3: Frank is young.,F,F,1
+1e0496e7-b81e-4982-acc5-124e154d851e,hard_mixed,Q4: Frank is nice.,F,F,1
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_positive,Q1: Emma is cold.,T,F,0
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_positive,Q2: Emma is rough.,T,F,0
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_positive,Q3: Emma is young.,T,F,0
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_positive,Q4: Emma is nice.,T,T,1
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_negative,Q1: Emma is not cold.,F,F,1
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_negative,Q2: Emma is not rough.,F,F,1
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_negative,Q3: Emma is short.,F,F,1
+8e5fefd4-4f99-4afb-9177-64cf79a88b90,base_negative,Q4: Emma is purple.,F,F,1

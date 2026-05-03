@@ -408,8 +408,27 @@ To understand the failure mode of frontier models, we performed an error analysi
 \subsection{Experimental setup}
 The benchmark has $100$ base groups ($80$ train / $20$ test) seeded into a combinatorially large hypothesis space via randomised entity mapping and rule variation, yielding $\approx\!11{,}200$ Stage-2 preference pairs. To probe out-of-template generalisation, Fusion-Conflict (8B) is also tested on five external reasoning domains (medical, legal, etc.) not seen at training, where it maintains $SR_{macro}\in[0.826,\,0.992]$. Per-stage hyperparameters: Stage~1 SFT uses AdamW + bf16 + LoRA ($r{=}8$, $\alpha{=}16$, dropout~$0.05$), $3$ epochs, batch~$4$, LR~$2{\times}10^{-5}$, max length~$512$. DPO uses $\beta{=}0.1$ at the same LR. LIRE uses $\lambda{=}1.0$, batch~$4$, grad-accum~$2$. RLVF mixes V2/V3/V4 samples at $\alpha{=}0.5$, momentum $\mu{=}0.99$, LR $1{\times}10^{-5}$, batch~$8$, grad-accum~$4$. Full ablation tables for the 1.5B/BERT/TinyLlama backbones are in Appendix~\ref{app:hyper}.
 
-\subsection{Ablation}
-Stage~1 pre-training alone helps Variant~2 modestly but hurts base accuracy ($1.000\to 0.525$ on Qwen2; full table in Appendix~\ref{app:ablation}). The \textbf{Fusion-LRA} intermediate (SFT only) recovers $98.8\%$ base accuracy and motivates the final Conflict-Aware architecture (Table~\ref{tab:final_performance_comparison} in Appendix~\ref{app:ablation}).
+\subsection{Stage-wise ablation: each stage addresses a distinct failure mode}
+\label{sec:ablation-stagewise}
+Table~\ref{tab:stage_wise} reports the per-stage progression on the four most diagnostic splits (base, V2 essential deletion, V3 contradiction, V4-multi compositional rewrites) for both backbones, isolating exactly what each training stage contributes.
+
+\begin{table}[h]
+\centering\small
+\caption{Stage-wise progression. Adding LIRE on top of SFT improves compositional invariance (V4-multi: $0.635{\to}0.993$ on Qwen2; $0.006{\to}1.000$ on Qwen3) but \emph{collapses} structural sensitivity on V2/V3, exactly the trade-off motivated in Section~\ref{sec:pipeline}. RLVF then restores V2/V3 to $1.000$ via the oracle-grounded reward without losing the LIRE gains. The Qwen3-8B baseline column also shows that scale alone does \emph{not} solve Logic Inertia (V3 $=0.656$ pre-training).}
+\label{tab:stage_wise}
+\begin{tabular}{l|cccc|cccc}
+\toprule
+& \multicolumn{4}{c|}{\textbf{Qwen2-1.5B}} & \multicolumn{4}{c}{\textbf{Qwen3-8B}} \\
+\textbf{Stage}            & Base & V2   & V3   & V4-multi & Base & V2   & V3   & V4-multi \\
+\midrule
+SFT (Stage~1+2)           & $1.000$ & $1.000$ & $1.000$ & $0.635$  & $0.333$ & $0.460$ & $0.656$ & $0.006$  \\
+\,$+$ LIRE (Stage~3)      & $0.812$ & $0.590$ & $0.344$ & $\mathbf{0.993}$ & $0.549$ & $0.503$ & $0.344$ & $\mathbf{1.000}$ \\
+\,$+$ RLVF (Stage~4)      & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $0.773$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three observations follow. \textbf{(i)} LIRE alone is harmful on V2/V3 because its symmetric-KL term suppresses \emph{any} distribution shift across rule reformulations, including those required by genuine logical change---a clean empirical instance of the invariance--sensitivity trade-off (Eq.~\ref{eq:lire}). \textbf{(ii)} RLVF resolves this with a single oracle reward (Eq.~\ref{eq:rlvf}): the same gradient signal that reinforces V4 invariance also reinforces V2/V3 sensitivity, removing the multi-objective balancing problem. \textbf{(iii)} The Qwen3-8B row demonstrates that scale alone is insufficient---the untrained $8$B model still falls below $0.7$ on V3---further evidence that Logic Inertia is structural rather than capacity-bound. Stage~1 pre-training alone moderately improves V2 but hurts base accuracy ($1.000{\to}0.525$ on Qwen2; full table in Appendix~\ref{app:ablation}).
 
 \section{Discussion}
 

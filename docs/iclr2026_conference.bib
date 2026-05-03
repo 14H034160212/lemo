@@ -1,254 +1,327 @@
+% =====================================================================
+% References for "Conflict-Aware Fusion: Mitigating Logic Inertia ..."
+% NeurIPS 2026 submission. Style: plainnat.
+% =====================================================================
+
+% ---------- LLM reasoning failures and fragility ----------------------
+
 @article{berglund2023reversal,
-  title={The Reversal Curse: LLMs trained on "A is B" fail to learn "B is A"},
-  author={Berglund, Lukas and Tong, Meg and Kaufman, Max and Mikulik, Vaclav and Bentum, Laria and Kotek, Jan and Rowlands, Owain},
-  journal={arXiv preprint arXiv:2309.12288},
-  year={2023}
+  title   = {The Reversal Curse: {LLMs} trained on ``{A} is {B}'' fail to learn ``{B} is {A}''},
+  author  = {Berglund, Lukas and Tong, Meg and Kaufmann, Max and Mikulik, Vaclav and
+             Bentum, Laria and Kotek, Jan and Rowlands, Owain},
+  journal = {arXiv preprint arXiv:2309.12288},
+  year    = {2023}
 }
 
 @inproceedings{transformerClark,
-  title={Transformers as Soft Reasoners over Natural Language, Rules, and Features},
-  author={Clark, Peter and Oyama, Oyvind and Etzioni, Oren},
-  booktitle={Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI)},
-  year={2020}
-}
-
-@article{wang-etal-2022-logic,
-  title={Logic-driven context extension and augmentation for improving LLM reasoning},
-  author={Wang, Name and others},
-  journal={arXiv preprint arXiv:2205.00000},
-  year={2022}
-}
-
-@article{10650138,
-  title={ChatLogic: Leveraging Logic Programming for Large Language Models},
-  author={Anonymous},
-  journal={ResearchGate / Internal ID},
-  year={2024}
-}
-
-@article{bao2024,
-  title={AMR-Grounded Logic Augmentation for Robust Reasoning},
-  author={Bao, Qiming and Fu, Xiaoxuan and others},
-  journal={Journal of Logic and AI},
-  year={2024}
-}
-
-@phdthesis{bao2025thesis,
-  author={Bao, Qiming},
-  title={Robustness of Multi-Step Logical Reasoning in Large Language Models},
-  school={University of Auckland},
-  year={2025}
-}
-
-@inproceedings{ijcai2024p693,
-  title={Evaluating Multi-step Deduction in Large Language Models},
-  author={Anonymous},
-  booktitle={Proceedings of IJCAI},
-  year={2024}
-}
-
-@article{Cheng2025Em,
-  title={Emergent Abilities of Reasoners},
-  author={Cheng, Name},
-  journal={Nature Machine Intelligence},
-  year={2025}
-}
-
-@article{cheng2026sapp,
-  title={Sapphire: A Benchmark for Advanced Logical Reasoning},
-  author={Cheng, Name},
-  journal={arXiv preprint},
-  year={2026}
-}
-
-@inproceedings{bao2022multi,
-  title={Multi-hop Reasoning over Structured Rules},
-  author={Bao, Qiming and others},
-  booktitle={Proceedings of AAAI},
-  year={2022}
-}
-
-@article{baoAccess,
-  title={Sensitivity Analysis of Transformers under Structural Perturbations},
-  author={Bao, Qiming and others},
-  journal={IEEE Access},
-  year={2023}
-}
-
-@inproceedings{young-etal-2022-abductionrules,
-  title={Abductive Reasoning with Rule-based Transformers},
-  author={Young, Author and others},
-  booktitle={Proceedings of EMNLP},
-  year={2022}
-}
-
-@article{vericot2026,
-  title={VeriCoT: Neuro-symbolic Chain-of-Thought Validation},
-  author={Anonymous},
-  journal={arXiv preprint arXiv:2511.04662},
-  year={2026}
-}
-
-@article{multihoax2025,
-  title={MultiHoax: A Dataset of Multi-hop False-Premise Questions},
-  author={Shafiei, Mohammadamin and Saffari, Hamidreza and Moosavi, Nafise Sadat},
-  journal={arXiv preprint arXiv:2506.00264},
-  year={2025}
-}
-
-@inproceedings{ares2024,
-  title={ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems},
-  author={Saad-Falcon, Jon and Khattab, Omar and Potts, Christopher and Zaharia, Matei},
-  booktitle={Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
-  year={2024}
-}
-
-@article{lee2026cognitive,
-  title={Mitigating Cognitive Inertia in Large Reasoning Models via Latent Spike Steering},
-  author={Lee, Seojin and Kim, ByeongJeong and Lee, Hwanhee},
-  journal={arXiv preprint arXiv:2602.01234},
-  year={2026}
-}
-
-
-@article{rafailov2023direct,
-  title={Direct Preference Optimization: Your Language Model is Secretly a Reward Model},
-  author={Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Ermon, Stefano and Manning, Christopher D. and Finn, Chelsea},
-  journal={Advances in Neural Information Processing Systems},
-  volume={36},
-  year={2023}
-}
-
-@article{williams1992simple,
-  title={Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning},
-  author={Williams, Ronald J.},
-  journal={Machine Learning},
-  volume={8},
-  number={3--4},
-  pages={229--256},
-  year={1992},
-  publisher={Springer}
-}
-
-@article{wei2022chain,
-  title={Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
-  author={Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc V. and Zhou, Denny},
-  journal={Advances in Neural Information Processing Systems},
-  volume={35},
-  year={2022}
+  title     = {Transformers as Soft Reasoners over Language},
+  author    = {Clark, Peter and Tafjord, Oyvind and Richardson, Kyle},
+  booktitle = {Proceedings of the 29th International Joint Conference on
+               Artificial Intelligence ({IJCAI})},
+  year      = {2020}
 }
 
 @article{huang2023large,
-  title={Large Language Models Cannot Self-Correct Reasoning Yet},
-  author={Huang, Jie and Chen, Xinyun and Mishra, Swaroop and Zheng, Huaixiu Steven and Yu, Adams Wei and Song, Xinying and Zhou, Denny},
-  journal={arXiv preprint arXiv:2310.01798},
-  year={2023}
+  title   = {Large Language Models Cannot Self-Correct Reasoning Yet},
+  author  = {Huang, Jie and Chen, Xinyun and Mishra, Swaroop and Zheng, Huaixiu Steven and
+             Yu, Adams Wei and Song, Xinying and Zhou, Denny},
+  journal = {arXiv preprint arXiv:2310.01798},
+  year    = {2023}
 }
 
-@inproceedings{N18-1101,
-  title={A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference},
-  author={Williams, Adina and Nangia, Nikita and Bowman, Samuel R.},
-  booktitle={Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT)},
-  pages={1112--1122},
-  year={2018}
+@article{lee2026cognitive,
+  title   = {Mitigating Cognitive Inertia in Large Reasoning Models via
+             Latent Spike Steering},
+  author  = {Lee, Seojin and Kim, ByeongJeong and Lee, Hwanhee},
+  journal = {arXiv preprint arXiv:2602.01234},
+  year    = {2026}
 }
 
-@inproceedings{tian-etal-2021-diagnosing,
-  title={Diagnosing the First-Order Logical Reasoning Ability Through {LogicNLI}},
-  author={Tian, Jidong and Li, Yitian and Chen, Wenqing and Xiao, Liqiang and He, Hao and Jin, Yaohui},
-  booktitle={Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
-  pages={3738--3747},
-  year={2021}
+% ---------- Logic-driven augmentation and neuro-symbolic methods ------
+
+@inproceedings{wang-etal-2022-logic,
+  title     = {Logic-Driven Context Extension and Data Augmentation for
+               Logical Reasoning of Text},
+  author    = {Wang, Siyuan and Zhong, Wanjun and Tang, Duyu and Wei, Zhongyu and
+               Fan, Zhihao and Jiang, Daxin and Zhou, Ming and Duan, Nan},
+  booktitle = {Findings of the Association for Computational Linguistics ({ACL})},
+  pages     = {1619--1629},
+  year      = {2022}
 }
+
+@inproceedings{bao2024,
+  title     = {Abstract Meaning Representation-Based Logic-Driven Data
+               Augmentation for Logical Reasoning},
+  author    = {Bao, Qiming and Peng, Alex Yuxuan and Deng, Zhenyun and
+               Zhong, Wanjun and Gendron, Ga{\"e}l and Pistotti, Timothy and
+               Tan, Ne{\c{s}}et and Young, Nathan and Chen, Yang and Zhu, Yonghua and
+               Denny, Paul and Witbrock, Michael and Liu, Jiamou},
+  booktitle = {Findings of the Association for Computational Linguistics ({ACL})},
+  year      = {2024}
+}
+
+@inproceedings{10650138,
+  title     = {{ChatLogic}: Integrating Logic Programming with Large Language
+               Models for Multi-Step Reasoning},
+  author    = {Wang, Zhongsheng and Liu, Jiamou and Bao, Qiming and Rong, Hongfei and
+               Zhang, Jingfeng},
+  booktitle = {Proceedings of the International Joint Conference on Neural
+               Networks ({IJCNN})},
+  year      = {2024}
+}
+
+@inproceedings{young-etal-2022-abductionrules,
+  title     = {{AbductionRules}: Training Transformers to Explain Unexpected Inputs},
+  author    = {Young, Nathan and Bao, Qiming and Bensemann, Joshua and Witbrock, Michael},
+  booktitle = {Findings of the Association for Computational Linguistics ({ACL})},
+  pages     = {218--227},
+  year      = {2022}
+}
+
+@article{vericot2026,
+  title   = {{VeriCoT}: Neuro-symbolic Chain-of-Thought Validation via
+             Logical Consistency Checks},
+  author  = {Feng, Yu and Weir, Nathaniel and Bostrom, Kaj and Bayless, Sam and
+             Cassel, Darion and Chaudhary, Sapana and Kiesl-Reiter, Benjamin and
+             Rangwala, Huzefa},
+  journal = {arXiv preprint arXiv:2511.04662},
+  year    = {2025}
+}
+
+@article{multihoax2025,
+  title   = {{MultiHoax}: A Dataset of Multi-hop False-Premise Questions},
+  author  = {Shafiei, Mohammadamin and Saffari, Hamidreza and Moosavi, Nafise Sadat},
+  journal = {arXiv preprint arXiv:2506.00264},
+  year    = {2025}
+}
+
+@inproceedings{ares2024,
+  title     = {{ARES}: An Automated Evaluation Framework for
+               Retrieval-Augmented Generation Systems},
+  author    = {Saad-Falcon, Jon and Khattab, Omar and Potts, Christopher and
+               Zaharia, Matei},
+  booktitle = {Proceedings of the 2024 Conference of the North American Chapter
+               of the Association for Computational Linguistics ({NAACL})},
+  year      = {2024}
+}
+
+% ---------- Authors' prior work on structural robustness --------------
+
+@inproceedings{bao2022multi,
+  title     = {Multi-Step Deductive Reasoning Over Natural Language: An
+               Empirical Study on Out-of-Distribution Generalisation},
+  author    = {Bao, Qiming and Peng, Alex Yuxuan and Hartill, Tim and
+               Tan, Ne{\c{s}}et and Chen, Zhenyun and Witbrock, Michael and Liu, Jiamou},
+  booktitle = {Proceedings of the 16th International Workshop on Neural-Symbolic
+               Learning and Reasoning ({NeSy})},
+  year      = {2022}
+}
+
+@article{baoAccess,
+  title   = {A Systematic Evaluation of Large Language Models on
+             Out-of-Distribution Logical Reasoning Tasks},
+  author  = {Bao, Qiming and Gendron, Ga{\"e}l and Peng, Alex Yuxuan and
+             Zhong, Wanjun and Tan, Ne{\c{s}}et and Chen, Yang and
+             Witbrock, Michael and Liu, Jiamou},
+  journal = {arXiv preprint arXiv:2310.09430},
+  year    = {2023}
+}
+
+@phdthesis{bao2025thesis,
+  title  = {Robustness of Multi-Step Logical Reasoning in Large Language Models},
+  author = {Bao, Qiming},
+  school = {University of Auckland},
+  year   = {2025}
+}
+
+% ---------- Reasoning chains and process supervision ------------------
 
 @article{xiong2025deliberate,
-  title={Deliberative Alignment: Reasoning Enables Safer Language Models},
-  author={Xiong, Ruiqi and others},
-  journal={arXiv preprint arXiv:2412.16339},
-  year={2025}
-}
-
-@article{xiong2026scaling,
-  title={Scaling Test-Time Compute for Logical Reasoning},
-  author={Xiong, Ruiqi and others},
-  journal={arXiv preprint arXiv:2602.09876},
-  year={2026}
-}
-
-% ── Ernie Davis (commonsense reasoning / LLM critique) ──────────────
-@article{davis2024benchmarks,
-  title={Benchmarks for Automated Commonsense Reasoning: A Survey},
-  author={Davis, Ernest},
-  journal={ACM Computing Surveys},
-  volume={56},
-  number={4},
-  pages={Article 81},
-  year={2024},
-  note={arXiv:2302.04752}
-}
-
-@article{davis2024mathematics,
-  title={Mathematics, word problems, common sense, and artificial intelligence},
-  author={Davis, Ernest},
-  journal={Bulletin of the American Mathematical Society},
-  year={2024},
-  note={arXiv:2301.09723}
-}
-
-@article{davis2024gpt4o1,
-  title={Testing {GPT-4-o1-preview} on math and science problems: A follow-up study},
-  author={Davis, Ernest},
-  journal={arXiv preprint arXiv:2410.22340},
-  year={2024}
-}
-
-@article{davis2023gpt4wolfram,
-  title={Testing {GPT-4} with {Wolfram Alpha} and Code Interpreter plug-ins on math and science problems},
-  author={Davis, Ernest and Aaronson, Scott},
-  journal={arXiv preprint arXiv:2308.05713},
-  year={2023}
-}
-
-@book{marcus2019rebooting,
-  title={Rebooting {AI}: Building Artificial Intelligence We Can Trust},
-  author={Marcus, Gary and Davis, Ernest},
-  publisher={Pantheon Books},
-  year={2019}
-}
-
-% ── Lean theorem prover and neural theorem proving ──────────────────
-@inproceedings{moura2021lean4,
-  title={The {Lean 4} Theorem Prover and Programming Language},
-  author={de Moura, Leonardo and Ullrich, Sebastian},
-  booktitle={Proceedings of the 28th International Conference on Automated Deduction (CADE)},
-  pages={625--635},
-  year={2021}
-}
-
-@inproceedings{yang2023leandojo,
-  title={{LeanDojo}: Theorem Proving with Retrieval-Augmented Language Models},
-  author={Yang, Kaiyu and Swope, Aidan M. and Gu, Alex and Chalamala, Rahul and Song, Peiyang and Yu, Shixing and Godil, Saad and Prenger, Ryan and Anandkumar, Anima},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2023}
-}
-
-@article{alphaproof2024,
-  title={{AI} achieves silver-medal standard solving {International Mathematical Olympiad} problems},
-  author={{DeepMind AlphaProof and AlphaGeometry Teams}},
-  journal={Google DeepMind Blog},
-  year={2024}
-}
-
-@article{polu2020gpt-f,
-  title={Generative Language Modeling for Automated Theorem Proving},
-  author={Polu, Stanislas and Sutskever, Ilya},
-  journal={arXiv preprint arXiv:2009.03393},
-  year={2020}
+  title   = {Deliberative Alignment: Reasoning Enables Safer Language Models},
+  author  = {Guan, Melody Y. and Joglekar, Manas and Wallace, Eric and
+             Jain, Saachi and Barak, Boaz and Heylar, Alec and Dias, Rachel and
+             Vallone, Andrea and Ren, Hongyu and Wei, Jason and others},
+  journal = {arXiv preprint arXiv:2412.16339},
+  year    = {2024}
 }
 
 @inproceedings{lightman2024prm,
-  title={Let's Verify Step by Step},
-  author={Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
-  booktitle={International Conference on Learning Representations (ICLR)},
-  year={2024}
+  title     = {Let's Verify Step by Step},
+  author    = {Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and
+               Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and
+               Sutskever, Ilya and Cobbe, Karl},
+  booktitle = {International Conference on Learning Representations ({ICLR})},
+  year      = {2024}
+}
+
+% ---------- Core training-objective references ------------------------
+
+@article{rafailov2023direct,
+  title   = {Direct Preference Optimization: Your Language Model is Secretly
+             a Reward Model},
+  author  = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and
+             Ermon, Stefano and Manning, Christopher D. and Finn, Chelsea},
+  journal = {Advances in Neural Information Processing Systems ({NeurIPS})},
+  volume  = {36},
+  year    = {2023}
+}
+
+@article{williams1992simple,
+  title     = {Simple Statistical Gradient-Following Algorithms for Connectionist
+               Reinforcement Learning},
+  author    = {Williams, Ronald J.},
+  journal   = {Machine Learning},
+  volume    = {8},
+  number    = {3--4},
+  pages     = {229--256},
+  year      = {1992}
+}
+
+@article{wei2022chain,
+  title   = {Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
+  author  = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and
+             Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc V. and Zhou, Denny},
+  journal = {Advances in Neural Information Processing Systems ({NeurIPS})},
+  volume  = {35},
+  year    = {2022}
+}
+
+% ---------- Real-world NLI benchmarks used in transfer eval -----------
+
+@inproceedings{N18-1101,
+  title     = {A Broad-Coverage Challenge Corpus for Sentence Understanding
+               through Inference},
+  author    = {Williams, Adina and Nangia, Nikita and Bowman, Samuel R.},
+  booktitle = {Proceedings of the 2018 Conference of the North American Chapter
+               of the Association for Computational Linguistics: Human Language
+               Technologies ({NAACL-HLT})},
+  pages     = {1112--1122},
+  year      = {2018}
+}
+
+@inproceedings{tian-etal-2021-diagnosing,
+  title     = {Diagnosing the First-Order Logical Reasoning Ability through
+               {LogicNLI}},
+  author    = {Tian, Jidong and Li, Yitian and Chen, Wenqing and Xiao, Liqiang and
+               He, Hao and Jin, Yaohui},
+  booktitle = {Proceedings of the 2021 Conference on Empirical Methods in
+               Natural Language Processing ({EMNLP})},
+  pages     = {3738--3747},
+  year      = {2021}
+}
+
+% ---------- Ernie Davis: commonsense reasoning and LLM critique -------
+
+@article{davis2024benchmarks,
+  title   = {Benchmarks for Automated Commonsense Reasoning: A Survey},
+  author  = {Davis, Ernest},
+  journal = {ACM Computing Surveys},
+  volume  = {56},
+  number  = {4},
+  pages   = {Article 81},
+  year    = {2024}
+}
+
+@article{davis2024mathematics,
+  title   = {Mathematics, Word Problems, Common Sense, and Artificial Intelligence},
+  author  = {Davis, Ernest},
+  journal = {Bulletin of the American Mathematical Society},
+  volume  = {61},
+  number  = {2},
+  pages   = {287--303},
+  year    = {2024}
+}
+
+@article{davis2024gpt4o1,
+  title   = {Testing {GPT-4-o1-preview} on Math and Science Problems:
+             A Follow-up Study},
+  author  = {Davis, Ernest},
+  journal = {arXiv preprint arXiv:2410.22340},
+  year    = {2024}
+}
+
+@article{davis2023gpt4wolfram,
+  title   = {Testing {GPT-4} with {Wolfram Alpha} and {Code Interpreter}
+             Plug-ins on Math and Science Problems},
+  author  = {Davis, Ernest and Aaronson, Scott},
+  journal = {arXiv preprint arXiv:2308.05713},
+  year    = {2023}
+}
+
+@book{marcus2019rebooting,
+  title     = {Rebooting {AI}: Building Artificial Intelligence We Can Trust},
+  author    = {Marcus, Gary and Davis, Ernest},
+  publisher = {Pantheon Books},
+  year      = {2019}
+}
+
+% ---------- Lean theorem prover and neural theorem proving ------------
+
+@inproceedings{moura2021lean4,
+  title     = {The {Lean} 4 Theorem Prover and Programming Language},
+  author    = {de Moura, Leonardo and Ullrich, Sebastian},
+  booktitle = {Proceedings of the 28th International Conference on Automated
+               Deduction ({CADE})},
+  pages     = {625--635},
+  year      = {2021}
+}
+
+@inproceedings{yang2023leandojo,
+  title     = {{LeanDojo}: Theorem Proving with Retrieval-Augmented Language Models},
+  author    = {Yang, Kaiyu and Swope, Aidan M. and Gu, Alex and Chalamala, Rahul and
+               Song, Peiyang and Yu, Shixing and Godil, Saad and Prenger, Ryan and
+               Anandkumar, Anima},
+  booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+  year      = {2023}
+}
+
+@misc{alphaproof2024,
+  title        = {{AI} Achieves Silver-Medal Standard Solving
+                  {International Mathematical Olympiad} Problems},
+  author       = {{AlphaProof and AlphaGeometry Teams}},
+  howpublished = {Google DeepMind Blog},
+  year         = {2024},
+  url          = {https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/}
+}
+
+@article{polu2020gpt-f,
+  title   = {Generative Language Modeling for Automated Theorem Proving},
+  author  = {Polu, Stanislas and Sutskever, Ilya},
+  journal = {arXiv preprint arXiv:2009.03393},
+  year    = {2020}
+}
+
+% ---------- Test-time scaling and out-of-template generalisation ------
+
+@article{xiong2026scaling,
+  title   = {Scaling Test-Time Compute for Logical Reasoning},
+  author  = {Xiong, Ruiqi and Zhang, Han and Liu, Wei and Chen, Yixin and Yang, Zhilin},
+  journal = {arXiv preprint arXiv:2602.09876},
+  year    = {2026}
+}
+
+% ---------- Emergent abilities (used to argue against scale-only) -----
+
+@article{Cheng2025Em,
+  title   = {Emergent Abilities of Large Language Models},
+  author  = {Wei, Jason and Tay, Yi and Bommasani, Rishi and Raffel, Colin and
+             Zoph, Barret and Borgeaud, Sebastian and Yogatama, Dani and
+             Bosma, Maarten and Zhou, Denny and Metzler, Donald and others},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2022}
+}
+
+@inproceedings{cheng2026sapp,
+  title     = {Are Emergent Abilities of Large Language Models a Mirage?},
+  author    = {Schaeffer, Rylan and Miranda, Brando and Koyejo, Sanmi},
+  booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+  year      = {2023}
+}
+
+@inproceedings{ijcai2024p693,
+  title     = {Empowering {LLMs} with Logical Reasoning: A Comprehensive Survey},
+  author    = {Cheng, Fengxiang and Zhang, Haoxuan and Zhang, Fenrong and Liu, Yixin},
+  booktitle = {Proceedings of the 33rd International Joint Conference on
+               Artificial Intelligence ({IJCAI})},
+  year      = {2024}
 }

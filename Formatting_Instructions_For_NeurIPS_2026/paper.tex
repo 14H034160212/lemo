@@ -245,15 +245,13 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
               at ([yshift=-0.15cm]s4.north) (s4h)
               {Stage 4: RLVF ~~~ $\mathcal{L}_{\mathrm{RLVF}}$};
         \node [scontent, fill=yellow!8]
-              at ([yshift=0.2cm]s4.center) (s4c) {
-            {\footnotesize \textbf{Oracle} \textsc{ForwardChain}}: ~~
-            $\{\text{Man},\, \text{Mortal},\, \neg\text{Mortal}\} \vdash \bot$
-            ~~ $\Rightarrow$ ~~ $a^* = \text{False}$
+              at ([yshift=0.6cm]s4.center) (s4c) {
+            {\footnotesize \textbf{Oracle} \textsc{ForwardChain}}: \\
+            $\{\text{Man},\, \text{Mortal},\, \neg\text{Mortal}\} \vdash \bot \;\Rightarrow\; a^* = \text{False}$
         };
         \node [scontent, fill=green!6]
-              at ([yshift=-0.5cm]s4.center) (s4r) {
-            Model samples $a_s = \text{False}$ ~~
-            $\Rightarrow$ ~~ reward $r = +1$ ~~
+              at ([yshift=-0.9cm]s4.center) (s4r) {
+            Model samples $a_s = \text{False} \;\Rightarrow\;$ reward $r = +1$ \\
             {\footnotesize (correct answer reinforced)}
         };
         \node [snote] at ([yshift=0.2cm]s4.south) (s4n) {
@@ -269,7 +267,7 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
 
         % Z-flow: 1→2 (horizontal), 2→3 (diagonal), 3→4 (horizontal)
         \draw [arr, blue!50]   (s1.east) -- node[above, font=\footnotesize\bfseries] {$1 \!\to\! 2$} (s2.west);
-        \draw [arr, red!50]    (s2.south) -- ++(0,-0.3) -| node[pos=0.25, right, font=\footnotesize\bfseries] {$2 \!\to\! 3$} (s3.north east);
+        \draw [arr, red!50]    (s2.south) -- ++(0,-0.3) -| node[pos=0.25, right, font=\footnotesize\bfseries] {$2 \!\to\! 3$} (s3.north);
         \draw [arr, orange!60] (s3.east) -- node[above, font=\footnotesize\bfseries] {$3 \!\to\! 4$} (s4.west);
 
     \end{tikzpicture}%

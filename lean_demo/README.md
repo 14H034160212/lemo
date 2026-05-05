@@ -1,7 +1,7 @@
 # Lean 4 Feasibility Demo for RLVF-Lean (Phase 2)
 
-This directory contains the Phase 2 feasibility demo referenced in Section 6.5
-of the paper. It shows that the Socrates contradiction running example can be
+This directory contains the Phase 2 feasibility demo referenced in the
+Phase 2 (RLVF-Lean) section of the paper. It shows that the Socrates contradiction running example can be
 encoded in **Lean 4** and verified by the Lean kernel, providing a natural
 upgrade path from the current `forward_chain()` oracle to a formal proof
 assistant.

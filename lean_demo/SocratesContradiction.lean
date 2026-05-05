@@ -14,7 +14,7 @@
   Or open in VS Code with the lean4 extension: Lean elaborates each
   tactic in real time, giving a step-by-step verification verdict
   that can be used as an RL reward signal (see Eq. (eq:lean-reward)
-  in Section 6.5 / Phase 2 of the paper).
+  in the Phase 2 / RLVF-Lean section of the paper).
 -/
 
 namespace LEMO.SocratesDemo

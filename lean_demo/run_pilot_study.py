@@ -4,7 +4,8 @@ run_pilot_study.py
 Pilot study for RLVF-Lean: dispatch a small battery of candidate
 reasoning traces to Lean 4 and record the kernel's step-level reward.
 
-This is the experiment reported in Section 6.5 / Appendix of the paper.
+This is the experiment reported in the Phase 2 (RLVF-Lean) section /
+Appendix of the paper.
 Results are written to `pilot_results.csv`.
 """
 

@@ -7,7 +7,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{}
-    \item[] Justification: The abstract states the four-stage SFT/DPO/LIRE/RLVF pipeline and the Logic Inertia phenomenon; Section~\ref{sec:introduction} enumerates three contributions (diagnostic benchmark, Logic Inertia formalization, Conflict-Aware Fusion framework), each of which is supported by a corresponding empirical section (Tables~\ref{tab:all_models_deltas},~\ref{tab:comparison_results},~\ref{tab:lean_pilot},~\ref{tab:lean_bench}).
+    \item[] Justification: The abstract states the four-stage SFT/DPO/LIRE/RLVF pipeline and the Logic Inertia phenomenon; Section~\ref{sec:introduction} enumerates five contributions ((i)~diagnostic benchmark and Logic Inertia formalization, (ii)~LIRE invariance regulariser, (iii)~RLVF reward formulation, (iv)~Lean~4 RLVF-Lean extension, (v)~the Conflict-Aware Fusion pipeline), each of which is supported by a corresponding empirical section (Tables~\ref{tab:all_models_deltas},~\ref{tab:comparison_results},~\ref{tab:lean_pilot},~\ref{tab:lean_bench}).
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -35,7 +35,7 @@
 \item {\bf Theory assumptions and proofs}
     \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
     \item[] Answer: \answerNA{}
-    \item[] Justification: The paper introduces loss functions (Eqs.~\ref{eq:dpo}--\ref{eq:rlvf}) and a step-level reward formulation (Eq.~\ref{eq:lean-reward}) but does not state formal theorems requiring proof. The benchmark-scale Lean~4 verification reported in Table~\ref{tab:lean_bench} provides machine-checked correctness for the multi-step reasoning derivations ($99.0\%$ T-rate), which is closer to a proof-checking experiment than to a paper-side theorem.
+    \item[] Justification: The paper introduces loss functions (Eqs.~\ref{eq:dpo}, \ref{eq:lire}, \ref{eq:rlvf}) and a step-level reward formulation (Eq.~\ref{eq:lean-reward}) but does not state formal theorems requiring proof. The benchmark-scale Lean~4 verification reported in Table~\ref{tab:lean_bench} provides machine-checked correctness for the multi-step reasoning derivations ($99.0\%$ T-rate on the $105$ T-cases of the $187$-question stratified sample), which is closer to a proof-checking experiment than to a paper-side theorem.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include theoretical results. 
@@ -49,7 +49,7 @@
     \item {\bf Experimental result reproducibility}
     \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Hyperparameters for all four stages are reported in Section~\ref{sec:method} and Table~\ref{tab:hyperparameters}; benchmark generation is given in Algorithm~\ref{alg:variant23}; loss functions are defined in Eqs.~\ref{eq:dpo}--\ref{eq:rlvf}; the complete codebase, datasets, and the Lean~4 verifier are released at the URL in the abstract footnote (\texttt{scripts/training/}, \texttt{data\_v2/}, \texttt{lean\_demo/}).
+    \item[] Justification: Hyperparameters for all four stages are reported in Section~\ref{sec:method} and Section~\ref{sec:method} and Appendix~\ref{app:hyper}; benchmark generation is given in Algorithm~\ref{alg:variant23}; loss functions are defined in Eqs.~\ref{eq:dpo}--\ref{eq:rlvf}; the complete codebase, datasets, and the Lean~4 verifier are released at the URL in the abstract footnote (\texttt{scripts/training/}, \texttt{data\_v2/}, \texttt{lean\_demo/}).
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -86,7 +86,7 @@
 \item {\bf Experimental setting/details}
     \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Section~\ref{sec:method} (``Experimental Setup and Hyperparameters'') reports data splits (80/20 by base group, 100 base groups), AdamW optimizer with bf16 mixed precision, LoRA configuration (r=8, $\alpha$=16, dropout=0.05), per-stage learning rates and batch sizes (Table~\ref{tab:hyperparameters}); DPO uses $\beta=0.1$, LIRE uses $\lambda=1.0$, RLVF uses baseline momentum $\mu=0.99$ and v4 mixing ratio $\alpha=0.5$.
+    \item[] Justification: Section~\ref{sec:method} (``Experimental Setup and Hyperparameters'') reports data splits (80/20 by base group, 100 base groups), AdamW optimizer with bf16 mixed precision, LoRA configuration (r=8, $\alpha$=16, dropout=0.05), per-stage learning rates and batch sizes (Section~\ref{sec:method} and Appendix~\ref{app:hyper}); DPO uses $\beta=0.1$, LIRE uses $\lambda=1.0$, RLVF uses baseline momentum $\mu=0.99$ and v4 mixing ratio $\alpha=0.5$.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.

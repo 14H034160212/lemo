@@ -67,16 +67,16 @@ Auckland, New Zealand \\
 \maketitle
 
 \begin{abstract}
-Large language models (LLMs) achieve high accuracy on many reasoning benchmarks but remain brittle under structural perturbations of rule-based systems. We introduce a controlled diagnostic framework with four orthogonal stress tests---redundant vs.\ essential rule deletion, contradictory-rule injection, logic-preserving rewrites, and multi-law stacking---and use it to expose \emph{Logic Inertia}: the systematic tendency of contemporary models (BERT, Qwen2, TinyLlama, GPT-4o, Qwen3-8B) to persist along learned deductive trajectories even when foundational premises are inconsistent. The collapse is sharp: untreated baselines fall from accuracy~$1.00$ on the base task to $0.00$ on contradiction injection, and even GPT-4o resolves only $56.0\%$ of contradiction cases. We propose \textbf{Conflict-Aware Fusion}, a four-stage training pipeline that enforces verification-before-deduction as a learned structural prior: \textbf{(i)} SFT establishes the verification preamble; \textbf{(ii)} DPO sharpens the halt-on-contradiction decision boundary; \textbf{(iii)} Logical Invariance REgularisation (LIRE) penalises divergence between logically equivalent rule formulations via symmetric KL; and \textbf{(iv)} Reinforcement Learning from Verification Feedback (RLVF) uses a symbolic forward-chaining engine as a deterministic oracle reward, jointly optimising invariance and sensitivity. The pipeline saturates all four primary stress tests for both $1.5$B and $8$B backbones. We further validate a Phase~2 extension in which the propositional oracle is replaced by a \textsc{Lean~4} kernel, attaining $99.0\%$ agreement with the benchmark ground truth on $187$ multi-step proof-verified questions and providing a sound upgrade path to formally verified RL training. The benchmark, training pipeline, and Lean verifier are publicly released.\footnote{Anonymous code/data repository: \url{https://anonymous.4open.science/r/lemo-D708/README.md}}
+Large language models (LLMs) achieve high accuracy on many reasoning benchmarks but remain brittle under structural perturbations of rule-based systems. We introduce a controlled diagnostic framework with four orthogonal stress tests---redundant vs.\ essential rule deletion, contradictory-rule injection, logic-preserving rewrites, and multi-law stacking---and use it to expose \emph{Logic Inertia}: the systematic tendency of generative LLMs (Qwen2/3, TinyLlama, GPT-4o, Gemma-3-4B-IT), as well as the encoder-only BERT baseline, to persist along learned deductive trajectories even when foundational premises are inconsistent. The collapse is sharp: untreated baselines fall from accuracy~$1.00$ on the base task to $0.00$ on contradiction injection (instance-level exact match; see \S\ref{sec:method}), and even GPT-4o resolves only $56.0\%$ of contradiction cases. We propose \textbf{Conflict-Aware Fusion}, a four-stage training pipeline that enforces verification-before-deduction as a learned structural prior: \textbf{(i)} SFT establishes the verification preamble; \textbf{(ii)} DPO sharpens the halt-on-contradiction decision boundary; \textbf{(iii)} Logical Invariance REgularisation (LIRE) penalises divergence between logically equivalent rule formulations via symmetric KL; and \textbf{(iv)} Reinforcement Learning from Verification Feedback (RLVF) uses a symbolic forward-chaining engine as a deterministic oracle reward, jointly optimising invariance and sensitivity. The pipeline saturates all four primary stress tests for both $1.5$B and $8$B backbones. We further validate a Phase~2 extension in which the propositional oracle is replaced by a \textsc{Lean~4} kernel, attaining $99.0\%$ kernel agreement on the $105$ classically-derivable (T) questions within a stratified $187$-question Lean-translated sample (overall $71.7\%$ across both polarities; the T/F asymmetry is analysed in \S\ref{sec:phase2}), providing a sound upgrade path to formally verified RL training. The benchmark, training pipeline, and Lean verifier are publicly released.\footnote{Anonymous code/data repository: \url{https://anonymous.4open.science/r/lemo-D708/README.md}}
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 Although large language models (LLMs) perform strongly on many reasoning benchmarks, it remains unclear whether they genuinely perform logical inference or rely on pattern completion. The distinction matters in real-world deployments---legal analysis, scientific discovery, automated decisions---where reasoning agents must handle incomplete information, redundant evidence, and explicit contradictions. Existing evaluations largely conflate linguistic competence with logical robustness and lack controlled stress tests for these conditions.
 
-We introduce a diagnostic framework that systematically probes structural robustness through four complementary perturbations: \textbf{(1)} rule deletion (redundant vs.\ essential), \textbf{(2)} contradictory-rule injection, \textbf{(3)} logic-preserving rewrites, and \textbf{(4)} multi-law stacking. Across three model families (BERT, Qwen2, TinyLlama) we uncover a sharp \emph{asymmetry of robustness}: models stay stable under semantics-preserving rewrites but collapse to accuracy~$0.0000$ under explicit contradictions. We term this phenomenon \textbf{Logic Inertia}---the tendency to persist along a learned deductive trajectory even when foundational premises are inconsistent. The same failure mode is reproduced on the Human Last Exam platform\footnote{\url{https://lastexam.ai/}}, where all top-tier models fail our constructed cases.
+We introduce a diagnostic framework that probes structural robustness through four perturbations: \textbf{(1)} rule deletion (redundant vs.\ essential), \textbf{(2)} contradictory-rule injection, \textbf{(3)} logic-preserving rewrites, and \textbf{(4)} multi-law stacking. Across three model families (BERT, Qwen2, TinyLlama) we uncover a sharp \emph{asymmetry of robustness}: models stay stable under semantics-preserving rewrites but collapse to instance-level accuracy~$0.0000$ under explicit contradictions. We term this \textbf{Logic Inertia}---the tendency to persist along a learned deductive trajectory under inconsistent premises. Concurrent work surfaces closely related failure modes under different terminology---``cognitive inertia''~\citep{lee2026cognitive}, premise critique~\citep{premiseCritique2025}, RuleBreakers~\citep{rulebreakers2025}, Inverse IFEval~\citep{inverseIFEval2025}, CodeCrash~\citep{codecrash2025}---but does not isolate the structural cause with a controlled propositional benchmark or close it with a learned structural prior; we do both. The same failure is reproduced on the Human Last Exam platform\footnote{\url{https://lastexam.ai/}}.
 
-To address it, we propose \textbf{Conflict-Aware Fusion (Fusion-Conflict)}, grounded in the \textbf{Cognitive Structure Hypothesis}: robust reasoning requires an explicit structural separation between premise validation and deductive execution. The framework operationalises this via a dual-process architecture trained by a four-stage pipeline (SFT $\to$ DPO $\to$ LIRE $\to$ RLVF). Our contributions are: \textbf{(i)} a diagnostic benchmark that disentangles redundancy, incompleteness, and contradiction, and the formalisation of \emph{Logic Inertia} as a structural failure mode reproduced across BERT, Qwen2/3, TinyLlama, GPT-4o, and Gemma-3-4B; \textbf{(ii)} \textbf{LIRE} (\emph{Logical Invariance REgularisation}), a symmetric-KL regulariser that enforces output-distribution invariance across logically equivalent rule formulations; \textbf{(iii)} \textbf{RLVF} (\emph{Reinforcement Learning from Verification Feedback}), a new RL algorithm that replaces RLHF's noisy human or learned reward with a deterministic symbolic-oracle reward, jointly optimising structural invariance and sensitivity in a single REINFORCE update; \textbf{(iv)} a sound \textsc{Lean~4} extension (\textbf{RLVF-Lean}) that elevates the oracle from a propositional forward-chainer to a formal proof-assistant kernel, with $99.0\%$ verifier agreement on $187$ multi-step T-derivations from our benchmark; and \textbf{(v)} the \textbf{Fusion-Conflict} pipeline that integrates the four stages and \emph{saturates} the held-out base, Variant~2 (essential-rule deletion), and Variant~3 (contradiction) splits for both $1.5$B and $8$B backbones---closing a gap that leaves untreated baselines at $0.250$ on V2 and $0.000$ on V3, and that GPT-4o and Gemma-3-4B-IT resolve in only $56.0\%$ and $43.9\%$ of V3 contradiction cases respectively. The synthetic structure is intentional: the benchmark is calibrated to \emph{expose} Logic Inertia, so the headline contrast lies in the \emph{collapse} pattern of strong baselines rather than in the absolute ceiling.
+To address it, we propose \textbf{Conflict-Aware Fusion (Fusion-Conflict)}, grounded in the \textbf{Cognitive Structure Hypothesis}: robust reasoning requires an explicit structural separation between premise validation and deductive execution, operationalised via a structured generation path trained by a four-stage pipeline (SFT $\to$ DPO $\to$ LIRE $\to$ RLVF). Our contributions are: \textbf{(i)} a diagnostic benchmark and the formalisation of \emph{Logic Inertia} as a structural failure mode reproduced across BERT, Qwen2/3, TinyLlama, GPT-4o, and Gemma-3-4B; \textbf{(ii)} \textbf{LIRE}, a symmetric-KL regulariser applied to autoregressive reasoning traces rather than the discriminative-QA setting of prior consistency regularisers~\citep{asai2020logicaug,li2019logicconsistency}; \textbf{(iii)} \textbf{RLVF}, an RL \emph{reward formulation} (not a new optimiser) replacing RLHF's learned reward with a deterministic symbolic-oracle reward in the propositional regime---complementary to proof-assistant-grounded RL~\citep{deepseekprover2024,leanabell2025,alphaproof2024}; \textbf{(iv)} a sound \textsc{Lean~4} extension (\textbf{RLVF-Lean}) elevating the oracle to a Lean kernel ($99.0\%$ kernel agreement on the $105$~T-cases of a $187$-question stratified Lean-translated sample; Table~\ref{tab:lean_bench}); and \textbf{(v)} the \textbf{Fusion-Conflict} pipeline, which \emph{saturates} the held-out base/V2/V3 splits for both $1.5$B and $8$B backbones---versus untreated baselines at $0.250$ on V2 and $0.000$ on V3, and GPT-4o/Gemma-3-4B-IT at $56.0\%$/$43.9\%$ on V3. The synthetic benchmark is calibrated to \emph{expose} Logic Inertia; the headline contrast is the \emph{collapse} pattern of strong baselines, not the absolute ceiling.
 
 \section{Related Work}
 
@@ -84,13 +84,16 @@ To address it, we propose \textbf{Conflict-Aware Fusion (Fusion-Conflict)}, grou
 Prior work documents that LLMs fail on multi-step deduction, abductive explanation, and compositional generalisation~\citep{berglund2023reversal,bao2022multi,ijcai2024p693,Cheng2025Em,cheng2026sapp,transformerClark,baoAccess,young-etal-2022-abductionrules,xiong2026scaling,bao2025thesis}. The Reversal Curse~\citep{berglund2023reversal} shows bidirectional inference failures, and reasoning fidelity degrades under controlled premise reordering and rewrites~\citep{baoAccess,bao2025thesis}. Logic-driven augmentation and neuro-symbolic hybrids partially mitigate these gaps via equivalence-based data expansion~\citep{wang-etal-2022-logic,bao2024} or external Prolog engines~\citep{10650138}, but address the symptoms rather than the model's intrinsic sensitivity to structural perturbations.
 
 \paragraph{Self-correction and verification under false premises.}
-Closer to our setting, \citet{xiong2025deliberate} and \citet{huang2023large} explore deliberative chains and self-correction; \citet{vericot2026} prune invalid reasoning via neuro-symbolic verification; \citet{multihoax2025} expose multi-hop fragility under adversarial premise injection; \citet{ares2024} evaluate RAG faithfulness. We complement this line by isolating the architectural root cause---a failure mode we name \textbf{Logic Inertia}, distinct from the latent-dynamics ``Cognitive Inertia'' of \citet{lee2026cognitive}---and by closing it with a structural prior trained via supervised and preference-based optimisation rather than inference-time prompting.
+Closer to our setting, \citet{xiong2025deliberate} and \citet{huang2023large} explore deliberative chains and self-correction; \citet{vericot2026} prune invalid reasoning via neuro-symbolic verification; \citet{multihoax2025} expose multi-hop fragility under adversarial premise injection; \citet{ares2024} evaluate RAG faithfulness; \citet{premiseCritique2025,rulebreakers2025,premiseRAG2025} probe premise-level evaluation and retrieval-augmented halting. We complement this line by isolating the architectural root cause---\textbf{Logic Inertia}, distinct from the latent-dynamics ``Cognitive Inertia'' of \citet{lee2026cognitive} and the instruction-inertia of \citet{inverseIFEval2025}---and by closing it with a structural prior trained \emph{into} the policy rather than elicited at inference.
+
+\paragraph{Verifier-grounded RL and consistency regularisation.}
+Proof-assistant feedback is an established RL reward source for theorem proving~\citep{deepseekprover2024,leanabell2025,alphaproof2024,logicReward2025}; RLVF-Lean is the propositional-reasoning analogue, with the kernel arbitrating premise-verification halts rather than full proofs. Symmetric-KL consistency regularisation has prior art in discriminative QA~\citep{asai2020logicaug,li2019logicconsistency,causalConsistency2026}; LIRE applies the idea at the autoregressive trace level under logically equivalent rule rewrites, where the target is invariance \emph{across} surface forms of the same proposition.
 
 \section{Methodology}
 \label{sec:method}
 We introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework, a structurally guided reasoning approach that enforces an explicit separation between premise verification and deductive execution. Guided by the \textbf{Cognitive Structure Hypothesis}, our methodology integrates three interdependent components:
 (1) a structural robustness benchmark for controlled evaluation,
-(2) a dual-process reasoning architecture that enforces verification-before-deduction, and
+(2) a two-phase generation path (verify, then deduce) that enforces verification-before-deduction, and
 (3) a structure-aligned optimization pipeline.
 Together, these components operationalize reasoning as a structurally constrained process rather than a purely data-driven behavior.
 
@@ -120,21 +123,23 @@ deduction must halt. Consequently, all queries associated with that
 instance are labeled \texttt{False}.
 
 Formally, let $\Gamma$ denote the set of premises and $Q$ the set of
-queries. If the premises entail a contradiction ($\Gamma \vdash \bot$),
+queries; the symbol $\vdash$ refers throughout to derivation under our
+forward-chaining engine on Horn-clause rules (Algorithm~\ref{alg:variant23}),
+not classical $\vdash_{\text{CL}}$ which would explode under contradiction.
+If the premises entail a contradiction ($\Gamma \vdash \bot$),
 then for every query $q \in Q$ we define
-
-\[
-\text{Label}(q) = \text{False}.
-\]
-
+$\text{Label}(q) = \text{False}$.
 This design enables contradiction detection to be evaluated using a
 standard binary classification metric while maintaining a clear and
 consistent reasoning semantics.
 
+\paragraph{Accuracy and $\mathrm{SR}_{\text{macro}}$.}
+Tables~\ref{tab:all_models_deltas}--\ref{tab:stage_wise} use \emph{instance-level exact match}: an instance is correct iff every query prediction matches the variant's label. Under the conservative semantics above, every Variant~3 query has label \texttt{F}; an untreated model that persists with its original deductive answers disagrees on at least one query, so instance accuracy collapses to $0.0000$. The structural-robustness macro score is $\mathrm{SR}_{\text{macro}} = \tfrac{1}{|\mathcal{V}|} \sum_{v \in \mathcal{V}} \mathrm{Acc}_v$ over $\mathcal{V} = \{\text{base}, \text{V1}, \text{V2}, \text{V3}, \text{V4-multi}\}$. The per-question labels in the Lean-translation study (Table~\ref{tab:lean_bench}) are the \emph{classical} (pre-override) polarities, which is why Variant~3 still contains $12$ classically-derivable T-questions even though the conservative-semantics instance label is \texttt{F}.
+
 Pseudocode for variant generation is in Appendix~\ref{app:variant-gen}. Although all instances are derived from a shared canonical template, the compositional variation in rule structures and query combinations induces diverse reasoning paths, preventing trivial memorisation.
 
-\subsection{Architectural Overview: Dual-Process Reasoning}
-Guided by the structural failures identified above, we introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} architecture. The core innovation is the imposition of a dual-process reasoning structure within the Chain-of-Thought (CoT) generation path.
+\subsection{Architectural Overview: Structured Two-Phase Generation}
+Guided by the structural failures identified above, we introduce the \textbf{Conflict-Aware Fusion (Fusion-Conflict)} framework. The core innovation is the imposition of a two-phase reasoning structure---\emph{verification then deduction}---within the Chain-of-Thought (CoT) generation path; this is a constraint on the \emph{generation trace}, not a modification of the underlying neural architecture or weights.
 
 As illustrated in Figure~\ref{fig:fusion_structure}, the reasoning process is constrained such that deductive rules cannot be applied until the model has explicitly validated the logical consistency of the premises. This design converts verification from an optional behavior into a required structural step. When contradictions or missing dependencies are detected, the model halts or revises reasoning rather than continuing forward deduction. The four-stage optimization pipeline that trains this behavior is detailed in \S\ref{sec:pipeline}.
 
@@ -224,13 +229,13 @@ As illustrated in Figure~\ref{fig:fusion_structure}, the reasoning process is co
               at ([xshift=-1.15cm]s3.center) (s3a) {
             {\footnotesize \textbf{Base rule:}} \\[2pt]
             ``All men are mortal'' \\
-            $p_\theta(\cdot|\mathbf{x})$
+            $\pi_\theta(\cdot|\mathbf{x})$
         };
         \node [scontent, fill=orange!6, text width=3.4cm]
               at ([xshift=1.15cm]s3.center) (s3b) {
             {\footnotesize \textbf{Contrapositive:}} \\[2pt]
             ``All non-mortals \\
-            are non-men'' ~ $p_\theta(\cdot|\tilde{\mathbf{x}})$
+            are non-men'' ~ $\pi_\theta(\cdot|\tilde{\mathbf{x}})$
         };
         \draw [<->, line width=1.2pt, orange!60] (s3a.east) -- (s3b.west)
               node[midway, above, font=\footnotesize] {Sym.\ KL $\approx 0$};
@@ -301,25 +306,24 @@ Preference pairs are generated automatically from benchmark instances: for contr
 While Stages 1--2 internalize the verification-before-deduction structural prior, they remain vulnerable to a subtler failure mode: \textit{surface-level pattern matching}. A model trained only with SFT and DPO can achieve perfect accuracy on the original rule formulations yet drop sharply (e.g., from 1.000 to 0.327 on De Morgan variants) when logically equivalent rules are rephrased. This motivates the two subsequent stages, which operate at the \emph{output-distribution} level rather than at the trace level.
 
 \paragraph{Stage 3: Logical Invariance REgularisation (LIRE).}
-Let $\mathbf{x}$ be a base premise-rule input and $\tilde{\mathbf{x}}$ its logically equivalent reformulation (De Morgan, double-negation, contrapositive). LIRE penalises divergence between the two output distributions $p_\theta(\cdot|\mathbf{x})$ and $p_\theta(\cdot|\tilde{\mathbf{x}})$ via a symmetric KL term:
+Let $\mathbf{x}$ be a base premise-rule input, $\tilde{\mathbf{x}}$ its logically equivalent reformulation (De Morgan, double-negation, contrapositive), and $y=(y_1,\dots,y_T)$ the gold trace from the SFT data. LIRE penalises divergence between the next-token distributions under the two inputs, evaluated by \emph{teacher-forcing the same gold $y$} on both branches (which aligns the distributions token-wise and avoids variable-length rollout mismatch):
 \begin{align}
-\mathcal{L}_{\mathrm{LIRE}} &= \mathcal{L}_{\mathrm{CE}}\bigl(p_\theta(\cdot|\mathbf{x}),\, y\bigr) + \lambda\,\mathcal{L}_{\mathrm{inv}},\;
-\mathcal{L}_{\mathrm{inv}} = \tfrac{1}{2}\bigl[\mathrm{KL}(p_\theta(\cdot|\mathbf{x})\Vert p_\theta(\cdot|\tilde{\mathbf{x}})) + \mathrm{KL}(p_\theta(\cdot|\tilde{\mathbf{x}})\Vert p_\theta(\cdot|\mathbf{x}))\bigr].
+\mathcal{L}_{\mathrm{LIRE}} &= \mathcal{L}_{\mathrm{CE}}\bigl(\pi_\theta(\cdot|\mathbf{x}),\, y\bigr) + \lambda\,\mathcal{L}_{\mathrm{inv}},\;\;
+\mathcal{L}_{\mathrm{inv}} = \tfrac{1}{2 T}\!\sum_{t=1}^{T} \bigl[\mathrm{KL}_t(\mathbf{x}\Vert\tilde{\mathbf{x}}) + \mathrm{KL}_t(\tilde{\mathbf{x}}\Vert\mathbf{x})\bigr],
 \label{eq:lire}
 \end{align}
-\refstepcounter{equation}\label{eq:symkl}%
-The symmetric form avoids the mode-seeking vs.\ mode-covering asymmetry of unidirectional KL.
+where $\mathrm{KL}_t(\mathbf{x}\Vert\tilde{\mathbf{x}}) := \mathrm{KL}\bigl(\pi_\theta(\cdot|\mathbf{x},y_{<t})\,\Vert\,\pi_\theta(\cdot|\tilde{\mathbf{x}},y_{<t})\bigr)$. Symmetry avoids the mode-seeking/covering asymmetry of unidirectional KL; the shared $y$ keeps the KL exact rather than approximated.
 
 \paragraph{Limitation of LIRE.}
 LIRE improves invariance (Variant~4 accuracy $0.741 \to 0.999$) but suppresses \emph{any} distribution shift across rule reformulations, including those that \emph{should} change the answer (Variants~2/3). Empirical sensitivity drops from $1.0$ to $0.47$, motivating Stage~4.
 
 \paragraph{Stage 4: \textsc{RLVF}---Reinforcement Learning from Verification Feedback.}
-\textsc{RLVF} is the new RL algorithm we introduce in this work. The key design choice is to replace RLHF's noisy human preferences or learned reward models with a \emph{deterministic symbolic oracle}, eliminating reward-model bias and enabling provably unbiased policy gradients on the rule-based reasoning regime. We formulate inference as a contextual bandit: at each step, sample $a_s\sim\pi_\theta(\cdot|\mathbf{x})$, query the oracle $a^*=\textsc{ForwardChain}(\mathbf{x})$, and assign $r=+1$ if $a_s=a^*$ else $-1$. The policy is optimised by REINFORCE~\citep{williams1992simple} with an EMA baseline $b$:
+\textsc{RLVF} is a verifier-grounded RL \emph{reward formulation} (not a new optimiser): plain REINFORCE drives the gradient, but the reward is a deterministic symbolic oracle replacing RLHF's learned reward model, eliminating reward-model bias on the rule-based regime. The policy emits a full reasoning trace $\tau\sim\pi_\theta(\cdot|\mathbf{x})$; a deterministic parser $\Pi(\tau)\in\{\text{T},\text{F}\}$ extracts the boolean answer from the final \texttt{Step\,N: Answer = \dots} line (regex-matched; unparseable traces get $r=-1$). The oracle returns $a^*=\textsc{ForwardChain}(\mathbf{x})$ and reward compares parsed answer to oracle:
 \begin{equation}
-\mathcal{L}_{\mathrm{RLVF}} = -\mathbb{E}_{a_s \sim \pi_\theta}\bigl[(r - b)\,\log\pi_\theta(a_s|\mathbf{x})\bigr],\quad b_t = \mu b_{t-1} + (1-\mu)\bar r_t,\;\mu=0.99.
+\mathcal{L}_{\mathrm{RLVF}} = -\mathbb{E}_{\tau \sim \pi_\theta}\!\bigl[(r - b_t)\,\log\pi_\theta(\tau|\mathbf{x})\bigr],\;\; r=\mathbb{1}[\Pi(\tau){=}a^*]-\mathbb{1}[\Pi(\tau){\neq}a^*],\;\; b_t=\mu b_{t-1}+(1-\mu)\bar r_t,
 \label{eq:rlvf}
 \end{equation}
-A single reward balances both objectives because the oracle naturally distinguishes \emph{equivalent} reformulations (Variant~4: same $a^*$ as base $\Rightarrow$ rewards \textbf{invariance}) from \emph{structural alterations} (Variants~2/3: different $a^*$ $\Rightarrow$ rewards \textbf{sensitivity}). Batches mix base / V2 / V3 / V4 samples at ratio $\alpha=0.5$ to optimise both properties jointly.
+where $\bar r_t$ is the mean reward on mini-batch $B_t$ and $\mu=0.99$. A single reward balances both objectives because the oracle naturally distinguishes \emph{equivalent} reformulations (V4: same $a^*\Rightarrow$ \textbf{invariance}) from \emph{structural alterations} (V2/V3: different $a^*\Rightarrow$ \textbf{sensitivity}). Each batch is composed of fraction $\alpha=0.5$ perturbation samples (uniformly from V2$\cup$V3$\cup$V4) and $1-\alpha=0.5$ base samples, balancing sensitivity, invariance, and base-task retention.
 
 In summary, each stage addresses a specific failure mode of its predecessor: SFT provides structure but not preference; DPO adds preference but not invariance; LIRE adds invariance but sacrifices sensitivity; RLVF restores both via the oracle-grounded reward.
 
@@ -385,7 +389,7 @@ Table~\ref{tab:comparison_results} summarises Fusion-Conflict against six baseli
 To understand the failure mode of frontier models, we performed an error analysis on GPT-4o using the OpenAI API on a stratified $200$-row sample per split (the per-question prediction CSVs are released alongside the benchmark). On Variant~3, where every query has ground-truth \texttt{False} under conservative reasoning semantics, GPT-4o produces the correct halt-on-contradiction answer in only $56.0\%$ of the $800$ test questions; the remaining $44.0\%$ continue deductive inference despite the explicit contradiction in the premises. A representative failure: given premises $\{A \to B,\, A,\, \neg B\}$, GPT-4o often surfaces the inconsistency in its verification trace and then proceeds to conclude $B$ from $\{A \to B, A\}$, stating ``Since $A$ is true and $A$ implies $B$, then $B$ must be true,'' effectively ignoring its own prior verification of $\neg B$. This suggests that frontier models suffer from a compartmentalization of verification and execution, where the ``reasoning momentum'' of the deductive steps overrides contradictory evidence. To rule out a vendor-specific artefact, we replicate the analysis on \textbf{Gemma-3-4B-IT} (an open-weight frontier model from a different lab, evaluated locally with identical prompts and decoding); it scores \emph{lower} on V3 ($0.439$) than GPT-4o, continuing past the contradiction in $56.1\%$ of cases, and shows the same qualitative failure pattern. Fusion-Conflict mitigates this by fusing the verification signal directly into the hidden state representation, forcing the model to reconcile the conflict before proceeding.
 
 \subsection{Experimental setup}
-The benchmark has $100$ base groups ($80$ train / $20$ test) seeded into a combinatorially large hypothesis space via randomised entity mapping and rule variation, yielding $\approx\!11{,}200$ Stage-2 preference pairs. To probe out-of-template generalisation, Fusion-Conflict (8B) is also tested on five external reasoning domains (medical, legal, etc.) not seen at training, where it maintains $SR_{macro}\in[0.826,\,0.992]$. Per-stage hyperparameters: Stage~1 SFT uses AdamW + bf16 + LoRA ($r{=}8$, $\alpha{=}16$, dropout~$0.05$), $3$ epochs, batch~$4$, LR~$2{\times}10^{-5}$, max length~$512$. DPO uses $\beta{=}0.1$ at the same LR. LIRE uses $\lambda{=}1.0$, batch~$4$, grad-accum~$2$. RLVF mixes V2/V3/V4 samples at $\alpha{=}0.5$, momentum $\mu{=}0.99$, LR $1{\times}10^{-5}$, batch~$8$, grad-accum~$4$. Full ablation tables for the 1.5B/BERT/TinyLlama backbones are in Appendix~\ref{app:hyper}.
+The benchmark has $100$ base groups ($80$ train / $20$ test) seeded into a combinatorially large hypothesis space via randomised entity mapping and rule variation, yielding $\approx\!11{,}200$ Stage-2 preference pairs. Out-of-template generalisation is evaluated on LogicNLI and MNLI-Con (Table~\ref{tab:real_world_results}). Per-stage hyperparameters: Stage~1 SFT uses AdamW + bf16 + LoRA ($r{=}8$, $\alpha{=}16$, dropout~$0.05$), $3$ epochs, batch~$4$, LR~$2{\times}10^{-5}$, max length~$512$. DPO uses $\beta{=}0.1$ at the same LR. LIRE uses $\lambda{=}1.0$, batch~$4$, grad-accum~$2$. RLVF mixes V2/V3/V4 at $\alpha{=}0.5$, $\mu{=}0.99$, LR $1{\times}10^{-5}$, batch~$8$, grad-accum~$4$. Full ablation tables are in Appendix~\ref{app:ablation}; all hyperparameters in Appendix~\ref{app:hyper}.
 
 \subsection{Stage-wise ablation: each stage addresses a distinct failure mode}
 \label{sec:ablation-stagewise}
@@ -393,27 +397,27 @@ Table~\ref{tab:stage_wise} reports the per-stage progression on the four most di
 
 \begin{table}[h]
 \centering\small
-\caption{Stage-wise progression. Adding LIRE on top of SFT improves compositional invariance (V4-multi: $0.635{\to}0.993$ on Qwen2; $0.006{\to}1.000$ on Qwen3) but \emph{collapses} structural sensitivity on V2/V3, exactly the trade-off motivated in Section~\ref{sec:pipeline}. RLVF then restores V2/V3 to oracle-level agreement on the held-out split without losing the LIRE gains. The Qwen3-8B baseline column also shows that scale alone does \emph{not} solve Logic Inertia (V3 $=0.656$ pre-training); the saturation in the bottom row should be read as evidence that the structural prior \emph{generalises}, since the same split drives every baseline below it---including GPT-4o on V3 at $0.560$---well below ceiling.}
+\caption{Stage-wise progression. Adding LIRE on top of SFT improves compositional invariance (V4-multi: $0.635{\to}0.993$ on Qwen2; $0.006{\to}1.000$ on Qwen3) but \emph{collapses} structural sensitivity on V2/V3, exactly the trade-off motivated in Section~\ref{sec:pipeline}. RLVF then restores V2/V3 to oracle-level agreement on the held-out split. On the $1.5$B backbone V4-multi degrades from $0.993$ (Stage~3) to $0.773$ (Stage~4)---a real residual of the invariance/sensitivity trade-off that LIRE alone cannot resolve at this capacity---while on $8$B the Stage-4 V4-multi remains at the LIRE ceiling ($1.000$); we report the gap rather than claim ``no loss''. The Qwen3-8B \emph{first} row is the SFT-only baseline (Stage~1), \emph{not} an untrained zero-shot run; even with Stage~1 internalised, V3 stays at $0.656$, supporting the claim that scale and SFT alone do not solve Logic Inertia, while the same split drives every baseline below it---including GPT-4o on V3 at $0.560$---well below ceiling.}
 \label{tab:stage_wise}
 \begin{tabular}{l|cccc|cccc}
 \toprule
 & \multicolumn{4}{c|}{\textbf{Qwen2-1.5B}} & \multicolumn{4}{c}{\textbf{Qwen3-8B}} \\
 \textbf{Stage}            & Base & V2   & V3   & V4-multi & Base & V2   & V3   & V4-multi \\
 \midrule
-SFT (Stage~1+2)           & $1.000$ & $1.000$ & $1.000$ & $0.635$  & $0.333$ & $0.460$ & $0.656$ & $0.006$  \\
+SFT+DPO (Stage~1+2)       & $1.000$ & $1.000$ & $1.000$ & $0.635$  & $0.333$ & $0.460$ & $0.656$ & $0.006$  \\
 \,$+$ LIRE (Stage~3)      & $0.812$ & $0.590$ & $0.344$ & $\mathbf{0.993}$ & $0.549$ & $0.503$ & $0.344$ & $\mathbf{1.000}$ \\
 \,$+$ RLVF (Stage~4)      & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $0.773$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ & $\mathbf{1.000}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Three observations follow. \textbf{(i)} LIRE alone is harmful on V2/V3 because its symmetric-KL term suppresses \emph{any} distribution shift across rule reformulations, including those required by genuine logical change---a clean empirical instance of the invariance--sensitivity trade-off (Eq.~\ref{eq:lire}). \textbf{(ii)} RLVF resolves this with a single oracle reward (Eq.~\ref{eq:rlvf}): the same gradient signal that reinforces V4 invariance also reinforces V2/V3 sensitivity, removing the multi-objective balancing problem. \textbf{(iii)} The Qwen3-8B row demonstrates that scale alone is insufficient---the untrained $8$B model still falls below $0.7$ on V3---further evidence that Logic Inertia is structural rather than capacity-bound. Stage~1 pre-training alone moderately improves V2 but hurts base accuracy ($1.000{\to}0.525$ on Qwen2; full table in Appendix~\ref{app:ablation}).
+Three observations follow. \textbf{(i)} LIRE alone is harmful on V2/V3 because its symmetric-KL term suppresses \emph{any} distribution shift across rule reformulations, including those required by genuine logical change---a clean empirical instance of the invariance--sensitivity trade-off (Eq.~\ref{eq:lire}). \textbf{(ii)} RLVF resolves this with a single oracle reward (Eq.~\ref{eq:rlvf}): the same gradient signal reinforces V4 invariance and V2/V3 sensitivity. \textbf{(iii)} The Qwen3-8B row shows scale + Stage-1 SFT remains insufficient---SFT-only $8$B falls to $0.656$ on V3---evidence that Logic Inertia is structural, not capacity-bound. Note that the two ``Stage~1'' numbers reported are \emph{not} contradictory: Fusion-LRA in Table~\ref{tab:comparison_results} (Base $0.988$) is SFT \emph{with} the conflict-aware preamble; the $0.525$ entry in Appendix~\ref{app:ablation} is the same backbone trained on a vanilla \emph{Mixed-Aug} corpus \emph{without} the preamble. The preamble, not the data mix, preserves base accuracy.
 
 \section{Discussion}
 
 \paragraph{Why DPO matters.} Fusion-LRA (SFT only) plateaus at $0.705$ on Variant~3 because SFT teaches the \emph{form} of the contradiction check but still occasionally hallucinates success---a ``shallow alignment'' failure. Adding DPO sharpens the halt-on-contradiction decision boundary and saturates the Variant~3 split, supporting the role of preference optimisation as a \emph{robustness hardener} rather than a marginal improvement.
 
-\paragraph{Why \textsc{RLVF}, not PPO/GRPO?} Modern RLHF stacks (PPO~\citep{schulman2017proximal}, GRPO~\citep{shao2024deepseekmath}) presuppose a \emph{learned} reward model trained on human preferences, which inherits annotator noise and distribution shift, and a clipped trust-region update to stabilise training against that noisy reward. Our setting is fundamentally different: the ground truth on V2/V3/V4 is exactly computable by a symbolic forward-chainer, so the reward is \emph{unbiased and deterministic}. This removes the dominant motivation for PPO's clipping and for GRPO's group-relative advantage normalisation. \textsc{RLVF} therefore uses plain REINFORCE with an EMA baseline (Eq.~\ref{eq:rlvf}), which is sufficient because (i)~variance of the gradient is small when the reward is $\pm 1$ deterministic, (ii)~the EMA baseline already captures the running mean, and (iii)~there is no reward hacking surface for the policy to exploit. Empirically, this single-reward formulation jointly optimises invariance (V4) and sensitivity (V2/V3) without the multi-objective balancing that learned-reward setups require, recovering the gains LIRE alone sacrificed (Table~\ref{tab:stage_wise}). The \textsc{RLVF-Lean} extension (Section~\ref{sec:phase2}) generalises this to step-level rewards from a Lean~4 kernel, preserving the unbiased-oracle property at proof granularity.
+\paragraph{Why \textsc{RLVF}, not PPO/GRPO?} Modern RLHF stacks (PPO~\citep{schulman2017proximal}, GRPO~\citep{shao2024deepseekmath}) presuppose a \emph{learned} reward model trained on human preferences, which inherits annotator noise and distribution shift, and a clipped trust-region update to stabilise training against that noisy reward. Our setting is fundamentally different: the ground truth on V2/V3/V4 is exactly computable by a symbolic forward-chainer, so the reward is \emph{unbiased and deterministic}. This removes the dominant motivation for PPO's clipping and for GRPO's group-relative advantage normalisation. \textsc{RLVF} therefore uses plain REINFORCE with an EMA baseline (Eq.~\ref{eq:rlvf}); the contribution is the reward \emph{formulation}, not the optimiser. Plain REINFORCE is sufficient because (i)~variance of the gradient is small when the reward is $\pm 1$ deterministic, (ii)~the EMA baseline already captures the running mean, and (iii)~there is no reward hacking surface for the policy to exploit. Empirically, this single-reward formulation jointly optimises invariance (V4) and sensitivity (V2/V3) without the multi-objective balancing that learned-reward setups require, recovering most of the gains LIRE alone sacrificed (Table~\ref{tab:stage_wise}); a residual V4-multi loss remains at the $1.5$B scale, as discussed below the table. The \textsc{RLVF-Lean} extension (Section~\ref{sec:phase2}) is the propositional-reasoning analogue of proof-assistant-grounded RL pipelines~\citep{deepseekprover2024,leanabell2025,alphaproof2024,logicReward2025}: it generalises the oracle to step-level rewards from a Lean~4 kernel, preserving the unbiased-oracle property at proof granularity.
 
 \paragraph{Cognitive Structure Hypothesis.} The dominance of Fusion-Conflict over both data-balanced (Mixed-Aug, $0.972$ on V3 but $0.525$ base) and over-conservative (RA-CoT, $0.690$/$0.263$) baselines indicates that reasoning reliability follows from the \emph{structural organisation} of the inference, not from data exposure alone. The mandatory verification preamble acts as a functional circuit breaker that prevents pattern-matching deductive momentum from overriding factual reality.
 
@@ -422,7 +426,7 @@ Variants 1--3 isolate model sensitivity to perturbations that preserve versus di
 
 Across the four primary stress tests (Table~\ref{tab:comparison_results}), Fusion-Conflict \emph{saturates} the held-out split for both backbones---meaning the policy matches the symbolic oracle's ground-truth on a benchmark that GPT-4o resolves at only $56.0\%$ on V3 and that the strongest non-Fusion baseline (Fusion-LRA) plateaus at $0.705$. The headline result is the \emph{gap} between the structural prior and these alternatives, not the absolute number. The \textbf{Variant~4 multi-law stacking} split remains the hardest condition: composing $2$--$5$ equivalence rewrites still degrades the $1.5$B backbone to $0.773$ while the $8$B backbone closes that gap, indicating that contradictory premises are now reliably handled but deep compositional rewrites still benefit from capacity. The Phase~2 RLVF-Lean extension (Section~\ref{sec:phase2}) targets this regime with a Lean kernel verifier beyond \textsc{ForwardChain}'s propositional reach.
 
-\paragraph{Out-of-distribution transfer.} To rule out memorisation we evaluate transfer to \textbf{LogicNLI}~\cite{tian-etal-2021-diagnosing} (a first-order-logic NLI benchmark) and the contradiction subset of \textbf{MNLI}~\cite{N18-1101}; no LogicNLI/MNLI examples were used in training, so the model only sees the synthetic structural-perturbation data of Section~\ref{sec:method}. We fine-tune a lightweight Qwen2.5-0.5B with our Stage~1 conflict-aware template, requiring an explicit ``Step~1: Detect Contradiction'' before entailment classification.
+\paragraph{Out-of-distribution transfer.} To rule out memorisation we evaluate transfer to \textbf{LogicNLI}~\cite{tian-etal-2021-diagnosing} and the contradiction subset of \textbf{MNLI}~\cite{N18-1101}; no LogicNLI/MNLI examples were used in training. The transfer model is a Qwen2.5-0.5B trained with the \emph{full} four-stage pipeline; Table~\ref{tab:real_world_results} reports each named ablation along the pipeline (Standard SFT~$=$ vanilla; Mixed-Aug~$=$ data augmentation only; Fusion-LRA~$=$ Stage~1 with the preamble; Conflict-Aware Fusion~$=$ full pipeline). Every variant requires ``Step~1: Detect Contradiction'' before entailment classification.
 
 \begin{table}[h]
     \centering
@@ -475,12 +479,21 @@ the benchmark ground-truth answer.
 \centering
 \small
 \caption{Lean~4 verification on real LEMO benchmark rows (20 rows per split,
-stratified random sample). We report the number of questions (\#T, \#F), the
-count accepted by Lean, and the agreement rate, separated by ground-truth
-polarity. T-cases are auto-derived via mechanical forward chaining; F-cases
-are attempted via classical negation. The gap between T-rate ($99.0\%$) and
-F-rate ($36.6\%$) reflects a semantic mismatch between LEMO's closed-world
-reasoning and Lean's classical logic, discussed below.}
+stratified random sample; $187$ total questions). \textbf{Polarity here is each query's
+\emph{classical} label} (i.e.\ the truth value derivable from premises before the
+conservative-semantics override of \S\ref{sec:method}), not the per-instance
+``everything-is-\texttt{F}'' override applied to Variant~3 in
+Tables~\ref{tab:all_models_deltas}--\ref{tab:stage_wise}. This is why Variant~3
+still contains $12$ classically-derivable T-cases. We report the number of
+questions (\#T, \#F), the count accepted by Lean, and the agreement rate, separated
+by ground-truth polarity. T-cases are auto-derived via mechanical forward chaining;
+F-cases are attempted via classical negation. Variant~1 happens to draw all-T
+queries because the underlying \texttt{test\_variant1.csv} file is constructed by
+removing \emph{redundant} rules, which preserves derivability of the original
+T-queries; the stratified sampler observed $42$ such queries and zero F-queries
+in the $20$-row draw. The gap between T-rate ($99.0\%$) and F-rate ($36.6\%$)
+reflects a semantic mismatch between LEMO's closed-world reasoning and Lean's
+classical logic, discussed below.}
 \label{tab:lean_bench}
 \begin{tabular}{lrrrrrr}
 \toprule
@@ -521,7 +534,10 @@ RLVF-Lean operationalises the neuro-symbolic stance~\citep{marcus2019rebooting,d
 
 \section{Conclusion}
 
-We diagnosed \textbf{Logic Inertia}---a structural failure mode in which contemporary LLMs (BERT, Qwen2/3, TinyLlama, GPT-4o, Gemma-3-4B-IT) persist along learned deductive trajectories under essential-rule deletion and contradictions---and closed it with two named contributions: \textbf{LIRE}, a symmetric-KL invariance regulariser, and \textbf{\textsc{RLVF}}, a new RL algorithm whose deterministic symbolic-oracle reward replaces RLHF's learned reward model. Combined in the \textbf{Conflict-Aware Fusion} pipeline (SFT$\to$DPO$\to$LIRE$\to$\textsc{RLVF}), they \emph{saturate} the held-out base/V2/V3 splits for both $1.5$B and $8$B backbones on a benchmark where GPT-4o resolves only $56.0\%$ of V3 contradictions and Gemma-3-4B-IT only $43.9\%$. The Phase~2 \textbf{\textsc{RLVF-Lean}} extension upgrades the oracle to a Lean~4 kernel ($99.0\%$ agreement on $187$ multi-step T-derivations). Code, benchmark, and verifier are released.
+We diagnosed \textbf{Logic Inertia}---a structural failure mode in which generative LLMs (Qwen2/3, TinyLlama, GPT-4o, Gemma-3-4B-IT) and the encoder-only BERT baseline persist along learned deductive trajectories under essential-rule deletion and contradictions---and closed it with two named contributions: \textbf{LIRE}, a symmetric-KL invariance regulariser applied at the trace level via teacher-forcing on logically equivalent rule reformulations, and \textbf{\textsc{RLVF}}, an RL \emph{reward formulation} (not a new optimiser) whose deterministic symbolic-oracle reward replaces RLHF's learned reward model and admits a plain REINFORCE update. Combined in the \textbf{Conflict-Aware Fusion} pipeline (SFT$\to$DPO$\to$LIRE$\to$\textsc{RLVF}), they \emph{saturate} the held-out base/V2/V3 splits for both $1.5$B and $8$B backbones on a benchmark where GPT-4o resolves only $56.0\%$ of V3 contradictions and Gemma-3-4B-IT only $43.9\%$. The Phase~2 \textbf{\textsc{RLVF-Lean}} extension upgrades the oracle to a Lean~4 kernel: on a stratified $187$-question Lean-translated sample, $99.0\%$ of the $105$~classically-derivable T-cases close under the kernel; the $36.6\%$ rate on the $82$ F-cases reflects the closed-world / classical semantics gap analysed in \S\ref{sec:phase2}.
+
+\paragraph{Limitations and future work.}
+The benchmark is propositional and synthetic; saturation evidences that the structural prior \emph{generalises across backbones}, not that contradictions are universally solved---V4-multi at $1.5$B drops to $0.773$ after Stage~4, and the Lean F-rate gap is genuine. Three next steps: (i) end-to-end RLVF-Lean training amortised through a persistent LeanDojo server; (ii) lifting the closed-world override via a CWA axiom schema or the hybrid forward-chain/Lean policy of \S\ref{sec:phase2}; (iii) evaluation on math/proof benchmarks. Code, benchmark, and verifier are released.
 
 
 \bibliography{references}
@@ -564,7 +580,7 @@ Epochs $3$; LR $2{\times}10^{-5}$; batch $4$; max length $512$; AdamW (mixed pre
 
 \begin{table}[h]
 \centering\small
-\caption{Ablation: Stage 1 pre-training alone hurts base accuracy on generative models.}
+\caption{Ablation: SFT on a vanilla \emph{Mixed-Aug} corpus \emph{without} the conflict-aware verification preamble. Compared to Fusion-LRA (Conflict-Aware SFT, Table~\ref{tab:comparison_results}, Base $=0.988$ on Qwen2), removing the preamble drops Qwen2's base accuracy to $0.5250$, isolating the contribution of the structural prior from the contribution of training data alone.}
 \label{tab:stage1_results}
 \begin{tabular}{lcccccc}
 \toprule
@@ -597,6 +613,8 @@ RA-CoT                 & 0.263          & 0.593          & 0.690          & 2 \\
 
 \subsection{Lean Pilot Study (8 hand-crafted traces)}
 \label{app:lean-pilot}
+
+Before the benchmark-scale Lean evaluation reported in Table~\ref{tab:lean_bench}, we ran a small hand-crafted pilot on the Socrates contradiction example to verify (i)~that the Python$\to$Lean bridge faithfully translates a halt-on-contradiction trace into a kernel-checkable theorem, (ii)~that valid halt traces receive reward~$+1$ while opportunistic deductive continuations and malformed traces receive $-1$, and (iii)~that per-trace verification latency is compatible with online RL. Table~\ref{tab:lean_pilot} reports kernel agreement on $8$ representative traces.
 
 \begin{table}[h]
 \centering\small
@@ -778,12 +796,13 @@ This variation replaces multiple rules with logically equivalent fewer rules, bu
         \item Anne is green or blue
     \end{itemize}
 
-    \item \textbf{Rules:}
+    \item \textbf{Rules:} (\emph{This variant deliberately combines two perturbations: a logical-equivalence rewrite of Rules~1+2 into a single Rule~A, \textbf{and} the deletion of Rules~5 and~6. Rule~6 is essential for deriving ``nice''; we discuss the two perturbations separately below.})
     \begin{itemize}
-        \item Rule A: If someone is green or blue then they are cold. $\forall x \, ((\text{Green}(x) \lor \text{Blue}(x)) \rightarrow \text{Cold}(x))$
+        \item Rule A: If someone is green or blue then they are cold. $\forall x \, ((\text{Green}(x) \lor \text{Blue}(x)) \rightarrow \text{Cold}(x))$ \quad \emph{(replaces Rules 1+2)}
         \item Rule 3: If someone is cold then they are rough. $\forall x \, (\text{Cold}(x) \rightarrow \text{Rough}(x))$
         \item Rule 4: If someone is rough then they are young. $\forall x \, (\text{Rough}(x) \rightarrow \text{Young}(x))$
-        % Rules 5 and 6 removed
+        \item \emph{Rule~5 (Young $\to$ Cold) -- removed (redundant cycle)}
+        \item \emph{Rule~6 (Young $\to$ Nice) -- removed (essential for ``nice''; this is the cause of Q4=F, not the Rule~A rewrite)}
     \end{itemize}
 
     \item \textbf{Questions:}
@@ -795,9 +814,9 @@ This variation replaces multiple rules with logically equivalent fewer rules, bu
     \end{itemize}
 \end{itemize}
 
-Rule A directly captures the dilemma of Rules 1 and 2, leading to ``Anne is cold" with equivalent logical force. Rules 3 and 4 then proceed as before. However, without Rule 6, we cannot derive ``Anne is nice," resulting in a different conclusion for Q4.
+Rule~A directly captures the dilemma of Rules 1 and 2, leading to ``Anne is cold" with equivalent logical force---this is the equivalence rewrite, and it preserves Q1--Q3. The change in Q4 (``nice'' becomes F) is caused entirely by the \emph{deletion of Rule~6}, not by the equivalence rewrite. We made both edits in this single illustrative variant to keep the example compact, but they are structurally independent: Variant~4 in the main benchmark applies the rewrite alone, and Variant~2 applies the essential-rule deletion alone.
 
-\textbf{Key Insight}: While Rule A is logically equivalent to the combination of Rules 1 and 2, the overall rule set simplification changes the available inference paths, demonstrating that equivalence at the micro-level doesn't guarantee identical macro-level conclusions.
+\textbf{Key Insight}: Logical equivalence of a sub-rule set (here Rules~1+2 vs.\ Rule~A) is a local property; it does not by itself change derivability. Macro-level derivability changes are caused by which essential rules remain, as isolated cleanly in Variant~2.
 
 The logical equivalence can be shown as:
 \[
@@ -851,7 +870,7 @@ This variation adds distracting and potentially contradictory rules, testing the
 
 \subsection{Reasoning Process and Analysis}
 
-    This variation introduces \textit{contradictory interference}, which challenges the AI's ability to address conflicts within the logical structure. The fact ``Anne is green or blue," combined with the original chain of reasoning (Rules 1-6), leads to the conclusions that Anne is cold, rough, young, and nice. However, the fact ``Anne is not cold or not nice" introduces a conflict, as it implies that being nice would mean Anne is not cold. This creates an contradiction that different AI systems might address differently:
+    This variation introduces \textit{contradictory interference}, which challenges the AI's ability to address conflicts within the logical structure. The fact ``Anne is green or blue," combined with the original chain of reasoning (Rules 1-6), leads to the conclusions that Anne is cold, rough, young, and nice. However, the fact ``Anne is not cold or not nice" introduces a conflict, as it implies that being nice would mean Anne is not cold. This creates a contradiction that different AI systems might address differently:
 
 \paragraph{Contradiction Handling Strategy.}
 

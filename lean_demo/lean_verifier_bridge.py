@@ -10,7 +10,7 @@ fails, 0 if the proof is incomplete but no error was raised.
 
 This is the function that would replace `forward_chain()` in
 `scripts/training/stage4_train_rlvf.py` for the RLVF-Lean variant of
-the pipeline (Section 6.5 / Phase 2 of the paper).
+the pipeline (the Phase 2 / RLVF-Lean section of the paper).
 
 Currently used only for feasibility demonstration --- a production
 implementation should use `LeanDojo` or a persistent Lean server to

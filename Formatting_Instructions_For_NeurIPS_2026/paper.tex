@@ -156,16 +156,16 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
             rounded corners, text centered, font=\small,
             minimum height=0.8cm]
 
-        % ── Grid: cols at x=0,10; rows at y=0,-4.2 ─────────
-        % Spacing tuned so input→top-row gap and top-row→bottom-row gap
-        % are both ~0.5cm.
+        % ── Grid: cols at x=0,10; rows at y=0,-4.3 ─────────
+        % Spacing tuned so input→top-row gap (~0.4cm) is slightly smaller
+        % than top-row→bottom-row gap (~0.5cm) for visual balance.
         \def\colsep{10}
-        \def\rowsep{-4.2}
+        \def\rowsep{-4.3}
 
         % ====================================================
         % INPUT — centered between the two columns
         % ====================================================
-        \node [inputbox, minimum width=19.6cm] at (5, 2.8) (input) {
+        \node [inputbox, minimum width=19.6cm] at (5, 2.7) (input) {
             \textbf{Running Example} ~~~
             \textit{Facts}: Socrates is a man. ~~
             \textit{Rule}: All men are mortal. ~~
@@ -197,13 +197,13 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
               at ([yshift=-0.15cm]s2.north) (s2h)
               {Stage 2: DPO Alignment ~~~ $\mathcal{L}_{\mathrm{DPO}}$};
         \node [scontent, fill=green!6, text width=3.4cm]
-              at ([xshift=-1.15cm]s2.center) (s2w) {
+              at ([xshift=-2.2cm]s2.center) (s2w) {
             {\footnotesize\color{green!50!black}\textbf{Preferred} $y_w$:} \\[2pt]
             ``Conflict detected! \\
             \textbf{HALT.}'' $\to$ \textbf{False}
         };
         \node [scontent, fill=red!6, text width=3.4cm]
-              at ([xshift=1.15cm]s2.center) (s2l) {
+              at ([xshift=2.2cm]s2.center) (s2l) {
             {\footnotesize\color{red!60!black}\textbf{Rejected} $y_l$:} \\[2pt]
             ``Consistent. \\
             Deduce Mortal.'' $\to$ True
@@ -220,13 +220,13 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
               at ([yshift=-0.15cm]s3.north) (s3h)
               {Stage 3: LIRE ~~~ $\mathcal{L}_{\mathrm{CE}} + \lambda\,\mathcal{L}_{\mathrm{inv}}$};
         \node [scontent, fill=blue!4, text width=3.4cm]
-              at ([xshift=-1.15cm]s3.center) (s3a) {
+              at ([xshift=-2.2cm]s3.center) (s3a) {
             {\footnotesize \textbf{Base rule:}} \\[2pt]
             ``All men are mortal'' \\
             $\pi_\theta(\cdot|\mathbf{x})$
         };
         \node [scontent, fill=orange!6, text width=3.4cm]
-              at ([xshift=1.15cm]s3.center) (s3b) {
+              at ([xshift=2.2cm]s3.center) (s3b) {
             {\footnotesize \textbf{Contrapositive:}} \\[2pt]
             ``All non-mortals \\
             are non-men'' ~ $\pi_\theta(\cdot|\tilde{\mathbf{x}})$

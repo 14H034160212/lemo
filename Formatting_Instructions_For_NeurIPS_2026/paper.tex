@@ -509,8 +509,7 @@ current pipeline implements option (ii), retaining the best of both verifiers.
 
 We diagnosed \textbf{Logic Inertia}---a structural failure mode in which generative LLMs (Qwen2/3, TinyLlama, GPT-4o, Gemma-3-4B-IT) and the encoder-only BERT baseline persist along learned deductive trajectories under essential-rule deletion and contradictions---and closed it with two named contributions: \textbf{LIRE}, a symmetric-KL invariance regulariser applied at the trace level via teacher-forcing on logically equivalent rule reformulations, and \textbf{\textsc{RLVF}}, an RL \emph{reward formulation} (not a new optimiser) whose deterministic symbolic-oracle reward replaces RLHF's learned reward model and admits a plain REINFORCE update. Combined in the \textbf{Conflict-Aware Fusion} pipeline (SFT$\to$DPO$\to$LIRE$\to$\textsc{RLVF}), they \emph{saturate} the held-out base/V2/V3 splits for both $1.5$B and $8$B backbones on a benchmark where GPT-4o resolves only $56.0\%$ of V3 contradictions and Gemma-3-4B-IT only $43.9\%$. The Phase~2 \textbf{\textsc{RLVF-Lean}} extension upgrades the oracle to a Lean~4 kernel: on a stratified $187$-question Lean-translated sample, $99.0\%$ of the $105$~classically-derivable T-cases close under the kernel; the $36.6\%$ rate on the $82$ F-cases reflects the closed-world / classical semantics gap analysed in \S\ref{sec:phase2}.
 
-\paragraph{Limitations and future work.}
-The benchmark is propositional and synthetic; saturation evidences that the structural prior \emph{generalises across backbones}, not that contradictions are universally solved---V4-multi at $1.5$B drops to $0.773$ after Stage~4, and the Lean F-rate gap is genuine. Three next steps: (i) end-to-end RLVF-Lean training amortised through a persistent LeanDojo server; (ii) lifting the closed-world override via a CWA axiom schema or the hybrid forward-chain/Lean policy of \S\ref{sec:phase2}; (iii) evaluation on math/proof benchmarks. Code, benchmark, and verifier are released.
+Code, benchmark, and verifier are released; a dedicated discussion of limitations and concrete future work is consolidated in Appendix~\ref{app:limitations}.
 
 
 \bibliography{references}
@@ -518,6 +517,11 @@ The benchmark is propositional and synthetic; saturation evidences that the stru
 
 \appendix
 \section{Appendix}
+
+\subsection{Limitations and Future Work}
+\label{app:limitations}
+
+The benchmark is propositional and synthetic; saturation evidences that the structural prior \emph{generalises across backbones}, not that contradictions are universally solved---V4-multi at $1.5$B drops to $0.773$ after Stage~4 (a capacity bottleneck rather than a structural-prior failure; \S\ref{sec:phase2}), and the Lean F-rate gap on the closed-world / classical semantics divide is genuine. The pipeline also commits to a single \emph{conservative} contradiction semantics; paraconsistent or priority-based resolution strategies (Appendix~\ref{app:base-example} ff.) are out of scope. Three concrete next steps follow: (i) end-to-end RLVF-Lean training amortised through a persistent LeanDojo server, replacing the current verification-only deployment; (ii) lifting the closed-world override via a CWA axiom schema, or via the hybrid forward-chain/Lean policy of \S\ref{sec:phase2} that uses Lean only for T-verdicts and the symbolic forward-chainer for F-verdicts; (iii) evaluation on math/proof benchmarks (e.g., MiniF2F, ProofNet) where the Lean kernel is the natural verifier and where stacked-rewrite depth substantially exceeds the $2$--$5$ laws stress-tested in V4-multi.
 
 \subsection{Structural Variant Generation}
 \label{app:variant-gen}

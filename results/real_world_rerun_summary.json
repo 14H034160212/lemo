@@ -1,0 +1,41 @@
+{
+  "datasets": {
+    "logicnli_asshipped": {
+      "n": 500,
+      "n_true": 0,
+      "majority_baseline": 1.0
+    },
+    "logicnli_fixed": {
+      "n": 500,
+      "n_true": 125,
+      "majority_baseline": 0.75
+    },
+    "mnli_con": {
+      "n": 349,
+      "n_true": 174,
+      "majority_baseline": 0.501432664756447
+    }
+  },
+  "results": {
+    "qwen_stage1": {
+      "logicnli_asshipped": 1.0,
+      "logicnli_fixed": 0.75,
+      "mnli_con": 0.5100286532951289
+    },
+    "qwen_lire": {
+      "logicnli_asshipped": 0.996,
+      "logicnli_fixed": 0.75,
+      "mnli_con": 0.5100286532951289
+    },
+    "qwen_rlvf": {
+      "logicnli_asshipped": 1.0,
+      "logicnli_fixed": 0.75,
+      "mnli_con": 0.5071633237822349
+    },
+    "qwen3_rlvf": {
+      "logicnli_asshipped": 0.044,
+      "logicnli_fixed": 0.282,
+      "mnli_con": 0.5988538681948424
+    }
+  }
+}

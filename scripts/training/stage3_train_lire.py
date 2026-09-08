@@ -23,9 +23,9 @@ import argparse
 import os
 import sys
 
-os.environ['HF_HOME'] = '/data/qbao775/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/data/qbao775/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/data/qbao775/lemo/.cache/huggingface/transformers'
+os.environ['HF_HOME'] = '.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
+os.environ['TRANSFORMERS_CACHE'] = '.cache/huggingface/transformers'
 
 import torch
 import torch.nn.functional as F

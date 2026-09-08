@@ -1,7 +1,7 @@
 #!/bin/bash
-export HF_HOME=/data/qbao775/lemo/.cache/huggingface
+export HF_HOME=.cache/huggingface
 export CUDA_VISIBLE_DEVICES=0
-PY=/data/qbao775/miniconda3/envs/lemo/bin/python
+PY=${PYTHON:-python}
 LOG_DIR=logs
 mkdir -p $LOG_DIR
 

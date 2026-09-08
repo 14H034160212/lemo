@@ -7,8 +7,8 @@
 
 @article{berglund2023reversal,
   title   = {The Reversal Curse: {LLMs} trained on ``{A} is {B}'' fail to learn ``{B} is {A}''},
-  author  = {Berglund, Lukas and Tong, Meg and Kaufmann, Max and Mikulik, Vaclav and
-             Bentum, Laria and Kotek, Jan and Rowlands, Owain},
+  author  = {Berglund, Lukas and Tong, Meg and Kaufmann, Max and Balesni, Mikita and
+             Stickland, Asa Cooper and Korbak, Tomasz and Evans, Owain},
   journal = {arXiv preprint arXiv:2309.12288},
   year    = {2023}
 }
@@ -33,7 +33,7 @@
   title   = {Mitigating Cognitive Inertia in Large Reasoning Models via
              Latent Spike Steering},
   author  = {Lee, Seojin and Kim, ByeongJeong and Lee, Hwanhee},
-  journal = {arXiv preprint arXiv:2602.01234},
+  journal = {arXiv preprint arXiv:2601.22484},
   year    = {2026}
 }
 
@@ -78,14 +78,15 @@
   year      = {2022}
 }
 
-@article{vericot2026,
-  title   = {{VeriCoT}: Neuro-symbolic Chain-of-Thought Validation via
-             Logical Consistency Checks},
-  author  = {Feng, Yu and Weir, Nathaniel and Bostrom, Kaj and Bayless, Sam and
-             Cassel, Darion and Chaudhary, Sapana and Kiesl-Reiter, Benjamin and
-             Rangwala, Huzefa},
-  journal = {arXiv preprint arXiv:2511.04662},
-  year    = {2025}
+@inproceedings{vericot2026,
+  title     = {{VeriCoT}: Neuro-symbolic Chain-of-Thought Validation via
+               Logical Consistency Checks},
+  author    = {Feng, Yu and Weir, Nathaniel and Bostrom, Kaj and Bayless, Sam and
+               Cassel, Darion and Chaudhary, Sapana and Kiesl-Reiter, Benjamin and
+               Rangwala, Huzefa},
+  booktitle = {International Conference on Learning Representations ({ICLR})},
+  year      = {2026},
+  note      = {arXiv:2511.04662}
 }
 
 @article{multihoax2025,
@@ -111,24 +112,27 @@
   title     = {Multi-Step Deductive Reasoning Over Natural Language: An
                Empirical Study on Out-of-Distribution Generalisation},
   author    = {Bao, Qiming and Peng, Alex Yuxuan and Hartill, Tim and
-               Tan, Ne{\c{s}}et and Chen, Zhenyun and Witbrock, Michael and Liu, Jiamou},
+               Tan, Ne{\c{s}}et and Deng, Zhenyun and Witbrock, Michael and Liu, Jiamou},
   booktitle = {Proceedings of the 16th International Workshop on Neural-Symbolic
                Learning and Reasoning ({NeSy})},
   year      = {2022}
 }
 
-@article{baoAccess,
-  title   = {A Systematic Evaluation of Large Language Models on
-             Out-of-Distribution Logical Reasoning Tasks},
-  author  = {Bao, Qiming and Gendron, Ga{\"e}l and Peng, Alex Yuxuan and
-             Zhong, Wanjun and Tan, Ne{\c{s}}et and Chen, Yang and
-             Witbrock, Michael and Liu, Jiamou},
-  journal = {arXiv preprint arXiv:2310.09430},
-  year    = {2023}
+@inproceedings{baoAccess,
+  title     = {Assessing and Enhancing the Robustness of Large Language Models
+               with Task Structure Variations for Logical Reasoning},
+  author    = {Bao, Qiming and Gendron, Ga{\"e}l and Peng, Alex Yuxuan and
+               Zhong, Wanjun and Tan, Ne{\c{s}}et and Chen, Yang and
+               Witbrock, Michael and Liu, Jiamou},
+  booktitle = {Proceedings of the International Conference on Neural
+               Information Processing ({ICONIP})},
+  year      = {2024},
+  note      = {arXiv:2310.09430}
 }
 
 @phdthesis{bao2025thesis,
-  title  = {Robustness of Multi-Step Logical Reasoning in Large Language Models},
+  title  = {Developing and Assessing Language Models for Logical Reasoning
+            over Natural Language},
   author = {Bao, Qiming},
   school = {University of Auckland},
   year   = {2025}
@@ -136,13 +140,14 @@
 
 % ---------- Reasoning chains and process supervision ------------------
 
-@article{xiong2025deliberate,
-  title   = {Deliberative Alignment: Reasoning Enables Safer Language Models},
-  author  = {Guan, Melody Y. and Joglekar, Manas and Wallace, Eric and
-             Jain, Saachi and Barak, Boaz and Heylar, Alec and Dias, Rachel and
-             Vallone, Andrea and Ren, Hongyu and Wei, Jason and others},
-  journal = {arXiv preprint arXiv:2412.16339},
-  year    = {2024}
+@inproceedings{xiong2025deliberate,
+  title     = {Deliberate Reasoning in Language Models as Structure-Aware Planning
+               with an Accurate World Model},
+  author    = {Xiong, Siheng and Payani, Ali and Yang, Yuan and Fekri, Faramarz},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for
+               Computational Linguistics (Volume 1: Long Papers)},
+  pages     = {31900--31931},
+  year      = {2025}
 }
 
 @inproceedings{lightman2024prm,
@@ -312,15 +317,16 @@
 % ---------- Test-time scaling and out-of-template generalisation ------
 
 @article{xiong2026scaling,
-  title   = {Scaling Test-Time Compute for Logical Reasoning},
-  author  = {Xiong, Ruiqi and Zhang, Han and Liu, Wei and Chen, Yixin and Yang, Zhilin},
-  journal = {arXiv preprint arXiv:2602.09876},
+  title   = {Adaptive Information Control for Search-Augmented {LLM} Reasoning},
+  author  = {Xiong, Siheng and Gungordu, Oguzhan and
+             Kerce, James C. and Fekri, Faramarz},
+  journal = {arXiv preprint arXiv:2602.01672},
   year    = {2026}
 }
 
 % ---------- Emergent abilities (used to argue against scale-only) -----
 
-@article{Cheng2025Em,
+@article{wei2022emergent,
   title   = {Emergent Abilities of Large Language Models},
   author  = {Wei, Jason and Tay, Yi and Bommasani, Rishi and Raffel, Colin and
              Zoph, Barret and Borgeaud, Sebastian and Yogatama, Dani and
@@ -329,7 +335,7 @@
   year    = {2022}
 }
 
-@inproceedings{cheng2026sapp,
+@inproceedings{schaeffer2023mirage,
   title     = {Are Emergent Abilities of Large Language Models a Mirage?},
   author    = {Schaeffer, Rylan and Miranda, Brando and Koyejo, Sanmi},
   booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
@@ -338,46 +344,63 @@
 
 @inproceedings{ijcai2024p693,
   title     = {Empowering {LLMs} with Logical Reasoning: A Comprehensive Survey},
-  author    = {Cheng, Fengxiang and Zhang, Haoxuan and Zhang, Fenrong and Liu, Yixin},
-  booktitle = {Proceedings of the 33rd International Joint Conference on
+  author    = {Cheng, Fengxiang and Li, Haoxuan and Liu, Fenrong and
+               {van Rooij}, Robert and Zhang, Kun and Lin, Zhouchen},
+  booktitle = {Proceedings of the 34th International Joint Conference on
                Artificial Intelligence ({IJCAI})},
-  year      = {2024}
+  year      = {2025}
 }
 
 % ---------- Concurrent / prior failure modes & premise critique ------
 
-@article{premiseCritique2025,
-  title   = {Don't Take the Premise for Granted: Evaluating the Premise Critique Ability of Large Language Models},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2025}
+@inproceedings{premiseCritique2025,
+  title     = {Don't Take the Premise for Granted: Evaluating the Premise
+               Critique Ability of Large Language Models},
+  author    = {Li, Jinzhe and Li, Gengxu and Chang, Yi and Wu, Yuan},
+  booktitle = {Findings of the Association for Computational Linguistics ({EMNLP})},
+  year      = {2025},
+  note      = {arXiv:2505.23715}
 }
 
-@article{rulebreakers2025,
-  title   = {{RULEBREAKERS}: Challenging {LLMs} at the Crossroads between Formal Logic and Human-like Reasoning},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2025}
+@inproceedings{rulebreakers2025,
+  title     = {{RULEBREAKERS}: Challenging {LLMs} at the Crossroads between
+               Formal Logic and Human-like Reasoning},
+  author    = {Chan, Jason and Gaizauskas, Robert and Zhao, Zhixue},
+  booktitle = {Proceedings of the 42nd International Conference on Machine
+               Learning ({ICML})},
+  year      = {2025},
+  note      = {arXiv:2410.16502}
 }
 
-@article{inverseIFEval2025,
-  title   = {Inverse {IFEval}: Can {LLMs} Unlearn Stubborn Training Conventions to Follow Real Instructions?},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2025}
+@inproceedings{inverseIFEval2025,
+  title     = {Inverse {IFEval}: Can {LLMs} Unlearn Stubborn Training Conventions
+               to Follow Real Instructions?},
+  author    = {Zhang, Qinyan and Lei, Xinping and Miao, Ruijie and Fu, Yu and
+               Fan, Haojie and Chang, Le and Hou, Jiafan and Zhang, Dingling and
+               Hou, Zhongfei and Yang, Ziqiang and Pu, Changxin and Hu, Fei and
+               Liu, Jingkai and Liu, Mengyun and Liu, Yang and Gao, Xiang and
+               Liu, Jiaheng and Yang, Tong and Wang, Zaiyuan and Zhang, Ge and
+               Huang, Wenhao},
+  booktitle = {International Conference on Learning Representations ({ICLR})},
+  year      = {2026},
+  note      = {arXiv:2509.04292}
 }
 
-@article{codecrash2025,
-  title   = {{CodeCrash}: Exposing {LLM} Fragility to Misleading Natural Language in Code Reasoning},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2025}
+@inproceedings{codecrash2025,
+  title     = {{CodeCrash}: Exposing {LLM} Fragility to Misleading Natural
+               Language in Code Reasoning},
+  author    = {Lam, Man Ho and Wang, Chaozheng and Huang, Jen-tse and Lyu, Michael R.},
+  booktitle = {Advances in Neural Information Processing Systems ({NeurIPS})},
+  year      = {2025},
+  note      = {arXiv:2504.14119}
 }
 
 @article{premiseRAG2025,
-  title   = {Don't Let It Hallucinate: Premise Verification via Retrieval-Augmented Logical Reasoning},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
+  title   = {Don't Let It Hallucinate: Premise Verification via
+             Retrieval-Augmented Logical Reasoning},
+  author  = {Qin, Yuehan and Li, Shawn and Nian, Yi and Yu, Xinyan Velocity and
+             Zhao, Yue and Ma, Xuezhe},
+  journal = {arXiv preprint arXiv:2504.06438},
   year    = {2025}
 }
 
@@ -391,17 +414,24 @@
 }
 
 @article{leanabell2025,
-  title   = {{Leanabell-Prover-V2}: Verifier-integrated Reasoning for Formal Theorem Proving via Reinforcement Learning},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
+  title   = {{Leanabell-Prover-V2}: Verifier-integrated Reasoning for Formal
+             Theorem Proving via Reinforcement Learning},
+  author  = {Ji, Xingguang and Liu, Yahui and Wang, Qi and Zhang, Jingyuan and
+             Yue, Yang and Shi, Rui and Sun, Chenxi and Zhang, Fuzheng and
+             Zhou, Guorui and Gai, Kun},
+  journal = {arXiv preprint arXiv:2507.08649},
   year    = {2025}
 }
 
-@article{logicReward2025,
-  title   = {{LogicReward}: Incentivizing {LLM} Reasoning via Step-Wise Logical Supervision},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2025}
+@inproceedings{logicReward2025,
+  title     = {{LogicReward}: Incentivizing {LLM} Reasoning via Step-Wise
+               Logical Supervision},
+  author    = {Xu, Jundong and Fei, Hao and Zhou, Huichi and Quan, Xin and
+               Huang, Qijun and Wu, Shengqiong and Wang, William Yang and
+               Lee, Mong-Li and Hsu, Wynne},
+  booktitle = {International Conference on Learning Representations ({ICLR})},
+  year      = {2026},
+  note      = {arXiv:2512.18196}
 }
 
 % ---------- Symmetric-KL / consistency regularisation ----------------
@@ -420,9 +450,12 @@
   year      = {2019}
 }
 
-@article{causalConsistency2026,
-  title   = {Causal Consistency Regularization: Training Verifiably Sensitive Reasoning in Large Language Models},
-  author  = {Anonymous},
-  journal = {arXiv preprint},
-  year    = {2026}
+@inproceedings{causalConsistency2026,
+  title     = {Causal Consistency Regularization: Training Verifiably Sensitive
+               Reasoning in Large Language Models},
+  author    = {Akter, Sanjeda and Shihab, Ibne Farabi and Sharma, Anuj},
+  booktitle = {Proceedings of the 64th Annual Meeting of the Association for
+               Computational Linguistics ({ACL})},
+  year      = {2026},
+  note      = {arXiv:2509.01544}
 }

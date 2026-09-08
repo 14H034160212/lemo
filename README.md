@@ -223,17 +223,41 @@ Predictions saved to `trained_models/{model}/predictions/{model}_{split}_predict
 | Implication | **1.000** | **1.000** | **1.000** | 0.745 | 0.953 | 0.590 |
 | Multi-law | **1.000** | **1.000** | 0.993 | 0.745 | 0.645 | 0.428 |
 
-### 7.3 Real-World Generalization (LogicNLI / MNLI)
+### 7.3 Real-World Generalization (LogicNLI / MNLI / FOLIO / ZebraLogic)
 
-Models trained on synthetic logic data were evaluated on real-world NLI benchmarks.
+Checkpoints trained only on the synthetic LEMO corpus, evaluated zero-shot.
+Reproduce with `scripts/evaluation/evaluate_real_world_v2.py` (LogicNLI/MNLI),
+`evaluate_folio.py`, `evaluate_zebra.py`. Raw per-row predictions are in
+`results/real_world_rerun/`; the summary is `results/real_world_rerun_summary.json`.
 
-| Model | Dataset | Predictions | Accuracy |
-|:---|:---|:---|:---:|
-| Qwen2 Fusion-Conflict | LogicNLI (n=500) | All "Unknown" | 0.000 |
-| Qwen2 Fusion-Conflict | MNLI (n=349) | All "Unknown" | 0.000 |
-| Qwen2 RealWorld-SFT | LogicNLI (n=500) | All "Unknown" | 0.000 |
+`p_True` = fraction of items the model labels True. A value near 0 or 1 means the
+classifier has **collapsed to a constant**, so its accuracy says nothing about reasoning.
 
-> All models predict "Unknown" on real-world NLI, indicating **zero generalization** from synthetic logic reasoning to natural language inference. The reasoning skills learned are tightly coupled to the synthetic template format.
+| Model | LogicNLI acc | p_True | MNLI-Con acc | p_True | FOLIO | ZebraLogic |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| *majority-class baseline* | *0.750* | — | *0.501* | — | *0.500* | *0.500* |
+| Stage-1 SFT (Qwen2-1.5B) | 0.750 | 0.00 | 0.510 | 0.03 | 0.433 | 0.470 |
+| + LIRE (Qwen2-1.5B) | 0.750 | 0.00 | 0.510 | 0.04 | — | — |
+| Fusion-Conflict (Qwen2-1.5B) | 0.750 | 0.00 | 0.507 | 0.03 | 0.438 | 0.462 |
+| Fusion-Conflict (Qwen3-8B) | 0.282 | 0.96 | **0.599** | 0.58 | **0.619** | 0.495 |
+
+> **Zero transfer to natural language.** Every 1.5B checkpoint degenerates into a
+> constant-`False` predictor, landing exactly on the LogicNLI majority-class
+> baseline and at chance on MNLI. The 8B checkpoint collapses the *opposite* way on
+> LogicNLI (96% of items labelled True), scoring **below** the baseline — even
+> though the same checkpoint saturates every split of the synthetic benchmark.
+> FOLIO at 8B is the only genuine positive signal. The structural prior is tightly
+> coupled to the propositional regime it was trained on.
+
+> ⚠️ **Corrected data-preparation defect.** `prepare_real_world_data.py` previously
+> looked LogicNLI's *string* labels up in an int-keyed dict with a `"False"`
+> default, so all 500 rows were silently labelled `False`. On that degenerate file
+> a constant-`False` predictor scores **1.000**, which is why earlier runs of this
+> experiment looked far better than they were. The mapping now raises on an
+> unmapped label instead of defaulting. The corrected eval set is
+> `data/real_world/logicnli_eval_fixed.csv` (125 True / 375 False); all numbers
+> above use it. The superseded all-`False` file is kept as
+> `data/real_world/logicnli_eval.csv` for reference only — do not score against it.
 
 ### 7.4 Key Findings
 

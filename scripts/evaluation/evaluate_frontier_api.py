@@ -72,21 +72,24 @@ def parse_answers(response_text: str, num_questions: int) -> list:
 def call_anthropic(client, model: str, facts: str, rules: str, questions: str) -> str:
     message = client.messages.create(
         model=model,
-        max_tokens=256,
+        max_tokens=1024,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_user_prompt(facts, rules, questions)}]
     )
-    return message.content[0].text
+    # Claude Opus 5 has thinking on by default, so content[0] may be a ThinkingBlock, not text.
+    return next((b.text for b in message.content if b.type == "text"), "")
 
 
 def call_openai(client, model: str, facts: str, rules: str, questions: str) -> str:
+    # gpt-5.x models reject `max_tokens` and require `max_completion_tokens` instead.
+    token_kwarg = {"max_completion_tokens": 256} if model.startswith("gpt-5") else {"max_tokens": 256}
     response = client.chat.completions.create(
         model=model,
-        max_tokens=256,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": build_user_prompt(facts, rules, questions)},
-        ]
+        ],
+        **token_kwarg,
     )
     return response.choices[0].message.content
 

@@ -1,0 +1,9 @@
+{
+  "n_rows": 134,
+  "n_dropped_uncertain": 69,
+  "results": {
+    "qwen_stage1": 0.4552238805970149,
+    "qwen_rlvf": 0.4701492537313433,
+    "qwen3_rlvf": 0.5746268656716418
+  }
+}

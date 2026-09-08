@@ -1,0 +1,121 @@
+group_id,question,ground_truth,prediction,correct
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q1: Grace is cold.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q2: Grace is rough.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q3: Grace is young.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q4: Grace is nice.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q1: Grace is not cold.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q2: Grace is not rough.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q3: Grace is happy.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q4: Grace is green.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q1: Grace is cold.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q2: Grace is rough.,F,F,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q3: Grace is young.,T,T,1
+99625f98-0598-46ba-8b60-9ba43a6c576a,Q4: Grace is nice.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q1: Oscar is cold.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q2: Oscar is rough.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q3: Oscar is young.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q4: Oscar is nice.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q1: Oscar is not cold.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q2: Oscar is not rough.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q3: Oscar is tall.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q4: Oscar is blue.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q1: Oscar is cold.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q2: Oscar is rough.,F,F,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q3: Oscar is young.,T,T,1
+3a80f02d-a654-45fe-808f-13b2c5b5c9ca,Q4: Oscar is nice.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q1: Oscar is cold.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q2: Oscar is rough.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q3: Oscar is young.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q4: Oscar is nice.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q1: Oscar is not cold.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,Q2: Oscar is not rough.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,Q3: Oscar is brave.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,Q4: Oscar is purple.,F,F,1
+d8649c05-c553-47ff-b398-d95357de0742,Q1: Oscar is cold.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q2: Oscar is rough.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q3: Oscar is young.,T,T,1
+d8649c05-c553-47ff-b398-d95357de0742,Q4: Oscar is nice.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q1: Ivan is cold.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q2: Ivan is rough.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q3: Ivan is young.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q4: Ivan is nice.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q1: Ivan is not cold.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q2: Ivan is not rough.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q3: Ivan is funny.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q4: Ivan is yellow.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q1: Ivan is cold.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q2: Ivan is rough.,T,T,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q3: Ivan is young.,F,F,1
+aff912c6-4d50-462a-9dec-1c8299956120,Q4: Ivan is nice.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q1: Frank is cold.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q2: Frank is rough.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q3: Frank is young.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q4: Frank is nice.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q1: Frank is not cold.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q2: Frank is not rough.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q3: Frank is tall.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q4: Frank is green.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q1: Frank is cold.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q2: Frank is rough.,T,T,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q3: Frank is young.,F,F,1
+233cad7a-af5e-464c-a0dd-84ea5c7809ef,Q4: Frank is nice.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q1: Nancy is cold.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q2: Nancy is rough.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q3: Nancy is young.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q4: Nancy is nice.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q1: Nancy is not cold.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q2: Nancy is not rough.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q3: Nancy is sad.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q4: Nancy is red.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q1: Nancy is cold.,F,F,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q2: Nancy is rough.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q3: Nancy is young.,T,T,1
+0a4bd7f4-d65b-494e-9c86-f5ff43150f63,Q4: Nancy is nice.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q1: Bob is cold.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q2: Bob is rough.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q3: Bob is young.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q4: Bob is nice.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q1: Bob is not cold.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q2: Bob is not rough.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q3: Bob is sad.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q4: Bob is blue.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q1: Bob is cold.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q2: Bob is rough.,T,T,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q3: Bob is young.,F,F,1
+018f0ba0-1ab3-4623-8f5b-b19b3e00b024,Q4: Bob is nice.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q1: Ivan is cold.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q2: Ivan is rough.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q3: Ivan is young.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q4: Ivan is nice.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q1: Ivan is not cold.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q2: Ivan is not rough.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q3: Ivan is tall.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q4: Ivan is orange.,F,F,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q1: Ivan is cold.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q2: Ivan is rough.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q3: Ivan is young.,T,T,1
+f15f4a4d-ba48-4a36-b2db-8c11da154cbc,Q4: Ivan is nice.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,Q1: Helen is cold.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q2: Helen is rough.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q3: Helen is young.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q4: Helen is nice.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q1: Helen is not cold.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,Q2: Helen is not rough.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,Q3: Helen is short.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,Q4: Helen is red.,F,F,1
+edd22152-b450-472c-a569-9495c8de5d07,Q1: Helen is cold.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q2: Helen is rough.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q3: Helen is young.,T,T,1
+edd22152-b450-472c-a569-9495c8de5d07,Q4: Helen is nice.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q1: David is cold.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q2: David is rough.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q3: David is young.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q4: David is nice.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q1: David is not cold.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q2: David is not rough.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q3: David is brave.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q4: David is yellow.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q1: David is cold.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q2: David is rough.,F,F,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q3: David is young.,T,T,1
+7991b5a4-b066-4161-a751-45d320a6a3d9,Q4: David is nice.,T,T,1

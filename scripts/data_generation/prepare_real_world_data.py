@@ -24,13 +24,27 @@ def prepare_logicnli():
     
     formatted_data = []
     for row in dataset:
-        # Map labels: entailment=True, contradiction=False, neutral=False/Unknown
-        # LogicNLI typically has entailment/contradiction
-        label_map = {0: "True", 1: "False", 2: "False"} # Simplifying neutral to False for now or skip
-        
-        if row['label'] == -1: continue 
-        
-        target = label_map.get(row['label'], "False")
+        # LogicNLI's `label` field is a STRING ('entailment' / 'contradiction' /
+        # 'neutral' / 'self_contradiction'), not an int. The previous version of
+        # this code looked it up in an int-keyed dict with a "False" default, so
+        # EVERY row silently fell through to "False" -- producing a degenerate
+        # all-False eval file on which a constant-False predictor scores 1.000.
+        # Never re-introduce a default here: an unmapped label must be an error.
+        LABEL_MAP = {
+            "entailment": "True",           # derivable from the premises
+            "contradiction": "False",       # conservative semantics: not derivable
+            "neutral": "False",
+            "self_contradiction": "False",
+        }
+        raw = row['label']
+        if raw in (-1, "-1"):
+            continue
+        if raw not in LABEL_MAP:
+            raise ValueError(
+                f"unmapped LogicNLI label {raw!r}; refusing to guess. "
+                f"Known labels: {sorted(LABEL_MAP)}"
+            )
+        target = LABEL_MAP[raw]
         
         # Conflict-Aware Template Construction
         # We treat Premise as Facts+Rules

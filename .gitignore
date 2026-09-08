@@ -49,3 +49,16 @@ venv/
 
 # Auto-generated chain scripts
 chain_lire_after_eval.sh
+
+# Local-only author block (double-blind hygiene)
+AUTHORS.local.txt
+
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+
+# Non-anonymous arXiv build — must never enter the review repository
+arxiv/

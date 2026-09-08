@@ -1,0 +1,9 @@
+{
+  "n_puzzles": 313,
+  "n_probes": 626,
+  "results": {
+    "qwen_stage1": 0.5,
+    "qwen_rlvf": 0.5,
+    "qwen3_rlvf": 0.5
+  }
+}

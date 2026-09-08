@@ -9,7 +9,7 @@ tags:
 - multi-step-inference
 license: apache-2.0
 datasets:
-- qbao775/structural-robustness-benchmark
+- ANONYMOUS/structural-robustness-benchmark
 metrics:
 - accuracy
 - SR_macro
@@ -23,7 +23,7 @@ It implements the **Fusion-Conflict** framework, which enforces an explicit stru
 
 ## 📖 Key Information
 - **Paper**: [Conflict-Aware Fusion: Mitigating Logic Inertia in Large Language Models](https://arxiv.org/abs/2512.06393)
-- **Repository**: [Lemo Project](https://github.com/qbao775/lemo)
+- **Repository**: [Anonymised for review](https://anonymous.4open.science/r/lemo-D708/README.md)
 - **Goal**: Ensure 100% structural robustness (SR_macro = 1.0) under contradictory premises while maintaining state-of-the-art general logic performance.
 
 ## 🚀 Quick Start
@@ -32,7 +32,7 @@ It implements the **Fusion-Conflict** framework, which enforces an explicit stru
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-model_id = "qbao775/Fusion-Conflict-8B"
+model_id = "ANONYMOUS/Fusion-Conflict-8B"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
 
@@ -73,7 +73,7 @@ If you use this model or the framework, please cite:
 ```bibtex
 @article{bao2026fusion,
   title={Conflict-Aware Fusion: Mitigating Logic Inertia in Large Language Models via Structured Cognitive Priors},
-  author={Bao, Qiming and Fu, Xiaoxuan and Witbrock, Michael},
+  author={Anonymous Authors},
   journal={arXiv preprint arXiv:2512.06393},
   year={2026}
 }

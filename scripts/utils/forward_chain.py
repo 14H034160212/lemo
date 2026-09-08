@@ -126,33 +126,40 @@ def parse_facts(facts_str: str) -> Dict[str, bool]:
     Parse the facts field (natural language) into {attr: bool} dict.
 
     Handles:
-      "Alice is blue or orange"          → {blue: True, orange: True}
-      "Alice is blue"                    → {blue: True}
-      "Alice is not cold"                → {cold: False}
-      "Alice is blue or orange, not cold" (comma-separated extras)
+      "Alice is blue or orange"                    → {blue: True, orange: True}
+      "Alice is blue"                              → {blue: True}
+      "Alice is not cold"                          → {cold: False}
+      "Alice is blue or orange, not cold"          (comma-separated extras)
+      "Alice is blue or orange | Alice is not cold" (pipe-separated multiple
+                                                       fact statements -- the
+                                                       format actually used by
+                                                       multi-fact rows, e.g.
+                                                       Variant 3 contradiction
+                                                       instances)
     """
     known: Dict[str, bool] = {}
 
-    # Remove leading name ("Alice is ..." → "blue or orange")
-    # Facts can be a single string or comma-separated
-    parts = [p.strip() for p in facts_str.split(",")]
+    # Top-level split on " | " for multiple fact statements, then each
+    # statement is further split on "," for the shorthand extras form.
+    for statement in facts_str.split("|"):
+        parts = [p.strip() for p in statement.split(",")]
 
-    for part in parts:
-        # strip "Name is " or "Name is not " prefix
-        m_or = re.match(r"^\w+ is (\w+) or (\w+)$", part, re.I)
-        m_not = re.match(r"^\w+ is not (\w+)$", part, re.I)
-        m_pos = re.match(r"^\w+ is (\w+)$", part, re.I)
+        for part in parts:
+            # strip "Name is " or "Name is not " prefix
+            m_or = re.match(r"^\w+ is (\w+) or (\w+)$", part, re.I)
+            m_not = re.match(r"^\w+ is not (\w+)$", part, re.I)
+            m_pos = re.match(r"^\w+ is (\w+)$", part, re.I)
 
-        if m_or:
-            # Disjunctive: at least one of c1/c2 is true.
-            # Both color→cold rules exist so cold will be derived either way.
-            # Safest: mark both as True (covers the disjunction for chaining).
-            known[m_or.group(1)] = True
-            known[m_or.group(2)] = True
-        elif m_not:
-            known[m_not.group(1)] = False
-        elif m_pos:
-            known[m_pos.group(1)] = True
+            if m_or:
+                # Disjunctive: at least one of c1/c2 is true.
+                # Both color→cold rules exist so cold will be derived either way.
+                # Safest: mark both as True (covers the disjunction for chaining).
+                known[m_or.group(1)] = True
+                known[m_or.group(2)] = True
+            elif m_not:
+                known[m_not.group(1)] = False
+            elif m_pos:
+                known[m_pos.group(1)] = True
 
     return known
 
@@ -190,6 +197,48 @@ def forward_chain(facts_str: str, rules_str: str) -> Dict[str, bool]:
                         changed = True
 
     return known
+
+
+def detect_contradiction(facts_str: str, rules_str: str) -> bool:
+    """
+    Independent, additive contradiction check: does the premise set entail
+    two different truth values for the same attribute?
+
+    This is a separate function from forward_chain() on purpose --
+    forward_chain() silently lets a later derivation overwrite an earlier
+    conflicting value (harmless for its existing step-reward/ORM-reward
+    uses, where the fallback CSV label is authoritative), and changing that
+    behaviour risks affecting training-time reward computation. This
+    function instead performs the same fixed-point iteration but returns
+    True the first time a conflicting assignment is encountered, without
+    ever overwriting a previously-derived value.
+    """
+    known: Dict[str, bool] = parse_facts(facts_str)
+    implications = parse_rules(rules_str)
+
+    changed = True
+    while changed:
+        changed = False
+        for imp in implications:
+            if imp[0] == _AND_PREFIX:
+                _, (attr1, attr2), conc_attr, conc_val = imp
+                if known.get(attr1) is False and known.get(attr2) is False:
+                    existing = known.get(conc_attr)
+                    if existing is not None and existing != conc_val:
+                        return True
+                    if existing is None:
+                        known[conc_attr] = conc_val
+                        changed = True
+            else:
+                prem_attr, prem_val, conc_attr, conc_val = imp
+                if known.get(prem_attr) == prem_val:
+                    existing = known.get(conc_attr)
+                    if existing is not None and existing != conc_val:
+                        return True
+                    if existing is None:
+                        known[conc_attr] = conc_val
+                        changed = True
+    return False
 
 
 # ------------------------------------------------------------------ #

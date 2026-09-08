@@ -3,11 +3,11 @@
 # Usage: bash run_experiments.sh [bert|qwen|llama|all]
 
 set -e
-cd /data/qbao775/lemo
+cd "$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 
-export HF_HOME=/data/qbao775/lemo/.cache/huggingface
-export HF_DATASETS_CACHE=/data/qbao775/lemo/.cache/huggingface/datasets
-export TRANSFORMERS_CACHE=/data/qbao775/lemo/.cache/huggingface/transformers
+export HF_HOME=.cache/huggingface
+export HF_DATASETS_CACHE=.cache/huggingface/datasets
+export TRANSFORMERS_CACHE=.cache/huggingface/transformers
 export CUDA_VISIBLE_DEVICES=0
 
 CONDA_RUN="conda run -n lemo --no-capture-output"

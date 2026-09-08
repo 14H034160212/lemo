@@ -1,7 +1,7 @@
 #!/bin/bash
 # Auto-evaluate Qwen3 RLVF when training finishes
 QWEN3_PID=1337400
-PYTHON="/data/qbao775/miniconda3/envs/lemo/bin/python"
+PYTHON="${PYTHON:-python}"
 LOG="logs/qwen3_pipeline.log"
 
 mkdir -p logs results

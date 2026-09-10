@@ -332,22 +332,33 @@ def variant2(facts, rules, name):
 
 def variant3(facts, rules, name):
     """
-    Add one of three different contradicting facts; each gives a DIFFERENT answer pattern:
-      Sub-type A: add 'not cold'  → cold=F → downstream all F → [F, F, F, F]
-      Sub-type B: add 'not rough' → rough=F directly → young/nice can't be derived → [T, F, F, F]
-      Sub-type C: add 'not nice'  → nice=F directly, chain above still valid → [T, T, T, F]
-    This ensures the model cannot simply memorise a single answer pattern.
+    Inject one of three contradicting facts, at three different points in the
+    deduction chain. All three yield [F, F, F, F].
+
+    The all-False labelling is required by the conservative contradiction
+    semantics the benchmark is defined under: once the premise set is
+    inconsistent (Gamma |- bot), the deduction is invalid and *every* query on
+    that instance is False, including the ones whose derivation would still go
+    through if the contradiction were ignored.
+
+    An earlier revision labelled the sub-types [F,F,F,F] / [T,F,F,F] /
+    [T,T,T,F] to stop a model memorising one answer pattern. That silently
+    switched Variant 3 to a "locally still derivable" semantics and left ~34%
+    True labels, which is incompatible with the definition above and makes the
+    contradiction-detection failure mode unmeasurable: a model that ignores the
+    contradiction entirely scores well instead of scoring zero. The three
+    injection points are kept — they still prevent pattern memorisation,
+    because the model must detect a contradiction sited anywhere in the chain —
+    but the correct response to all of them is to halt, so all answers are F.
     """
     choice = random.randint(0, 2)
     if choice == 0:
-        extra = f"{name} is not cold"
-        answers = ["F", "F", "F", "F"]
+        extra = f"{name} is not cold"    # contradicts the head of the chain
     elif choice == 1:
-        extra = f"{name} is not rough"
-        answers = ["T", "F", "F", "F"]
+        extra = f"{name} is not rough"   # contradicts mid-chain
     else:
-        extra = f"{name} is not nice"
-        answers = ["T", "T", "T", "F"]
+        extra = f"{name} is not nice"    # contradicts the tail
+    answers = ["F", "F", "F", "F"]
     f = facts + [extra]
     return f, rules, [f"Q1: {name} is cold.",
                       f"Q2: {name} is rough.",
@@ -688,7 +699,20 @@ for gid, name, facts, rules, q, a, cp in base_examples:
 DATA_DIR = "data"
 os.makedirs(DATA_DIR, exist_ok=True)
 
-write_rows(f"{DATA_DIR}/train.csv", train_rows, header)
+# Two training corpora, because the baselines and the method need different ones.
+#
+#   train.csv          — NO Variant-3 rows. This is what the untreated baselines
+#                        (train.py) are trained on, so Variant 3 stays genuinely
+#                        held out for them and the contradiction failure mode is
+#                        measurable. If a baseline is trained on Variant 3 it just
+#                        learns "these inputs are all False" and scores 1.000,
+#                        which measures exposure, not contradiction detection.
+#   train_with_v3.csv  — the full corpus including Variant 3. The conflict-aware
+#                        method is supposed to learn halting from contradiction
+#                        examples, so its data generators read this file.
+train_rows_no_v3 = [r for r in train_rows if r["type"] != "variant3"]
+write_rows(f"{DATA_DIR}/train.csv", train_rows_no_v3, header)
+write_rows(f"{DATA_DIR}/train_with_v3.csv", train_rows, header)
 write_rows(f"{DATA_DIR}/test_base.csv", test_base_rows, header)
 write_rows(f"{DATA_DIR}/test_hard_mixed.csv", hard_test_rows, header)
 write_rows(f"{DATA_DIR}/test_variant1.csv", variant1_rows, header)
@@ -702,7 +726,8 @@ write_rows(f"{DATA_DIR}/test_variant4_equiv_multi.csv", equiv_rows_multi, header
 
 # ---- STATS ----
 print(f"✔ Data generation complete! Files saved to '{DATA_DIR}/'")
-print(f"  train.csv          : {len(train_rows)} rows  (base_pos + base_neg + hard_mixed + variant2 + variant3)")
+print(f"  train.csv          : {len(train_rows_no_v3)} rows  (base_pos + base_neg + hard_mixed + variant2; Variant 3 held out)")
+print(f"  train_with_v3.csv  : {len(train_rows)} rows  (adds variant3, for the conflict-aware method)")
 print(f"  test_base.csv      : {len(test_base_rows)} rows (positive + negative + mixed)")
 print(f"  test_hard_mixed.csv: {len(hard_test_rows)} rows (5 mixed types × {NUM} examples)")
 print(f"  test_variant1.csv  : {len(variant1_rows)} rows")

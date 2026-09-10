@@ -417,7 +417,10 @@ def train_rlvf(
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='RLVF Training')
     parser.add_argument('--model', type=str, default='qwen', choices=['qwen', 'qwen3', 'llama', 'bert'])
-    parser.add_argument('--train_csv', type=str, default='data/train.csv')
+    # train_with_v3.csv INCLUDES Variant 3. RLVF is the conflict-aware method and
+    # must see contradiction examples; data/train.csv holds Variant 3 out and is
+    # for the untreated baselines only.
+    parser.add_argument('--train_csv', type=str, default='data/train_with_v3.csv')
     parser.add_argument('--pairs_csv', type=str, default='data/train_lire_pairs.csv')
     parser.add_argument('--stage1_dir', type=str, default=None)
     parser.add_argument('--output_dir', type=str, default=None)

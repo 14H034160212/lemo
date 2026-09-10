@@ -264,18 +264,30 @@ def variant2_domain(facts, rules, entity, d):
 
 
 def variant3_domain(facts, rules, entity, d):
-    """Add a contradicting fact."""
+    """Add a contradicting fact at one of three points in the chain.
+
+    All three sub-types are labelled all-False, as required by the conservative
+    contradiction semantics: once the premises are inconsistent the deduction is
+    invalid and every query on the instance is False, including those whose
+    derivation would still succeed if the contradiction were ignored.
+
+    An earlier revision labelled sub-types 1 and 2 with leading Ts ("the chain
+    above the contradiction still holds"), which is a different, locally-derivable
+    semantics. It left ~34% True labels in Variant 3 and made contradiction
+    detection unmeasurable, since a model that never notices the contradiction
+    then scores well rather than scoring zero. The three injection points are
+    retained so the model cannot memorise a single pattern; the correct response
+    to all of them is the same, namely to halt.
+    """
     chain = d["chain"]
     choice = random.randint(0, 2)
     if choice == 0:
-        extra = f"{entity} is not {chain[0]}"
-        answers = ["F"] * len(chain)
+        extra = f"{entity} is not {chain[0]}"      # head of the chain
     elif choice == 1:
         extra = f"{entity} is not {chain[1]}" if len(chain) > 1 else f"{entity} is not {chain[0]}"
-        answers = ["T"] + ["F"] * (len(chain) - 1)
     else:
-        extra = f"{entity} is not {chain[-1]}"
-        answers = ["T"] * (len(chain) - 1) + ["F"]
+        extra = f"{entity} is not {chain[-1]}"     # tail
+    answers = ["F"] * len(chain)
     f = facts + [extra]
     questions = [f"Q{i+1}: {entity} is {prop}." for i, prop in enumerate(chain)]
     return f, rules, questions, answers

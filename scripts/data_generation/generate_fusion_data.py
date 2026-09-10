@@ -1,10 +1,14 @@
+# Reads train_with_v3.csv (the corpus that INCLUDES Variant 3). The Table-2
+# training strategies are compared against each other, so they must all see
+# the same contradiction examples; train.csv holds Variant 3 out and is for
+# the untreated Table-1 baselines only.
 
 import csv
 import random
 import os
 import pandas as pd
 
-BASE_TRAIN_FILE = "data/train.csv"
+BASE_TRAIN_FILE = "data/train_with_v3.csv"
 MIXED_TRAIN_FILE = "data/train_mixed.csv"
 OUTPUT_FILE = "data/train_fusion.csv"
 

@@ -14,8 +14,8 @@ from transformers import (
 )
 from peft import PeftModel, get_peft_model, LoraConfig
 
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
+os.environ['HF_HOME'] = '.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
 
 def get_log_probs(logits, labels):
     shift_logits = logits[..., :-1, :].contiguous()

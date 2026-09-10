@@ -13,8 +13,8 @@ from trl import DPOTrainer
 from peft import LoraConfig, get_peft_model, PeftModel
 
 # Environment
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
+os.environ['HF_HOME'] = '.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
 
 def get_log_probs(logits, labels):
     labels = labels[:, 1:].clone()

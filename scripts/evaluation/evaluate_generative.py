@@ -84,6 +84,50 @@ def generate_answer(model, tokenizer, prompt, device, max_new_tokens=256):
     return generated_text
 
 
+def generate_answers_batch(model, tokenizer, prompts, device,
+                           max_new_tokens=384, batch_size=32):
+    """Batched greedy decoding.
+
+    The per-prompt version above is latency-bound (one forward per token for a
+    single sequence), which made a full split take hours. Batching amortises the
+    weight reads across `batch_size` sequences. Decoder-only models need LEFT
+    padding so every sequence's last real token sits at the same index and the
+    generated continuation can be sliced at a single offset.
+
+    max_new_tokens defaults to 384. An earlier version used 128, reasoning from
+    the longest *training target* (79 words, ~110 tokens). That was wrong: the
+    trained models first restate every rule before concluding, so 94-96% of
+    generations were cut off before the final "Answer: True/False" line and
+    parse_answer() fell through to its "F" default. The resulting accuracies
+    were just the fraction of F labels in each split, not reasoning. Measured
+    p95 of an untruncated trace is ~256 tokens; 384 leaves headroom.
+    """
+    original_side = tokenizer.padding_side
+    tokenizer.padding_side = "left"
+    outs = []
+    try:
+        with torch.no_grad():
+            for i in range(0, len(prompts), batch_size):
+                chunk = prompts[i:i + batch_size]
+                enc = tokenizer(chunk, return_tensors="pt", padding=True,
+                                truncation=True, max_length=512).to(device)
+                gen = model.generate(
+                    **enc,
+                    max_new_tokens=max_new_tokens,
+                    do_sample=False,
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                )
+                new_tokens = gen[:, enc["input_ids"].shape[1]:]
+                outs.extend(
+                    t.strip() for t in
+                    tokenizer.batch_decode(new_tokens, skip_special_tokens=True)
+                )
+    finally:
+        tokenizer.padding_side = original_side
+    return outs
+
+
 def parse_answer(generated_text):
     """
     Parse generated text to extract T or F.
@@ -158,7 +202,8 @@ def describe_change(split_name: str, laws_used: str, law_count: int) -> str:
     return "unknown"
 
 
-def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out_dir):
+def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out_dir,
+                  max_new_tokens=384, batch_size=32, max_rows=None, seed=0):
     """
     Evaluate on one CSV file AND save predictions.
     """
@@ -173,6 +218,17 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
     os.makedirs(out_dir, exist_ok=True)
     output_csv = os.path.join(out_dir, f"{model_key}_{split_name}_predictions.csv")
 
+    if max_rows is not None and len(ds) > max_rows:
+        # Same stratified-sample protocol the paper uses for the frontier
+        # baselines (200 rows/split); fixed seed keeps it reproducible.
+        import random as _random
+        idx = sorted(_random.Random(seed).sample(range(len(ds)), max_rows))
+        ds = ds.select(idx) if hasattr(ds, "select") else [ds[i] for i in idx]
+        print(f"  [{split_name}] stratified sample: {max_rows} rows (seed={seed})")
+
+    # Two passes: build every prompt first, then decode them in batches. The
+    # previous one-prompt-at-a-time loop was the dominant cost of this script.
+    pending = []
     for row in ds:
         facts = row["facts"]
         rules = row["rules"]
@@ -185,13 +241,25 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
         changed_desc = describe_change(split_name, laws_used, law_count)
 
         for q, truth in zip(questions, answers):
-            # Format prompt
-            prompt = format_question_prompt(facts, rules, q)
+            pending.append({
+                "prompt": format_question_prompt(facts, rules, q),
+                "row": row, "facts": facts, "rules": rules, "q": q,
+                "truth": truth, "changed_desc": changed_desc,
+                "laws_used": laws_used, "law_count": law_count,
+            })
 
-            # Generate answer
-            generated = generate_answer(model, tokenizer, prompt, device)
+    generated_all = generate_answers_batch(
+        model, tokenizer, [p["prompt"] for p in pending], device,
+        max_new_tokens=max_new_tokens, batch_size=batch_size,
+    )
 
-            # Parse to T/F
+    for item, generated in zip(pending, generated_all):
+        row = item["row"]
+        facts, rules = item["facts"], item["rules"]
+        q, truth = item["q"], item["truth"]
+        changed_desc = item["changed_desc"]
+        laws_used, law_count = item["laws_used"], item["law_count"]
+        if True:
             pred = parse_answer(generated)
 
             output_rows.append({
@@ -243,7 +311,8 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
     return acc, total, correct
 
 
-def main(model_key: str, model_dir: str = None):
+def main(model_key: str, model_dir: str = None, splits: list = None,
+         max_new_tokens: int = 384, batch_size: int = 32, max_rows: int = None):
     # Allow custom model directory or use default
     if model_dir is None:
         model_dir = f"./trained_models/{model_key}_stage2_mixed"
@@ -290,7 +359,15 @@ def main(model_key: str, model_dir: str = None):
 
     print("\n===== Detailed Evaluation Per Split =====")
 
-    for split_name, filename in DEFAULT_TEST_FILES.items():
+    _files = DEFAULT_TEST_FILES if not splits else {
+        k: v for k, v in DEFAULT_TEST_FILES.items() if k in splits
+    }
+    if splits:
+        missing = [k for k in splits if k not in DEFAULT_TEST_FILES]
+        if missing:
+            raise ValueError(f"unknown split(s): {missing}; known: {sorted(DEFAULT_TEST_FILES)}")
+        print(f"\u25b6 Restricting evaluation to splits: {list(_files)}")
+    for split_name, filename in _files.items():
         output_csv = os.path.join(predictions_dir, f"{model_key}_{split_name}_predictions.csv")
         
         # Load ground truth dataset
@@ -336,6 +413,9 @@ def main(model_key: str, model_dir: str = None):
             split_name,
             device,
             predictions_dir,
+            max_new_tokens=max_new_tokens,
+            batch_size=batch_size,
+            max_rows=max_rows,
         )
         results.append({
             "split": split_name,
@@ -407,6 +487,15 @@ if __name__ == "__main__":
     parser.add_argument("--stage", type=str, default=None,
                         choices=["stage1_gen", "stage2", "stage2_mixed"],
                         help="Shortcut to evaluate stage models")
+    parser.add_argument("--max_new_tokens", type=int, default=384,
+                        help="Decoding budget; longest training target is ~110 tokens")
+    parser.add_argument("--batch_size", type=int, default=32,
+                        help="Generation batch size (left-padded)")
+    parser.add_argument("--max_rows", type=int, default=None,
+                        help="Stratified-sample this many rows per split (paper uses 200)")
+    parser.add_argument("--splits", nargs="+", default=None,
+                        help="Evaluate only these splits (default: all). "
+                             "e.g. --splits base variant2 variant3")
     args = parser.parse_args()
 
     # Handle stage shortcuts
@@ -415,4 +504,6 @@ if __name__ == "__main__":
     else:
         model_dir = args.model_dir
 
-    main(args.model, model_dir=model_dir)
+    main(args.model, model_dir=model_dir, splits=args.splits,
+         max_new_tokens=args.max_new_tokens, batch_size=args.batch_size,
+         max_rows=args.max_rows)

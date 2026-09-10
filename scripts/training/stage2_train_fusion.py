@@ -13,9 +13,9 @@ from transformers import (
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # Environment setup
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TMPDIR'] = '/mnt/lemo/tmp'
+os.environ['HF_HOME'] = '.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
+os.environ['TMPDIR'] = './tmp'
 
 def train_fusion():
     model_id = "Qwen/Qwen2-1.5B"

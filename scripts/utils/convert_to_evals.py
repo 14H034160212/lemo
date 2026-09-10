@@ -35,8 +35,8 @@ def convert_to_evals_jsonl(csv_path, output_path):
                 f.write(json.dumps(json_record) + '\n')
 
 if __name__ == "__main__":
-    data_dir = "/mnt/lemo/data"
-    output_dir = "/mnt/lemo/evals_data"
+    data_dir = "./data"
+    output_dir = "./evals_data"
     os.makedirs(output_dir, exist_ok=True)
     
     variants = [

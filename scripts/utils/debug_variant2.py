@@ -5,7 +5,7 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
+os.environ['HF_HOME'] = '.cache/huggingface'
 
 def debug_v2(model_path):
     print(f"Loading CoT model from {model_path}...")

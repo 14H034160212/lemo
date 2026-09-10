@@ -2,8 +2,8 @@
 set -e
 
 # ensure cache is on large disk
-export HF_HOME='/mnt/lemo/.cache/huggingface'
-export HF_DATASETS_CACHE='/mnt/lemo/.cache/huggingface/datasets'
+export HF_HOME='.cache/huggingface'
+export HF_DATASETS_CACHE='.cache/huggingface/datasets'
 
 echo "Resuming experiments..."
 

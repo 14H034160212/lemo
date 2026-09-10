@@ -12,9 +12,9 @@ import argparse
 import os
 
 # Set HuggingFace cache to avoid disk space issues
-os.environ['HF_HOME'] = '/mnt/lemo/.cache/huggingface'
-os.environ['HF_DATASETS_CACHE'] = '/mnt/lemo/.cache/huggingface/datasets'
-os.environ['TRANSFORMERS_CACHE'] = '/mnt/lemo/.cache/huggingface/transformers'
+os.environ['HF_HOME'] = '.cache/huggingface'
+os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
+os.environ['TRANSFORMERS_CACHE'] = '.cache/huggingface/transformers'
 
 from datasets import load_dataset, Dataset, concatenate_datasets
 from transformers import (

@@ -1,0 +1,25 @@
+#!/bin/bash
+# Block oversized files before they reach a commit.
+#
+# Why: `git add data/*.csv` once swept a 60 MB generated corpus into a commit
+# that had already been pushed. Removing it afterwards does not shrink the
+# repository -- the blob stays in history -- so the only cheap moment to catch
+# this is before the commit exists. GitHub warns at 50 MB and refuses at 100 MB.
+LIMIT_MB=50
+fail=0
+while IFS= read -r f; do
+  [ -f "$f" ] || continue
+  mb=$(( $(wc -c < "$f") / 1048576 ))
+  if [ "$mb" -ge "$LIMIT_MB" ]; then
+    echo "pre-commit: $f is ${mb} MB (limit ${LIMIT_MB} MB)" >&2
+    fail=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=AM)
+if [ "$fail" = 1 ]; then
+  cat >&2 <<'MSG'
+Refusing the commit. If the file is generated, add it to .gitignore and note
+the generator in the commit message instead. To override deliberately:
+    git commit --no-verify
+MSG
+  exit 1
+fi

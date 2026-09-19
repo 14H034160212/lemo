@@ -73,3 +73,9 @@ neurips2026_supplementary.zip
 *.tex.bak*
 *.py.bak
 lemo_deck_test.py
+
+# Generated training corpora that are reproducible from their generators and
+# too large to belong in git. train_fusion_v3aug.csv (60 MB) was swept in by a
+# `git add data/*.csv` glob despite an earlier decision not to commit it;
+# regenerate with scripts/data_generation/make_v3mixed_train_aug.py.
+data/train_fusion_v3aug.csv

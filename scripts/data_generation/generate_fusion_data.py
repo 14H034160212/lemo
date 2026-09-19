@@ -97,7 +97,12 @@ def main():
         print("Required training files missing.")
         return
 
-    base_rows = list(csv.DictReader(open(BASE_TRAIN_FILE)))
+    # Only the base rows belong here. The contradiction and rule-removal signal
+    # comes from train_mixed.csv (aug_variant2 / aug_variant3) below, not from
+    # this file, so feeding it variant rows only inflates the denominator and
+    # dilutes the contradiction ratio the method depends on.
+    base_rows = [r for r in csv.DictReader(open(BASE_TRAIN_FILE))
+                 if str(r.get("type", "")).startswith("base_")]
     mixed_df = pd.read_csv(MIXED_TRAIN_FILE)
     
     v2_rows = mixed_df[mixed_df['type'] == 'aug_variant2'].to_dict('records')
@@ -116,8 +121,20 @@ def main():
         for row in v2_rows:
             fusion_samples.extend(generate_variant_cot(row, "v2"))
         
+        # The contradiction cap used to be the literal 320, which was tuned when
+        # BASE_TRAIN_FILE held 160 rows and produced ~14.3% contradiction samples.
+        # Once the base corpus grew, the base half scaled with it while this cap
+        # did not, diluting contradictions to ~1% -- and a model cannot learn to
+        # halt on contradictions from 1% of its training signal. Scale the cap
+        # with the base corpus so the ratio the method was designed around holds
+        # at any corpus size.
+        # 0.50 is calibrated, not guessed: it reproduces the original corpus's
+        # ratios exactly (14.29% contradiction, 57.14% verification-prefix),
+        # verified against `git show ea27058:data/train_fusion.csv`.
+        _V3_PER_BASE_ROW = 0.50
+        _v3_cap = max(320, int(len(base_rows) * _V3_PER_BASE_ROW))
         random.shuffle(v3_rows)
-        for row in v3_rows[:320]: # Limit scale
+        for row in (v3_rows * (1 + _v3_cap // max(1, len(v3_rows))))[:_v3_cap]:
             fusion_samples.extend(generate_variant_cot(row, "v3"))
             fusion_samples.extend(generate_variant_gen(row))
 

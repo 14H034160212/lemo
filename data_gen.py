@@ -56,6 +56,43 @@ def demorgan_law(p, q):
 
 
 # =========================================================
+# NON-EQUIVALENT REWRITES  (the control class for Variant 4)
+# =========================================================
+# Variant 4 as originally built contained only logic-PRESERVING rewrites, so
+# every question kept its answer and the whole split was labelled T. On an
+# all-T split a model that simply answers T scores 1.000, which is
+# indistinguishable from one that genuinely recognises logical equivalence --
+# measured directly: LIRE lifts variant4-multi 0.712 -> 0.998 while its rate of
+# answering T on the balanced base split goes 0.443 -> 0.833 and base accuracy
+# falls 1.000 -> 0.694. The "invariance gain" was a shift toward T.
+#
+# These are the classical fallacies: near-identical surface form, different
+# logic. A model that has learned equivalence must keep its answer under the
+# transformations above and CHANGE it under these. Labels are not hand-written;
+# they are computed by the forward-chaining oracle (see variant_noneq_single).
+
+def converse(p, q):
+    # P -> Q  does NOT entail  Q -> P
+    return f"If someone is {q} then they are {p}."
+
+def inverse(p, q):
+    # P -> Q  does NOT entail  not P -> not Q
+    return f"If someone is not {p} then they are not {q}."
+
+def affirming_consequent(p, q):
+    # treats Q as sufficient for P
+    return f"If someone is {q} then they are {p}."
+
+def demorgan_fallacy(p, q):
+    # not (P or Q)  is NOT  not P or not Q
+    return f"If someone is not {p} or not {q} then they are not cold."
+
+def disjunction_to_conjunction(p, q):
+    # P or Q  is NOT  P and Q
+    return f"If someone is {p} and {q} then they are cold."
+
+
+# =========================================================
 # BASE GENERATION — answers: T, T, T, T
 # =========================================================
 
@@ -437,6 +474,61 @@ def variant_equiv_single(facts, rules, color_pair):
 # VARIANT 4 — MULTI-LAW EQUIVALENTS (2–5 rules)
 # =========================================================
 
+def variant_noneq_single(facts, rules, color_pair, name):
+    """Variant 4's control class: rewrites that are NOT logic-preserving.
+
+    Same shape as variant_equiv_single, but each rewrite is a classical
+    fallacy rather than an equivalence, so the answers are expected to move.
+    Labels come from forward_chain(), never from a hand-written pattern -- the
+    whole point of this split is that the answer is not predictable from the
+    split name, so writing the labels by hand would defeat it.
+    """
+    from scripts.utils.forward_chain import forward_chain, check_answer
+
+    c1, c2 = color_pair
+    tail = [
+        rule("cold", "rough"),
+        rule("not young", "not rough"),
+        rule("young", "cold"),
+        rule("young", "nice"),
+    ]
+    # Both colour rules must be rewritten. The fact is a disjunction
+    # ("<name> is c1 or c2"), so corrupting only the c1 rule leaves the c2 rule
+    # to derive "cold" anyway and the whole chain survives unchanged -- which is
+    # exactly the all-T degeneracy this split exists to avoid.
+    neq = {
+        "converse":         [converse(c1, "cold"), converse(c2, "cold")] + tail,
+        "inverse":          [inverse(c1, "cold"), inverse(c2, "cold")] + tail,
+        "demorgan_fallacy": [demorgan_fallacy(c1, c2)] + tail,
+        "disj_to_conj":     [disjunction_to_conjunction(c1, c2)] + tail,
+    }
+
+    questions = [f"Q1: {name} is cold.",
+                 f"Q2: {name} is rough.",
+                 f"Q3: {name} is young.",
+                 f"Q4: {name} is nice."]
+
+    # NOTE on how this split must be *used*: on its own it is all-F, just as the
+    # equivalence split on its own is all-T, and either one alone can be
+    # saturated by a constant predictor. They are only informative interleaved
+    # into a single split whose labels then contain both classes -- see
+    # variant4_mixed in the writer below. Keeping them as separate dicts here is
+    # deliberate: the caller decides the mix.
+    out = {}
+    facts_str = " | ".join(facts)
+    for law, rule_set in neq.items():
+        rules_str = " | ".join(rule_set)
+        closure = forward_chain(facts_str, rules_str)
+        answers = []
+        for q in questions:
+            val = check_answer(q, closure)
+            # An attribute that cannot be derived is False under the benchmark's
+            # closed-world reading, matching how every other split is labelled.
+            answers.append("T" if val is True else "F")
+        out[law] = (rule_set, questions, answers)
+    return out
+
+
 def variant_equiv_multi(facts, rules, color_pair):
     """
     Start from base rules, then *add* 2–5 extra rules that are
@@ -481,6 +573,12 @@ variant2_rows = []
 variant3_rows = []
 equiv_rows_single = {law: [] for law in EQ_LAWS}
 equiv_rows_multi = []
+# Variant 4's control split: equivalence rewrites (answers preserved) interleaved
+# with non-equivalence rewrites (answers change). Neither half is usable alone --
+# each is single-class and a constant predictor saturates it. Mixed, the labels
+# contain both classes, so accuracy here separates a model that recognises
+# logical equivalence from one that has merely drifted toward a single answer.
+noneq_rows_mixed = []
 
 base_examples = []
 # NUM=1000: train 800, test 200; variant test sets have 1000 examples (4000 questions)
@@ -679,6 +777,31 @@ for gid, name, facts, rules, q, a, cp in base_examples:
             "equiv_laws_used": law,
         })
 
+# ---- VARIANT 4 MIXED (equivalence + non-equivalence control) ----
+for gid, name, facts, rules, q, a, cp in base_examples:
+    # equivalence half: answers unchanged
+    for law, rlist in variant_equiv_single(facts, rules, cp).items():
+        noneq_rows_mixed.append({
+            "group_id": gid,
+            "type": f"equiv_{law}",
+            "facts": " | ".join(facts),
+            "rules": " | ".join(rlist),
+            "questions": " | ".join(q),
+            "answers": " | ".join(a),
+            "equiv_laws_used": law,
+        })
+    # non-equivalence half: answers recomputed by the forward-chaining oracle
+    for law, (rlist, qs, ans) in variant_noneq_single(facts, rules, cp, name).items():
+        noneq_rows_mixed.append({
+            "group_id": gid,
+            "type": f"noneq_{law}",
+            "facts": " | ".join(facts),
+            "rules": " | ".join(rlist),
+            "questions": " | ".join(qs),
+            "answers": " | ".join(ans),
+            "equiv_laws_used": f"NONEQ:{law}",
+        })
+
 # ---- VARIANT 4 MULTI-LAW ----
 for gid, name, facts, rules, q, a, cp in base_examples:
     f_multi, r_multi, laws_used = variant_equiv_multi(facts, rules, cp)
@@ -723,6 +846,7 @@ for law, rows in equiv_rows_single.items():
     write_rows(f"{DATA_DIR}/test_variant4_equiv_{law}.csv", rows, header)
 
 write_rows(f"{DATA_DIR}/test_variant4_equiv_multi.csv", equiv_rows_multi, header)
+write_rows(f"{DATA_DIR}/test_variant4_mixed.csv", noneq_rows_mixed, header)
 
 # ---- STATS ----
 print(f"✔ Data generation complete! Files saved to '{DATA_DIR}/'")
@@ -736,6 +860,7 @@ print(f"  test_variant3.csv  : {len(variant3_rows)} rows")
 for law in EQ_LAWS:
     print(f"  test_variant4_equiv_{law}.csv: {len(equiv_rows_single[law])} rows")
 print(f"  test_variant4_equiv_multi.csv: {len(equiv_rows_multi)} rows")
+print(f"  test_variant4_mixed.csv: {len(noneq_rows_mixed)} rows  (equivalence + non-equivalence control)")
 
 # Answer distribution in test_base
 from collections import Counter

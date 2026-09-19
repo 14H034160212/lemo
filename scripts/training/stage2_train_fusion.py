@@ -17,10 +17,19 @@ os.environ['HF_HOME'] = '.cache/huggingface'
 os.environ['HF_DATASETS_CACHE'] = '.cache/huggingface/datasets'
 os.environ['TMPDIR'] = './tmp'
 
-def train_fusion():
+def train_fusion(train_file="data/train_fusion.csv",
+                 output_dir="trained_models/qwen_fusion_sft_conflict_aware",
+                 seed=42):
+    """seed controls LoRA initialisation and data order.
+
+    There was no seed argument before, so every run used the HuggingFace
+    default of 42 and re-running produced bit-identical results. That made the
+    single number we report indistinguishable from a lucky draw: with n=1 there
+    is no way to tell a 14-point gap between two methods from seed noise.
+    """
     model_id = "Qwen/Qwen2-1.5B"
-    train_file = "data/train_fusion.csv"
-    output_dir = "trained_models/qwen_fusion_sft_conflict_aware"
+    print(f"  train file : {train_file}")
+    print(f"  output dir : {output_dir}")
     
     print(f"Loading data from {train_file}...")
     df = pd.read_csv(train_file)
@@ -71,10 +80,17 @@ def train_fusion():
     
     training_args = TrainingArguments(
         output_dir=output_dir,
+        seed=seed,
         per_device_train_batch_size=4,
         gradient_accumulation_steps=4,
         learning_rate=2e-5,
+        # The corpus is now 10x the size it was when num_train_epochs=3 was set
+        # (112k rows vs 11.2k), so 3 epochs would be 21k steps against the ~2.1k
+        # the recipe was tuned for. Cap the step count so the training budget
+        # stays comparable while the model still sees the full, correctly
+        # proportioned distribution (14.29% contradiction samples).
         num_train_epochs=3,
+        max_steps=2100,
         logging_steps=10,
         save_strategy="epoch",
         fp16=True,
@@ -96,4 +112,11 @@ def train_fusion():
     print(f"Fusion SFT model saved to {output_dir}")
 
 if __name__ == "__main__":
-    train_fusion()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--train_file", default="data/train_fusion.csv")
+    ap.add_argument("--output_dir",
+                    default="trained_models/qwen_fusion_sft_conflict_aware")
+    ap.add_argument("--seed", type=int, default=42)
+    a = ap.parse_args()
+    train_fusion(a.train_file, a.output_dir, a.seed)

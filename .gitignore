@@ -62,3 +62,14 @@ AUTHORS.local.txt
 
 # Non-anonymous arXiv build — must never enter the review repository
 arxiv/
+
+# --- Double-blind hygiene -------------------------------------------------
+# This repository is mirrored verbatim to an anonymous host, so anything below
+# would be served as-is to reviewers. Keep it out of the tree entirely rather
+# than relying on remembering not to `git add` it.
+*OpenReview*.pdf            # reviewer threads carry the author list in rebuttals
+*评审意见*.pdf               # internal review-response drafts
+neurips2026_supplementary.zip
+*.tex.bak*
+*.py.bak
+lemo_deck_test.py

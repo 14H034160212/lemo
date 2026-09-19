@@ -18,6 +18,12 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import AutoPeftModelForCausalLM
 
+import sys as _sys
+_sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from scripts.utils.eval_provenance import (
+    collect_provenance, write_provenance, sanity_columns, warn_if_uninformative,
+)
+
 MODEL_LIST = {
     "qwen": "Qwen/Qwen2-1.5B",
     "qwen3": "/data/shared/qwen3/Qwen3-8B",
@@ -37,6 +43,14 @@ DEFAULT_TEST_FILES = {
     "variant4_equiv_identity": "data/test_variant4_equiv_identity.csv",
     "variant4_equiv_commutativity": "data/test_variant4_equiv_commutativity.csv",
     "variant4_equiv_multi": "data/test_variant4_equiv_multi.csv",
+    # Equivalence rewrites interleaved with non-equivalence controls, so the
+    # labels carry both classes; the equiv_* splits are all-T and saturate.
+    "variant4_mixed": "data/test_variant4_mixed.csv",
+    # Two-class control for Variant 3: contradictory instances interleaved with
+    # consistent ones of the same surface form, so answering False on sight
+    # scores at the baseline (0.5835) instead of the 1.0000 that the all-False
+    # test_variant3.csv hands out.
+    "variant3_mixed": "data/test_variant3_mixed.csv",
 }
 
 
@@ -285,6 +299,14 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
 
     acc = correct / total if total > 0 else 0.0
 
+    # parse_rate is the one that matters here: a truncated generation
+    # parses to the "F" default and yields an accuracy equal to the share
+    # of F labels, which looks like a real measurement.
+    sanity = sanity_columns([r["ground_truth"] for r in output_rows],
+                            [r["prediction"] for r in output_rows],
+                            generated=[r["generated_text"] for r in output_rows])
+    warn_if_uninformative(split_name, acc, sanity)
+
     # Save prediction CSV
     with open(output_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
@@ -308,7 +330,7 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
 
     print(f"📄 Predictions saved to: {output_csv}")
 
-    return acc, total, correct
+    return acc, total, correct, sanity
 
 
 def main(model_key: str, model_dir: str = None, splits: list = None,
@@ -405,7 +427,7 @@ def main(model_key: str, model_dir: str = None, splits: list = None,
                 print(f"  ⚠️ Error reading file: {e}. Re-running evaluation...")
         
         print(f"\n[{split_name}] Evaluating...")
-        acc, total, correct = eval_and_save(
+        acc, total, correct, sanity = eval_and_save(
             model,
             tokenizer,
             filename,
@@ -421,7 +443,8 @@ def main(model_key: str, model_dir: str = None, splits: list = None,
             "split": split_name,
             "accuracy": acc,
             "correct": correct,
-            "total": total
+            "total": total,
+            **sanity,
         })
         print(f"  samples (questions): {total}")
         print(f"  correct: {correct}")
@@ -438,7 +461,13 @@ def main(model_key: str, model_dir: str = None, splits: list = None,
     
     summary_csv_path = os.path.join(model_dir, "accuracy_summary.csv")
     with open(summary_csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total"])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total",
+                        "majority_class_baseline", "pred_concentration",
+                        "parse_rate", "pred_distribution"],
+            extrasaction="ignore",
+        )
         writer.writeheader()
 
         ordered_splits = [
@@ -453,6 +482,7 @@ def main(model_key: str, model_dir: str = None, splits: list = None,
             "variant4_equiv_identity",
             "variant4_equiv_commutativity",
             "variant4_equiv_multi",
+            "variant4_mixed",
         ]
 
         for split in ordered_splits:
@@ -466,14 +496,26 @@ def main(model_key: str, model_dir: str = None, splits: list = None,
             print(f"{split:<35} | {acc:>9.4f} | {delta_str:>9}")
             
             writer.writerow({
+                # res carries the sanity columns too; spread it so they reach
+                # the CSV instead of being dropped by an explicit field list.
+                **res,
                 "split": split,
                 "accuracy": acc,
                 "delta_vs_base": delta,
-                "correct": res["correct"],
-                "total": res["total"]
             })
             
     print(f"\n📄 Accuracy summary saved to: {summary_csv_path}")
+
+    _prov_path = write_provenance(
+        summary_csv_path,
+        collect_provenance(_files, model_dir=model_dir,
+                           extra={"model_key": model_key,
+                                  "eval_path": "causal-lm generation",
+                                  "max_new_tokens": max_new_tokens,
+                                  "batch_size": batch_size,
+                                  "max_rows": max_rows}),
+    )
+    print(f"📄 Provenance saved to: {_prov_path}")
 
     print("\n✅ Evaluation FINISHED.\n")
 

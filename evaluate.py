@@ -13,6 +13,12 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
+import sys as _sys
+_sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from scripts.utils.eval_provenance import (
+    collect_provenance, write_provenance, sanity_columns, warn_if_uninformative,
+)
+
 MODEL_LIST = {
     "bert": "bert-base-uncased",
     "qwen": "Qwen/Qwen2-1.5B",
@@ -34,6 +40,15 @@ DEFAULT_TEST_FILES = {
     "variant4_equiv_identity": "data/test_variant4_equiv_identity.csv",
     "variant4_equiv_commutativity": "data/test_variant4_equiv_commutativity.csv",
     "variant4_equiv_multi": "data/test_variant4_equiv_multi.csv",
+    # Equivalence rewrites interleaved with non-equivalence controls, so the
+    # labels contain both classes. The equiv_* splits above are all-T and a
+    # constant predictor saturates them; this one does not.
+    "variant4_mixed": "data/test_variant4_mixed.csv",
+    # Two-class control for Variant 3: contradictory instances interleaved with
+    # consistent ones of the same surface form, so answering False on sight
+    # scores at the baseline (0.5835) instead of the 1.0000 that the all-False
+    # test_variant3.csv hands out.
+    "variant3_mixed": "data/test_variant3_mixed.csv",
 }
 
 
@@ -135,6 +150,12 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
 
     acc = correct / total if total > 0 else 0.0
 
+    # An accuracy figure alone is not falsifiable: a collapsed classifier and a
+    # reasoning one can report the same number. Record what distinguishes them.
+    sanity = sanity_columns([r["ground_truth"] for r in output_rows],
+                            [r["prediction"] for r in output_rows])
+    warn_if_uninformative(split_name, acc, sanity)
+
     # Save prediction CSV
     with open(output_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
@@ -157,10 +178,10 @@ def eval_and_save(model, tokenizer, filename, model_key, split_name, device, out
 
     print(f"📄 Predictions saved to: {output_csv}")
 
-    return acc, total, correct
+    return acc, total, correct, sanity
 
 
-def main(model_key: str, model_dir: str = None):
+def main(model_key: str, model_dir: str = None, splits: list = None):
     # Allow custom model directory or use default
     if model_dir is None:
         model_dir = f"./trained_models/{model_key}"
@@ -184,12 +205,26 @@ def main(model_key: str, model_dir: str = None):
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
     predictions_dir = os.path.join(model_dir, "predictions")
+    # The per-split prediction CSVs must carry the same suffix as the summary.
+    # Without it a --data_dir data_v2 --output_suffix _v2 run silently overwrote
+    # the v1 prediction files (different row counts, same filename), so any
+    # per-row analysis afterwards read v2 rows while believing they were v1.
+    # accuracy_summary{,_v2}.csv were always separate, so the accuracies
+    # themselves were never affected.
+    _pred_suffix = getattr(main, "_output_suffix", "")
     results = []
 
     print("\n===== Detailed Evaluation Per Split =====")
 
-    for split_name, filename in DEFAULT_TEST_FILES.items():
-        output_csv = os.path.join(predictions_dir, f"{model_key}_{split_name}_predictions.csv")
+    test_files = ({k: v for k, v in DEFAULT_TEST_FILES.items() if k in splits}
+                  if splits else DEFAULT_TEST_FILES)
+    if splits:
+        missing = [s for s in splits if s not in DEFAULT_TEST_FILES]
+        if missing:
+            raise SystemExit(f"unknown split(s): {missing}. "
+                             f"available: {sorted(DEFAULT_TEST_FILES)}")
+    for split_name, filename in test_files.items():
+        output_csv = os.path.join(predictions_dir, f"{model_key}_{split_name}_predictions{_pred_suffix}.csv")
         
         # Load ground truth dataset
         ds = load_dataset("csv", data_files=filename)["train"]
@@ -226,7 +261,7 @@ def main(model_key: str, model_dir: str = None):
                 print(f"  ⚠️ Error reading file: {e}. Re-running evaluation...")
 
         print(f"\n[{split_name}] Evaluating {filename}...")
-        acc, total, correct = eval_and_save(
+        acc, total, correct, sanity = eval_and_save(
             model,
             tokenizer,
             filename,
@@ -239,7 +274,8 @@ def main(model_key: str, model_dir: str = None):
             "split": split_name,
             "accuracy": acc,
             "correct": correct,
-            "total": total
+            "total": total,
+            **sanity,
         })
         print(f"  samples (questions): {total}")
         print(f"  correct: {correct}")
@@ -257,7 +293,13 @@ def main(model_key: str, model_dir: str = None):
     _suffix = getattr(main, "_output_suffix", "")
     summary_csv_path = os.path.join(model_dir, f"accuracy_summary{_suffix}.csv")
     with open(summary_csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total"])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["split", "accuracy", "delta_vs_base", "correct", "total",
+                        "majority_class_baseline", "pred_concentration",
+                        "pred_distribution"],
+            extrasaction="ignore",
+        )
         writer.writeheader()
 
         ordered_splits = [
@@ -273,6 +315,8 @@ def main(model_key: str, model_dir: str = None):
             "variant4_equiv_identity",
             "variant4_equiv_commutativity",
             "variant4_equiv_multi",
+            "variant4_mixed",
+            "variant3_mixed",
         ]
 
         for split in ordered_splits:
@@ -286,14 +330,27 @@ def main(model_key: str, model_dir: str = None):
             print(f"{split:<35} | {acc:>9.4f} | {delta_str:>9}")
             
             writer.writerow({
+                # res carries the sanity columns too; spread it so they reach
+                # the CSV instead of being dropped by an explicit field list.
+                **res,
                 "split": split,
                 "accuracy": acc,
                 "delta_vs_base": delta,
-                "correct": res["correct"],
-                "total": res["total"]
             })
 
     print(f"\n📄 Accuracy summary saved to: {summary_csv_path}")
+
+    # Record which data and code produced these numbers. Without this a
+    # summary is unattributable: two summaries measured against different
+    # benchmark versions look identical on disk.
+    _prov_path = write_provenance(
+        summary_csv_path,
+        collect_provenance(test_files, model_dir=model_dir,
+                           extra={"model_key": model_key,
+                                  "output_suffix": _suffix,
+                                  "eval_path": "sequence-classification"}),
+    )
+    print(f"📄 Provenance saved to: {_prov_path}")
 
     print("\n✅ Evaluation FINISHED.\n")
 
@@ -308,6 +365,8 @@ if __name__ == "__main__":
                         help="Shortcut to evaluate stage models (overrides model_dir)")
     parser.add_argument("--data_dir", type=str, default=None,
                         help="Custom data directory containing test_*.csv files (default: data/)")
+    parser.add_argument("--splits", nargs="+", default=None,
+                        help="evaluate only these splits (default: all)")
     parser.add_argument("--output_suffix", type=str, default="",
                         help="Suffix for accuracy_summary filename, e.g. '_v2' → accuracy_summary_v2.csv")
     args = parser.parse_args()
@@ -329,4 +388,4 @@ if __name__ == "__main__":
             if os.path.exists(new_path):
                 DEFAULT_TEST_FILES[split_name] = new_path
 
-    main(args.model, model_dir=model_dir)
+    main(args.model, model_dir=model_dir, splits=args.splits)

@@ -1,0 +1,24 @@
+{
+  "adapter_mtime": 1789211850,
+  "eval_path": "generative",
+  "git_commit": "d956587eb0feb04054ba4e2041d57e3df584a127",
+  "git_dirty": true,
+  "max_new_tokens": 512,
+  "model_dir": "trained_models/qwen_fusion_sft_conflict_aware",
+  "test_files": {
+    "folio": {
+      "missing": true,
+      "path": "huggingface:tasksource/folio"
+    },
+    "logicnli": {
+      "bytes": 618785,
+      "path": "data/real_world/logicnli_eval_fixed.csv",
+      "sha256": "8e756404b1ef0343"
+    },
+    "mnli_con": {
+      "bytes": 77991,
+      "path": "data/real_world/mnli_eval.csv",
+      "sha256": "33c948e51d66dea9"
+    }
+  }
+}

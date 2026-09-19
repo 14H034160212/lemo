@@ -1,0 +1,45 @@
+{
+  "model_dir": "trained_models/qwen_fusion_sft_conflict_aware",
+  "path": "generative",
+  "results": {
+    "logicnli": {
+      "n": 500,
+      "protocol_kept": 0.46,
+      "n_parsed": 230,
+      "accuracy_parsed_only": 0.6043,
+      "rho_T_parsed": 0.2348,
+      "accuracy_forced": 0.606,
+      "rho_T_forced": 0.236,
+      "accuracy_f_default": 0.672,
+      "rho_T_f_default": 0.15,
+      "majority_baseline": 0.75,
+      "pred_concentration": 0.85
+    },
+    "mnli_con": {
+      "n": 349,
+      "protocol_kept": 0.0745,
+      "n_parsed": 26,
+      "accuracy_parsed_only": 0.8846,
+      "rho_T_parsed": 0.5,
+      "accuracy_forced": 0.8739,
+      "rho_T_forced": 0.4928,
+      "accuracy_f_default": 0.5587,
+      "rho_T_f_default": 0.1146,
+      "majority_baseline": 0.5014,
+      "pred_concentration": 0.8854
+    },
+    "folio": {
+      "n": 811,
+      "protocol_kept": 0.2491,
+      "n_parsed": 202,
+      "accuracy_parsed_only": 0.6238,
+      "rho_T_parsed": 0.5446,
+      "accuracy_forced": 0.6584,
+      "rho_T_forced": 0.5487,
+      "accuracy_f_default": 0.5302,
+      "rho_T_f_default": 0.3391,
+      "majority_baseline": 0.5672,
+      "pred_concentration": 0.6609
+    }
+  }
+}

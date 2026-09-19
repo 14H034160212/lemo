@@ -19,24 +19,49 @@ import csv
 import random
 import sys
 import time
+import os
 from pathlib import Path
 from typing import Dict, List
 
 _HERE = Path(__file__).resolve().parent
+# Keep the original 187-question run on data_v2 intact; name the output
+# after the dataset it was measured on, so the two cannot be confused again.
+OUT_NAME = "benchmark_lean_results_%s.csv" % os.environ.get("LEMO_DATA_DIR", "data")
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 
 from lemo_to_lean import parse_row, emit_theorem, verify_with_lean  # noqa: E402
 
 
-DATA_DIR = _HERE.parent / "data_v2"
+# The Lean study originally read data_v2/ -- the five-domain expansion -- while
+# every other table in the paper is measured on data/. Table 5 was therefore
+# reporting a different dataset than Tables 1-4 without saying so. Default to
+# data/ so the formal-verification numbers sit on the same benchmark as the
+# rest; pass --data_dir data_v2 to reproduce the original figures.
+DATA_DIR = _HERE.parent / os.environ.get("LEMO_DATA_DIR", "data")
 
 # (split_name, csv_filename, n_rows_to_sample)
+# Scaled up from 20 rows/split. At ~0.37 s per trace the original 187-question
+# sample cost under two minutes, so the small n was not a compute limit -- and
+# 187 questions is thin for a per-split T/F breakdown (variant2's F cell had
+# n=20).
+#
+# variant3_mixed is added because it is the one split whose labels we need an
+# *independent* check on: every other label in this benchmark comes from our own
+# forward_chain oracle, which is also the oracle RLVF is rewarded against.
+# Reviewer 2hi4 objected that training reward and evaluation semantics are
+# therefore coupled. A Lean 4 kernel derivation is not our oracle, so agreement
+# here is an external audit of the control's labels rather than a restatement
+# of them.
 SPLITS = [
-    ("base",              "test_base.csv",     20),
-    ("variant1_redundant", "test_variant1.csv", 20),
-    ("variant2_essential", "test_variant2.csv", 20),
-    ("variant3_contradiction", "test_variant3.csv", 20),
+    ("base",                   "test_base.csv",           150),
+    ("variant1_redundant",     "test_variant1.csv",       150),
+    ("variant2_essential",     "test_variant2.csv",       150),
+    ("variant3_contradiction", "test_variant3.csv",       150),
+    # variant3_mixed is held out for now: the runner burned six hours of CPU on
+    # this split with no output and produced nothing. Translation of these rows
+    # is fast when tested in isolation, so the hang is in the verification loop
+    # and is not yet diagnosed. The four splits above complete in ~26 minutes.
 ]
 
 
@@ -108,7 +133,7 @@ def main():
         print(f"   avg verification time    : "
               f"{total_time / max(1, n_questions):.2f} s/question")
 
-    out = _HERE / "benchmark_lean_results.csv"
+    out = _HERE / OUT_NAME
     if all_results:
         with open(out, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(all_results[0].keys()))

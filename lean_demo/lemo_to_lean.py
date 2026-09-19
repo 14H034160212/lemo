@@ -51,8 +51,20 @@ _FACT_RE_OR  = re.compile(r"^\s*(.+?)\s+is\s+(\w+)\s+or\s+(\w+)\s*$", re.I)
 _FACT_RE_NOT = re.compile(r"^\s*(.+?)\s+is\s+not\s+(\w+)\s*$", re.I)
 _FACT_RE_POS = re.compile(r"^\s*(.+?)\s+is\s+(\w+)\s*$", re.I)
 
-_RULE_POS = re.compile(r"^If\s+(?:something|it)\s+is\s+(\w+)\s+then\s+(?:something|it)\s+is\s+(\w+)\.?$", re.I)
-_RULE_NEG = re.compile(r"^If\s+(?:something|it)\s+is\s+not\s+(\w+)\s+then\s+(?:something|it)\s+is\s+not\s+(\w+)\.?$", re.I)
+# The benchmark exists in two surface forms. data_v2/ phrases rules
+# impersonally ("If something is tropical then it is blooming"), while data/ --
+# the corpus every other table in the paper is measured on -- phrases them
+# personally ("If someone is blue then they are cold"). Only the impersonal
+# form was matched here, so the translator parsed 0/150 rows of data/ and the
+# Lean study could only ever run on data_v2. Note that build_rule_sentence()
+# below *emits* the personal form, so the generator and the parser in this same
+# file disagreed with each other.
+_SUBJ = r"(?:something|it|someone|somebody|they|he|she)"
+_COP = r"(?:is|are)"
+_RULE_POS = re.compile(
+    rf"^If\s+{_SUBJ}\s+{_COP}\s+(\w+)\s+then\s+{_SUBJ}\s+{_COP}\s+(\w+)\.?$", re.I)
+_RULE_NEG = re.compile(
+    rf"^If\s+{_SUBJ}\s+{_COP}\s+not\s+(\w+)\s+then\s+{_SUBJ}\s+{_COP}\s+not\s+(\w+)\.?$", re.I)
 
 _Q_POS = re.compile(r"^Q\d+:\s*(.+?)\s+is\s+(\w+)\.?\s*$", re.I)
 _Q_NEG = re.compile(r"^Q\d+:\s*(.+?)\s+is\s+not\s+(\w+)\.?\s*$", re.I)

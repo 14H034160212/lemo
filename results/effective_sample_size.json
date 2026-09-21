@@ -1,0 +1,172 @@
+{
+  "splits": {
+    "test_base.csv": {
+      "rows": 600,
+      "questions": 2400,
+      "unique_verbatim": 347,
+      "unique_structures": 128,
+      "replication": 4.7,
+      "effective_fraction": 0.2133
+    },
+    "test_depth.csv": {
+      "rows": 480,
+      "questions": 1680,
+      "unique_verbatim": 480,
+      "unique_structures": 480,
+      "replication": 1.0,
+      "effective_fraction": 1.0
+    },
+    "test_hard_mixed.csv": {
+      "rows": 5000,
+      "questions": 20000,
+      "unique_verbatim": 1688,
+      "unique_structures": 126,
+      "replication": 39.7,
+      "effective_fraction": 0.0252
+    },
+    "test_mt_control.csv": {
+      "rows": 600,
+      "questions": 2400,
+      "unique_verbatim": 599,
+      "unique_structures": 596,
+      "replication": 1.0,
+      "effective_fraction": 0.9933
+    },
+    "test_mt_control3.csv": {
+      "rows": 900,
+      "questions": 3600,
+      "unique_verbatim": 900,
+      "unique_structures": 897,
+      "replication": 1.0,
+      "effective_fraction": 0.9967
+    },
+    "test_variant1.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant2.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 701,
+      "unique_structures": 90,
+      "replication": 11.1,
+      "effective_fraction": 0.09
+    },
+    "test_variant3.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 709,
+      "unique_structures": 90,
+      "replication": 11.1,
+      "effective_fraction": 0.09
+    },
+    "test_variant3_mixed.csv": {
+      "rows": 3000,
+      "questions": 12000,
+      "unique_verbatim": 1979,
+      "unique_structures": 329,
+      "replication": 9.1,
+      "effective_fraction": 0.1097
+    },
+    "test_variant4_equiv_commutativity.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_contrapositive.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_demorgan.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_double_negation.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_identity.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_implication.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 401,
+      "unique_structures": 30,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    },
+    "test_variant4_equiv_multi.csv": {
+      "rows": 1000,
+      "questions": 4000,
+      "unique_verbatim": 995,
+      "unique_structures": 947,
+      "replication": 1.1,
+      "effective_fraction": 0.947
+    },
+    "test_variant4_mixed.csv": {
+      "rows": 10000,
+      "questions": 40000,
+      "unique_verbatim": 4010,
+      "unique_structures": 300,
+      "replication": 33.3,
+      "effective_fraction": 0.03
+    }
+  },
+  "cluster_robust": {
+    "qwen_fusion_sft_conflict_aware": {
+      "accuracy": 0.7342,
+      "clusters": 329,
+      "questions": 12000,
+      "ci95_cluster": [
+        0.7102,
+        0.757
+      ],
+      "ci95_naive": [
+        0.7263,
+        0.7422
+      ],
+      "width_ratio": 2.96,
+      "unmatched_rows": 0
+    },
+    "qwen_rlvf_gen_fixed": {
+      "accuracy": 0.5904,
+      "clusters": 329,
+      "questions": 12000,
+      "ci95_cluster": [
+        0.5224,
+        0.6683
+      ],
+      "ci95_naive": [
+        0.5816,
+        0.5992
+      ],
+      "width_ratio": 8.29,
+      "unmatched_rows": 0
+    }
+  }
+}

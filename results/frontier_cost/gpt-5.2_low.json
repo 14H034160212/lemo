@@ -1,0 +1,3169 @@
+{
+  "summary": {
+    "model": "gpt-5.2",
+    "verify_first": false,
+    "test_file": "data/test_variant3_mixed.csv",
+    "instances": 150,
+    "questions": 600,
+    "failed_calls": 0,
+    "accuracy": 0.7133,
+    "out_tokens_per_question": 40.9,
+    "reasoning_tokens_per_question": 36.9,
+    "reasoning_effort": "low",
+    "in_tokens_per_question": 53.9,
+    "seconds_per_question": 0.809,
+    "majority_class_baseline": 0.5835
+  },
+  "records": [
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 121,
+      "in_tokens": 221,
+      "reasoning_tokens": 105,
+      "seconds": 2.7
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 162,
+      "in_tokens": 209,
+      "reasoning_tokens": 146,
+      "seconds": 3.0
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 180,
+      "in_tokens": 209,
+      "reasoning_tokens": 164,
+      "seconds": 3.47
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 141,
+      "in_tokens": 221,
+      "reasoning_tokens": 125,
+      "seconds": 2.95
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 112,
+      "in_tokens": 201,
+      "reasoning_tokens": 96,
+      "seconds": 2.49
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 155,
+      "in_tokens": 201,
+      "reasoning_tokens": 139,
+      "seconds": 3.05
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 109,
+      "in_tokens": 221,
+      "reasoning_tokens": 93,
+      "seconds": 2.34
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 180,
+      "in_tokens": 221,
+      "reasoning_tokens": 164,
+      "seconds": 3.58
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 288,
+      "in_tokens": 221,
+      "reasoning_tokens": 272,
+      "seconds": 4.91
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 124,
+      "in_tokens": 221,
+      "reasoning_tokens": 108,
+      "seconds": 2.85
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 244,
+      "in_tokens": 221,
+      "reasoning_tokens": 228,
+      "seconds": 4.41
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 194,
+      "in_tokens": 201,
+      "reasoning_tokens": 178,
+      "seconds": 3.86
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 234,
+      "in_tokens": 209,
+      "reasoning_tokens": 218,
+      "seconds": 4.28
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 160,
+      "in_tokens": 221,
+      "reasoning_tokens": 144,
+      "seconds": 3.25
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 209,
+      "reasoning_tokens": 106,
+      "seconds": 2.79
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 115,
+      "in_tokens": 209,
+      "reasoning_tokens": 99,
+      "seconds": 2.63
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 155,
+      "in_tokens": 221,
+      "reasoning_tokens": 139,
+      "seconds": 2.97
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 85,
+      "in_tokens": 209,
+      "reasoning_tokens": 69,
+      "seconds": 1.99
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 175,
+      "in_tokens": 221,
+      "reasoning_tokens": 159,
+      "seconds": 3.09
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 168,
+      "in_tokens": 221,
+      "reasoning_tokens": 152,
+      "seconds": 3.08
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 130,
+      "in_tokens": 221,
+      "reasoning_tokens": 114,
+      "seconds": 2.25
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 215,
+      "in_tokens": 221,
+      "reasoning_tokens": 199,
+      "seconds": 4.73
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 138,
+      "in_tokens": 201,
+      "reasoning_tokens": 122,
+      "seconds": 3.0
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 193,
+      "in_tokens": 221,
+      "reasoning_tokens": 177,
+      "seconds": 3.67
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 121,
+      "in_tokens": 221,
+      "reasoning_tokens": 105,
+      "seconds": 2.03
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 203,
+      "in_tokens": 221,
+      "reasoning_tokens": 187,
+      "seconds": 3.64
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 136,
+      "in_tokens": 221,
+      "reasoning_tokens": 120,
+      "seconds": 2.78
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 137,
+      "in_tokens": 221,
+      "reasoning_tokens": 121,
+      "seconds": 2.69
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 290,
+      "in_tokens": 221,
+      "reasoning_tokens": 274,
+      "seconds": 4.84
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 146,
+      "in_tokens": 209,
+      "reasoning_tokens": 130,
+      "seconds": 2.73
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 180,
+      "in_tokens": 221,
+      "reasoning_tokens": 164,
+      "seconds": 3.52
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 126,
+      "in_tokens": 209,
+      "reasoning_tokens": 110,
+      "seconds": 2.76
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 118,
+      "in_tokens": 209,
+      "reasoning_tokens": 102,
+      "seconds": 2.2
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 289,
+      "in_tokens": 221,
+      "reasoning_tokens": 273,
+      "seconds": 5.35
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 115,
+      "in_tokens": 221,
+      "reasoning_tokens": 99,
+      "seconds": 2.6
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 130,
+      "in_tokens": 209,
+      "reasoning_tokens": 114,
+      "seconds": 2.52
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 169,
+      "in_tokens": 221,
+      "reasoning_tokens": 153,
+      "seconds": 2.95
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 121,
+      "in_tokens": 221,
+      "reasoning_tokens": 105,
+      "seconds": 2.53
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 162,
+      "in_tokens": 221,
+      "reasoning_tokens": 146,
+      "seconds": 3.1
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 117,
+      "in_tokens": 221,
+      "reasoning_tokens": 101,
+      "seconds": 2.42
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 147,
+      "in_tokens": 209,
+      "reasoning_tokens": 131,
+      "seconds": 2.65
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 187,
+      "in_tokens": 209,
+      "reasoning_tokens": 171,
+      "seconds": 3.85
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 144,
+      "in_tokens": 221,
+      "reasoning_tokens": 128,
+      "seconds": 2.96
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 160,
+      "in_tokens": 221,
+      "reasoning_tokens": 144,
+      "seconds": 2.92
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 205,
+      "in_tokens": 221,
+      "reasoning_tokens": 189,
+      "seconds": 4.13
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 105,
+      "in_tokens": 209,
+      "reasoning_tokens": 89,
+      "seconds": 2.15
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 211,
+      "in_tokens": 201,
+      "reasoning_tokens": 195,
+      "seconds": 4.12
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 201,
+      "reasoning_tokens": 106,
+      "seconds": 2.6
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 123,
+      "in_tokens": 221,
+      "reasoning_tokens": 107,
+      "seconds": 2.65
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 210,
+      "in_tokens": 221,
+      "reasoning_tokens": 194,
+      "seconds": 4.28
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 181,
+      "in_tokens": 221,
+      "reasoning_tokens": 165,
+      "seconds": 3.62
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 171,
+      "in_tokens": 221,
+      "reasoning_tokens": 155,
+      "seconds": 3.55
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 150,
+      "in_tokens": 201,
+      "reasoning_tokens": 134,
+      "seconds": 2.69
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 145,
+      "in_tokens": 221,
+      "reasoning_tokens": 129,
+      "seconds": 2.96
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 221,
+      "reasoning_tokens": 106,
+      "seconds": 2.3
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 145,
+      "in_tokens": 221,
+      "reasoning_tokens": 129,
+      "seconds": 3.4
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 226,
+      "in_tokens": 221,
+      "reasoning_tokens": 210,
+      "seconds": 4.47
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 113,
+      "in_tokens": 221,
+      "reasoning_tokens": 97,
+      "seconds": 2.05
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 201,
+      "in_tokens": 221,
+      "reasoning_tokens": 185,
+      "seconds": 3.44
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 142,
+      "in_tokens": 221,
+      "reasoning_tokens": 126,
+      "seconds": 2.62
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 221,
+      "reasoning_tokens": 106,
+      "seconds": 2.36
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 143,
+      "in_tokens": 201,
+      "reasoning_tokens": 127,
+      "seconds": 2.69
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 116,
+      "in_tokens": 221,
+      "reasoning_tokens": 100,
+      "seconds": 2.23
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 116,
+      "in_tokens": 209,
+      "reasoning_tokens": 100,
+      "seconds": 2.55
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 148,
+      "in_tokens": 221,
+      "reasoning_tokens": 132,
+      "seconds": 2.9
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 209,
+      "in_tokens": 209,
+      "reasoning_tokens": 193,
+      "seconds": 3.67
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 155,
+      "in_tokens": 221,
+      "reasoning_tokens": 139,
+      "seconds": 3.08
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 190,
+      "in_tokens": 221,
+      "reasoning_tokens": 174,
+      "seconds": 3.63
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 146,
+      "in_tokens": 221,
+      "reasoning_tokens": 130,
+      "seconds": 3.74
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 152,
+      "in_tokens": 209,
+      "reasoning_tokens": 136,
+      "seconds": 2.69
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 201,
+      "reasoning_tokens": 106,
+      "seconds": 2.27
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 161,
+      "in_tokens": 201,
+      "reasoning_tokens": 145,
+      "seconds": 3.43
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 187,
+      "in_tokens": 221,
+      "reasoning_tokens": 171,
+      "seconds": 3.84
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 165,
+      "in_tokens": 221,
+      "reasoning_tokens": 149,
+      "seconds": 4.67
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 149,
+      "in_tokens": 201,
+      "reasoning_tokens": 133,
+      "seconds": 3.55
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 197,
+      "in_tokens": 221,
+      "reasoning_tokens": 181,
+      "seconds": 3.73
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 84,
+      "in_tokens": 201,
+      "reasoning_tokens": 68,
+      "seconds": 2.41
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 172,
+      "in_tokens": 221,
+      "reasoning_tokens": 156,
+      "seconds": 3.69
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 110,
+      "in_tokens": 221,
+      "reasoning_tokens": 94,
+      "seconds": 3.13
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 120,
+      "in_tokens": 209,
+      "reasoning_tokens": 104,
+      "seconds": 2.44
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 159,
+      "in_tokens": 221,
+      "reasoning_tokens": 143,
+      "seconds": 2.91
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 77,
+      "in_tokens": 221,
+      "reasoning_tokens": 61,
+      "seconds": 1.8
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 363,
+      "in_tokens": 221,
+      "reasoning_tokens": 347,
+      "seconds": 7.35
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 223,
+      "in_tokens": 221,
+      "reasoning_tokens": 207,
+      "seconds": 4.64
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 138,
+      "in_tokens": 221,
+      "reasoning_tokens": 122,
+      "seconds": 2.98
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 210,
+      "in_tokens": 221,
+      "reasoning_tokens": 194,
+      "seconds": 3.95
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 221,
+      "reasoning_tokens": 106,
+      "seconds": 2.36
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 259,
+      "in_tokens": 221,
+      "reasoning_tokens": 243,
+      "seconds": 5.14
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 287,
+      "in_tokens": 201,
+      "reasoning_tokens": 271,
+      "seconds": 5.09
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 131,
+      "in_tokens": 209,
+      "reasoning_tokens": 115,
+      "seconds": 2.92
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 119,
+      "in_tokens": 209,
+      "reasoning_tokens": 103,
+      "seconds": 2.36
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 117,
+      "in_tokens": 221,
+      "reasoning_tokens": 101,
+      "seconds": 2.5
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 145,
+      "in_tokens": 201,
+      "reasoning_tokens": 129,
+      "seconds": 3.2
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 110,
+      "in_tokens": 221,
+      "reasoning_tokens": 94,
+      "seconds": 2.46
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 155,
+      "in_tokens": 201,
+      "reasoning_tokens": 139,
+      "seconds": 2.79
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 131,
+      "in_tokens": 209,
+      "reasoning_tokens": 115,
+      "seconds": 3.16
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 199,
+      "in_tokens": 221,
+      "reasoning_tokens": 183,
+      "seconds": 3.31
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 118,
+      "in_tokens": 221,
+      "reasoning_tokens": 102,
+      "seconds": 2.57
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 125,
+      "in_tokens": 221,
+      "reasoning_tokens": 109,
+      "seconds": 2.78
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 233,
+      "in_tokens": 221,
+      "reasoning_tokens": 217,
+      "seconds": 4.37
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 152,
+      "in_tokens": 221,
+      "reasoning_tokens": 136,
+      "seconds": 2.77
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 217,
+      "in_tokens": 209,
+      "reasoning_tokens": 201,
+      "seconds": 3.65
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 118,
+      "in_tokens": 221,
+      "reasoning_tokens": 102,
+      "seconds": 2.29
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 244,
+      "in_tokens": 221,
+      "reasoning_tokens": 228,
+      "seconds": 4.01
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 187,
+      "in_tokens": 221,
+      "reasoning_tokens": 171,
+      "seconds": 3.3
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 151,
+      "in_tokens": 209,
+      "reasoning_tokens": 135,
+      "seconds": 3.27
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 170,
+      "in_tokens": 221,
+      "reasoning_tokens": 154,
+      "seconds": 3.07
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 124,
+      "in_tokens": 221,
+      "reasoning_tokens": 108,
+      "seconds": 2.46
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 167,
+      "in_tokens": 221,
+      "reasoning_tokens": 151,
+      "seconds": 3.41
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 144,
+      "in_tokens": 221,
+      "reasoning_tokens": 128,
+      "seconds": 4.17
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 162,
+      "in_tokens": 221,
+      "reasoning_tokens": 146,
+      "seconds": 2.95
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 218,
+      "in_tokens": 221,
+      "reasoning_tokens": 202,
+      "seconds": 4.0
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 172,
+      "in_tokens": 221,
+      "reasoning_tokens": 156,
+      "seconds": 2.82
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 201,
+      "in_tokens": 221,
+      "reasoning_tokens": 185,
+      "seconds": 3.83
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 122,
+      "in_tokens": 221,
+      "reasoning_tokens": 106,
+      "seconds": 2.58
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 201,
+      "in_tokens": 201,
+      "reasoning_tokens": 185,
+      "seconds": 3.83
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 146,
+      "in_tokens": 221,
+      "reasoning_tokens": 130,
+      "seconds": 2.97
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 196,
+      "in_tokens": 221,
+      "reasoning_tokens": 180,
+      "seconds": 3.63
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 143,
+      "in_tokens": 209,
+      "reasoning_tokens": 127,
+      "seconds": 3.16
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 156,
+      "in_tokens": 221,
+      "reasoning_tokens": 140,
+      "seconds": 3.0
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 120,
+      "in_tokens": 221,
+      "reasoning_tokens": 104,
+      "seconds": 2.37
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 103,
+      "in_tokens": 221,
+      "reasoning_tokens": 87,
+      "seconds": 2.57
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 138,
+      "in_tokens": 221,
+      "reasoning_tokens": 122,
+      "seconds": 2.88
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 162,
+      "in_tokens": 221,
+      "reasoning_tokens": 146,
+      "seconds": 3.25
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 220,
+      "in_tokens": 201,
+      "reasoning_tokens": 204,
+      "seconds": 4.22
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 190,
+      "in_tokens": 201,
+      "reasoning_tokens": 174,
+      "seconds": 3.22
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 178,
+      "in_tokens": 201,
+      "reasoning_tokens": 162,
+      "seconds": 3.1
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 101,
+      "in_tokens": 221,
+      "reasoning_tokens": 85,
+      "seconds": 2.14
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 492,
+      "in_tokens": 221,
+      "reasoning_tokens": 476,
+      "seconds": 8.24
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 182,
+      "in_tokens": 201,
+      "reasoning_tokens": 166,
+      "seconds": 3.26
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 229,
+      "in_tokens": 221,
+      "reasoning_tokens": 213,
+      "seconds": 3.91
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 143,
+      "in_tokens": 201,
+      "reasoning_tokens": 127,
+      "seconds": 2.86
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 126,
+      "in_tokens": 221,
+      "reasoning_tokens": 110,
+      "seconds": 2.58
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 191,
+      "in_tokens": 221,
+      "reasoning_tokens": 175,
+      "seconds": 3.92
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 106,
+      "in_tokens": 221,
+      "reasoning_tokens": 90,
+      "seconds": 2.47
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 259,
+      "in_tokens": 221,
+      "reasoning_tokens": 243,
+      "seconds": 4.98
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 149,
+      "in_tokens": 221,
+      "reasoning_tokens": 133,
+      "seconds": 3.21
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 149,
+      "in_tokens": 221,
+      "reasoning_tokens": 133,
+      "seconds": 2.92
+    },
+    {
+      "type": "contra",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 199,
+      "in_tokens": 221,
+      "reasoning_tokens": 183,
+      "seconds": 3.88
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 170,
+      "in_tokens": 201,
+      "reasoning_tokens": 154,
+      "seconds": 4.54
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 142,
+      "in_tokens": 209,
+      "reasoning_tokens": 126,
+      "seconds": 3.29
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 130,
+      "in_tokens": 201,
+      "reasoning_tokens": 114,
+      "seconds": 2.67
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 160,
+      "in_tokens": 221,
+      "reasoning_tokens": 144,
+      "seconds": 2.94
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 131,
+      "in_tokens": 221,
+      "reasoning_tokens": 115,
+      "seconds": 2.58
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 109,
+      "in_tokens": 209,
+      "reasoning_tokens": 93,
+      "seconds": 2.46
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 200,
+      "in_tokens": 221,
+      "reasoning_tokens": 184,
+      "seconds": 3.7
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 215,
+      "in_tokens": 201,
+      "reasoning_tokens": 199,
+      "seconds": 3.87
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 0,
+      "n": 4,
+      "out_tokens": 114,
+      "in_tokens": 221,
+      "reasoning_tokens": 98,
+      "seconds": 2.48
+    },
+    {
+      "type": "consistent_mixed",
+      "gold": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 96,
+      "in_tokens": 209,
+      "reasoning_tokens": 80,
+      "seconds": 2.04
+    },
+    {
+      "type": "consistent_disj",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 170,
+      "in_tokens": 221,
+      "reasoning_tokens": 154,
+      "seconds": 2.9
+    }
+  ]
+}

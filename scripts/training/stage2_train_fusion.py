@@ -19,7 +19,8 @@ os.environ['TMPDIR'] = './tmp'
 
 def train_fusion(train_file="data/train_fusion.csv",
                  output_dir="trained_models/qwen_fusion_sft_conflict_aware",
-                 seed=42):
+                 seed=42, model_id="Qwen/Qwen2-1.5B", batch_size=4,
+                 grad_accum=4):
     """seed controls LoRA initialisation and data order.
 
     There was no seed argument before, so every run used the HuggingFace
@@ -27,7 +28,7 @@ def train_fusion(train_file="data/train_fusion.csv",
     single number we report indistinguishable from a lucky draw: with n=1 there
     is no way to tell a 14-point gap between two methods from seed noise.
     """
-    model_id = "Qwen/Qwen2-1.5B"
+    print(f"  base model : {model_id}")
     print(f"  train file : {train_file}")
     print(f"  output dir : {output_dir}")
     
@@ -81,8 +82,8 @@ def train_fusion(train_file="data/train_fusion.csv",
     training_args = TrainingArguments(
         output_dir=output_dir,
         seed=seed,
-        per_device_train_batch_size=4,
-        gradient_accumulation_steps=4,
+        per_device_train_batch_size=batch_size,
+        gradient_accumulation_steps=grad_accum,
         learning_rate=2e-5,
         # The corpus is now 10x the size it was when num_train_epochs=3 was set
         # (112k rows vs 11.2k), so 3 epochs would be 21k steps against the ~2.1k
@@ -118,5 +119,13 @@ if __name__ == "__main__":
     ap.add_argument("--output_dir",
                     default="trained_models/qwen_fusion_sft_conflict_aware")
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--model_id", default="Qwen/Qwen2-1.5B",
+                    help="backbone; the 8B run uses /data/shared/qwen3/Qwen3-8B")
+    ap.add_argument("--batch_size", type=int, default=4)
+    ap.add_argument("--grad_accum", type=int, default=4,
+                    help="kept x batch_size constant across scales so the "
+                         "effective batch, and therefore the step count, "
+                         "matches the 1.5B runs")
     a = ap.parse_args()
-    train_fusion(a.train_file, a.output_dir, a.seed)
+    train_fusion(a.train_file, a.output_dir, a.seed, a.model_id,
+                 a.batch_size, a.grad_accum)

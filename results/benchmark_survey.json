@@ -1,0 +1,435 @@
+{
+  "ProofWriter": {
+    "hf": "tasksource/proofwriter",
+    "splits": {
+      "test": {
+        "n": 60000,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.468,
+        "distribution": {
+          "Unknown": 28081,
+          "False": 16046,
+          "True": 15873
+        }
+      },
+      "test::config=NatLang": {
+        "n": 2759,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.498,
+        "distribution": {
+          "Unknown": 1374,
+          "False": 705,
+          "True": 680
+        }
+      },
+      "test::config=birds-electricity": {
+        "n": 1841,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.7485,
+        "distribution": {
+          "Unknown": 1378,
+          "False": 240,
+          "True": 223
+        }
+      },
+      "test::config=depth-0": {
+        "n": 6843,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4625,
+        "distribution": {
+          "Unknown": 3165,
+          "False": 1842,
+          "True": 1836
+        }
+      },
+      "test::config=depth-1": {
+        "n": 6890,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4897,
+        "distribution": {
+          "Unknown": 3374,
+          "False": 1783,
+          "True": 1733
+        }
+      },
+      "test::config=depth-2": {
+        "n": 6847,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4636,
+        "distribution": {
+          "Unknown": 3174,
+          "False": 1845,
+          "True": 1828
+        }
+      },
+      "test::config=depth-3": {
+        "n": 7002,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4446,
+        "distribution": {
+          "Unknown": 3113,
+          "False": 1965,
+          "True": 1924
+        }
+      },
+      "test::config=depth-3ext": {
+        "n": 9065,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4442,
+        "distribution": {
+          "Unknown": 4027,
+          "False": 2530,
+          "True": 2508
+        }
+      },
+      "test::config=depth-3ext-NatLang": {
+        "n": 11875,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4639,
+        "distribution": {
+          "Unknown": 5509,
+          "True": 3202,
+          "False": 3164
+        }
+      },
+      "test::config=depth-5": {
+        "n": 6878,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4314,
+        "distribution": {
+          "Unknown": 2967,
+          "False": 1972,
+          "True": 1939
+        }
+      },
+      "test::QDep=0": {
+        "n": 30148,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.5829,
+        "distribution": {
+          "Unknown": 17574,
+          "False": 6343,
+          "True": 6231
+        }
+      },
+      "test::QDep=1": {
+        "n": 15810,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4983,
+        "distribution": {
+          "Unknown": 7878,
+          "False": 4000,
+          "True": 3932
+        }
+      },
+      "test::QDep=2": {
+        "n": 7588,
+        "n_classes": 3,
+        "majority_class": "False",
+        "majority_baseline": 0.3769,
+        "distribution": {
+          "False": 2860,
+          "True": 2854,
+          "Unknown": 1874
+        }
+      },
+      "test::QDep=3": {
+        "n": 4850,
+        "n_classes": 3,
+        "majority_class": "True",
+        "majority_baseline": 0.4441,
+        "distribution": {
+          "True": 2154,
+          "False": 2144,
+          "Unknown": 552
+        }
+      },
+      "test::QDep=4": {
+        "n": 899,
+        "n_classes": 3,
+        "majority_class": "True",
+        "majority_baseline": 0.4216,
+        "distribution": {
+          "True": 379,
+          "False": 361,
+          "Unknown": 159
+        }
+      },
+      "test::QDep=5": {
+        "n": 701,
+        "n_classes": 3,
+        "majority_class": "False",
+        "majority_baseline": 0.4822,
+        "distribution": {
+          "False": 338,
+          "True": 323,
+          "Unknown": 40
+        }
+      },
+      "test::maxD=0": {
+        "n": 4955,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4589,
+        "distribution": {
+          "Unknown": 2274,
+          "False": 1350,
+          "True": 1331
+        }
+      },
+      "test::maxD=1": {
+        "n": 11514,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.5308,
+        "distribution": {
+          "Unknown": 6112,
+          "False": 2742,
+          "True": 2660
+        }
+      },
+      "test::maxD=2": {
+        "n": 8834,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4604,
+        "distribution": {
+          "Unknown": 4067,
+          "False": 2417,
+          "True": 2350
+        }
+      },
+      "test::maxD=3": {
+        "n": 24705,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4561,
+        "distribution": {
+          "Unknown": 11268,
+          "True": 6727,
+          "False": 6710
+        }
+      },
+      "test::maxD=4": {
+        "n": 2894,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4468,
+        "distribution": {
+          "Unknown": 1293,
+          "True": 807,
+          "False": 794
+        }
+      },
+      "test::maxD=5": {
+        "n": 6566,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4293,
+        "distribution": {
+          "Unknown": 2819,
+          "False": 1890,
+          "True": 1857
+        }
+      },
+      "test::maxD=6": {
+        "n": 452,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4602,
+        "distribution": {
+          "Unknown": 208,
+          "False": 124,
+          "True": 120
+        }
+      },
+      "test::maxD=7": {
+        "n": 40,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.525,
+        "distribution": {
+          "Unknown": 21,
+          "True": 10,
+          "False": 9
+        }
+      },
+      "test::maxD=8": {
+        "n": 32,
+        "n_classes": 3,
+        "majority_class": "Unknown",
+        "majority_baseline": 0.4688,
+        "distribution": {
+          "Unknown": 15,
+          "True": 9,
+          "False": 8
+        }
+      }
+    }
+  },
+  "RuleTaker": {
+    "hf": "tasksource/ruletaker",
+    "splits": {
+      "test": {
+        "n": 60000,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5048,
+        "distribution": {
+          "entailment": 30289,
+          "not entailment": 29711
+        }
+      },
+      "test::config=NatLang": {
+        "n": 3074,
+        "n_classes": 2,
+        "majority_class": "not entailment",
+        "majority_baseline": 0.515,
+        "distribution": {
+          "not entailment": 1583,
+          "entailment": 1491
+        }
+      },
+      "test::config=depth-0": {
+        "n": 6776,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5151,
+        "distribution": {
+          "entailment": 3490,
+          "not entailment": 3286
+        }
+      },
+      "test::config=depth-1": {
+        "n": 6964,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5046,
+        "distribution": {
+          "entailment": 3514,
+          "not entailment": 3450
+        }
+      },
+      "test::config=depth-2": {
+        "n": 6973,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5044,
+        "distribution": {
+          "entailment": 3517,
+          "not entailment": 3456
+        }
+      },
+      "test::config=depth-3": {
+        "n": 7174,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5047,
+        "distribution": {
+          "entailment": 3621,
+          "not entailment": 3553
+        }
+      },
+      "test::config=depth-3ext": {
+        "n": 9143,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5043,
+        "distribution": {
+          "entailment": 4611,
+          "not entailment": 4532
+        }
+      },
+      "test::config=depth-3ext-NatLang": {
+        "n": 12326,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5071,
+        "distribution": {
+          "entailment": 6251,
+          "not entailment": 6075
+        }
+      },
+      "test::config=depth-5": {
+        "n": 7570,
+        "n_classes": 2,
+        "majority_class": "entailment",
+        "majority_baseline": 0.5012,
+        "distribution": {
+          "entailment": 3794,
+          "not entailment": 3776
+        }
+      }
+    }
+  },
+  "ProofWriter-MCQ": {
+    "hf": "renma/ProofWriter",
+    "splits": {
+      "validation": {
+        "n": 600,
+        "n_classes": 3,
+        "majority_class": "A",
+        "majority_baseline": 0.3333,
+        "distribution": {
+          "A": 200,
+          "B": 200,
+          "C": 200
+        }
+      }
+    }
+  },
+  "FOLIO": {
+    "hf": "tasksource/folio",
+    "splits": {
+      "train": {
+        "n": 1001,
+        "n_classes": 3,
+        "majority_class": "True",
+        "majority_baseline": 0.3876,
+        "distribution": {
+          "True": 388,
+          "Uncertain": 324,
+          "False": 289
+        }
+      },
+      "validation": {
+        "n": 203,
+        "n_classes": 3,
+        "majority_class": "True",
+        "majority_baseline": 0.3547,
+        "distribution": {
+          "True": 72,
+          "Uncertain": 69,
+          "False": 62
+        }
+      }
+    }
+  },
+  "LogicalEntailment": {
+    "hf": "tasksource/logical-entailment",
+    "splits": {
+      "test": {
+        "n": 5000,
+        "n_classes": 2,
+        "majority_class": "not entailment",
+        "majority_baseline": 0.5076,
+        "distribution": {
+          "not entailment": 2538,
+          "entailment": 2462
+        }
+      }
+    }
+  }
+}

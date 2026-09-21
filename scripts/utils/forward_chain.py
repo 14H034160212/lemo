@@ -99,8 +99,35 @@ def _parse_single_rule(rule_str: str) -> List[Tuple]:
         results += [(x, True, y, True), (y, False, x, False)]
         return results
 
+    # 6b. "If someone is not X then they are Y"  (negated premise)
+    #     and "If someone is X then they are not Y"  (negated conclusion)
+    #
+    # Both were missing. The first fell through to `return []`, so the rule was
+    # dropped: 4042 instances across the benchmark state
+    # "If someone is not cold then they are rough", and on the rows containing
+    # it the oracle agreed with the stored labels on only 25% of questions
+    # (100/400) against 100% (400/400) on rows without it -- the chain breaks at
+    # the unparsed step and everything downstream is reported False.
+    #
+    # The second was worse than dropped. Pattern 7 below matches
+    # "If someone is rough then they are not cold" with `\w+` binding to the
+    # bare word "not", yielding the bogus implication ('rough', True, 'not',
+    # True) over an attribute literally named "not". A silently wrong rule is
+    # harder to notice than a missing one, so it is caught here first.
+    m = re.match(r"If someone is not (\w+) then they are (?!not\b)(\w+)", r, re.I)
+    if m:
+        x, y = m.group(1), m.group(2)
+        results += [(x, False, y, True), (y, False, x, True)]
+        return results
+
+    m = re.match(r"If someone is (?!not\b)(\w+) then they are not (\w+)", r, re.I)
+    if m:
+        x, y = m.group(1), m.group(2)
+        results += [(x, True, y, False), (y, True, x, False)]
+        return results
+
     # 7. "If someone is X then they are Y"  (standard rule)
-    m = re.match(r"If someone is (\w+) then they are (\w+)", r, re.I)
+    m = re.match(r"If someone is (?!not\b)(\w+) then they are (?!not\b)(\w+)", r, re.I)
     if m:
         x, y = m.group(1), m.group(2)
         results += [(x, True, y, True), (y, False, x, False)]

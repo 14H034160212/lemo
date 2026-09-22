@@ -51,6 +51,10 @@ DEFAULT_TEST_FILES = {
     # scores at the baseline (0.5835) instead of the 1.0000 that the all-False
     # test_variant3.csv hands out.
     "variant3_mixed": "data/test_variant3_mixed.csv",
+    # Matched modus-ponens / modus-tollens / negated-premise arms. All-True by
+    # construction, so it is read per question position, never as one accuracy:
+    # position 3 is the manipulated inference and position 4 is downstream.
+    "mt_control3": "data/test_mt_control3.csv",
 }
 
 

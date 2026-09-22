@@ -53,6 +53,10 @@ DEFAULT_TEST_FILES = {
     # construction, so it is read per question position, never as one accuracy:
     # position 3 is the manipulated inference and position 4 is downstream.
     "mt_control3": "data/test_mt_control3.csv",
+    # Same design as variant3_mixed with the chain drawn from a predicate pool:
+    # 3000 distinct structures instead of 329, so question-level intervals need
+    # no cluster correction. Baseline 0.5803 against v1's 0.5835.
+    "variant3_mixed_v2": "data/test_variant3_mixed_v2.csv",
 }
 
 

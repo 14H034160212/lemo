@@ -162,7 +162,7 @@ fourth is its consequence. That compound cost is the quantity we measure.
 
 \paragraph{Premise validation and contradictory inputs.}
 The specific failure of continuing to deduce from inconsistent premises is
-documented. \textsc{PCBench}~\citep{premisecritique2025} evaluates premise
+documented. \textsc{PCBench}~\citep{premiseCritique2025} evaluates premise
 critique over four error types and three difficulty levels across 15 models,
 finding that most rely on explicit prompting to notice an error, that direct
 contradictions are easier to catch than procedural ones, and---relevant to our
@@ -238,7 +238,15 @@ mandatory verification preamble, and is the initialisation for everything else.
 explicitly and halt when it fails; this is the only objective whose claims
 survive \S\ref{sec:v3control}. \textbf{\textsc{RLVF}} is trained from the same
 initialisation with a symbolic forward-chainer as reward
-(Eq.~\ref{eq:rlvf}); \S\ref{sec:v3control} reports that it collapses to a
+as reward:
+
+\begin{equation}
+\mathcal{L}_{\mathrm{RLVF}} = -\mathbb{E}_{\tau \sim \pi_\theta}\!\bigl[(r - b_t)\,\log\pi_\theta(\tau|\mathbf{x})\bigr],\;\; r=\mathbb{1}[\Pi(\tau){=}a^*]-\mathbb{1}[\Pi(\tau){\neq}a^*],\;\; b_t=\mu b_{t-1}+(1-\mu)\bar r_t,
+\label{eq:rlvf}
+\end{equation}
+
+\noindent where $b_t$ is an EMA baseline over the mini-batch reward.
+\S\ref{sec:v3control} reports that it collapses to a
 constant responder in four seeds out of four, and \S\ref{sec:shortcut} why.
 Two further objectives, DPO and LIRE, are in Appendix~\ref{app:retracted}.
 
@@ -282,6 +290,46 @@ first 8B run we trained happened to be the worst of the four ($0.081$ against a
 mean of $0.146$) and supported a stronger claim than the data does; the best
 ($0.247$) is within one standard deviation of the $1.5$B mean and would have
 supported none.
+
+\begin{table*}[t]
+    \centering
+    \caption{Trained methods on Qwen2-1.5B, re-measured in September 2026 on the
+    current benchmark with the released checkpoints. \textbf{V3 and V3-mixed
+    measure the same capability and disagree completely.} Variant~3 is
+    single-class---under the conservative semantics of \S\ref{sec:method} every
+    query on a contradictory instance is False---so its majority-class baseline
+    is $1.000$ and a model that answers False on sight scores perfectly there
+    while learning nothing. V3-mixed (\S\ref{sec:v3control}) interleaves
+    contradictory instances with consistent ones of the same surface form;
+    its baseline is $0.5835$. Only Fusion-LRA exceeds that baseline. Every row
+    reports the evaluation path used, because a two-logit classification head
+    and free generation are not equally hard.}
+    \label{tab:comparison_results}
+    \setlength{\tabcolsep}{5pt}
+    \renewcommand{\arraystretch}{1.05}
+    \footnotesize
+    \begin{tabular}{llccccc}
+        \toprule
+        \textbf{Method} & \textbf{Path} & \textbf{Base} & \textbf{V2} &
+        \textbf{V3} & \textbf{V3-mixed} & $\rho_{\top}$ \\
+        & & \emph{0.549} & \emph{0.503} & \emph{1.000} & \emph{0.5835} & \\
+        \midrule
+        Stage-1 SFT & classifier & 1.000 & 1.000 & 0.004 & 0.432 & 0.98 \\
+        \,$+$ LIRE & classifier & 0.688 & 0.590 & 0.000 & 0.417 & 1.00 \\
+        \,$+$ \textsc{RLVF} & classifier & 1.000 & 1.000 & 0.000 & 0.433 & 0.98 \\
+        \textsc{RLVF} (generative, corrected oracle) & generative & 0.767 & 0.799 & 1.000 & 0.590$^{\dagger}$ & 0.02 \\
+        \midrule
+        \rowcolor{gray!10} Fusion-LRA (conflict-aware SFT) & generative &
+        0.870 & 0.610 & 0.982 & \textbf{0.698}\,$\pm$\,0.054 & 0.34 \\
+        \bottomrule
+        \multicolumn{7}{l}{\footnotesize Row 2 of the header gives each split's
+        majority-class baseline. $\rho_{\top}$ is the fraction of V3-mixed items} \\
+        \multicolumn{7}{l}{\footnotesize answered True (gold: $0.417$).
+        $^{\dagger}$not significantly above baseline ($p{=}0.127$); all other} \\
+        \multicolumn{7}{l}{\footnotesize V3-mixed figures differ from baseline at
+        $p{<}10^{-240}$.} \\
+    \end{tabular}
+\end{table*}
 
 \subsection{A two-class control for contradiction detection}
 \label{sec:v3control}
@@ -479,25 +527,16 @@ is small and, on the two-class control, mildly positive rather than negative.
 \subsection{Experimental setup}
 The benchmark has $100$ base groups ($80$ train / $20$ test) seeded via randomised entity mapping and rule variation, yielding $11{,}200$ Stage-1 SFT instances and $2{,}160$ preference pairs. All objectives use AdamW $+$ bf16 $+$ LoRA ($r{=}8$, $\alpha{=}16$); hyperparameters are in Appendix~\ref{app:hyper}, full ablation tables in Appendix~\ref{app:ablation}. \textbf{Compute.} The whole pipeline fits on a single NVIDIA A100 ($40$\,GB) for Qwen3-8B and a $\geq16$\,GB consumer GPU for the smaller backbones: $5.1$ GPU-hours at $1.5$B and $9.7$ at $8$B for the released model, measured per stage in Appendix~\ref{app:compute}. Lean kernel verification adds $\sim\!0.36$\,s/trace on CPU, is required only during training, and is dispatch-amortisable via a persistent server~\citep{yang2023leandojo}.
 
-\subsection{Objective ablation: what each branch buys and gives up}
+\subsection{Objective ablation}
 \label{sec:ablation-stagewise}
-Table~\ref{tab:stage_wise} compares the three objectives on the four most diagnostic splits (base, V2 essential deletion, V3 contradiction, V4-multi rewrites) for both backbones, isolating what each contributes over the shared Stage-1 base.
-
-% Table~\ref{tab:stage_wise} moved to Appendix~\ref{app:stagewise}: its figures
-% predate the 2026-03-31 benchmark regeneration and have not been re-verified.
-
-
-Three observations follow. \textbf{(i)} LIRE alone is harmful on V2/V3: its symmetric-KL term suppresses \emph{any} distribution shift across rule reformulations, including those genuine logical change requires---a clean instance of the invariance--sensitivity trade-off (Eq.~\ref{eq:lire}). \textbf{(ii)} \textsc{RLVF} dissolves the trade-off rather than repairing LIRE: one oracle reward (Eq.~\ref{eq:rlvf}) reinforces V4 invariance and V2/V3 sensitivity with the same gradient, so the fix is a better objective, not an extra stage. \textbf{(iii)} SFT-only at $8$B still falls to $0.656$ on V3---Logic Inertia is structural, not capacity-bound, whether or not scale-driven jumps are genuine emergence~\citep{wei2022emergent} or measurement artefacts~\citep{schaeffer2023mirage}. Finally, the two ``Stage~1'' numbers are \emph{not} contradictory: Fusion-LRA in Table~\ref{tab:comparison_results} (Base $0.988$) is SFT \emph{with} the conflict-aware preamble, whereas the $0.525$ entry in Appendix~\ref{app:ablation} is the same backbone on a vanilla \emph{Mixed-Aug} corpus \emph{without} it. The preamble, not the data mix, preserves base accuracy.
-
-\paragraph{Rigid protocol or genuine robustness?} An earlier draft answered
-this from the ablation alone. That answer does not hold: the protocol string
-is emitted almost everywhere, including on instances with nothing to detect,
-so its presence cannot separate the two hypotheses. The two-class control of
-\S\ref{sec:v3control} is the test that can, and Table~\ref{tab:v3control}
-reports what it finds---genuine discrimination for conflict-aware SFT, none for
-any other objective, and a near-chance boundary on the hardest class.
-\S\ref{sec:frontier_prompt} supplies the external control: handing a frontier
-model that exact protocol as a prompt \emph{degrades} contradiction handling.
+The comparison between objectives over a shared Stage-1 base was this work's
+original argument, and \S\ref{sec:v3control} removes most of it: on the
+two-class control only conflict-aware SFT exceeds a constant responder. The
+stage-wise figures from the earlier draft are kept in
+Appendix~\ref{app:stagewise}, measured before the 2026-03-31 benchmark
+regeneration and not re-verified, so they document what was tried rather than
+support any claim. What survives the control is reported in
+Table~\ref{tab:comparison_results} and \S\ref{sec:v3control}.
 
 \section{Discussion}
 
@@ -571,10 +610,26 @@ rewarded by the kernel is described in the earlier draft but was never
 implemented, and we withdraw it (Appendix~\ref{app:leandetail}).
 
 \section{Conclusion}
+We set out to show that a verify-before-deduce prior repairs contradiction
+handling, and built controls strong enough to test it. Most of what we expected
+did not survive them. Of four trained objectives only conflict-aware SFT exceeds
+a constant responder on a two-class control, and it does so at
+$0.698 \pm 0.054$ over six seeds against a $0.5835$ baseline---weaker at 8B, not
+stronger, and resting partly on a surface cue that co-occurs with contradiction
+in training with probability $1.000$. A symbolic solver scores $1.000$ on every
+split of this benchmark, so nothing here argues for a learned approach where the
+premises are already formalised.
 
-We diagnosed \textbf{Logic Inertia}---models persisting along learned deductive trajectories under essential-rule deletion and contradictions---and closed it with \textbf{LIRE} (trace-level symmetric-KL invariance) and \textbf{\textsc{RLVF}} (a deterministic symbolic-oracle reward replacing RLHF's learned reward model), combined in the \textbf{Conflict-Aware Fusion} pipeline, which saturates the held-out base/V2/V3 splits at both $1.5$B and $8$B. The result that matters most is negative and about the alternatives: a full model generation after GPT-4o, contradiction handling is still the weakest axis for GPT-5.2 and Claude~Opus~5, and both a verification-first few-shot prompt and an external symbolic guard \emph{degrade} it further. The prior has to be trained in, not requested at inference.
-
-Two boundaries bound the claim. Transfer is largely absent: on four external datasets every $1.5$B checkpoint degenerates to a constant predictor at the majority-class baseline and the $8$B one inverts rather than resolves, with FOLIO at $8$B the lone positive---so what the pipeline installs is structural logical robustness, not general reasoning (\S\ref{sec:external}). And the Phase-1 oracle shares its forward-chaining engine with the benchmark labels, which is exactly why Phase~2 hands arbitration to an externally specified Lean~4 kernel (\S\ref{sec:phase2}). Next steps follow: end-to-end RLVF-Lean training through a persistent LeanDojo server, a closed-world axiom schema to lift the F-case gap, and math/proof benchmarks where the kernel is the natural verifier. Code, benchmark and verifier are released; see Appendix~\ref{app:limitations}.
+What the benchmark does well is diagnose. Matched arms that differ only in
+inference form show GPT-5.2 at medium reasoning effort applying a negated
+premise perfectly and its contrapositive not once in 150 attempts, with the
+downstream query failing alongside it in $96$--$100\%$ of cases---a total
+failure, not the degradation the literature reports, and invisible inside an
+aggregate of $0.797$. Isolating it required pairing instances, sampling chains
+rather than reusing thirty structures, and reporting seeds rather than
+questions. We think that is the transferable part: on perturbation-style
+benchmarks, where the perturbation fixes the label, an accuracy alone cannot
+distinguish a capability from a constant.
 
 \section*{Ethics Statement}
 This work studies logical robustness of language models on a synthetic, propositional

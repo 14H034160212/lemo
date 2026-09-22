@@ -1,0 +1,116 @@
+{
+  "test_base.csv": {
+    "questions": 2400,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_depth.csv": {
+    "questions": 1680,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_hard_mixed.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_mt_control.csv": {
+    "questions": 2400,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_mt_control3.csv": {
+    "questions": 3600,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant1.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant2.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant3.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant3_mixed.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_commutativity.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_contrapositive.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_demorgan.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_double_negation.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_identity.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_implication.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_equiv_multi.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "test_variant4_mixed.csv": {
+    "questions": 4000,
+    "coverage": 1.0,
+    "accuracy_on_covered": 1.0,
+    "accuracy_overall": 1.0
+  },
+  "logicnli_eval_fixed.csv": {
+    "questions": 500,
+    "coverage": 0.0,
+    "accuracy_on_covered": null,
+    "accuracy_overall": 0.0
+  },
+  "mnli_eval.csv": {
+    "questions": 349,
+    "coverage": 0.0,
+    "accuracy_on_covered": null,
+    "accuracy_overall": 0.0
+  }
+}

@@ -385,6 +385,24 @@ not the question, is the unit that claim is about. Thirty structures is also few
 enough to memorise, which is the concrete form of a reviewer concern about this
 benchmark family.
 
+\paragraph{A symbolic solver wins outright on this benchmark, and that bounds
+what it can show.} Asked for a systematic comparison against symbolic and
+verifier-based methods, we ran the obvious one end to end: parse the premises
+into logic, then forward-chain. Across all seventeen splits it achieves
+\textbf{coverage $1.000$ and accuracy $1.000$}. This is not a surprise---the
+labels are computed by the same procedure---but stating it plainly settles
+something. \textbf{Wherever the premises are already formalised, or are written
+in a grammar a parser covers, nothing here competes with a solver, and no result
+on this benchmark should be read as evidence that it does.} What the benchmark
+can do is diagnose model behaviour, which is how we use it.
+
+The same pipeline has \textbf{coverage $0.000$} on LogicNLI and MNLI: not one
+instance of real natural language is parseable. That gap is the only regime in
+which a learned approach has a role---and \S\ref{sec:external} reports that ours
+does not generalise there either, transferring to premise-consistency tasks and
+not at all to first-order reasoning. We state both halves because reporting only
+the first would overclaim and only the second would be incomplete.
+
 \subsection{The capability is partly a surface cue}
 \label{sec:shortcut}
 

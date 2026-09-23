@@ -130,13 +130,10 @@ per-run provenance---without which the headline numbers of an earlier draft of
 this work could not be distinguished from a constant predictor, and under which
 most of them did not survive.
 
-\paragraph{Scope.} The capability is propositional premise validation. Against
-an untrained backbone it transfers to premise-consistency tasks
-(LogicNLI $+0.210$, $p{=}1.2{\times}10^{-9}$; MNLI-contradiction $+0.152$,
-$p{=}1.2{\times}10^{-7}$) and not at all to first-order reasoning
-(FOLIO $-0.019$, $p{=}0.40$). It does not improve with scale, and
-\S\ref{sec:shortcut} shows part of what we measure is a surface cue present in
-training with probability $1.000$.
+\paragraph{Scope.} The capability is propositional premise validation: against
+an untrained backbone it transfers to premise-consistency tasks and not at all
+to first-order reasoning, it does not improve with scale, and part of what we
+measure is a surface cue (\S\ref{sec:external}, \S\ref{sec:shortcut}).
 
 \section{Related Work}
 
@@ -151,14 +148,10 @@ accuracy to localise weaknesses, finding failure rates from 29\% to 90\%.
 Both establish a result we rely on: modus tollens is substantially harder than
 modus ponens, mirroring the same asymmetry in human reasoning.
 
-These designs deliberately isolate each rule, which is what makes them
-diagnostic. It also means they do not measure what a weak rule costs once it is
-\emph{embedded}. In a chain, a single failed step does not contribute one
-error---it caps every conclusion downstream of it, and an aggregate score mixes
-those propagated failures with primary ones. \S\ref{sec:v3control} reports a
-frontier model answering the first two steps of a four-step chain correctly and
-the last two incorrectly, where only the third is a reasoning failure and the
-fourth is its consequence. That compound cost is the quantity we measure.
+Isolating each rule is what makes those designs diagnostic, and is also what
+leaves the compound cost unmeasured: in a chain a failed step caps every
+conclusion downstream of it, so an aggregate mixes propagated failures with
+primary ones. That cost is the quantity we measure.
 
 \paragraph{Premise validation and contradictory inputs.}
 The specific failure of continuing to deduce from inconsistent premises is
@@ -171,14 +164,11 @@ predict premise-critique ability.
 \textsc{RULEBREAKERS}~\citep{chan2025rulebreakers} studies the complementary
 case, where formal validity and world knowledge disagree.
 
-\textsc{RULEBREAKERS} also supplies the methodological precedent for our
-controls. Because its perturbation determines the label---every rulebreaker is
-False and every matched non-rulebreaker True---per-condition accuracy is
-saturated by a constant response, so it scores paired instances jointly and a
-constant policy earns zero. We arrived at the same requirement from the
-opposite direction, by finding that our own single-class splits had awarded
-$1.000$ to a model answering \texttt{False} on 4000/4000 questions
-(\S\ref{sec:v3control}).
+\textsc{RULEBREAKERS} also supplies the precedent for our controls: its
+perturbation determines the label, so it scores matched instances jointly and a
+constant policy earns zero. We reached the same requirement from the opposite
+direction, after our own single-class splits awarded $1.000$ to a model
+answering \texttt{False} on 4000/4000 questions.
 
 \paragraph{What verifier rewards can and cannot install.}
 On the training side, RLVR is reported to sharpen rather than extend: RL-trained
@@ -252,45 +242,6 @@ Two further objectives, DPO and LIRE, are in Appendix~\ref{app:retracted}.
 
 \section{Experiments}
 
-\subsection{Main Results}
-The baseline failure pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3)---direct evidence of \textbf{Logic Inertia}.
-
-Table~\ref{tab:comparison_results} summarises the trained objectives on
-Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
-splits and are retained only to show what the controls of
-\S\ref{sec:v3control} change; they are not evidence.
-
-\paragraph{The capability gets worse with scale.} We trained the same
-conflict-aware objective on Qwen3-8B, four seeds against six at $1.5$B. The
-larger model is clearly better on the splits that do not require contradiction
-detection---base $0.9075$ against $0.870$, V2 $0.8023$ against $0.610$---and
-significantly worse on the control:
-
-\begin{center}\small
-\begin{tabular}{lccc}
-\toprule
-& \textbf{accuracy} & \textbf{discrimination gap} & \textbf{seeds} \\
-\midrule
-Qwen2-1.5B & $0.6979 \pm 0.0542$ & $0.420 \pm 0.200$ & 6 \\
-Qwen3-8B & $0.6323 \pm 0.0282$ & $0.146 \pm 0.071$ & 4 \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-Welch $p{=}0.0189$ on accuracy and $p{=}0.0096$ on the gap; Mann--Whitney
-$p{=}0.0333$ and $p{=}0.0095$, reported because the variances differ. The 8B
-model remains above the $0.5835$ baseline ($p{=}0.0204$), so this is a weaker
-capability rather than none: the larger model learns more of the task and less
-of this part of it. Its seed variance is also a third of the smaller model's
-($0.071$ against $0.200$), so $1.5$B is erratically better while 8B is
-consistently mediocre.
-
-\textbf{A single seed would have reported this wrongly in both directions.} The
-first 8B run we trained happened to be the worst of the four ($0.081$ against a
-mean of $0.146$) and supported a stronger claim than the data does; the best
-($0.247$) is within one standard deviation of the $1.5$B mean and would have
-supported none.
-
 \begin{table*}[t]
     \centering
     \caption{Trained methods on Qwen2-1.5B, re-measured in September 2026 on the
@@ -330,6 +281,26 @@ supported none.
         $p{<}10^{-240}$.} \\
     \end{tabular}
 \end{table*}
+
+\subsection{Main Results}
+The baseline failure pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3)---direct evidence of \textbf{Logic Inertia}.
+
+Table~\ref{tab:comparison_results} summarises the trained objectives on
+Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
+splits and are retained only to show what the controls of
+\S\ref{sec:v3control} change; they are not evidence.
+
+\paragraph{The capability gets worse with scale.} The same objective at
+Qwen3-8B, four seeds against six, is clearly better where contradiction
+detection is not needed (base $0.9075$ vs $0.870$, V2 $0.8023$ vs $0.610$) and
+significantly worse on the control: accuracy $0.6323 \pm 0.0282$ against
+$0.6979 \pm 0.0542$ and gap $0.146 \pm 0.071$ against $0.420 \pm 0.200$ (Welch
+$p{=}0.0189$ and $p{=}0.0096$; Mann--Whitney $p{=}0.0333$ and $p{=}0.0095$). It
+stays above the $0.5835$ baseline ($p{=}0.0204$), so this is a weaker capability
+rather than none, and its seed variance is a third of the smaller model's---the
+larger model is consistently mediocre where the smaller is erratically better.
+Our first 8B run happened to be the worst of the four and supported a stronger
+claim than the data does; the best would have supported none.
 
 \subsection{A two-class control for contradiction detection}
 \label{sec:v3control}
@@ -433,6 +404,16 @@ not the question, is the unit that claim is about. Thirty structures is also few
 enough to memorise, which is the concrete form of a reviewer concern about this
 benchmark family.
 
+We rebuilt the control with its chain drawn from a twenty-predicate pool: 3000
+rows, 3000 structures, baseline $0.5803$. Re-evaluating all ten seeded
+checkpoints, estimates fall---conflict-aware SFT $0.6979 \to 0.6244$, its gap
+$0.420 \to 0.318$---so part of the original measured its thirty-odd structures,
+which the training corpus shares. The spread collapses with them: the gap's
+standard deviation $0.200 \to \mathbf{0.053}$, accuracy's $0.0542 \to 0.0191$.
+\textbf{The seed instability we reported earlier was mostly replication noise.}
+The comparison sharpens: against verifier-reward RL the gap separates at
+$p{<}10^{-4}$, up from $0.0020$, and RL's own gap is $0.000 \pm 0.006$.
+
 \paragraph{A symbolic solver wins outright on this benchmark, and that bounds
 what it can show.} Asked for a systematic comparison against symbolic and
 verifier-based methods, we ran the obvious one end to end: parse the premises
@@ -480,6 +461,14 @@ alone, so the model exchanged one cue for another rather than learning to check.
 We report this because it bounds what our positive result means: a two-class
 control on the test set is necessary but not sufficient when the training
 distribution contains the shortcut.
+
+The cue reappears on an independently built benchmark. Every instance of the
+matched-form split carries a negated fact---disjunction elimination leaves one
+behind---and every gold answer is \texttt{True}; our checkpoints answer
+\texttt{True} on $19.2\%$ (1.5B) and $31.4\%$ (8B) of it, with the three arms
+indistinguishable ($0.192/0.040/0.194$). The frontier models separate those arms
+sharply on the same file. What transfers from training is the reflex, not the
+inference.
 
 \subsection{Is the gap prompt-inducible? Frontier models and inference-time verification}
 \label{sec:frontier_prompt}

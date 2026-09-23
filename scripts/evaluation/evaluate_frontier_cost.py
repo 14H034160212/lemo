@@ -110,11 +110,15 @@ def main():
     ap.add_argument("--reasoning_effort", default=None,
                     choices=[None, "minimal", "low", "medium", "high"],
                     help="gpt-5.x only; the default is no reasoning at all")
+    ap.add_argument("--sample_seed", type=int, default=0,
+                    help="which stratified draw to evaluate; vary it across "
+                         "repeats so the error bar covers instance sampling "
+                         "as well as decoding")
     ap.add_argument("--delay", type=float, default=0.3)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
-    rows = load_stratified(args.test_file, args.per_class)
+    rows = load_stratified(args.test_file, args.per_class, seed=args.sample_seed)
     print(f"{args.model}: {len(rows)} instances "
           f"({len(rows)*4} questions), verify_first={args.verify_first}", flush=True)
 
@@ -164,6 +168,7 @@ def main():
         "out_tokens_per_question": round(tok_out / total, 1),
         "reasoning_tokens_per_question": round(tok_reason / total, 1),
         "reasoning_effort": args.reasoning_effort,
+        "sample_seed": args.sample_seed,
         "in_tokens_per_question": round(tok_in / total, 1),
         "seconds_per_question": round(secs / total, 3),
         "majority_class_baseline": 0.5835,

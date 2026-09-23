@@ -1,0 +1,10424 @@
+{
+  "summary": {
+    "model": "gpt-4.1",
+    "verify_first": false,
+    "test_file": "data/test_mt_control3.csv",
+    "instances": 450,
+    "questions": 1800,
+    "failed_calls": 0,
+    "accuracy": 0.8328,
+    "out_tokens_per_question": 1.8,
+    "reasoning_tokens_per_question": 0.0,
+    "reasoning_effort": null,
+    "in_tokens_per_question": 53.2,
+    "seconds_per_question": 0.164,
+    "majority_class_baseline": 0.5835,
+    "by_position": {
+      "mp_Q1": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_Q3": {
+        "accuracy": 0.9933,
+        "n": 150
+      },
+      "mp_Q4": {
+        "accuracy": 0.9933,
+        "n": 150
+      },
+      "mp_neg_Q1": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_neg_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_neg_Q3": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_neg_Q4": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mt_Q1": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mt_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mt_Q3": {
+        "accuracy": 0.0,
+        "n": 150
+      },
+      "mt_Q4": {
+        "accuracy": 0.0067,
+        "n": 150
+      }
+    },
+    "q4_wrong_given_q3_wrong": {
+      "mp_neg": null,
+      "mp": 1.0,
+      "mt": 0.9933
+    }
+  },
+  "records": [
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 1.14
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 1.04
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 1.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.02
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 1.22
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.9
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 1.02
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.83
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.83
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.85
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 1.23
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.49
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.75
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.75
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.48
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.51
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.92
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.83
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.89
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.9
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.8
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 1.21
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.8
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.81
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.82
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.49
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.75
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.46
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.94
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.47
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.76
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.77
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.14
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.51
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.77
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.92
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.45
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 1.19
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.76
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.83
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.79
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.48
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.54
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.77
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.85
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.83
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.52
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.82
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.77
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.79
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.34
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.78
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.79
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.8
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.51
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.71
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.76
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.51
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.56
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.51
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.07
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 1.01
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.86
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.9
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.75
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.53
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.01
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.79
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.67
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.84
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.72
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.81
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.5
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.74
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.66
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.87
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.63
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "T"
+      ],
+      "correct": 3,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.64
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.73
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.7
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.58
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.57
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.61
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.47
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.68
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "?",
+        "?"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 1.13
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.69
+    },
+    {
+      "type": "chain_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "F",
+        "F"
+      ],
+      "correct": 2,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 212,
+      "reasoning_tokens": 0,
+      "seconds": 0.6
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.55
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.65
+    },
+    {
+      "type": "chain_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 216,
+      "reasoning_tokens": 0,
+      "seconds": 0.59
+    },
+    {
+      "type": "chain_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "pred": [
+        "T",
+        "T",
+        "T",
+        "T"
+      ],
+      "correct": 4,
+      "n": 4,
+      "out_tokens": 7,
+      "in_tokens": 210,
+      "reasoning_tokens": 0,
+      "seconds": 0.62
+    }
+  ]
+}

@@ -49,16 +49,9 @@ Anonymous authors \\
 Paper under double-blind review
 }
 
-%%% CAMERA-READY AUTHOR BLOCK: kept out of the repository for double-blind
-%%% review; restore from AUTHORS.local.txt together with \iclrfinalcopy.
-%\author{%
-%Auckland, New Zealand \\
-%\And
-%School of Humanities \\
-%Beijing, China \\
-%\AND
-%Auckland, New Zealand \\
-%}
+%%% CAMERA-READY AUTHOR BLOCK: three author groups, kept out of the repository
+%%% for double-blind review. Restore from AUTHORS.local.txt (gitignored)
+%%% together with \iclrfinalcopy.
 
 
 % Uncomment for the camera-ready (non-anonymous) version:
@@ -81,11 +74,13 @@ caps every conclusion after it and an aggregate score mixes propagated failures
 with primary ones. We measure that cost. Instances are generated in arms that
 are logically equivalent and differ only in the form of one inference, each
 query's position in the chain is fixed, and primary and propagated failures are
-reported separately. GPT-5.2 at medium reasoning effort applies a rule with a
-negated premise perfectly and its contrapositive not once in $150$ attempts,
-with the steps before it at $0.940$ and the step after it failing alongside it
-in $96$--$100\%$ of cases---a total failure where the literature reports a
-degradation, and one an aggregate of $0.797$ conceals. Reaching it required
+reported separately. Across five frontier models, a rule with a negated
+premise is applied at $0.999$ and its contrapositive at $0.186$; three
+configurations answer it correctly not once in $150$ attempts, and a wrong step
+takes the step after it down in $77$--$100\%$ of cases. The same models complete
+the rest of the chain at ceiling, so a total failure on one inference form
+surfaces as an aggregate between $0.79$ and $0.93$---a degradation where the
+measurement shows an absence. Raising the reasoning budget does not recover it. Reaching it required
 controls we also report: perturbation benchmarks assign labels deterministically,
 so a perturbed split is single-class and a constant response saturates it. Under
 those controls most of what we set out to claim did not survive. Of four trained
@@ -121,11 +116,12 @@ harder than modus ponens. Isolation is what makes those benchmarks diagnostic
 and is also what they do not measure: the cost of a weak rule \emph{inside} a
 chain. A failed step does not add one error, it caps every conclusion downstream
 of it, and an aggregate score cannot separate the primary failure from its
-consequences. On matched arms differing only in inference form, GPT-5.2 at
-medium reasoning effort applies a rule with a negated premise perfectly
-($1.000$) and its contrapositive not once in 150 attempts ($0.000$), with the
-upstream steps at $0.940$---and the downstream query fails with it in $96$--%
-$100\%$ of cases.
+consequences. On matched arms differing only in inference form, five
+frontier models apply a rule with a negated premise at $0.999$ and its
+contrapositive at $0.186$, with the upstream steps at ceiling; GPT-4.1 and
+GPT-5.2 answer the contrapositive correctly not once in $150$ attempts, and the
+downstream query fails alongside it in $77$--$100\%$ of cases
+(\S\ref{sec:chain}).
 
 \paragraph{Measuring any of this requires a control.} Under the conservative
 semantics of \S\ref{sec:method} every query on a contradictory instance is
@@ -146,17 +142,14 @@ as such.
 
 \textbf{(i)}~\emph{What a weak rule costs inside a chain.} Logical reasoning is
 evaluated by decomposing it into rules tested one at a time---one rule per
-instance in \textsc{LogicBench}, atomic skills and their quantified variants in
-\textsc{LogicAsker}, a single two-premise inference in
-\textsc{RULEBREAKERS}---and none of these measure error propagation or per-step
-correctness. We pair instances that differ only in the form of one inference,
-fix each query's position in the chain, and report the primary failure and the
-propagated one separately. GPT-5.2 at medium reasoning effort applies a rule
-with a negated premise perfectly ($1.000$) and its contrapositive not once in
-$150$ attempts ($0.000$), with upstream steps at $0.940$ and the downstream
-query failing alongside it in $96$--$100\%$ of cases. The literature reports
-modus tollens as harder than modus ponens; inside a chain, at maximum effort,
-it is absent, and the aggregate reads $0.797$.
+instance in \textsc{LogicBench}, atomic skills in \textsc{LogicAsker}, a single
+two-premise inference in \textsc{RULEBREAKERS}---and none of these measure
+error propagation or per-step correctness. We pair instances that differ only in
+the form of one inference, fix each query's position, and report the primary
+failure separately from the propagated one (\S\ref{sec:chain}). The literature
+reports modus tollens as harder than modus ponens; inside a chain it is absent
+in three of eight configurations, reasoning effort does not recover it, and the
+aggregates that conceal it read $0.79$--$0.93$.
 
 \textbf{(ii)}~\emph{A control that makes such claims falsifiable.} Two-class
 splits, majority baselines, prediction distributions, answer-parse rates,
@@ -287,17 +280,15 @@ Two further objectives, DPO and LIRE, are in Appendix~\ref{app:retracted}.
 
 \begin{table*}[t]
     \centering
-    \caption{Trained methods on Qwen2-1.5B, re-measured in September 2026 on the
-    current benchmark with the released checkpoints. \textbf{V3 and V3-mixed
-    measure the same capability and disagree completely.} Variant~3 is
-    single-class---under the conservative semantics of \S\ref{sec:method} every
-    query on a contradictory instance is False---so its majority-class baseline
-    is $1.000$ and a model that answers False on sight scores perfectly there
-    while learning nothing. V3-mixed (\S\ref{sec:v3control}) interleaves
-    contradictory instances with consistent ones of the same surface form;
-    its baseline is $0.5835$. Only Fusion-LRA exceeds that baseline. Every row
-    reports the evaluation path used, because a two-logit classification head
-    and free generation are not equally hard.}
+    \caption{Trained methods on Qwen2-1.5B, re-measured in September 2026 with
+    the released checkpoints. \textbf{V3 and V3-mixed measure the same
+    capability and disagree completely.} Variant~3 is single-class---every query
+    on a contradictory instance is False---so its baseline is $1.000$ and a
+    model answering False on sight scores perfectly while learning nothing.
+    V3-mixed (\S\ref{sec:v3control}) interleaves contradictory instances with
+    consistent ones of the same surface form, at a $0.5835$ baseline that only
+    Fusion-LRA exceeds. Each row names its evaluation path: a two-logit
+    classification head and free generation are not equally hard.}
     \label{tab:comparison_results}
     \setlength{\tabcolsep}{5pt}
     \renewcommand{\arraystretch}{1.05}
@@ -359,16 +350,13 @@ part of the verification preamble, not a detection signal---precisely the
 format-compliance concern the capability claim has to answer.
 
 We therefore construct \texttt{variant3\_mixed}: $3{,}000$ instances
-($12{,}000$ questions) in three classes that share one surface form, a base
-chain plus exactly one extra negated fact.
-
-\begin{itemize}[leftmargin=14pt,itemsep=1pt,topsep=2pt]
-\item \textbf{contra}: the negated fact contradicts the chain $\Rightarrow$ all False.
-\item \textbf{consistent-disj}: it negates one disjunct; the other still fires $\Rightarrow$ nothing breaks.
-\item \textbf{consistent-mixed}: a chain with one rule removed, plus a negated fact about something that chain can no longer derive.
-\end{itemize}
-
-The third class is the discriminating one: the extra fact is frequently the
+($12{,}000$ questions) in three classes that share one surface form---a base
+chain plus exactly one extra negated fact. In \textbf{contra} that fact
+contradicts the chain, so every query is False; in \textbf{consistent-disj} it
+negates one disjunct while the other still fires, so nothing breaks; in
+\textbf{consistent-mixed} one rule is removed and the negated fact concerns
+something the chain can no longer derive. The third class is the discriminating
+one: the extra fact is frequently the
 \emph{same sentence} that makes a base instance contradictory, and here it is
 harmless, because the rule that would have derived it is gone. Surface matching
 cannot separate the classes; only following the rules can. All four chain
@@ -380,22 +368,16 @@ assumed. Labels are $41.7\%$ True, giving a majority-class baseline of $0.5835$.
 
 \begin{table}[h]
 \centering\small
-\caption{Per-class behaviour on the control; Fusion-LRA is mean\,$\pm$\,s.d.\ over
-six training seeds. The discriminating quantity is the gap between the
-consistent and contradictory True-rates: it is positive for every seed and
-averages $0.420 \pm 0.200$ ($p{=}0.0018$ against zero, $n{=}6$). Its size varies
-a great deal, and the variance sits almost entirely in
-\textbf{cons.-disj}---plainly consistent instances, which different seeds accept
-between $17\%$ and $93\%$ of the time. Contradiction detection itself is the
-stable part ($0.903 \pm 0.108$). \textsc{RLVF} is mean\,$\pm$\,s.d.\ over four seeds and answers False on
-essentially everything: its discrimination gap is $0.014 \pm 0.018$, its
-accuracy $0.5830 \pm 0.0065$ is statistically indistinguishable from the
-$0.5835$ baseline ($p{=}0.44$), and two of the four seeds answer False on all
-$12{,}000$ questions, landing exactly on the baseline with a gap of $0.000$. The
-collapse is the objective's fixed point, not a bad draw---its seed variance is
-an order of magnitude smaller than Fusion-LRA's. Its $1.000$ on Variant~3 is the
-constant-False artefact the control was built to expose, and correcting the
-reward oracle changed which constant it collapsed to, not that it collapsed.}
+\caption{Per-class behaviour on the control, mean\,$\pm$\,s.d.\ over six
+training seeds (Fusion-LRA) and four (\textsc{RLVF}). The discriminating
+quantity is the gap between the consistent and contradictory True-rates; it is
+positive for every Fusion-LRA seed ($0.420 \pm 0.200$, $p{=}0.0018$ against
+zero) and its variance sits almost entirely in \textbf{cons.-disj}, plainly
+consistent instances that different seeds accept between $17\%$ and $93\%$ of
+the time. \textsc{RLVF} answers False on essentially everything: accuracy
+$0.5830 \pm 0.0065$ against the $0.5835$ baseline ($p{=}0.44$), with two of
+four seeds answering False on all $12{,}000$ questions. Its $1.000$ on
+Variant~3 is the constant-False artefact this control was built to expose.}
 \label{tab:v3control}
 \begin{tabular}{lccc}
 \toprule
@@ -513,38 +495,78 @@ indistinguishable ($0.192/0.040/0.194$). The frontier models separate those arms
 sharply on the same file. What transfers from training is the reflex, not the
 inference.
 
+\subsection{What a weak rule costs inside a chain}
+\label{sec:chain}
+
+We build three arms that share a four-step chain, the same entities and the
+same query positions, and differ only in the form of the third rule: \textbf{MP}
+(\emph{``If someone is rough then they are young''}), \textbf{MP$\neg$}
+(\emph{``If someone is not sleepy then they are young''}), and \textbf{MT}
+(\emph{``If someone is not young then they are not rough''}, the contrapositive
+of MP). Q1 and Q2 probe the steps before the manipulated rule, Q3 the rule
+itself, Q4 the step after it. MP$\neg$ separates the two candidate
+explanations: a model that mishandles negated antecedents should fail it too,
+while one that cannot run an implication backwards should pass it and fail only
+MT. Every instance is oracle-verified; we draw $150$ per arm ($1800$ questions
+per model).
+
+\begin{table}[h]
+\centering\small
+\caption{Per-step accuracy on the matched-form chain, $150$ instances/arm.
+Upstream is the mean of Q1 and Q2 over all three arms; MT\,$\to$\,Q4 is accuracy
+on the step following the manipulated rule; \emph{prop.}\ is
+$P(\text{Q4 wrong}\mid\text{Q3 wrong})$ on the MT arm. \emph{Effort} is the
+\texttt{reasoning\_effort} parameter, which applies only to the GPT-5 family;
+the GPT-4o and GPT-4.1 rows average two replicate runs of one configuration.
+The aggregate column is the number a conventional evaluation would report.}
+\label{tab:chain}
+\begin{tabular}{llcccccc}
+\toprule
+\textbf{Model} & \textbf{Effort} & \textbf{Upstream} & \textbf{MP} & \textbf{MP$\neg$} & \textbf{MT} & \textbf{MT\,$\to$\,Q4} & \textbf{Aggregate} \\
+\midrule
+GPT-4o      & ---     & 0.962 & 0.967 & 1.000 & 0.087 & 0.297 & 0.841 \\
+GPT-4.1     & ---     & 1.000 & 0.993 & 1.000 & \textbf{0.000} & 0.017 & 0.834 \\
+GPT-5-nano  & default & 1.000 & 1.000 & 1.000 & 0.054 & 0.054 & 0.843 \\
+GPT-5-nano  & medium  & 0.998 & 1.000 & 0.993 & 0.080 & 0.080 & 0.844 \\
+GPT-5-mini  & default & 1.000 & 1.000 & 1.000 & 0.571 & 0.571 & 0.928 \\
+GPT-5-mini  & medium  & 1.000 & 1.000 & 1.000 & 0.507 & 0.507 & 0.918 \\
+GPT-5.2     & default & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
+GPT-5.2     & medium  & 0.933 & 0.940 & 1.000 & \textbf{0.000} & 0.000 & 0.790 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The failure is contraposition, not negation.} Across the seven
+configurations whose upstream steps are intact, MP$\neg$ averages $0.999$ and
+MT $0.186$; three answer MT correctly not once in $150$ attempts. Models that
+apply \emph{``if not sleepy then young''} without a single error cannot apply
+\emph{``if not young then not rough''} at all, on chains they otherwise
+complete: negated antecedents are not the obstacle, running the implication
+backwards is. GPT-5.2 at default effort is the one row where MP$\neg$ also
+collapses ($0.500$), and there the upstream steps sit at $0.582$ and the
+aggregate at $0.499$, indistinguishable from chance; we read it as a degenerate
+configuration and exclude it from that average.
+
+\paragraph{Reasoning budget does not buy it.} Raising
+\texttt{reasoning\_effort} to medium moves MT by $+0.026$ on GPT-5-nano,
+$-0.064$ on GPT-5-mini and $0.000$ on GPT-5.2, at $42$--$304$ reasoning tokens
+per question. The one model that is not near-zero, GPT-5-mini at $0.571$, is
+also the one that gets \emph{worse} with more effort. Whatever the deficit is,
+it is not a budget the model can spend its way out of.
+
+\paragraph{The cost is compound, and the aggregate hides it.} A wrong Q3 takes
+Q4 with it in $77$--$100\%$ of cases, so one weak rule costs roughly two steps
+rather than one. Since each arm is a quarter of the questions and the other
+steps are near-ceiling, a total collapse on one inference form surfaces as an
+aggregate between $0.79$ and $0.93$: GPT-4.1 scores $0.834$ overall while
+answering zero of $150$ contrapositive queries correctly. This is the quantity
+rule-at-a-time evaluation cannot produce---not that modus tollens is harder,
+which is established, but what it costs where it sits inside a derivation.
+
 \subsection{Is the gap prompt-inducible? Frontier models and inference-time verification}
 \label{sec:frontier_prompt}
 
 The sharpest challenge to a training-time fix is that the behaviour might simply be promptable. We test this directly on two current frontier models under three inference-time regimes, using the same stratified $200$-row-per-split protocol ($800$ questions/split) as our original GPT-4o/Gemma evaluation: \textbf{(a)} zero-shot; \textbf{(b)} a \emph{verification-first few-shot} prompt that explicitly instructs the model to normalise rules, check consistency, identify missing dependencies, and halt before deducing, with V2/V3/V4 exemplars; and \textbf{(c)} a \emph{neuro-symbolic guard}---a naive LLM given no contradiction-handling instructions at all, whose answers are overridden to \texttt{False} for any instance in which an independent external symbolic checker finds a contradiction in the raw facts (a verify-then-correct pipeline in the spirit of \citet{vericot2026}, implemented without re-running the solver that produced our own labels).
-
-\begin{table}[h]
-\centering\small
-\caption{Frontier models and inference-time verification versus the trained structural prior ($800$ questions/split; GPT-4o V2 $n{=}636$). \textbf{The V3 column of this table is measured on the single-class split and we no longer draw a conclusion from it.} An earlier draft read the verification-first prompt as \emph{degrading} contradiction handling, because V3 there is all-False and a prompt that makes a model answer False less often registers as a loss. On the two-class control the sign reverses: the same prompt scores $0.7767$ against $0.7633$ without it (\S\ref{sec:v3control}). The external guard likewise catches only contradictions visible in the raw facts, not those requiring derivation.}
-\label{tab:frontier_prompt}
-    % $\ddagger$: see the scale paragraph in Section~\ref{sec:v3control} --
-    % these are single-class-split figures from a SEQ_CLS head and do not
-    % survive the two-class control.
-\begin{tabular}{llccc}
-\toprule
-\textbf{Setting} & \textbf{Model} & \textbf{Base} & \textbf{V2} & \textbf{V3 (contradiction)} \\
-\midrule
-Zero-shot & GPT-4o & 0.789 & 0.818 & 0.560 \\
-Zero-shot & Gemma-3-4B-IT & 0.580 & 0.360 & 0.439 \\
-Zero-shot & GPT-5.2 & 0.730 & 0.846 & \textbf{0.825} \\
-Zero-shot & Claude Opus 5 & 0.943 & 0.993 & 0.679 \\
-\midrule
-Verification-first few-shot & GPT-5.2 & 0.751 & 0.889 & 0.800 \\
-Verification-first few-shot & Claude Opus 5 & 0.999 & 1.000 & 0.648 \\
-\midrule
-Naive LLM $+$ external symbolic guard & GPT-5.2 & 0.784 & 0.903 & 0.648 \\
-Naive LLM $+$ external symbolic guard & Claude Opus 5 & 0.970 & 1.000 & 0.648 \\
-\midrule
-\rowcolor{gray!10} Fusion-Conflict (Qwen2-1.5B, trained) & --- & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
-\rowcolor{gray!10} Fusion-Conflict (Qwen3-8B, trained) & --- & 1.000$^{\ddagger}$ & 1.000$^{\ddagger}$ & 1.000$^{\ddagger}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 Two conclusions survive the control. \textbf{(i)} Logic Inertia is not an
 artefact of a stale model generation: a full generation after GPT-4o,
@@ -559,108 +581,77 @@ is small and, on the two-class control, mildly positive rather than negative.
 \subsection{Experimental setup}
 The benchmark has $100$ base groups ($80$ train / $20$ test) seeded via randomised entity mapping and rule variation, yielding $11{,}200$ Stage-1 SFT instances and $2{,}160$ preference pairs. All objectives use AdamW $+$ bf16 $+$ LoRA ($r{=}8$, $\alpha{=}16$); hyperparameters are in Appendix~\ref{app:hyper}, full ablation tables in Appendix~\ref{app:ablation}. \textbf{Compute.} The whole pipeline fits on a single NVIDIA A100 ($40$\,GB) for Qwen3-8B and a $\geq16$\,GB consumer GPU for the smaller backbones: $5.1$ GPU-hours at $1.5$B and $9.7$ at $8$B for the released model, measured per stage in Appendix~\ref{app:compute}. Lean kernel verification adds $\sim\!0.36$\,s/trace on CPU, is required only during training, and is dispatch-amortisable via a persistent server~\citep{yang2023leandojo}.
 
-\subsection{Objective ablation}
-\label{sec:ablation-stagewise}
-The comparison between objectives over a shared Stage-1 base was this work's
-original argument, and \S\ref{sec:v3control} removes most of it: on the
-two-class control only conflict-aware SFT exceeds a constant responder. The
-stage-wise figures from the earlier draft are kept in
-Appendix~\ref{app:stagewise}, measured before the 2026-03-31 benchmark
-regeneration and not re-verified, so they document what was tried rather than
-support any claim. What survives the control is reported in
-Table~\ref{tab:comparison_results} and \S\ref{sec:v3control}.
+\paragraph{Objective ablation.}
+Comparing objectives over a shared Stage-1 base was this work's original
+argument, and \S\ref{sec:v3control} removes most of it. The stage-wise figures
+from the earlier draft are kept in Appendix~\ref{app:stagewise}, measured
+before the 2026-03-31 benchmark regeneration and not re-verified, so they
+document what was tried rather than support a claim; what survives the control
+is Table~\ref{tab:comparison_results}.
 
 \section{Discussion}
 
-\paragraph{Structure, not data exposure.} SFT alone (Fusion-LRA) plateaus at $0.705$ on V3: it teaches the \emph{form} of the contradiction check but still hallucinates success. Fusion-Conflict dominates both the data-balanced baseline (Mixed-Aug, $0.972$ V3 but $0.525$ base) and the over-conservative one (RA-CoT, $0.690$/$0.263$): reliability follows from \emph{structural organisation}---the verification preamble acting as a circuit breaker---not from data exposure alone.
+\paragraph{An objective comparison we withdraw.} An earlier draft argued from
+the Variant-3 ranking (Fusion-Conflict over Mixed-Aug and RA-CoT) that
+reliability follows from structural organisation rather than data exposure.
+Those figures are single-class (\S\ref{sec:v3control}) and cannot separate the
+claim from a constant response; the ablation table is retained in
+Appendix~\ref{app:ablation} without that reading.
 
 \paragraph{An unbiased reward is not a low-variance one.} We initially argued
-that because the oracle reward is exactly computable, deterministic, and free of
-a reward-hacking surface, the clipping in PPO~\citep{schulman2017proximal} and
-the group-relative normalisation in GRPO~\citep{shao2024deepseekmath} are
-unnecessary, and used plain REINFORCE with an EMA baseline (Eq.~\ref{eq:rlvf}).
-That argument is wrong and we withdraw it. With no trust region the EMA baseline
-climbed to $+0.695$, so a wrong trace was penalised $5.6\times$ more than a
-correct one was rewarded, and the policy degenerated into non-parsing output at
-step~$250$. Adding a KL penalty against the initialisation stabilised training
-for the full $600$ steps. Unbiasedness constrains the reward's expectation; it
-says nothing about the variance of the gradient estimator, which is what the
-trust region exists to control. A second failure mode is not a variance issue at
-all: on a contradictory instance, ``answered False after detecting the
-contradiction'' and ``answered False unconditionally'' receive \emph{identical}
-reward, so an outcome-only signal is degenerate for the capability we are trying
-to install, and \textsc{RLVF} converges to the constant
+that an exactly computable, deterministic reward makes the trust region of
+PPO~\citep{schulman2017proximal} or GRPO~\citep{shao2024deepseekmath}
+unnecessary, and used plain REINFORCE with an EMA baseline
+(Eq.~\ref{eq:rlvf}). We withdraw that: with no trust region the baseline
+climbed to $+0.695$, penalising a wrong trace $5.6\times$ more than a correct
+one was rewarded, and the policy degenerated into non-parsing output at
+step~$250$ (a KL penalty against the initialisation fixed it;
+Appendix~\ref{app:reinforce}). Unbiasedness constrains the reward's
+expectation, not the gradient estimator's variance. The second failure mode is
+not variance at all: ``answered False after detecting the contradiction'' and
+``answered False unconditionally'' earn \emph{identical} reward, so an
+outcome-only signal is degenerate for the capability we want
 (Table~\ref{tab:v3control}). Demonstration supplies what the reward cannot.
 
-\paragraph{Train- vs.\ inference-time mitigation.} Inference-time guards~\citep{vericot2026,xiong2025deliberate,premiseRAG2025} re-invoke a verifier on every deployment query; our prior is amortised into the weights at training time, so V2/V3 robustness costs nothing at runtime, and the Phase~2 Lean kernel is needed only during training.
+\paragraph{Train- vs.\ inference-time mitigation.} Inference-time guards~\citep{vericot2026,xiong2025deliberate,premiseRAG2025} re-invoke a verifier on every deployment query, whereas a prior amortised into the weights costs nothing at runtime.
 
 \subsection{Generalisation and Sensitivity}
 Fusion-Conflict retains base accuracy under Variant~1, so contradiction detection introduces no noise fragility. \textbf{Variant~4 multi-law stacking} remains hardest: the residual at $1.5$B concentrates on instances composing $\geq3$ laws (contrapositive $\circ$ double-negation $\circ$ De\,Morgan), where the policy holds the structural prior but loses syntactic tracking---a capacity bottleneck rather than a failure of the prior, since the same policy at $8$B saturates V4-multi. RLVF-Lean (\S\ref{sec:phase2}) is the natural fix: per-tactic verification grounds each rewrite step independently of trace length.
 
 \subsubsection{Out-of-distribution transfer: what the structural prior does \emph{not} buy}
 \label{sec:external}
-Saturating a synthetic benchmark invites the objection that the policy has memorised a template family. We evaluate the trained checkpoints zero-shot, with no in-domain examples, on four external datasets: \textbf{LogicNLI}~\citep{tian-etal-2021-diagnosing} and the contradiction subset of \textbf{MNLI}~\citep{N18-1101}, close to the premise-consistency behaviour we train; and \textbf{FOLIO}~\citep{han2024folio} (first-order-logic entailment; train$+$validation minus \texttt{Uncertain} rows, $811$ items) and \textbf{ZebraLogic}~\citep{lin2025zebralogic} (constraint-satisfaction puzzles; the public test labels are withheld, so we solve $313$ puzzles with our own solver and build two balanced T/F probes each), whose task formats we never trained on.
+Saturating a synthetic benchmark invites the objection that the policy has memorised a template family. We evaluate the trained checkpoints zero-shot on four external datasets (Table~\ref{tab:external_transfer}): \textbf{LogicNLI}~\citep{tian-etal-2021-diagnosing} and the contradiction subset of \textbf{MNLI}~\citep{N18-1101}, close to the behaviour we train, and \textbf{FOLIO}~\citep{han2024folio} and \textbf{ZebraLogic}~\citep{lin2025zebralogic}, whose task formats we never trained on (preparation details in Appendix~\ref{app:movedtables}).
 
-\begin{table}[h]
-\centering\small
-\caption{Zero-shot out-of-distribution transfer. \textbf{The result is negative and we report it as such.} $\rho_{\top}$ is the fraction of items labelled True; a value near $0$ or $1$ means the classifier has collapsed to a constant, so its accuracy carries no information about reasoning. LogicNLI labels are rebuilt from the preserved \texttt{original\_label} field after we found the released preparation script had silently labelled all $500$ rows \texttt{False} (Appendix~\ref{app:limitations})---a file on which a constant-False predictor scores $1.000$, which is exactly what $\rho_{\top}$ is here to expose.}
-\label{tab:external_transfer}\label{tab:real_world_results}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lcccccc}
-\toprule
-& \multicolumn{2}{c}{\textbf{LogicNLI} ($n{=}500$)} & \multicolumn{2}{c}{\textbf{MNLI-Con} ($n{=}349$)} & \textbf{FOLIO} & \textbf{Zebra} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-\textbf{Model} & Acc & $\rho_{\top}$ & Acc & $\rho_{\top}$ & ($n{=}811$) & ($n{=}626$) \\
-\midrule
-\emph{Majority-class baseline} & \emph{0.750} & --- & \emph{0.501} & --- & \emph{0.500} & \emph{0.500} \\
-\midrule
-Stage-1 SFT (Qwen2-1.5B)        & 0.750 & 0.00 & 0.510 & 0.03 & 0.433 & 0.470 \\
-\,$+$ LIRE (Qwen2-1.5B)         & 0.750 & 0.00 & 0.510 & 0.04 & --- & --- \\
-Fusion-Conflict (Qwen2-1.5B)    & 0.750 & 0.00 & 0.507 & 0.03 & 0.438 & 0.462 \\
-\rowcolor{gray!10} Fusion-Conflict (Qwen3-8B) & 0.282 & 0.96 & \textbf{0.599} & 0.58 & \textbf{0.619} & 0.495 \\
-\bottomrule
-\end{tabular}
-\end{table}
+The result is negative and bounds our claim rather than supporting it. At $1.5$B the prior does not transfer at all: every checkpoint degenerates into a constant-\texttt{False} predictor, scoring exactly the majority-class baseline on LogicNLI and chance on MNLI. At $8$B the collapse inverts rather than resolves ($96\%$ of LogicNLI items labelled True, accuracy below baseline), even though that checkpoint saturates every split of our own benchmark. The one genuine positive is FOLIO at $8$B ($0.619$ vs.\ $0.500$); ZebraLogic, which has no premise-consistency component, moves at neither scale.
 
-Three things follow, and they bound our claim rather than support it. \textbf{(i)}~At $1.5$B the prior does not transfer at all: all three checkpoints degenerate into constant-\texttt{False} predictors, scoring exactly the majority-class baseline on LogicNLI and chance on MNLI. \textbf{(ii)}~At $8$B the collapse inverts rather than resolves ($96\%$ of LogicNLI items labelled True, accuracy well below baseline), even though that checkpoint saturates every split of our own benchmark. \textbf{(iii)}~The one genuine positive is FOLIO at $8$B ($0.619$ vs.\ $0.500$ chance); ZebraLogic---a reasoning form with no premise-consistency component---moves at neither scale.
-
-What the pipeline demonstrably installs is robustness of the \emph{verify-then-deduce} structure \emph{within} the propositional regime it is trained on, reliably across backbones; it is not a general reasoning upgrade, and the synthetic saturation of \S\ref{sec:ablation-stagewise} is not evidence that contradiction handling is solved in natural language. This also sharpens \S\ref{sec:frontier_prompt}: the trained prior beats every inference-time alternative \emph{on the structural axis it targets}, and that axis is narrower than ``reasoning''.
+What the pipeline demonstrably installs is robustness of the \emph{verify-then-deduce} structure \emph{within} the propositional regime it is trained on, reliably across backbones; it is not a general reasoning upgrade, and the synthetic saturation of Appendix~\ref{app:stagewise} is not evidence that contradiction handling is solved in natural language. This also sharpens \S\ref{sec:frontier_prompt}: the trained prior beats every inference-time alternative \emph{on the structural axis it targets}, and that axis is narrower than ``reasoning''.
 
 \subsection{Formal verification of the benchmark's labels}
 \label{sec:phase2}
-We translate instances to Lean~4 and check each query against the kernel, as an
-audit of our own oracle: every other label in this benchmark comes from the
-forward-chainer that also computes the RLVF reward, which couples training and
-evaluation. Agreement is $0.9965$ on derivable queries in the five-domain
-corpus ($n{=}1660$) and $0.6119$ on the corpus the rest of this paper uses, so
-the headline figure is a property of that dataset rather than of the
-translation; on non-derivable queries agreement is $0.2213$, because proving
-that something does \emph{not} follow requires the closed-world assumption and
-our translator does not encode it. \textbf{We therefore do not use Lean as an
-independent adjudicator}---at these rates it would add noise. An RL variant
-rewarded by the kernel is described in the earlier draft but was never
-implemented, and we withdraw it (Appendix~\ref{app:leandetail}).
+Every label here comes from the forward-chainer that also computes the RLVF
+reward, so we audited it against a Lean~4 kernel. Agreement on derivable
+queries is $0.9965$ on a five-domain corpus ($n{=}1660$) but $0.6119$ on the
+corpus used here and $0.2213$ on non-derivable queries, where proving
+non-entailment needs a closed-world assumption our translator does not encode.
+\textbf{We therefore do not use Lean as an independent adjudicator}, and we
+withdraw the kernel-rewarded RL variant, described in an earlier draft but
+never implemented (Appendix~\ref{app:leandetail}).
 
 \section{Conclusion}
 We set out to show that a verify-before-deduce prior repairs contradiction
 handling, and built controls strong enough to test it. Most of what we expected
-did not survive them. Of four trained objectives only conflict-aware SFT exceeds
-a constant responder on a two-class control, and it does so at
-$0.698 \pm 0.054$ over six seeds against a $0.5835$ baseline---weaker at 8B, not
-stronger, and resting partly on a surface cue that co-occurs with contradiction
-in training with probability $1.000$. A symbolic solver scores $1.000$ on every
-split of this benchmark, so nothing here argues for a learned approach where the
-premises are already formalised.
+did not survive. Of four trained objectives only conflict-aware SFT exceeds a
+constant responder on a two-class control, at $0.698 \pm 0.054$ over six seeds
+against a $0.5835$ baseline---weaker at 8B, not stronger, and resting partly on
+a surface cue that co-occurs with contradiction in training with probability
+$1.000$. A symbolic solver scores $1.000$ on every split here, so nothing
+argues for a learned approach where the premises are already formalised.
 
-What the benchmark does well is diagnose. Matched arms that differ only in
-inference form show GPT-5.2 at medium reasoning effort applying a negated
-premise perfectly and its contrapositive not once in 150 attempts, with the
-downstream query failing alongside it in $96$--$100\%$ of cases---a total
-failure, not the degradation the literature reports, and invisible inside an
-aggregate of $0.797$. Isolating it required pairing instances, sampling chains
-rather than reusing thirty structures, and reporting seeds rather than
-questions. We think that is the transferable part: on perturbation-style
-benchmarks, where the perturbation fixes the label, an accuracy alone cannot
+What the benchmark does well is diagnose. Matched arms show five frontier
+models applying a negated premise at $0.999$ and its contrapositive at
+$0.186$---GPT-4.1 and GPT-5.2 not once in $150$ attempts---with the downstream
+query failing alongside it, all of it invisible inside aggregates of
+$0.79$--$0.93$. Where a perturbation fixes the label, accuracy alone cannot
 distinguish a capability from a constant.
 
 \section*{Ethics Statement}
@@ -698,6 +689,58 @@ and logs. The authors take full responsibility for the content of this paper.
 \appendix
 \section{Appendix}
 
+\subsection{Tables moved from the main text}
+\label{app:movedtables}
+
+\begin{table}[h]
+\centering\small
+\caption{Frontier models and inference-time verification versus the trained structural prior ($800$ questions/split; GPT-4o V2 $n{=}636$). \textbf{The V3 column of this table is measured on the single-class split and we no longer draw a conclusion from it.} An earlier draft read the verification-first prompt as \emph{degrading} contradiction handling, because V3 there is all-False and a prompt that makes a model answer False less often registers as a loss. On the two-class control the sign reverses: the same prompt scores $0.7767$ against $0.7633$ without it (\S\ref{sec:v3control}). The external guard likewise catches only contradictions visible in the raw facts, not those requiring derivation.}
+\label{tab:frontier_prompt}
+    % $\ddagger$: see the scale paragraph in Section~\ref{sec:v3control} --
+    % these are single-class-split figures from a SEQ_CLS head and do not
+    % survive the two-class control.
+\begin{tabular}{llccc}
+\toprule
+\textbf{Setting} & \textbf{Model} & \textbf{Base} & \textbf{V2} & \textbf{V3 (contradiction)} \\
+\midrule
+Zero-shot & GPT-4o & 0.789 & 0.818 & 0.560 \\
+Zero-shot & Gemma-3-4B-IT & 0.580 & 0.360 & 0.439 \\
+Zero-shot & GPT-5.2 & 0.730 & 0.846 & \textbf{0.825} \\
+Zero-shot & Claude Opus 5 & 0.943 & 0.993 & 0.679 \\
+\midrule
+Verification-first few-shot & GPT-5.2 & 0.751 & 0.889 & 0.800 \\
+Verification-first few-shot & Claude Opus 5 & 0.999 & 1.000 & 0.648 \\
+\midrule
+Naive LLM $+$ external symbolic guard & GPT-5.2 & 0.784 & 0.903 & 0.648 \\
+Naive LLM $+$ external symbolic guard & Claude Opus 5 & 0.970 & 1.000 & 0.648 \\
+\midrule
+\rowcolor{gray!10} Fusion-Conflict (Qwen2-1.5B, trained) & --- & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} \\
+\rowcolor{gray!10} Fusion-Conflict (Qwen3-8B, trained) & --- & 1.000$^{\ddagger}$ & 1.000$^{\ddagger}$ & 1.000$^{\ddagger}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{Zero-shot out-of-distribution transfer. \textbf{The result is negative and we report it as such.} $\rho_{\top}$ is the fraction of items labelled True; a value near $0$ or $1$ means the classifier has collapsed to a constant, so its accuracy carries no information about reasoning. LogicNLI labels are rebuilt from the preserved \texttt{original\_label} field after we found the released preparation script had silently labelled all $500$ rows \texttt{False} (Appendix~\ref{app:limitations})---a file on which a constant-False predictor scores $1.000$, which is exactly what $\rho_{\top}$ is here to expose.}
+\label{tab:external_transfer}\label{tab:real_world_results}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{LogicNLI} ($n{=}500$)} & \multicolumn{2}{c}{\textbf{MNLI-Con} ($n{=}349$)} & \textbf{FOLIO} & \textbf{Zebra} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Model} & Acc & $\rho_{\top}$ & Acc & $\rho_{\top}$ & ($n{=}811$) & ($n{=}626$) \\
+\midrule
+\emph{Majority-class baseline} & \emph{0.750} & --- & \emph{0.501} & --- & \emph{0.500} & \emph{0.500} \\
+\midrule
+Stage-1 SFT (Qwen2-1.5B)        & 0.750 & 0.00 & 0.510 & 0.03 & 0.433 & 0.470 \\
+\,$+$ LIRE (Qwen2-1.5B)         & 0.750 & 0.00 & 0.510 & 0.04 & --- & --- \\
+Fusion-Conflict (Qwen2-1.5B)    & 0.750 & 0.00 & 0.507 & 0.03 & 0.438 & 0.462 \\
+\rowcolor{gray!10} Fusion-Conflict (Qwen3-8B) & 0.282 & 0.96 & \textbf{0.599} & 0.58 & \textbf{0.619} & 0.495 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Lean 4 translation, and the withdrawn RLVF-Lean extension}
 \label{app:leandetail}
 Retained from the earlier draft. The kernel-rewarded RL variant it describes has
@@ -705,7 +748,7 @@ no checkpoint and no training script, and the training code never calls the Lean
 reward; it was a feasibility demonstration presented as an extension.
 
 \subsection{Phase 2: Scaling the Verifier with a Formal Proof Assistant}
-\label{sec:phase2}
+\label{app:phase2}
 
 The propositional \textsc{ForwardChain} oracle cannot verify quantified reasoning, induction, or mathematical derivations~\citep{davis2024benchmarks,davis2024mathematics,davis2024gpt4o1}, motivating a proof assistant as the natural successor. \textbf{RLVF-Lean} translates the policy's CoT into \textsc{Lean 4}~\citep{moura2021lean4} tactic applications and rewards each prefix by the kernel verdict ($+1$ on success, $-1$ if the tactic fails or introduces inconsistency, $0$ if incomplete), converting \textsc{RLVF}'s sparse terminal reward into a dense step-grounded signal akin to process reward models~\citep{lightman2024prm} but with kernel soundness: every verdict is a deductive check, not a prediction. A hand-crafted pilot achieves $8/8$ kernel agreement at $0.36$\,s/trace on CPU (Appendix~\ref{app:lean-pilot}). At benchmark scale we auto-translated a stratified $80$-row ($187$-question) sample of the four test splits (translator specified in Appendix~\ref{app:lean-translator}); scored against each query's \emph{classical} polarity---the value derivable \emph{before} the conservative-semantics override, which is why Variant~3 still contains $12$ classically-derivable T-cases---the kernel agrees on $104/105$ T-cases ($99.0\%$) and $30/82$ F-cases ($36.6\%$), broken down per split in Appendix~\ref{app:lean-bench-table}.
 
@@ -951,6 +994,7 @@ variant3 (contradiction)     & 12  & 12  & $100.0\%$ & 30  & 18 & $60.0\%$ \\
 
 
 \subsection{Why Plain REINFORCE Suffices for \textsc{RLVF}}
+\label{app:reinforce}
 \label{app:rlvf-rationale}
 
 We initially gave three reasons why plain REINFORCE should suffice: a

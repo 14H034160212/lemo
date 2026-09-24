@@ -75,12 +75,13 @@ with primary ones. We measure that cost. Instances are generated in arms that
 are logically equivalent and differ only in the form of one inference, each
 query's position in the chain is fixed, and primary and propagated failures are
 reported separately. Across five frontier models, a rule with a negated
-premise is applied at $0.999$ and its contrapositive at $0.186$; three
-configurations answer it correctly not once in $150$ attempts, and a wrong step
-takes the step after it down in $77$--$100\%$ of cases. The same models complete
-the rest of the chain at ceiling, so a total failure on one inference form
-surfaces as an aggregate between $0.79$ and $0.93$---a degradation where the
-measurement shows an absence. Raising the reasoning budget does not recover it. Reaching it required
+premise is applied at $0.999$ and its contrapositive at $0.199$; GPT-4.1
+answers it correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in $450$, and
+a wrong step takes the step after it down in $76$--$100\%$ of cases. The same
+models complete the rest of the chain at ceiling, so a total failure on one
+inference form surfaces as an aggregate between $0.80$ and $0.93$---a
+degradation where the measurement shows an absence. Raising the reasoning
+budget never recovers it. Reaching it required
 controls we also report: perturbation benchmarks assign labels deterministically,
 so a perturbed split is single-class and a constant response saturates it. Under
 those controls most of what we set out to claim did not survive. Of four trained
@@ -118,9 +119,9 @@ chain. A failed step does not add one error, it caps every conclusion downstream
 of it, and an aggregate score cannot separate the primary failure from its
 consequences. On matched arms differing only in inference form, five
 frontier models apply a rule with a negated premise at $0.999$ and its
-contrapositive at $0.186$, with the upstream steps at ceiling; GPT-4.1 and
-GPT-5.2 answer the contrapositive correctly not once in $150$ attempts, and the
-downstream query fails alongside it in $77$--$100\%$ of cases
+contrapositive at $0.199$, with the upstream steps at ceiling; GPT-4.1 answers
+the contrapositive correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in
+$450$, and the downstream query fails alongside it in $76$--$100\%$ of cases
 (\S\ref{sec:chain}).
 
 \paragraph{Measuring any of this requires a control.} Under the conservative
@@ -148,8 +149,8 @@ error propagation or per-step correctness. We pair instances that differ only in
 the form of one inference, fix each query's position, and report the primary
 failure separately from the propagated one (\S\ref{sec:chain}). The literature
 reports modus tollens as harder than modus ponens; inside a chain it is absent
-in three of eight configurations, reasoning effort does not recover it, and the
-aggregates that conceal it read $0.79$--$0.93$.
+in three of eight configurations, reasoning effort never recovers it, and the
+aggregates that conceal it read $0.80$--$0.93$.
 
 \textbf{(ii)}~\emph{A control that makes such claims falsifiable.} Two-class
 splits, majority baselines, prediction distributions, answer-parse rates,
@@ -512,54 +513,58 @@ per model).
 
 \begin{table}[h]
 \centering\small
-\caption{Per-step accuracy on the matched-form chain, $150$ instances/arm.
-Upstream is the mean of Q1 and Q2 over all three arms; MT\,$\to$\,Q4 is accuracy
-on the step following the manipulated rule; \emph{prop.}\ is
-$P(\text{Q4 wrong}\mid\text{Q3 wrong})$ on the MT arm. \emph{Effort} is the
-\texttt{reasoning\_effort} parameter, which applies only to the GPT-5 family;
-the GPT-4o and GPT-4.1 rows average two replicate runs of one configuration.
-The aggregate column is the number a conventional evaluation would report.}
+\caption{Per-step accuracy on the matched-form chain, $150$ instances/arm per
+run, mean\,$\pm$\,s.d.\ over $n$ runs that draw a different half of the $300$
+instances per arm. Upstream is the mean of Q1 and Q2 over all three arms;
+MT\,$\to$\,Q4 is accuracy on the step after the manipulated rule. Run-to-run
+s.d.\ is shown only for MT; on every other column it is at most $0.024$.
+\emph{Effort} is \texttt{reasoning\_effort}, which the API applies only to the
+GPT-5 family, so the GPT-4o and GPT-4.1 rows pool four runs of one
+configuration. The aggregate
+column is the number a conventional evaluation would report.}
 \label{tab:chain}
-\begin{tabular}{llcccccc}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccccccc}
 \toprule
-\textbf{Model} & \textbf{Effort} & \textbf{Upstream} & \textbf{MP} & \textbf{MP$\neg$} & \textbf{MT} & \textbf{MT\,$\to$\,Q4} & \textbf{Aggregate} \\
+\textbf{Model} & \textbf{Effort} & $n$ & \textbf{Upstream} & \textbf{MP} & \textbf{MP$\neg$} & \textbf{MT} & \textbf{MT\,$\to$\,Q4} & \textbf{Aggregate} \\
 \midrule
-GPT-4o      & ---     & 0.962 & 0.967 & 1.000 & 0.087 & 0.297 & 0.841 \\
-GPT-4.1     & ---     & 1.000 & 0.993 & 1.000 & \textbf{0.000} & 0.017 & 0.834 \\
-GPT-5-nano  & default & 1.000 & 1.000 & 1.000 & 0.054 & 0.054 & 0.843 \\
-GPT-5-nano  & medium  & 0.998 & 1.000 & 0.993 & 0.080 & 0.080 & 0.844 \\
-GPT-5-mini  & default & 1.000 & 1.000 & 1.000 & 0.571 & 0.571 & 0.928 \\
-GPT-5-mini  & medium  & 1.000 & 1.000 & 1.000 & 0.507 & 0.507 & 0.918 \\
-GPT-5.2     & default & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
-GPT-5.2     & medium  & 0.933 & 0.940 & 1.000 & \textbf{0.000} & 0.000 & 0.790 \\
+GPT-4o      & ---     & 4 & 0.964 & 0.968 & 1.000 & 0.107\,$\pm$\,0.026 & 0.315 & 0.845 \\
+GPT-4.1     & ---     & 4 & 1.000 & 0.993 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.022 & 0.834 \\
+GPT-5-nano  & default & 3 & 0.999 & 1.000 & 1.000 & 0.096\,$\pm$\,0.043 & 0.096 & 0.849 \\
+GPT-5-nano  & medium  & 1 & 0.998 & 1.000 & 0.993 & 0.080 & 0.080 & 0.844 \\
+GPT-5-mini  & default & 3 & 1.000 & 1.000 & 1.000 & 0.602\,$\pm$\,0.056 & 0.602 & 0.934 \\
+GPT-5-mini  & medium  & 1 & 1.000 & 1.000 & 1.000 & 0.507 & 0.507 & 0.918 \\
+GPT-5.2     & default & 1 & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
+GPT-5.2     & medium  & 3 & 0.952 & 0.960 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.000 & 0.803 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \paragraph{The failure is contraposition, not negation.} Across the seven
 configurations whose upstream steps are intact, MP$\neg$ averages $0.999$ and
-MT $0.186$; three answer MT correctly not once in $150$ attempts. Models that
-apply \emph{``if not sleepy then young''} without a single error cannot apply
-\emph{``if not young then not rough''} at all, on chains they otherwise
-complete: negated antecedents are not the obstacle, running the implication
-backwards is. GPT-5.2 at default effort is the one row where MP$\neg$ also
-collapses ($0.500$), and there the upstream steps sit at $0.582$ and the
-aggregate at $0.499$, indistinguishable from chance; we read it as a degenerate
-configuration and exclude it from that average.
+MT $0.199$. GPT-4.1 answers MT correctly $0$ times in $600$ attempts and
+GPT-5.2 at medium effort $0$ in $450$, with their upstream steps at $1.000$ and
+$0.952$; neither varies across runs. Models that apply \emph{``if not sleepy
+then young''} without a single error cannot apply \emph{``if not young then not
+rough''} at all, on chains they otherwise complete: negated antecedents are not
+the obstacle, running the implication backwards is. GPT-5.2 at default effort is
+the one row where MP$\neg$ also collapses ($0.500$), and there the upstream steps
+sit at $0.582$ and the aggregate at $0.499$, indistinguishable from chance; we
+read it as a degenerate configuration and exclude it from that average.
 
 \paragraph{Reasoning budget does not buy it.} Raising
-\texttt{reasoning\_effort} to medium moves MT by $+0.026$ on GPT-5-nano,
-$-0.064$ on GPT-5-mini and $0.000$ on GPT-5.2, at $42$--$304$ reasoning tokens
-per question. The one model that is not near-zero, GPT-5-mini at $0.571$, is
-also the one that gets \emph{worse} with more effort. Whatever the deficit is,
-it is not a budget the model can spend its way out of.
+\texttt{reasoning\_effort} to medium never improves MT: $-0.016$ on GPT-5-nano
+(inside its $\pm0.043$ run-to-run spread), $-0.095$ on GPT-5-mini and $0.000$ on
+GPT-5.2, at $42$--$304$ reasoning tokens per question. The one model that is not
+near-zero, GPT-5-mini at $0.602$, is the one that loses the most. Whatever the
+deficit is, it is not a budget the model can spend its way out of.
 
 \paragraph{The cost is compound, and the aggregate hides it.} A wrong Q3 takes
-Q4 with it in $77$--$100\%$ of cases, so one weak rule costs roughly two steps
+Q4 with it in $76$--$100\%$ of cases, so one weak rule costs roughly two steps
 rather than one. Since each arm is a quarter of the questions and the other
 steps are near-ceiling, a total collapse on one inference form surfaces as an
-aggregate between $0.79$ and $0.93$: GPT-4.1 scores $0.834$ overall while
-answering zero of $150$ contrapositive queries correctly. This is the quantity
+aggregate between $0.80$ and $0.93$: GPT-4.1 scores $0.834$ overall while
+answering zero of $600$ contrapositive queries correctly. This is the quantity
 rule-at-a-time evaluation cannot produce---not that modus tollens is harder,
 which is established, but what it costs where it sits inside a derivation.
 
@@ -649,9 +654,9 @@ argues for a learned approach where the premises are already formalised.
 
 What the benchmark does well is diagnose. Matched arms show five frontier
 models applying a negated premise at $0.999$ and its contrapositive at
-$0.186$---GPT-4.1 and GPT-5.2 not once in $150$ attempts---with the downstream
-query failing alongside it, all of it invisible inside aggregates of
-$0.79$--$0.93$. Where a perturbation fixes the label, accuracy alone cannot
+$0.199$---GPT-4.1 $0$ times in $600$ attempts---with the downstream query
+failing alongside it, all of it invisible inside aggregates of
+$0.80$--$0.93$. Where a perturbation fixes the label, accuracy alone cannot
 distinguish a capability from a constant.
 
 \section*{Ethics Statement}

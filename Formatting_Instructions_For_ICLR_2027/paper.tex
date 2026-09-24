@@ -75,7 +75,7 @@ with primary ones. We measure that cost. Instances are generated in arms that
 are logically equivalent and differ only in the form of one inference, each
 query's position in the chain is fixed, and primary and propagated failures are
 reported separately. Across five frontier models, a rule with a negated
-premise is applied at $0.999$ and its contrapositive at $0.199$; GPT-4.1
+premise is applied at $0.999$ and its contrapositive at $0.209$; GPT-4.1
 answers it correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in $450$, and
 a wrong step takes the step after it down in $76$--$100\%$ of cases. The same
 models complete the rest of the chain at ceiling, so a total failure on one
@@ -119,7 +119,7 @@ chain. A failed step does not add one error, it caps every conclusion downstream
 of it, and an aggregate score cannot separate the primary failure from its
 consequences. On matched arms differing only in inference form, five
 frontier models apply a rule with a negated premise at $0.999$ and its
-contrapositive at $0.199$, with the upstream steps at ceiling; GPT-4.1 answers
+contrapositive at $0.209$, with the upstream steps at ceiling; GPT-4.1 answers
 the contrapositive correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in
 $450$, and the downstream query fails alongside it in $76$--$100\%$ of cases
 (\S\ref{sec:chain}).
@@ -531,9 +531,9 @@ column is the number a conventional evaluation would report.}
 GPT-4o      & ---     & 4 & 0.964 & 0.968 & 1.000 & 0.107\,$\pm$\,0.026 & 0.315 & 0.845 \\
 GPT-4.1     & ---     & 4 & 1.000 & 0.993 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.022 & 0.834 \\
 GPT-5-nano  & default & 3 & 0.999 & 1.000 & 1.000 & 0.096\,$\pm$\,0.043 & 0.096 & 0.849 \\
-GPT-5-nano  & medium  & 1 & 0.998 & 1.000 & 0.993 & 0.080 & 0.080 & 0.844 \\
+GPT-5-nano  & medium  & 3 & 0.998 & 1.000 & 0.998 & 0.082\,$\pm$\,0.017 & 0.082 & 0.846 \\
 GPT-5-mini  & default & 3 & 1.000 & 1.000 & 1.000 & 0.602\,$\pm$\,0.056 & 0.602 & 0.934 \\
-GPT-5-mini  & medium  & 1 & 1.000 & 1.000 & 1.000 & 0.507 & 0.507 & 0.918 \\
+GPT-5-mini  & medium  & 3 & 1.000 & 1.000 & 1.000 & 0.576\,$\pm$\,0.064 & 0.576 & 0.929 \\
 GPT-5.2     & default & 1 & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
 GPT-5.2     & medium  & 3 & 0.952 & 0.960 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.000 & 0.803 \\
 \bottomrule
@@ -541,9 +541,9 @@ GPT-5.2     & medium  & 3 & 0.952 & 0.960 & 1.000 & \textbf{0.000\,$\pm$\,0.000}
 \end{table}
 
 \paragraph{The failure is contraposition, not negation.} Across the seven
-configurations whose upstream steps are intact, MP$\neg$ averages $0.999$ and
-MT $0.199$. GPT-4.1 answers MT correctly $0$ times in $600$ attempts and
-GPT-5.2 at medium effort $0$ in $450$, with their upstream steps at $1.000$ and
+configurations whose upstream steps are intact, MP$\neg$ is at least $0.998$
+in every one while MT averages $0.209$. GPT-4.1 answers MT correctly $0$ times
+in $600$ attempts and GPT-5.2 at medium effort $0$ in $450$, with their upstream steps at $1.000$ and
 $0.952$; neither varies across runs. Models that apply \emph{``if not sleepy
 then young''} without a single error cannot apply \emph{``if not young then not
 rough''} at all, on chains they otherwise complete: negated antecedents are not
@@ -553,10 +553,10 @@ sit at $0.582$ and the aggregate at $0.499$, indistinguishable from chance; we
 read it as a degenerate configuration and exclude it from that average.
 
 \paragraph{Reasoning budget does not buy it.} Raising
-\texttt{reasoning\_effort} to medium never improves MT: $-0.016$ on GPT-5-nano
-(inside its $\pm0.043$ run-to-run spread), $-0.095$ on GPT-5-mini and $0.000$ on
-GPT-5.2, at $42$--$304$ reasoning tokens per question. The one model that is not
-near-zero, GPT-5-mini at $0.602$, is the one that loses the most. Whatever the
+\texttt{reasoning\_effort} to medium never improves MT: $-0.013$ on GPT-5-nano,
+$-0.026$ on GPT-5-mini and $0.000$ on GPT-5.2, over three runs each and at
+$42$--$304$ reasoning tokens per question. The one model that is not near-zero,
+GPT-5-mini at $0.602$, is the one that loses the most. Whatever the
 deficit is, it is not a budget the model can spend its way out of.
 
 \paragraph{The cost is compound, and the aggregate hides it.} A wrong Q3 takes
@@ -654,7 +654,7 @@ argues for a learned approach where the premises are already formalised.
 
 What the benchmark does well is diagnose. Matched arms show five frontier
 models applying a negated premise at $0.999$ and its contrapositive at
-$0.199$---GPT-4.1 $0$ times in $600$ attempts---with the downstream query
+$0.209$---GPT-4.1 $0$ times in $600$ attempts---with the downstream query
 failing alongside it, all of it invisible inside aggregates of
 $0.80$--$0.93$. Where a perturbation fixes the label, accuracy alone cannot
 distinguish a capability from a constant.

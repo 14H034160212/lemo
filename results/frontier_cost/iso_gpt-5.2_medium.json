@@ -1,0 +1,8597 @@
+{
+  "summary": {
+    "model": "gpt-5.2",
+    "verify_first": false,
+    "test_file": "data/test_isolated_control.csv",
+    "instances": 450,
+    "questions": 900,
+    "failed_calls": 0,
+    "accuracy": 0.8333,
+    "out_tokens_per_question": 40.3,
+    "reasoning_tokens_per_question": 34.3,
+    "reasoning_effort": "medium",
+    "sample_seed": 0,
+    "in_tokens_per_question": 79.7,
+    "seconds_per_question": 0.877,
+    "majority_class_baseline": 0.5,
+    "by_position": {
+      "mp_Q1": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_neg_Q1": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mp_neg_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      },
+      "mt_Q1": {
+        "accuracy": 0.0,
+        "n": 150
+      },
+      "mt_Q2": {
+        "accuracy": 1.0,
+        "n": 150
+      }
+    },
+    "q4_wrong_given_q3_wrong": {}
+  },
+  "records": [
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 2.03
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 160,
+      "reasoning_tokens": 54,
+      "seconds": 1.38
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 55,
+      "in_tokens": 158,
+      "reasoning_tokens": 43,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.44
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 101,
+      "in_tokens": 160,
+      "reasoning_tokens": 89,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 45,
+      "in_tokens": 158,
+      "reasoning_tokens": 33,
+      "seconds": 1.07
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 105,
+      "in_tokens": 160,
+      "reasoning_tokens": 93,
+      "seconds": 2.48
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 101,
+      "in_tokens": 160,
+      "reasoning_tokens": 89,
+      "seconds": 1.84
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 1.99
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 81,
+      "in_tokens": 160,
+      "reasoning_tokens": 69,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 158,
+      "reasoning_tokens": 40,
+      "seconds": 1.56
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 158,
+      "reasoning_tokens": 63,
+      "seconds": 1.55
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.3
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 158,
+      "reasoning_tokens": 40,
+      "seconds": 1.37
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 213,
+      "in_tokens": 160,
+      "reasoning_tokens": 201,
+      "seconds": 4.32
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 72,
+      "in_tokens": 160,
+      "reasoning_tokens": 60,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 48,
+      "in_tokens": 158,
+      "reasoning_tokens": 36,
+      "seconds": 1.37
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 104,
+      "in_tokens": 160,
+      "reasoning_tokens": 92,
+      "seconds": 2.05
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 135,
+      "in_tokens": 160,
+      "reasoning_tokens": 123,
+      "seconds": 2.61
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 160,
+      "reasoning_tokens": 73,
+      "seconds": 2.0
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 158,
+      "reasoning_tokens": 80,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 158,
+      "reasoning_tokens": 65,
+      "seconds": 1.44
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 59,
+      "in_tokens": 160,
+      "reasoning_tokens": 47,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 160,
+      "reasoning_tokens": 49,
+      "seconds": 1.49
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.21
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 113,
+      "in_tokens": 160,
+      "reasoning_tokens": 101,
+      "seconds": 2.14
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 51,
+      "in_tokens": 160,
+      "reasoning_tokens": 39,
+      "seconds": 1.29
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 158,
+      "reasoning_tokens": 40,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 115,
+      "in_tokens": 160,
+      "reasoning_tokens": 103,
+      "seconds": 2.23
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 58,
+      "in_tokens": 160,
+      "reasoning_tokens": 46,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 160,
+      "reasoning_tokens": 66,
+      "seconds": 1.86
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 1.92
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 158,
+      "reasoning_tokens": 41,
+      "seconds": 1.56
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 44,
+      "in_tokens": 158,
+      "reasoning_tokens": 32,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 1.47
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 2.1
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.6
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 144,
+      "in_tokens": 160,
+      "reasoning_tokens": 132,
+      "seconds": 2.61
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 119,
+      "in_tokens": 160,
+      "reasoning_tokens": 107,
+      "seconds": 2.09
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 158,
+      "reasoning_tokens": 63,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 98,
+      "in_tokens": 160,
+      "reasoning_tokens": 86,
+      "seconds": 1.93
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 110,
+      "in_tokens": 160,
+      "reasoning_tokens": 98,
+      "seconds": 2.17
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 63,
+      "in_tokens": 160,
+      "reasoning_tokens": 51,
+      "seconds": 1.27
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 45,
+      "in_tokens": 158,
+      "reasoning_tokens": 33,
+      "seconds": 1.24
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 100,
+      "in_tokens": 160,
+      "reasoning_tokens": 88,
+      "seconds": 2.24
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 158,
+      "reasoning_tokens": 40,
+      "seconds": 1.33
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 158,
+      "reasoning_tokens": 37,
+      "seconds": 1.39
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 97,
+      "in_tokens": 160,
+      "reasoning_tokens": 85,
+      "seconds": 2.15
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 160,
+      "reasoning_tokens": 84,
+      "seconds": 2.24
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 158,
+      "reasoning_tokens": 75,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 146,
+      "in_tokens": 160,
+      "reasoning_tokens": 134,
+      "seconds": 2.55
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 133,
+      "in_tokens": 160,
+      "reasoning_tokens": 121,
+      "seconds": 2.07
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 160,
+      "reasoning_tokens": 38,
+      "seconds": 1.08
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 142,
+      "in_tokens": 160,
+      "reasoning_tokens": 130,
+      "seconds": 2.82
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 111,
+      "in_tokens": 160,
+      "reasoning_tokens": 99,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 160,
+      "reasoning_tokens": 35,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 63,
+      "in_tokens": 160,
+      "reasoning_tokens": 51,
+      "seconds": 1.48
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 158,
+      "reasoning_tokens": 66,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 120,
+      "in_tokens": 160,
+      "reasoning_tokens": 108,
+      "seconds": 2.16
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 64,
+      "in_tokens": 160,
+      "reasoning_tokens": 52,
+      "seconds": 1.56
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 112,
+      "in_tokens": 160,
+      "reasoning_tokens": 100,
+      "seconds": 2.26
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 158,
+      "reasoning_tokens": 42,
+      "seconds": 1.33
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 160,
+      "reasoning_tokens": 70,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 160,
+      "reasoning_tokens": 65,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 160,
+      "reasoning_tokens": 65,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 151,
+      "in_tokens": 160,
+      "reasoning_tokens": 139,
+      "seconds": 3.03
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 158,
+      "reasoning_tokens": 75,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.89
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 160,
+      "reasoning_tokens": 35,
+      "seconds": 1.21
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 43,
+      "in_tokens": 158,
+      "reasoning_tokens": 31,
+      "seconds": 1.24
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.23
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 158,
+      "reasoning_tokens": 71,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 160,
+      "reasoning_tokens": 80,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.21
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 160,
+      "reasoning_tokens": 62,
+      "seconds": 1.69
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 65,
+      "in_tokens": 160,
+      "reasoning_tokens": 53,
+      "seconds": 1.53
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 95,
+      "in_tokens": 160,
+      "reasoning_tokens": 83,
+      "seconds": 2.21
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 160,
+      "reasoning_tokens": 75,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 170,
+      "in_tokens": 160,
+      "reasoning_tokens": 158,
+      "seconds": 2.99
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 2.14
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 95,
+      "in_tokens": 160,
+      "reasoning_tokens": 83,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.48
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 160,
+      "reasoning_tokens": 66,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 158,
+      "reasoning_tokens": 41,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 160,
+      "reasoning_tokens": 62,
+      "seconds": 1.48
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 81,
+      "in_tokens": 160,
+      "reasoning_tokens": 69,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.86
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 160,
+      "reasoning_tokens": 75,
+      "seconds": 1.92
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 72,
+      "in_tokens": 160,
+      "reasoning_tokens": 60,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 121,
+      "in_tokens": 160,
+      "reasoning_tokens": 109,
+      "seconds": 2.56
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 158,
+      "reasoning_tokens": 42,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.38
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 100,
+      "in_tokens": 160,
+      "reasoning_tokens": 88,
+      "seconds": 2.04
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.18
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 110,
+      "in_tokens": 160,
+      "reasoning_tokens": 98,
+      "seconds": 2.19
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 158,
+      "reasoning_tokens": 65,
+      "seconds": 1.87
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 62,
+      "in_tokens": 158,
+      "reasoning_tokens": 50,
+      "seconds": 1.45
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 160,
+      "reasoning_tokens": 80,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 160,
+      "reasoning_tokens": 66,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.2
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 160,
+      "reasoning_tokens": 80,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 160,
+      "reasoning_tokens": 44,
+      "seconds": 1.35
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 158,
+      "reasoning_tokens": 42,
+      "seconds": 1.19
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 140,
+      "in_tokens": 160,
+      "reasoning_tokens": 128,
+      "seconds": 2.49
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 158,
+      "reasoning_tokens": 66,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 158,
+      "reasoning_tokens": 37,
+      "seconds": 1.25
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 160,
+      "reasoning_tokens": 42,
+      "seconds": 1.25
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 160,
+      "reasoning_tokens": 70,
+      "seconds": 1.91
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 57,
+      "in_tokens": 160,
+      "reasoning_tokens": 45,
+      "seconds": 1.27
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.39
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 160,
+      "reasoning_tokens": 75,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 160,
+      "reasoning_tokens": 63,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 90,
+      "in_tokens": 160,
+      "reasoning_tokens": 78,
+      "seconds": 1.79
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 160,
+      "reasoning_tokens": 62,
+      "seconds": 1.44
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 160,
+      "reasoning_tokens": 38,
+      "seconds": 1.24
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 158,
+      "reasoning_tokens": 37,
+      "seconds": 1.22
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 109,
+      "in_tokens": 160,
+      "reasoning_tokens": 97,
+      "seconds": 1.97
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.84
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 2.11
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 130,
+      "in_tokens": 160,
+      "reasoning_tokens": 118,
+      "seconds": 2.27
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 160,
+      "reasoning_tokens": 63,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 118,
+      "in_tokens": 160,
+      "reasoning_tokens": 106,
+      "seconds": 2.05
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.8
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 117,
+      "in_tokens": 160,
+      "reasoning_tokens": 105,
+      "seconds": 2.02
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.8
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 160,
+      "reasoning_tokens": 63,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 158,
+      "reasoning_tokens": 64,
+      "seconds": 1.92
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 64,
+      "in_tokens": 160,
+      "reasoning_tokens": 52,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 65,
+      "in_tokens": 158,
+      "reasoning_tokens": 53,
+      "seconds": 1.69
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 57,
+      "in_tokens": 158,
+      "reasoning_tokens": 45,
+      "seconds": 1.26
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 160,
+      "reasoning_tokens": 66,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 107,
+      "in_tokens": 160,
+      "reasoning_tokens": 95,
+      "seconds": 2.15
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 158,
+      "reasoning_tokens": 72,
+      "seconds": 1.89
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.55
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 158,
+      "reasoning_tokens": 67,
+      "seconds": 1.95
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 158,
+      "reasoning_tokens": 57,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 158,
+      "reasoning_tokens": 59,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.33
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 1.94
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 97,
+      "in_tokens": 160,
+      "reasoning_tokens": 85,
+      "seconds": 2.02
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 160,
+      "reasoning_tokens": 70,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 160,
+      "reasoning_tokens": 41,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.91
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 160,
+      "reasoning_tokens": 62,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 160,
+      "reasoning_tokens": 40,
+      "seconds": 1.3
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 158,
+      "reasoning_tokens": 54,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 160,
+      "reasoning_tokens": 56,
+      "seconds": 1.33
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.41
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 160,
+      "reasoning_tokens": 38,
+      "seconds": 1.25
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 160,
+      "reasoning_tokens": 71,
+      "seconds": 1.91
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 60,
+      "in_tokens": 158,
+      "reasoning_tokens": 48,
+      "seconds": 1.42
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 2.33
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.56
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.0
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 158,
+      "reasoning_tokens": 67,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 105,
+      "in_tokens": 160,
+      "reasoning_tokens": 93,
+      "seconds": 1.9
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 2.05
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 160,
+      "reasoning_tokens": 63,
+      "seconds": 1.38
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 160,
+      "reasoning_tokens": 84,
+      "seconds": 2.17
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 81,
+      "in_tokens": 160,
+      "reasoning_tokens": 69,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 93,
+      "in_tokens": 160,
+      "reasoning_tokens": 81,
+      "seconds": 2.15
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 72,
+      "in_tokens": 160,
+      "reasoning_tokens": 60,
+      "seconds": 1.55
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 60,
+      "in_tokens": 158,
+      "reasoning_tokens": 48,
+      "seconds": 1.41
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 57,
+      "in_tokens": 160,
+      "reasoning_tokens": 45,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 160,
+      "reasoning_tokens": 67,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 52,
+      "in_tokens": 160,
+      "reasoning_tokens": 40,
+      "seconds": 1.5
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 48,
+      "in_tokens": 160,
+      "reasoning_tokens": 36,
+      "seconds": 1.08
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 45,
+      "in_tokens": 160,
+      "reasoning_tokens": 33,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 65,
+      "in_tokens": 160,
+      "reasoning_tokens": 53,
+      "seconds": 1.3
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 160,
+      "reasoning_tokens": 75,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 107,
+      "in_tokens": 160,
+      "reasoning_tokens": 95,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 160,
+      "reasoning_tokens": 49,
+      "seconds": 1.26
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.31
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 1.94
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.45
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 2.07
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 158,
+      "reasoning_tokens": 64,
+      "seconds": 1.57
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.28
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 158,
+      "reasoning_tokens": 62,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.57
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 160,
+      "reasoning_tokens": 35,
+      "seconds": 1.1
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 62,
+      "in_tokens": 158,
+      "reasoning_tokens": 50,
+      "seconds": 1.43
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 91,
+      "in_tokens": 160,
+      "reasoning_tokens": 79,
+      "seconds": 1.99
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 158,
+      "reasoning_tokens": 37,
+      "seconds": 1.35
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 59,
+      "in_tokens": 158,
+      "reasoning_tokens": 47,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 135,
+      "in_tokens": 160,
+      "reasoning_tokens": 123,
+      "seconds": 2.5
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 62,
+      "in_tokens": 160,
+      "reasoning_tokens": 50,
+      "seconds": 1.71
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 107,
+      "in_tokens": 160,
+      "reasoning_tokens": 95,
+      "seconds": 2.14
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 158,
+      "reasoning_tokens": 59,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 160,
+      "reasoning_tokens": 80,
+      "seconds": 2.04
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.74
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 98,
+      "in_tokens": 160,
+      "reasoning_tokens": 86,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 160,
+      "reasoning_tokens": 73,
+      "seconds": 2.06
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 110,
+      "in_tokens": 160,
+      "reasoning_tokens": 98,
+      "seconds": 2.17
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 160,
+      "reasoning_tokens": 67,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 160,
+      "reasoning_tokens": 73,
+      "seconds": 2.2
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 60,
+      "in_tokens": 158,
+      "reasoning_tokens": 48,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 158,
+      "reasoning_tokens": 41,
+      "seconds": 1.26
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 158,
+      "reasoning_tokens": 63,
+      "seconds": 1.51
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 160,
+      "reasoning_tokens": 71,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 160,
+      "reasoning_tokens": 55,
+      "seconds": 1.71
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 158,
+      "reasoning_tokens": 67,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.92
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.54
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 160,
+      "reasoning_tokens": 84,
+      "seconds": 1.88
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 1.94
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 100,
+      "in_tokens": 160,
+      "reasoning_tokens": 88,
+      "seconds": 1.89
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 158,
+      "reasoning_tokens": 62,
+      "seconds": 2.05
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 2.0
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.32
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 58,
+      "in_tokens": 160,
+      "reasoning_tokens": 46,
+      "seconds": 1.47
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.28
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 59,
+      "in_tokens": 158,
+      "reasoning_tokens": 47,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 90,
+      "in_tokens": 160,
+      "reasoning_tokens": 78,
+      "seconds": 2.15
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.52
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 158,
+      "reasoning_tokens": 57,
+      "seconds": 1.47
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 111,
+      "in_tokens": 160,
+      "reasoning_tokens": 99,
+      "seconds": 2.27
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 160,
+      "reasoning_tokens": 55,
+      "seconds": 1.52
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 158,
+      "reasoning_tokens": 65,
+      "seconds": 1.62
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.28
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 143,
+      "in_tokens": 160,
+      "reasoning_tokens": 131,
+      "seconds": 2.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 59,
+      "in_tokens": 160,
+      "reasoning_tokens": 47,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 160,
+      "reasoning_tokens": 84,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 116,
+      "in_tokens": 160,
+      "reasoning_tokens": 104,
+      "seconds": 2.51
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 89,
+      "in_tokens": 160,
+      "reasoning_tokens": 77,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 81,
+      "in_tokens": 158,
+      "reasoning_tokens": 69,
+      "seconds": 1.79
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.53
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 1.79
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 160,
+      "reasoning_tokens": 71,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 158,
+      "reasoning_tokens": 73,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 158,
+      "reasoning_tokens": 72,
+      "seconds": 1.75
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 48,
+      "in_tokens": 158,
+      "reasoning_tokens": 36,
+      "seconds": 1.24
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 97,
+      "in_tokens": 160,
+      "reasoning_tokens": 85,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.71
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 166,
+      "in_tokens": 160,
+      "reasoning_tokens": 154,
+      "seconds": 3.06
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 158,
+      "reasoning_tokens": 41,
+      "seconds": 1.25
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 117,
+      "in_tokens": 160,
+      "reasoning_tokens": 105,
+      "seconds": 2.22
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 93,
+      "in_tokens": 160,
+      "reasoning_tokens": 81,
+      "seconds": 1.87
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 87,
+      "in_tokens": 160,
+      "reasoning_tokens": 75,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.13
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 117,
+      "in_tokens": 160,
+      "reasoning_tokens": 105,
+      "seconds": 1.99
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 2.04
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 158,
+      "reasoning_tokens": 57,
+      "seconds": 1.64
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 158,
+      "reasoning_tokens": 54,
+      "seconds": 1.62
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 158,
+      "reasoning_tokens": 55,
+      "seconds": 1.51
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 1.54
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 158,
+      "reasoning_tokens": 66,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 158,
+      "reasoning_tokens": 56,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 138,
+      "in_tokens": 160,
+      "reasoning_tokens": 126,
+      "seconds": 2.45
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 158,
+      "reasoning_tokens": 63,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.26
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 158,
+      "reasoning_tokens": 70,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 2.21
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 160,
+      "reasoning_tokens": 71,
+      "seconds": 1.73
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 94,
+      "in_tokens": 160,
+      "reasoning_tokens": 82,
+      "seconds": 1.94
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 77,
+      "in_tokens": 160,
+      "reasoning_tokens": 65,
+      "seconds": 1.65
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 160,
+      "reasoning_tokens": 54,
+      "seconds": 1.37
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 158,
+      "reasoning_tokens": 66,
+      "seconds": 2.12
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 92,
+      "in_tokens": 160,
+      "reasoning_tokens": 80,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 160,
+      "reasoning_tokens": 64,
+      "seconds": 1.46
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 111,
+      "in_tokens": 160,
+      "reasoning_tokens": 99,
+      "seconds": 2.25
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 158,
+      "reasoning_tokens": 42,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 158,
+      "reasoning_tokens": 70,
+      "seconds": 1.54
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 160,
+      "reasoning_tokens": 84,
+      "seconds": 1.93
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 160,
+      "reasoning_tokens": 54,
+      "seconds": 1.35
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 115,
+      "in_tokens": 160,
+      "reasoning_tokens": 103,
+      "seconds": 2.19
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.25
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 51,
+      "in_tokens": 160,
+      "reasoning_tokens": 39,
+      "seconds": 1.3
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 93,
+      "in_tokens": 160,
+      "reasoning_tokens": 81,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 1.91
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 129,
+      "in_tokens": 160,
+      "reasoning_tokens": 117,
+      "seconds": 2.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 105,
+      "in_tokens": 160,
+      "reasoning_tokens": 93,
+      "seconds": 2.12
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 160,
+      "reasoning_tokens": 55,
+      "seconds": 1.52
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 160,
+      "reasoning_tokens": 37,
+      "seconds": 1.22
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 96,
+      "in_tokens": 158,
+      "reasoning_tokens": 84,
+      "seconds": 1.82
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 49,
+      "in_tokens": 158,
+      "reasoning_tokens": 37,
+      "seconds": 1.12
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.54
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 158,
+      "reasoning_tokens": 76,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 158,
+      "reasoning_tokens": 73,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 160,
+      "reasoning_tokens": 54,
+      "seconds": 1.47
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 160,
+      "reasoning_tokens": 62,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 2.09
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 51,
+      "in_tokens": 160,
+      "reasoning_tokens": 39,
+      "seconds": 1.2
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 45,
+      "in_tokens": 158,
+      "reasoning_tokens": 33,
+      "seconds": 1.12
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 1.61
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 160,
+      "reasoning_tokens": 41,
+      "seconds": 1.47
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 160,
+      "reasoning_tokens": 67,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 160,
+      "reasoning_tokens": 59,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 160,
+      "reasoning_tokens": 38,
+      "seconds": 1.58
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 123,
+      "in_tokens": 160,
+      "reasoning_tokens": 111,
+      "seconds": 2.28
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 2.39
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 158,
+      "reasoning_tokens": 59,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 90,
+      "in_tokens": 160,
+      "reasoning_tokens": 78,
+      "seconds": 1.99
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 114,
+      "in_tokens": 160,
+      "reasoning_tokens": 102,
+      "seconds": 2.14
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 50,
+      "in_tokens": 158,
+      "reasoning_tokens": 38,
+      "seconds": 1.18
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 119,
+      "in_tokens": 160,
+      "reasoning_tokens": 107,
+      "seconds": 2.07
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 2.07
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 59,
+      "in_tokens": 160,
+      "reasoning_tokens": 47,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 160,
+      "reasoning_tokens": 67,
+      "seconds": 1.62
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 100,
+      "in_tokens": 160,
+      "reasoning_tokens": 88,
+      "seconds": 2.09
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 158,
+      "reasoning_tokens": 72,
+      "seconds": 2.01
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 2.44
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.45
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 53,
+      "in_tokens": 158,
+      "reasoning_tokens": 41,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 120,
+      "in_tokens": 160,
+      "reasoning_tokens": 108,
+      "seconds": 2.21
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 1.71
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.49
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 122,
+      "in_tokens": 160,
+      "reasoning_tokens": 110,
+      "seconds": 2.45
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 58,
+      "in_tokens": 160,
+      "reasoning_tokens": 46,
+      "seconds": 1.38
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 158,
+      "reasoning_tokens": 61,
+      "seconds": 1.79
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 158,
+      "reasoning_tokens": 55,
+      "seconds": 1.87
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 158,
+      "reasoning_tokens": 63,
+      "seconds": 1.53
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 109,
+      "in_tokens": 160,
+      "reasoning_tokens": 97,
+      "seconds": 2.22
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 158,
+      "reasoning_tokens": 49,
+      "seconds": 1.48
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 68,
+      "in_tokens": 160,
+      "reasoning_tokens": 56,
+      "seconds": 1.44
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 47,
+      "in_tokens": 158,
+      "reasoning_tokens": 35,
+      "seconds": 1.26
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 160,
+      "reasoning_tokens": 68,
+      "seconds": 1.5
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 1.91
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 66,
+      "in_tokens": 158,
+      "reasoning_tokens": 54,
+      "seconds": 1.39
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 101,
+      "in_tokens": 160,
+      "reasoning_tokens": 89,
+      "seconds": 2.0
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 75,
+      "in_tokens": 160,
+      "reasoning_tokens": 63,
+      "seconds": 1.75
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 62,
+      "in_tokens": 160,
+      "reasoning_tokens": 50,
+      "seconds": 1.57
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 83,
+      "in_tokens": 160,
+      "reasoning_tokens": 71,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 55,
+      "in_tokens": 160,
+      "reasoning_tokens": 43,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 106,
+      "in_tokens": 160,
+      "reasoning_tokens": 94,
+      "seconds": 2.1
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 107,
+      "in_tokens": 160,
+      "reasoning_tokens": 95,
+      "seconds": 1.89
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 1.59
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 103,
+      "in_tokens": 160,
+      "reasoning_tokens": 91,
+      "seconds": 2.43
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 136,
+      "in_tokens": 160,
+      "reasoning_tokens": 124,
+      "seconds": 2.74
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 62,
+      "in_tokens": 158,
+      "reasoning_tokens": 50,
+      "seconds": 1.44
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 94,
+      "in_tokens": 160,
+      "reasoning_tokens": 82,
+      "seconds": 2.16
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 160,
+      "reasoning_tokens": 70,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 89,
+      "in_tokens": 160,
+      "reasoning_tokens": 77,
+      "seconds": 1.78
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 158,
+      "reasoning_tokens": 70,
+      "seconds": 1.67
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 54,
+      "in_tokens": 160,
+      "reasoning_tokens": 42,
+      "seconds": 1.32
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 84,
+      "in_tokens": 160,
+      "reasoning_tokens": 72,
+      "seconds": 1.53
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 46,
+      "in_tokens": 158,
+      "reasoning_tokens": 34,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 123,
+      "in_tokens": 160,
+      "reasoning_tokens": 111,
+      "seconds": 2.61
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 65,
+      "in_tokens": 160,
+      "reasoning_tokens": 53,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 81,
+      "in_tokens": 160,
+      "reasoning_tokens": 69,
+      "seconds": 1.64
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 116,
+      "in_tokens": 160,
+      "reasoning_tokens": 104,
+      "seconds": 2.56
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 74,
+      "in_tokens": 158,
+      "reasoning_tokens": 62,
+      "seconds": 1.45
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 79,
+      "in_tokens": 160,
+      "reasoning_tokens": 67,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 113,
+      "in_tokens": 160,
+      "reasoning_tokens": 101,
+      "seconds": 2.24
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 158,
+      "in_tokens": 160,
+      "reasoning_tokens": 146,
+      "seconds": 2.7
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.69
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 105,
+      "in_tokens": 160,
+      "reasoning_tokens": 93,
+      "seconds": 1.94
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 63,
+      "in_tokens": 158,
+      "reasoning_tokens": 51,
+      "seconds": 1.45
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 108,
+      "in_tokens": 160,
+      "reasoning_tokens": 96,
+      "seconds": 1.97
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 158,
+      "reasoning_tokens": 59,
+      "seconds": 1.77
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 160,
+      "reasoning_tokens": 61,
+      "seconds": 1.5
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 158,
+      "reasoning_tokens": 61,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 105,
+      "in_tokens": 160,
+      "reasoning_tokens": 93,
+      "seconds": 2.11
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 143,
+      "in_tokens": 160,
+      "reasoning_tokens": 131,
+      "seconds": 2.85
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 158,
+      "reasoning_tokens": 64,
+      "seconds": 2.09
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 89,
+      "in_tokens": 160,
+      "reasoning_tokens": 77,
+      "seconds": 2.1
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 51,
+      "in_tokens": 158,
+      "reasoning_tokens": 39,
+      "seconds": 1.23
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.22
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 103,
+      "in_tokens": 160,
+      "reasoning_tokens": 91,
+      "seconds": 1.92
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 51,
+      "in_tokens": 160,
+      "reasoning_tokens": 39,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 88,
+      "in_tokens": 160,
+      "reasoning_tokens": 76,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 93,
+      "in_tokens": 160,
+      "reasoning_tokens": 81,
+      "seconds": 1.84
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 98,
+      "in_tokens": 160,
+      "reasoning_tokens": 86,
+      "seconds": 2.14
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 90,
+      "in_tokens": 160,
+      "reasoning_tokens": 78,
+      "seconds": 1.99
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 160,
+      "reasoning_tokens": 44,
+      "seconds": 1.31
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 158,
+      "reasoning_tokens": 55,
+      "seconds": 1.95
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 158,
+      "reasoning_tokens": 58,
+      "seconds": 1.62
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 158,
+      "reasoning_tokens": 61,
+      "seconds": 1.7
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 60,
+      "in_tokens": 160,
+      "reasoning_tokens": 48,
+      "seconds": 1.71
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 91,
+      "in_tokens": 160,
+      "reasoning_tokens": 79,
+      "seconds": 1.98
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 1.66
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 99,
+      "in_tokens": 160,
+      "reasoning_tokens": 87,
+      "seconds": 1.72
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 61,
+      "in_tokens": 160,
+      "reasoning_tokens": 49,
+      "seconds": 1.31
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.34
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 134,
+      "in_tokens": 160,
+      "reasoning_tokens": 122,
+      "seconds": 2.47
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 65,
+      "in_tokens": 160,
+      "reasoning_tokens": 53,
+      "seconds": 1.42
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 102,
+      "in_tokens": 160,
+      "reasoning_tokens": 90,
+      "seconds": 2.2
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 67,
+      "in_tokens": 160,
+      "reasoning_tokens": 55,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 86,
+      "in_tokens": 160,
+      "reasoning_tokens": 74,
+      "seconds": 1.84
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 73,
+      "in_tokens": 158,
+      "reasoning_tokens": 61,
+      "seconds": 1.63
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 70,
+      "in_tokens": 160,
+      "reasoning_tokens": 58,
+      "seconds": 1.76
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 72,
+      "in_tokens": 160,
+      "reasoning_tokens": 60,
+      "seconds": 1.4
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 97,
+      "in_tokens": 160,
+      "reasoning_tokens": 85,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 69,
+      "in_tokens": 160,
+      "reasoning_tokens": 57,
+      "seconds": 1.56
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 78,
+      "in_tokens": 160,
+      "reasoning_tokens": 66,
+      "seconds": 1.6
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 158,
+      "reasoning_tokens": 68,
+      "seconds": 1.81
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 44,
+      "in_tokens": 158,
+      "reasoning_tokens": 32,
+      "seconds": 1.09
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 158,
+      "reasoning_tokens": 68,
+      "seconds": 1.79
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 100,
+      "in_tokens": 160,
+      "reasoning_tokens": 88,
+      "seconds": 1.95
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 118,
+      "in_tokens": 160,
+      "reasoning_tokens": 106,
+      "seconds": 2.39
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 45,
+      "in_tokens": 158,
+      "reasoning_tokens": 33,
+      "seconds": 1.41
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 64,
+      "in_tokens": 158,
+      "reasoning_tokens": 52,
+      "seconds": 1.68
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 134,
+      "in_tokens": 160,
+      "reasoning_tokens": 122,
+      "seconds": 2.6
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 76,
+      "in_tokens": 158,
+      "reasoning_tokens": 64,
+      "seconds": 1.64
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 103,
+      "in_tokens": 160,
+      "reasoning_tokens": 91,
+      "seconds": 2.09
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 129,
+      "in_tokens": 160,
+      "reasoning_tokens": 117,
+      "seconds": 2.58
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 82,
+      "in_tokens": 158,
+      "reasoning_tokens": 70,
+      "seconds": 1.84
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 48,
+      "in_tokens": 158,
+      "reasoning_tokens": 36,
+      "seconds": 1.16
+    },
+    {
+      "type": "iso_mt",
+      "depth": null,
+      "arm": "mt",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "F",
+        "F"
+      ],
+      "correct": 1,
+      "n": 2,
+      "out_tokens": 125,
+      "in_tokens": 160,
+      "reasoning_tokens": 113,
+      "seconds": 2.41
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 80,
+      "in_tokens": 158,
+      "reasoning_tokens": 68,
+      "seconds": 1.83
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 71,
+      "in_tokens": 158,
+      "reasoning_tokens": 59,
+      "seconds": 1.64
+    },
+    {
+      "type": "iso_mp_neg",
+      "depth": null,
+      "arm": "mp_neg",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 85,
+      "in_tokens": 160,
+      "reasoning_tokens": 73,
+      "seconds": 1.64
+    },
+    {
+      "type": "iso_mp",
+      "depth": null,
+      "arm": "mp",
+      "gold": [
+        "T",
+        "F"
+      ],
+      "pred": [
+        "T",
+        "F"
+      ],
+      "correct": 2,
+      "n": 2,
+      "out_tokens": 56,
+      "in_tokens": 158,
+      "reasoning_tokens": 44,
+      "seconds": 1.31
+    }
+  ]
+}

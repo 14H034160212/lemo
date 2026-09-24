@@ -75,13 +75,14 @@ with primary ones. We measure that cost. Instances are generated in arms that
 are logically equivalent and differ only in the form of one inference, each
 query's position in the chain is fixed, and primary and propagated failures are
 reported separately. Across five frontier models, a rule with a negated
-premise is applied at $0.999$ and its contrapositive at $0.209$; GPT-4.1
-answers it correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in $450$, and
-a wrong step takes the step after it down in $76$--$100\%$ of cases. The same
-models complete the rest of the chain at ceiling, so a total failure on one
-inference form surfaces as an aggregate between $0.80$ and $0.93$---a
-degradation where the measurement shows an absence. Raising the reasoning
-budget never recovers it. Reaching it required
+premise is applied at $0.999$ and its contrapositive at $0.209$, and a wrong
+step takes the step after it down in $76$--$100\%$ of cases. Asked for the same
+contrapositive on its own, four of the five are at or near ceiling---GPT-4.1
+answers $100$ of $100$ correctly and rejects $100$ of $100$ foils---and the same
+rule in the same words is then applied correctly $0$ times in $600$ attempts
+once two derived steps precede it. The chain removes a rule these models have.
+Because the rest of it stays at ceiling, the loss surfaces as an aggregate
+between $0.80$ and $0.93$, and raising the reasoning budget never recovers it. Reaching it required
 controls we also report: perturbation benchmarks assign labels deterministically,
 so a perturbed split is single-class and a constant response saturates it. Under
 those controls most of what we set out to claim did not survive. Of four trained
@@ -119,10 +120,10 @@ chain. A failed step does not add one error, it caps every conclusion downstream
 of it, and an aggregate score cannot separate the primary failure from its
 consequences. On matched arms differing only in inference form, five
 frontier models apply a rule with a negated premise at $0.999$ and its
-contrapositive at $0.209$, with the upstream steps at ceiling; GPT-4.1 answers
-the contrapositive correctly $0$ times in $600$ attempts and GPT-5.2 $0$ in
-$450$, and the downstream query fails alongside it in $76$--$100\%$ of cases
-(\S\ref{sec:chain}).
+contrapositive at $0.209$, with the upstream steps at ceiling, and the
+downstream query fails alongside it in $76$--$100\%$ of cases. Asked for the
+same contrapositive with the chain removed, four of the five are at or near
+ceiling: the rule is not missing, the chain removes it (\S\ref{sec:chain}).
 
 \paragraph{Measuring any of this requires a control.} Under the conservative
 semantics of \S\ref{sec:method} every query on a contradictory instance is
@@ -148,8 +149,10 @@ two-premise inference in \textsc{RULEBREAKERS}---and none of these measure
 error propagation or per-step correctness. We pair instances that differ only in
 the form of one inference, fix each query's position, and report the primary
 failure separately from the propagated one (\S\ref{sec:chain}). The literature
-reports modus tollens as harder than modus ponens; inside a chain it is absent
-in three of eight configurations, reasoning effort never recovers it, and the
+reports modus tollens as harder than modus ponens, measured one rule at a time.
+We measure the same rule in isolation and inside a chain, and the gap is the
+result: GPT-4.1 goes from $100/100$ to $0/600$ on one inference form while every
+other step stays at ceiling, reasoning effort never recovers it, and the
 aggregates that conceal it read $0.80$--$0.93$.
 
 \textbf{(ii)}~\emph{A control that makes such claims falsifiable.} Two-class
@@ -552,6 +555,54 @@ the one row where MP$\neg$ also collapses ($0.500$), and there the upstream step
 sit at $0.582$ and the aggregate at $0.499$, indistinguishable from chance; we
 read it as a degenerate configuration and exclude it from that average.
 
+\paragraph{The deficit belongs to the chain, not to the rule.} The reading so
+far is that these models cannot contrapose. That is testable: we ask each arm
+for exactly the inference it asks for at Q3, with the two upstream steps
+replaced by a fact and the downstream step removed---same predicates, same rule
+wording, same distractors, same oracle, one step instead of three. Because a
+model could separate ``\emph{young} occurs in a rule'' from ``\emph{nice} does
+not'' without inferring anything, each arm is paired with a foil carrying the
+same rule and a fact that does not trigger it, so the queried predicate still
+occurs in a rule but the gold answer is \texttt{False}; predicate presence alone
+then scores $0.500$. All five models answer MP and MP$\neg$ at $1.000$ on both
+halves.
+
+\begin{table}[h]
+\centering\small
+\caption{The contrapositive in isolation against the same inference inside the
+chain. \emph{Trigger} is the instance whose fact fires the rule (gold
+\texttt{True}); \emph{foil} shares the rule but not the fact (gold
+\texttt{False}), so a policy keying on predicate presence scores $1.000/0.000$.
+Isolated figures are $100$ instances per cell; chain figures are the MT column
+of Table~\ref{tab:chain}.}
+\label{tab:isolated}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{MT in isolation}} & & \\
+\cmidrule(lr){2-3}
+\textbf{Model} & trigger & foil & \textbf{MT in chain} & $\Delta$ \\
+\midrule
+GPT-4.1     & 1.000 & 1.000 & \textbf{0.000} & $\mathbf{-1.000}$ \\
+GPT-5-mini  & 1.000 & 1.000 & 0.602 & $-0.398$ \\
+GPT-4o      & 0.970 & 0.980 & 0.107 & $-0.863$ \\
+GPT-5-nano  & 0.440 & 1.000 & 0.096 & $-0.344$ \\
+GPT-5.2     & 0.000 & 1.000 & 0.000 & $\phantom{-}0.000$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four of the five hold the rule and lose it. GPT-4.1 is the clean case: it
+applies the contrapositive on $100$ of $100$ isolated instances and rejects
+$100$ of $100$ foils, so the capability is present and is not a surface cue---%
+and the same rule, in the same words, is applied correctly $0$ times in $600$
+attempts once two derived steps precede it. GPT-5.2 is the instructive
+exception. It answers \texttt{False} on every isolated MT instance, trigger and
+foil alike, which is a constant on that arm rather than a wrong belief; the rule
+is absent for it, and its chain failure therefore needs no appeal to context.
+The literature's result---modus tollens is harder than modus ponens---is
+measured in isolation, which is exactly where four of these five models do not
+have the problem. What the chain removes is not a rule they never had.
+
 \paragraph{Reasoning budget does not buy it.} Raising
 \texttt{reasoning\_effort} to medium never improves MT: $-0.013$ on GPT-5-nano,
 $-0.026$ on GPT-5-mini and $0.000$ on GPT-5.2, over three runs each and at
@@ -655,8 +706,9 @@ argues for a learned approach where the premises are already formalised.
 What the benchmark does well is diagnose. Matched arms show five frontier
 models applying a negated premise at $0.999$ and its contrapositive at
 $0.209$---GPT-4.1 $0$ times in $600$ attempts---with the downstream query
-failing alongside it, all of it invisible inside aggregates of
-$0.80$--$0.93$. Where a perturbation fixes the label, accuracy alone cannot
+failing alongside it, all of it invisible inside aggregates of $0.80$--$0.93$.
+Stripped of the chain, four of those five apply the same rule at or near
+ceiling, so what the chain costs is not a capability they lacked. Where a perturbation fixes the label, accuracy alone cannot
 distinguish a capability from a constant.
 
 \section*{Ethics Statement}

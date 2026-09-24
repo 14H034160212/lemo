@@ -171,7 +171,12 @@ def main():
         "sample_seed": args.sample_seed,
         "in_tokens_per_question": round(tok_in / total, 1),
         "seconds_per_question": round(secs / total, 3),
-        "majority_class_baseline": 0.5835,
+        # computed from the rows actually evaluated: the hardcoded 0.5835
+        # belonged to variant3_mixed and was wrong for every other file
+        "majority_class_baseline": round(max(
+            sum(g.count("T") for g in (r["gold"] for r in recs)),
+            sum(g.count("F") for g in (r["gold"] for r in recs)),
+        ) / total, 4) if total else None,
     }
     # Per-depth breakdown: the whole point of the depth benchmark is whether
     # cost grows with chain length, which a single mean hides.

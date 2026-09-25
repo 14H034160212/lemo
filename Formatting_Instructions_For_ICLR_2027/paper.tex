@@ -389,6 +389,14 @@ rule-at-a-time evaluation cannot produce---not that modus tollens is harder,
 which is established, but what it costs where it sits inside a derivation.
 
 \section{Controls, and what a trained prior buys}
+\label{sec:trained}
+
+\S\ref{sec:chain} was measurable because every claim had a condition under
+which the capability is absent---the foil. This section gives the control that
+plays that role for the rest of the paper, and the training work this project
+began as, which the control largely undoes. That work targets a different
+failure, and we keep the two apart.
+
 
 \begin{table*}[t]
     \centering
@@ -570,17 +578,14 @@ not at all to first-order reasoning. We state both halves because reporting only
 the first would overclaim and only the second would be incomplete.
 
 \subsection{Main Results}
-This section concerns a second failure, which the benchmark was originally
-built for: given premises that contradict each other, a model continues to
-deduce from them instead of halting---it notices the inconsistency in its own
-trace and answers anyway. We call that \textbf{Logic Inertia}, and it is not
-rule loss: the rule is applied, the premise set is what has failed. The
-baseline pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3).
+The failure targeted here is that a model given premises that contradict each
+other keeps deducing from them instead of halting. We call it \textbf{Logic
+Inertia}; it is not rule loss, since the rule is applied and it is the premise
+set that has failed. The baseline pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3).
 
 Table~\ref{tab:comparison_results} summarises the trained objectives on
-Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
-splits and are retained only to show what the controls of
-\S\ref{sec:v3control} change; they are not evidence.
+Qwen2-1.5B. Figures marked $\ddagger$ come from single-class splits and are not
+evidence; they are kept only to show what \S\ref{sec:v3control} changes.
 
 \paragraph{The capability gets worse with scale.} The same objective at
 Qwen3-8B, four seeds against six, is clearly better where contradiction
@@ -635,7 +640,7 @@ inference.
 \subsection{Is the gap prompt-inducible? Frontier models and inference-time verification}
 \label{sec:frontier_prompt}
 
-The sharpest challenge to a training-time fix is that the behaviour might simply be promptable. We test this directly on two current frontier models under three inference-time regimes, using the same stratified $200$-row-per-split protocol ($800$ questions/split) as our original GPT-4o/Gemma evaluation: \textbf{(a)} zero-shot; \textbf{(b)} a \emph{verification-first few-shot} prompt that explicitly instructs the model to normalise rules, check consistency, identify missing dependencies, and halt before deducing, with V2/V3/V4 exemplars; and \textbf{(c)} a \emph{neuro-symbolic guard}---a naive LLM given no contradiction-handling instructions at all, whose answers are overridden to \texttt{False} for any instance in which an independent external symbolic checker finds a contradiction in the raw facts (a verify-then-correct pipeline in the spirit of \citet{vericot2026}, implemented without re-running the solver that produced our own labels).
+The sharpest challenge to a training-time fix is that the behaviour might simply be promptable. We test two frontier models under three inference-time regimes on the same stratified $200$-row-per-split protocol ($800$ questions/split): zero-shot; a \emph{verification-first few-shot} prompt instructing the model to normalise rules, check consistency and halt before deducing; and a \emph{neuro-symbolic guard}, a naive LLM whose answers are overridden to \texttt{False} wherever an external checker finds a contradiction in the raw facts, in the spirit of \citet{vericot2026} (Table~\ref{tab:frontier_prompt}).
 
 Two conclusions survive the control. \textbf{(i)} Logic Inertia is not an
 artefact of a stale model generation: a full generation after GPT-4o,
@@ -645,7 +650,7 @@ does not track general capability. \textbf{(ii)} The gap is not closed by
 prompting or by an external guard, though the direction of the residual effect
 is small and, on the two-class control, mildly positive rather than negative.
 
-\paragraph{What the failure looks like.} Given $\{A \to B,\; A,\; \neg B\}$, GPT-4o routinely surfaces the inconsistency in its own verification trace and then proceeds anyway---``Since $A$ is true and $A$ implies $B$, then $B$ must be true''---overriding the $\neg B$ it just acknowledged (Appendix~\ref{app:qualitative}). Detecting the conflict and letting it halt deduction are separate capabilities; only the first is present.
+\paragraph{What the failure looks like.} Given $\{A \to B,\; A,\; \neg B\}$, GPT-4o often surfaces the inconsistency in its trace and proceeds anyway, overriding the $\neg B$ it just acknowledged (Appendix~\ref{app:qualitative}). We read this as detection and halting being separate capabilities, but the reading is qualitative: \S\ref{sec:shortcut} shows trace mentions are not a detection signal.
 
 \subsection{Experimental setup}
 The benchmark has $100$ base groups ($80$ train / $20$ test) seeded via randomised entity mapping and rule variation, yielding $11{,}200$ Stage-1 SFT instances and $2{,}160$ preference pairs. All objectives use AdamW $+$ bf16 $+$ LoRA ($r{=}8$, $\alpha{=}16$); hyperparameters are in Appendix~\ref{app:hyper}, full ablation tables in Appendix~\ref{app:ablation}. \textbf{Compute.} The whole pipeline fits on a single NVIDIA A100 ($40$\,GB) for Qwen3-8B and a $\geq16$\,GB consumer GPU for the smaller backbones: $5.1$ GPU-hours at $1.5$B and $9.7$ at $8$B for the released model, measured per stage in Appendix~\ref{app:compute}. Lean kernel verification adds $\sim\!0.36$\,s/trace on CPU, is required only during training, and is dispatch-amortisable via a persistent server~\citep{yang2023leandojo}.
@@ -685,7 +690,11 @@ outcome-only signal is degenerate for the capability we want
 \paragraph{Train- vs.\ inference-time mitigation.} Inference-time guards~\citep{vericot2026,xiong2025deliberate,premiseRAG2025} re-invoke a verifier on every deployment query, whereas a prior amortised into the weights costs nothing at runtime.
 
 \subsection{Generalisation and Sensitivity}
-Fusion-Conflict retains base accuracy under Variant~1, so contradiction detection introduces no noise fragility. \textbf{Variant~4 multi-law stacking} remains hardest: the residual at $1.5$B concentrates on instances composing $\geq3$ laws (contrapositive $\circ$ double-negation $\circ$ De\,Morgan), where the policy holds the structural prior but loses syntactic tracking---a capacity bottleneck rather than a failure of the prior, since the same policy at $8$B saturates V4-multi. RLVF-Lean (\S\ref{sec:phase2}) is the natural fix: per-tactic verification grounds each rewrite step independently of trace length.
+An earlier draft also read a sensitivity profile off the Variant-1 and
+Variant-4 splits. Those are single-class too, so we withdraw that reading on
+the same grounds as the rest; the per-variant figures stay in
+Appendix~\ref{app:ablation}. What we can report under a control is external
+transfer, and it is negative.
 
 \subsubsection{Out-of-distribution transfer: what the structural prior does \emph{not} buy}
 \label{sec:external}

@@ -95,20 +95,21 @@ We report the diagnosis, and the boundary around it.
 
 \section{Introduction}
 \label{sec:introduction}
-Give a language model the premises $\{A \to B,\; A,\; \neg B\}$ and ask whether
-$B$ holds. GPT-4o routinely notices the inconsistency in its own verification
-trace and answers anyway---``since $A$ is true and $A$ implies $B$, then $B$
-must be true''---overriding the $\neg B$ it acknowledged one sentence earlier.
-The premises stopped supporting any conclusion and the model kept deducing. We
-call this \textbf{Logic Inertia}, and two measurements make it more than a
-curiosity. It does not recede with capability: Claude~Opus~5 is at $0.943$ and
-$0.993$ on our clean and rule-deletion splits and $0.679$ when the premises
-contradict each other, \emph{below} the weaker GPT-5.2
-(\S\ref{sec:frontier_prompt}). And it is not closed by a verification-first
-prompt or an external symbolic guard. The failure matters wherever an agent
-reasons over a rule set that can become inconsistent---conflicting clauses in a
-policy, retrieved documents that disagree, an agent whose state a new
-observation invalidates---where the right behaviour is to halt and escalate.
+Tell GPT-4.1 that Anne is rough, give it the rule \emph{``if someone is not
+young then they are not rough''}, and ask whether Anne is young. It answers
+correctly on $100$ of $100$ instances, and on $100$ matched instances whose
+fact does not fire the rule it correctly declines to conclude anything. Now
+derive \emph{``Anne is rough''} through two prior steps instead of stating it,
+leave the rule, the wording and the question untouched, and the same model
+answers correctly $0$ times in $600$ attempts---while answering the two steps
+that precede it at $1.000$. The rule did not get harder and the model did not
+stop having it. Two derived steps in front of it were enough.
+
+We call this \textbf{rule loss}, and it is invisible to the way logical
+reasoning is currently evaluated. It matters wherever a conclusion rests on a
+chain rather than a single step---a policy engine composing clauses, an agent
+carrying derived state forward---because there the steps preceding an inference
+are the normal case, not a stress test.
 
 \paragraph{What is not yet measured.} The field evaluates logical reasoning by
 decomposing it into inference rules tested in isolation---25 patterns with one
@@ -125,17 +126,13 @@ downstream query fails alongside it in $76$--$100\%$ of cases. Asked for the
 same contrapositive with the chain removed, four of the five are at or near
 ceiling: the rule is not missing, the chain removes it (\S\ref{sec:chain}).
 
-\paragraph{Measuring any of this requires a control.} Under the conservative
-semantics of \S\ref{sec:method} every query on a contradictory instance is
-\texttt{False}, so a split of such instances is single-class: a model answering
-\texttt{False} on sight scores $1.000$ while checking nothing, and the word
-``conflict'' appears in $95\%$ of our model's traces on instances with nothing
-to detect. We therefore interleave contradictory instances with consistent ones
-of identical surface form---frequently the same negated sentence, harmless
-because the rule that would derive it is absent. Against the resulting $0.5835$
-baseline, conflict-aware SFT reaches $0.698 \pm 0.054$ over six seeds while
-every other objective we trained, including verifier-reward RL with a corrected
-oracle, sits at or below a constant responder.
+\paragraph{Measuring any of this requires a control.} Perturbation benchmarks
+assign labels deterministically, so a perturbed split is single-class and a
+constant response saturates it---on our own contradiction split a model
+answering \texttt{False} on sight scores $1.000$ while checking nothing. Every
+claim below is therefore made on two-class splits against a stated majority
+baseline (\S\ref{sec:v3control}), and under that control most of what this work
+originally set out to claim did not survive.
 
 \paragraph{Contributions.} The first is a measurement the existing benchmarks
 are not built to make. The second is the set of controls it needs. The third is
@@ -170,12 +167,9 @@ known mechanism---outcome rewards drive degenerate constants, and reinforcement
 finetuning erodes refusal behaviour~\citep{song2025hallucinationtax}---and we
 claim the measurement, not the mechanism. We also show the trained behaviour
 rests partly on a surface cue, and that a symbolic solver scores $1.000$ on
-every split of this benchmark.
-
-\paragraph{Scope.} The capability is propositional premise validation: against
-an untrained backbone it transfers to premise-consistency tasks and not at all
-to first-order reasoning, it does not improve with scale, and part of what we
-measure is a surface cue (\S\ref{sec:external}, \S\ref{sec:shortcut}).
+every split of this benchmark. The capability it installs is propositional
+premise validation and does not reach first-order reasoning
+(\S\ref{sec:external}, \S\ref{sec:shortcut}).
 
 \section{Related Work}
 
@@ -255,6 +249,16 @@ Pseudocode for variant generation is in Appendix~\ref{app:variant-gen}. Although
 
 \section{Rule loss in multi-step reasoning}
 \label{sec:chain}
+
+\paragraph{Definition.} A model exhibits \textbf{rule loss} on a rule $r$ when
+it applies $r$ correctly with $r$'s antecedent supplied as a fact, and fails to
+apply the same $r$, in the same words, when that antecedent must instead be
+derived. We measure it as $\mathrm{acc}_{0}(r) - \mathrm{acc}_{d}(r)$, the drop
+between those two conditions on instances matched in every other
+respect---predicates, wording, distractors, query, oracle---with $d$ the number
+of steps derived before $r$ fires. It is a property of a
+$(\text{model}, r, d)$ triple rather than of a model, and it is distinct from a
+model simply lacking $r$, which $\mathrm{acc}_{0}(r)$ detects on its own.
 
 We build three arms that share a four-step chain, the same entities and the
 same query positions, and differ only in the form of the third rule: \textbf{MP}
@@ -566,7 +570,12 @@ not at all to first-order reasoning. We state both halves because reporting only
 the first would overclaim and only the second would be incomplete.
 
 \subsection{Main Results}
-The baseline failure pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3)---direct evidence of \textbf{Logic Inertia}.
+This section concerns a second failure, which the benchmark was originally
+built for: given premises that contradict each other, a model continues to
+deduce from them instead of halting---it notices the inconsistency in its own
+trace and answers anyway. We call that \textbf{Logic Inertia}, and it is not
+rule loss: the rule is applied, the premise set is what has failed. The
+baseline pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3).
 
 Table~\ref{tab:comparison_results} summarises the trained objectives on
 Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
@@ -698,22 +707,24 @@ withdraw the kernel-rewarded RL variant, described in an earlier draft but
 never implemented (Appendix~\ref{app:leandetail}).
 
 \section{Conclusion}
-We set out to show that a verify-before-deduce prior repairs contradiction
-handling, and built controls strong enough to test it. Most of what we expected
-did not survive. Of four trained objectives only conflict-aware SFT exceeds a
-constant responder on a two-class control, at $0.698 \pm 0.054$ over six seeds
-against a $0.5835$ baseline---weaker at 8B, not stronger, and resting partly on
-a surface cue that co-occurs with contradiction in training with probability
-$1.000$. A symbolic solver scores $1.000$ on every split here, so nothing
-argues for a learned approach where the premises are already formalised.
+A rule a model applies at ceiling on its own is applied zero times once two
+derived steps precede it. Across five frontier models a negated premise is
+handled at $0.999$ and its contrapositive at $0.209$, the downstream query
+fails alongside it, and stripped of the chain four of the five recover the rule
+at or near ceiling---so what the chain costs is not a capability they lacked.
+Reasoning budget does not buy it back, and aggregates of $0.80$--$0.93$ conceal
+all of it. Rule loss is a property of a model, a rule and a depth, and the
+isolated condition is the one under which the existing literature measures.
 
-What the benchmark does well is diagnose. Matched arms show five frontier
-models applying a negated premise at $0.999$ and its contrapositive at
-$0.209$---GPT-4.1 $0$ times in $600$ attempts---with the downstream query
-failing alongside it, all of it invisible inside aggregates of $0.80$--$0.93$.
-Stripped of the chain, four of those five apply the same rule at or near
-ceiling, so what the chain costs is not a capability they lacked. Where a perturbation fixes the label, accuracy alone cannot
-distinguish a capability from a constant.
+We also set out to show that a verify-before-deduce prior repairs contradiction
+handling, and built controls strong enough to test it. Most of that did not
+survive: of four trained objectives only conflict-aware SFT exceeds a constant
+responder, at $0.698 \pm 0.054$ against a $0.5835$ baseline, weaker at 8B rather
+than stronger and resting partly on a surface cue that co-occurs with
+contradiction in training with probability $1.000$; a symbolic solver scores
+$1.000$ on every split here. The lesson is the measurement's: where a
+perturbation fixes the label, accuracy alone cannot tell a capability from a
+constant.
 
 \section*{Ethics Statement}
 This work studies logical robustness of language models on a synthetic, propositional

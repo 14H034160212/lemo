@@ -32,7 +32,7 @@
 \usetikzlibrary{shapes,arrows,positioning,calc}
 \usetikzlibrary{positioning,fit,backgrounds}
 
-\title{Present in Isolation, Absent in a Chain:\\Measuring Rule Loss in Multi-Step Reasoning}
+\title{Conflict-Aware Fusion: Mitigating Logic Inertia in Large Language Models via Structured Cognitive Priors}
 
 % The \author macro works with any number of authors. Use \And and \AND
 % to separate names. For anonymous submission, authors are hidden automatically.
@@ -138,24 +138,22 @@ every other objective we trained, including verifier-reward RL with a corrected
 oracle, sits at or below a constant responder.
 
 \paragraph{Contributions.} The first is a measurement the existing benchmarks
-are not built to make. The second is the set of controls it needs. The third is
-a training-side result that is an instance of a mechanism already described,
-and we mark it as such rather than claim it.
+are not built to make; the second and third are diagnostic; the training-side
+result we report is an instance of a mechanism already described, and we mark it
+as such.
 
-\textbf{(i)}~\emph{A rule is present in isolation and absent in a chain.}
-Logical reasoning is evaluated by decomposing it into rules tested one at a
-time---one rule per instance in \textsc{LogicBench}, atomic skills in
-\textsc{LogicAsker}, a single two-premise inference in
-\textsc{RULEBREAKERS}---and none of these measure error propagation or per-step
-correctness. We hold a rule, its wording, the query and the oracle fixed and
-vary only what precedes it (\S\ref{sec:chain}). GPT-4.1 applies the
-contrapositive on $100$ of $100$ isolated instances, rejects $100$ of $100$
-foils, and then applies the same rule correctly $0$ times in $600$ attempts
-once two derived steps come first, with every other step of the chain at
-ceiling. The literature reports modus tollens as harder than modus ponens,
-measured one rule at a time, which is exactly the condition under which four of
-our five models do not have the problem. Reasoning effort never recovers it,
-and the aggregates that conceal it read $0.80$--$0.93$.
+\textbf{(i)}~\emph{What a weak rule costs inside a chain.} Logical reasoning is
+evaluated by decomposing it into rules tested one at a time---one rule per
+instance in \textsc{LogicBench}, atomic skills in \textsc{LogicAsker}, a single
+two-premise inference in \textsc{RULEBREAKERS}---and none of these measure
+error propagation or per-step correctness. We pair instances that differ only in
+the form of one inference, fix each query's position, and report the primary
+failure separately from the propagated one (\S\ref{sec:chain}). The literature
+reports modus tollens as harder than modus ponens, measured one rule at a time.
+We measure the same rule in isolation and inside a chain, and the gap is the
+result: GPT-4.1 goes from $100/100$ to $0/600$ on one inference form while every
+other step stays at ceiling, reasoning effort never recovers it, and the
+aggregates that conceal it read $0.80$--$0.93$.
 
 \textbf{(ii)}~\emph{A control that makes such claims falsifiable.} Two-class
 splits, majority baselines, prediction distributions, answer-parse rates,
@@ -163,9 +161,9 @@ structural (not row) sample sizes, and per-run provenance. Without them the
 headline numbers of an earlier draft of this work could not be told apart from a
 constant predictor, and most did not survive once they could be.
 
-\textbf{(iii)}~\emph{Where a trained prior does and does not help}
-(\S\ref{sec:v3control}). Conflict-aware SFT exceeds a constant responder on the
-control; verifier-reward RL, from the same initialisation, collapses to one. That contrast is a specific case of a
+\textbf{(iii)}~\emph{Where a trained prior does and does not help.} Conflict-aware
+SFT exceeds a constant responder on the control; verifier-reward RL, from the
+same initialisation, collapses to one. That contrast is a specific case of a
 known mechanism---outcome rewards drive degenerate constants, and reinforcement
 finetuning erodes refusal behaviour~\citep{song2025hallucinationtax}---and we
 claim the measurement, not the mechanism. We also show the trained behaviour
@@ -227,15 +225,11 @@ cue in the training distribution, and report in \S\ref{sec:shortcut} that the
 cue is present with probability $1.000$ and that supervised training exploits it
 as well.
 
-\section{Benchmark and semantics}
+\section{Methodology}
 \label{sec:method}
-Every split used below is generated from one rule-based system, so an instance
-and its perturbation differ in a single controlled way and nothing else. This
-section fixes that generator and the semantics its labels carry; \S\ref{sec:chain}
-uses it to build the matched arms, and \S\ref{sec:v3control} to build the
-two-class control.
+\textbf{Conflict-Aware Fusion (Fusion-Conflict)} integrates three components: (1) a structural robustness benchmark, (2) a two-phase generation path that enforces verification-before-deduction, and (3) a structure-aligned training recipe: one SFT base plus three objectives trained from it.
 
-\subsection{Structural robustness benchmark}
+\subsection{Structural Robustness Benchmark}
 
 The benchmark is both a diagnostic tool and a training corpus. Unlike conventional benchmarks composed of heterogeneous tasks, all evaluation instances are derived from a single canonical rule-based system with systematically controlled perturbations; each variant preserves domain semantics and vocabulary while differing only in structural properties, isolating reasoning robustness from domain shift.
 
@@ -253,138 +247,40 @@ Tables~\ref{tab:all_models_deltas}--\ref{tab:stage_wise} use \emph{instance-leve
 
 Pseudocode for variant generation is in Appendix~\ref{app:variant-gen}. Although all instances are derived from a shared canonical template, the compositional variation in rule structures and query combinations induces diverse reasoning paths, preventing trivial memorisation.
 
-\section{Rule loss in multi-step reasoning}
-\label{sec:chain}
+\subsection{Structured two-phase generation}
+\label{sec:arch}
+Every trained trace is required to open with an explicit verification phase
+before any deduction: \emph{``Step 1: Verify facts''}, followed by either
+``Facts are consistent'' and the derivation, or ``Conflict detected'' and a
+halt. The prior being installed is the \emph{ordering}---validate the premise
+set, then deduce---rather than any particular wording, and \S\ref{sec:shortcut}
+reports how far short of that the trained models fall: the phrase appears on
+$95\%$ of instances with nothing to detect, so its presence carries almost no
+information. Appendix~\ref{app:running} works a contradiction instance through
+each objective.
 
-We build three arms that share a four-step chain, the same entities and the
-same query positions, and differ only in the form of the third rule: \textbf{MP}
-(\emph{``If someone is rough then they are young''}), \textbf{MP$\neg$}
-(\emph{``If someone is not sleepy then they are young''}), and \textbf{MT}
-(\emph{``If someone is not young then they are not rough''}, the contrapositive
-of MP). Q1 and Q2 probe the steps before the manipulated rule, Q3 the rule
-itself, Q4 the step after it. MP$\neg$ separates the two candidate
-explanations: a model that mishandles negated antecedents should fail it too,
-while one that cannot run an implication backwards should pass it and fail only
-MT. Every instance is oracle-verified; we draw $150$ per arm ($1800$ questions
-per model).
+\subsection{Training objectives}
+\label{sec:pipeline}
+\textbf{Stage~1 (structural SFT)} fine-tunes on instances spanning canonical,
+perturbed and contradiction-containing variants, every target opening with the
+mandatory verification preamble, and is the initialisation for everything else.
+\textbf{Conflict-aware SFT} continues from it on traces that carry out the check
+explicitly and halt when it fails; this is the only objective whose claims
+survive \S\ref{sec:v3control}. \textbf{\textsc{RLVF}} is trained from the same
+initialisation with a symbolic forward-chainer as reward
+as reward:
 
-\begin{table}[h]
-\centering\small
-\caption{Per-step accuracy on the matched-form chain, $150$ instances/arm per
-run, mean\,$\pm$\,s.d.\ over $n$ runs that draw a different half of the $300$
-instances per arm. Upstream is the mean of Q1 and Q2 over all three arms;
-MT\,$\to$\,Q4 is accuracy on the step after the manipulated rule. Run-to-run
-s.d.\ is shown only for MT; on every other column it is at most $0.024$.
-\emph{Effort} is \texttt{reasoning\_effort}, which the API applies only to the
-GPT-5 family, so the GPT-4o and GPT-4.1 rows pool four runs of one
-configuration. The aggregate
-column is the number a conventional evaluation would report.}
-\label{tab:chain}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{llccccccc}
-\toprule
-\textbf{Model} & \textbf{Effort} & $n$ & \textbf{Upstream} & \textbf{MP} & \textbf{MP$\neg$} & \textbf{MT} & \textbf{MT\,$\to$\,Q4} & \textbf{Aggregate} \\
-\midrule
-GPT-4o      & ---     & 4 & 0.964 & 0.968 & 1.000 & 0.107\,$\pm$\,0.026 & 0.315 & 0.845 \\
-GPT-4.1     & ---     & 4 & 1.000 & 0.993 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.022 & 0.834 \\
-GPT-5-nano  & default & 3 & 0.999 & 1.000 & 1.000 & 0.096\,$\pm$\,0.043 & 0.096 & 0.849 \\
-GPT-5-nano  & medium  & 3 & 0.998 & 1.000 & 0.998 & 0.082\,$\pm$\,0.017 & 0.082 & 0.846 \\
-GPT-5-mini  & default & 3 & 1.000 & 1.000 & 1.000 & 0.602\,$\pm$\,0.056 & 0.602 & 0.934 \\
-GPT-5-mini  & medium  & 3 & 1.000 & 1.000 & 1.000 & 0.576\,$\pm$\,0.064 & 0.576 & 0.929 \\
-GPT-5.2     & default & 1 & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
-GPT-5.2     & medium  & 3 & 0.952 & 0.960 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.000 & 0.803 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{equation}
+\mathcal{L}_{\mathrm{RLVF}} = -\mathbb{E}_{\tau \sim \pi_\theta}\!\bigl[(r - b_t)\,\log\pi_\theta(\tau|\mathbf{x})\bigr],\;\; r=\mathbb{1}[\Pi(\tau){=}a^*]-\mathbb{1}[\Pi(\tau){\neq}a^*],\;\; b_t=\mu b_{t-1}+(1-\mu)\bar r_t,
+\label{eq:rlvf}
+\end{equation}
 
-\subsection{The failure is contraposition, not negation}
-Across the seven
-configurations whose upstream steps are intact, MP$\neg$ is at least $0.998$
-in every one while MT averages $0.209$. GPT-4.1 answers MT correctly $0$ times
-in $600$ attempts and GPT-5.2 at medium effort $0$ in $450$, with their upstream steps at $1.000$ and
-$0.952$; neither varies across runs. Models that apply \emph{``if not sleepy
-then young''} without a single error cannot apply \emph{``if not young then not
-rough''} at all, on chains they otherwise complete: negated antecedents are not
-the obstacle, running the implication backwards is. GPT-5.2 at default effort is
-the one row where MP$\neg$ also collapses ($0.500$), and there the upstream steps
-sit at $0.582$ and the aggregate at $0.499$, indistinguishable from chance; we
-read it as a degenerate configuration and exclude it from that average.
+\noindent where $b_t$ is an EMA baseline over the mini-batch reward.
+\S\ref{sec:v3control} reports that it collapses to a
+constant responder in four seeds out of four, and \S\ref{sec:shortcut} why.
+Two further objectives, DPO and LIRE, are in Appendix~\ref{app:retracted}.
 
-\subsection{The deficit belongs to the chain, not to the rule}
-The reading so
-far is that these models cannot contrapose. That is testable: we ask each arm
-for exactly the inference it asks for at Q3, with the two upstream steps
-replaced by a fact and the downstream step removed---same predicates, same rule
-wording, same distractors, same oracle, one step instead of three. Because a
-model could separate ``\emph{young} occurs in a rule'' from ``\emph{nice} does
-not'' without inferring anything, each arm is paired with a foil carrying the
-same rule and a fact that does not trigger it, so the queried predicate still
-occurs in a rule but the gold answer is \texttt{False}; predicate presence alone
-then scores $0.500$. All five models answer MP and MP$\neg$ at $1.000$ on both
-halves.
-
-\begin{table}[h]
-\centering\small
-\caption{The contrapositive in isolation against the same inference inside the
-chain. \emph{Trigger} is the instance whose fact fires the rule (gold
-\texttt{True}); \emph{foil} shares the rule but not the fact (gold
-\texttt{False}), so a policy keying on predicate presence scores $1.000/0.000$.
-\emph{Paired} scores the two halves of one instance jointly, as
-\textsc{RULEBREAKERS} does, and is measured over all $200$ pairs; $^{\ast}$~marks
-the three models whose halves are $1.000/1.000$ or $0.000/1.000$, which
-determines the paired rate without a further run. $\Delta$ is taken from the
-paired column. Chain figures are the MT column of Table~\ref{tab:chain}.}
-\label{tab:isolated}
-\begin{tabular}{lccccc}
-\toprule
-& \multicolumn{3}{c}{\textbf{MT in isolation}} & & \\
-\cmidrule(lr){2-4}
-\textbf{Model} & trigger & foil & paired & \textbf{MT in chain} & $\Delta$ \\
-\midrule
-GPT-4.1     & 1.000 & 1.000 & 1.000$^{\ast}$ & \textbf{0.000} & $\mathbf{-1.000}$ \\
-GPT-5-mini  & 1.000 & 1.000 & 1.000$^{\ast}$ & 0.602 & $-0.398$ \\
-GPT-4o      & 0.970 & 0.980 & 0.905 & 0.107 & $-0.798$ \\
-GPT-5-nano  & 0.440 & 1.000 & 0.370 & 0.096 & $-0.274$ \\
-GPT-5.2     & 0.000 & 1.000 & 0.000$^{\ast}$ & 0.000 & $\phantom{-}0.000$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Four of the five hold the rule, in whole or in part, and lose it. GPT-4.1 is
-the clean case: it applies the contrapositive on $100$ of $100$ isolated
-instances and rejects $100$ of $100$ foils, so the capability is present and is
-not a surface cue---and the same rule, in the same words, is applied correctly
-$0$ times in $600$ attempts once two derived steps precede it. GPT-4o keeps
-both halves on $181$ of $200$ pairs and drops to $0.107$; GPT-5-nano holds the
-rule only partially ($0.370$ paired, failing the trigger and never the foil,
-the signature of not attempting the contraposition rather than botching it) and
-still drops to $0.096$. GPT-5.2 is the instructive
-exception. It answers \texttt{False} on every isolated MT instance, trigger and
-foil alike, which is a constant on that arm rather than a wrong belief; the rule
-is absent for it, and its chain failure therefore needs no appeal to context.
-The literature's result---modus tollens is harder than modus ponens---is
-measured in isolation, which is exactly where four of these five models do not
-have the problem. What the chain removes is not a rule they never had.
-
-\subsection{Reasoning budget does not buy it}
-Raising
-\texttt{reasoning\_effort} to medium never improves MT: $-0.013$ on GPT-5-nano,
-$-0.026$ on GPT-5-mini and $0.000$ on GPT-5.2, over three runs each and at
-$42$--$304$ reasoning tokens per question. The one model that is not near-zero,
-GPT-5-mini at $0.602$, is the one that loses the most. Whatever the
-deficit is, it is not a budget the model can spend its way out of.
-
-\subsection{The cost is compound, and the aggregate hides it}
-A wrong Q3 takes
-Q4 with it in $76$--$100\%$ of cases, so one weak rule costs roughly two steps
-rather than one. Since each arm is a quarter of the questions and the other
-steps are near-ceiling, a total collapse on one inference form surfaces as an
-aggregate between $0.80$ and $0.93$: GPT-4.1 scores $0.834$ overall while
-answering zero of $600$ contrapositive queries correctly. This is the quantity
-rule-at-a-time evaluation cannot produce---not that modus tollens is harder,
-which is established, but what it costs where it sits inside a derivation.
-
-\section{Controls, and what a trained prior buys}
+\section{Experiments}
 
 \begin{table*}[t]
     \centering
@@ -424,25 +320,25 @@ which is established, but what it costs where it sits inside a derivation.
     \end{tabular}
 \end{table*}
 
-\subsection{Training objectives}
-\label{sec:pipeline}
-\textbf{Stage~1 (structural SFT)} fine-tunes on instances spanning canonical,
-perturbed and contradiction-containing variants, every target opening with the
-mandatory verification preamble, and is the initialisation for everything else.
-\textbf{Conflict-aware SFT} continues from it on traces that carry out the check
-explicitly and halt when it fails; this is the only objective whose claims
-survive \S\ref{sec:v3control}. \textbf{\textsc{RLVF}} is trained from the same
-initialisation with a symbolic forward-chainer as reward:
+\subsection{Main Results}
+The baseline failure pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3)---direct evidence of \textbf{Logic Inertia}.
 
-\begin{equation}
-\mathcal{L}_{\mathrm{RLVF}} = -\mathbb{E}_{\tau \sim \pi_\theta}\!\bigl[(r - b_t)\,\log\pi_\theta(\tau|\mathbf{x})\bigr],\;\; r=\mathbb{1}[\Pi(\tau){=}a^*]-\mathbb{1}[\Pi(\tau){\neq}a^*],\;\; b_t=\mu b_{t-1}+(1-\mu)\bar r_t,
-\label{eq:rlvf}
-\end{equation}
+Table~\ref{tab:comparison_results} summarises the trained objectives on
+Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
+splits and are retained only to show what the controls of
+\S\ref{sec:v3control} change; they are not evidence.
 
-\noindent where $b_t$ is an EMA baseline over the mini-batch reward.
-\S\ref{sec:v3control} reports that it collapses to a
-constant responder in four seeds out of four, and \S\ref{sec:shortcut} why.
-Two further objectives, DPO and LIRE, are in Appendix~\ref{app:retracted}.
+\paragraph{The capability gets worse with scale.} The same objective at
+Qwen3-8B, four seeds against six, is clearly better where contradiction
+detection is not needed (base $0.9075$ vs $0.870$, V2 $0.8023$ vs $0.610$) and
+significantly worse on the control: accuracy $0.6323 \pm 0.0282$ against
+$0.6979 \pm 0.0542$ and gap $0.146 \pm 0.071$ against $0.420 \pm 0.200$ (Welch
+$p{=}0.0189$ and $p{=}0.0096$; Mann--Whitney $p{=}0.0333$ and $p{=}0.0095$). It
+stays above the $0.5835$ baseline ($p{=}0.0204$), so this is a weaker capability
+rather than none, and its seed variance is a third of the smaller model's---the
+larger model is consistently mediocre where the smaller is erratically better.
+Our first 8B run happened to be the worst of the four and supported a stronger
+claim than the data does; the best would have supported none.
 
 \subsection{A two-class control for contradiction detection}
 \label{sec:v3control}
@@ -565,26 +461,6 @@ does not generalise there either, transferring to premise-consistency tasks and
 not at all to first-order reasoning. We state both halves because reporting only
 the first would overclaim and only the second would be incomplete.
 
-\subsection{Main Results}
-The baseline failure pattern is uniform across BERT, Qwen2 and TinyLlama (Table~\ref{tab:all_models_deltas}, Appendix~\ref{app:baseline-table}): all three stay at $1.000$ on the base task and Variant~1, drop to $0.25$--$0.295$ under essential-rule removal (Variant~2), and collapse to $0.000$ under explicit contradictions (Variant~3)---direct evidence of \textbf{Logic Inertia}.
-
-Table~\ref{tab:comparison_results} summarises the trained objectives on
-Qwen2-1.5B. Figures marked $\ddagger$ elsewhere come from the single-class
-splits and are retained only to show what the controls of
-\S\ref{sec:v3control} change; they are not evidence.
-
-\paragraph{The capability gets worse with scale.} The same objective at
-Qwen3-8B, four seeds against six, is clearly better where contradiction
-detection is not needed (base $0.9075$ vs $0.870$, V2 $0.8023$ vs $0.610$) and
-significantly worse on the control: accuracy $0.6323 \pm 0.0282$ against
-$0.6979 \pm 0.0542$ and gap $0.146 \pm 0.071$ against $0.420 \pm 0.200$ (Welch
-$p{=}0.0189$ and $p{=}0.0096$; Mann--Whitney $p{=}0.0333$ and $p{=}0.0095$). It
-stays above the $0.5835$ baseline ($p{=}0.0204$), so this is a weaker capability
-rather than none, and its seed variance is a third of the smaller model's---the
-larger model is consistently mediocre where the smaller is erratically better.
-Our first 8B run happened to be the worst of the four and supported a stronger
-claim than the data does; the best would have supported none.
-
 \subsection{The capability is partly a surface cue}
 \label{sec:shortcut}
 
@@ -622,6 +498,133 @@ behind---and every gold answer is \texttt{True}; our checkpoints answer
 indistinguishable ($0.192/0.040/0.194$). The frontier models separate those arms
 sharply on the same file. What transfers from training is the reflex, not the
 inference.
+
+\subsection{What a weak rule costs inside a chain}
+\label{sec:chain}
+
+We build three arms that share a four-step chain, the same entities and the
+same query positions, and differ only in the form of the third rule: \textbf{MP}
+(\emph{``If someone is rough then they are young''}), \textbf{MP$\neg$}
+(\emph{``If someone is not sleepy then they are young''}), and \textbf{MT}
+(\emph{``If someone is not young then they are not rough''}, the contrapositive
+of MP). Q1 and Q2 probe the steps before the manipulated rule, Q3 the rule
+itself, Q4 the step after it. MP$\neg$ separates the two candidate
+explanations: a model that mishandles negated antecedents should fail it too,
+while one that cannot run an implication backwards should pass it and fail only
+MT. Every instance is oracle-verified; we draw $150$ per arm ($1800$ questions
+per model).
+
+\begin{table}[h]
+\centering\small
+\caption{Per-step accuracy on the matched-form chain, $150$ instances/arm per
+run, mean\,$\pm$\,s.d.\ over $n$ runs that draw a different half of the $300$
+instances per arm. Upstream is the mean of Q1 and Q2 over all three arms;
+MT\,$\to$\,Q4 is accuracy on the step after the manipulated rule. Run-to-run
+s.d.\ is shown only for MT; on every other column it is at most $0.024$.
+\emph{Effort} is \texttt{reasoning\_effort}, which the API applies only to the
+GPT-5 family, so the GPT-4o and GPT-4.1 rows pool four runs of one
+configuration. The aggregate
+column is the number a conventional evaluation would report.}
+\label{tab:chain}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccccccc}
+\toprule
+\textbf{Model} & \textbf{Effort} & $n$ & \textbf{Upstream} & \textbf{MP} & \textbf{MP$\neg$} & \textbf{MT} & \textbf{MT\,$\to$\,Q4} & \textbf{Aggregate} \\
+\midrule
+GPT-4o      & ---     & 4 & 0.964 & 0.968 & 1.000 & 0.107\,$\pm$\,0.026 & 0.315 & 0.845 \\
+GPT-4.1     & ---     & 4 & 1.000 & 0.993 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.022 & 0.834 \\
+GPT-5-nano  & default & 3 & 0.999 & 1.000 & 1.000 & 0.096\,$\pm$\,0.043 & 0.096 & 0.849 \\
+GPT-5-nano  & medium  & 3 & 0.998 & 1.000 & 0.998 & 0.082\,$\pm$\,0.017 & 0.082 & 0.846 \\
+GPT-5-mini  & default & 3 & 1.000 & 1.000 & 1.000 & 0.602\,$\pm$\,0.056 & 0.602 & 0.934 \\
+GPT-5-mini  & medium  & 3 & 1.000 & 1.000 & 1.000 & 0.576\,$\pm$\,0.064 & 0.576 & 0.929 \\
+GPT-5.2     & default & 1 & 0.582 & 0.747 & 0.500 & \textbf{0.000} & 0.000 & 0.499 \\
+GPT-5.2     & medium  & 3 & 0.952 & 0.960 & 1.000 & \textbf{0.000\,$\pm$\,0.000} & 0.000 & 0.803 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The failure is contraposition, not negation.} Across the seven
+configurations whose upstream steps are intact, MP$\neg$ is at least $0.998$
+in every one while MT averages $0.209$. GPT-4.1 answers MT correctly $0$ times
+in $600$ attempts and GPT-5.2 at medium effort $0$ in $450$, with their upstream steps at $1.000$ and
+$0.952$; neither varies across runs. Models that apply \emph{``if not sleepy
+then young''} without a single error cannot apply \emph{``if not young then not
+rough''} at all, on chains they otherwise complete: negated antecedents are not
+the obstacle, running the implication backwards is. GPT-5.2 at default effort is
+the one row where MP$\neg$ also collapses ($0.500$), and there the upstream steps
+sit at $0.582$ and the aggregate at $0.499$, indistinguishable from chance; we
+read it as a degenerate configuration and exclude it from that average.
+
+\paragraph{The deficit belongs to the chain, not to the rule.} The reading so
+far is that these models cannot contrapose. That is testable: we ask each arm
+for exactly the inference it asks for at Q3, with the two upstream steps
+replaced by a fact and the downstream step removed---same predicates, same rule
+wording, same distractors, same oracle, one step instead of three. Because a
+model could separate ``\emph{young} occurs in a rule'' from ``\emph{nice} does
+not'' without inferring anything, each arm is paired with a foil carrying the
+same rule and a fact that does not trigger it, so the queried predicate still
+occurs in a rule but the gold answer is \texttt{False}; predicate presence alone
+then scores $0.500$. All five models answer MP and MP$\neg$ at $1.000$ on both
+halves.
+
+\begin{table}[h]
+\centering\small
+\caption{The contrapositive in isolation against the same inference inside the
+chain. \emph{Trigger} is the instance whose fact fires the rule (gold
+\texttt{True}); \emph{foil} shares the rule but not the fact (gold
+\texttt{False}), so a policy keying on predicate presence scores $1.000/0.000$.
+\emph{Paired} scores the two halves of one instance jointly, as
+\textsc{RULEBREAKERS} does, and is measured over all $200$ pairs; $^{\ast}$~marks
+the three models whose halves are $1.000/1.000$ or $0.000/1.000$, which
+determines the paired rate without a further run. $\Delta$ is taken from the
+paired column. Chain figures are the MT column of Table~\ref{tab:chain}.}
+\label{tab:isolated}
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{3}{c}{\textbf{MT in isolation}} & & \\
+\cmidrule(lr){2-4}
+\textbf{Model} & trigger & foil & paired & \textbf{MT in chain} & $\Delta$ \\
+\midrule
+GPT-4.1     & 1.000 & 1.000 & 1.000$^{\ast}$ & \textbf{0.000} & $\mathbf{-1.000}$ \\
+GPT-5-mini  & 1.000 & 1.000 & 1.000$^{\ast}$ & 0.602 & $-0.398$ \\
+GPT-4o      & 0.970 & 0.980 & 0.905 & 0.107 & $-0.798$ \\
+GPT-5-nano  & 0.440 & 1.000 & 0.370 & 0.096 & $-0.274$ \\
+GPT-5.2     & 0.000 & 1.000 & 0.000$^{\ast}$ & 0.000 & $\phantom{-}0.000$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four of the five hold the rule, in whole or in part, and lose it. GPT-4.1 is
+the clean case: it applies the contrapositive on $100$ of $100$ isolated
+instances and rejects $100$ of $100$ foils, so the capability is present and is
+not a surface cue---and the same rule, in the same words, is applied correctly
+$0$ times in $600$ attempts once two derived steps precede it. GPT-4o keeps
+both halves on $181$ of $200$ pairs and drops to $0.107$; GPT-5-nano holds the
+rule only partially ($0.370$ paired, failing the trigger and never the foil,
+the signature of not attempting the contraposition rather than botching it) and
+still drops to $0.096$. GPT-5.2 is the instructive
+exception. It answers \texttt{False} on every isolated MT instance, trigger and
+foil alike, which is a constant on that arm rather than a wrong belief; the rule
+is absent for it, and its chain failure therefore needs no appeal to context.
+The literature's result---modus tollens is harder than modus ponens---is
+measured in isolation, which is exactly where four of these five models do not
+have the problem. What the chain removes is not a rule they never had.
+
+\paragraph{Reasoning budget does not buy it.} Raising
+\texttt{reasoning\_effort} to medium never improves MT: $-0.013$ on GPT-5-nano,
+$-0.026$ on GPT-5-mini and $0.000$ on GPT-5.2, over three runs each and at
+$42$--$304$ reasoning tokens per question. The one model that is not near-zero,
+GPT-5-mini at $0.602$, is the one that loses the most. Whatever the
+deficit is, it is not a budget the model can spend its way out of.
+
+\paragraph{The cost is compound, and the aggregate hides it.} A wrong Q3 takes
+Q4 with it in $76$--$100\%$ of cases, so one weak rule costs roughly two steps
+rather than one. Since each arm is a quarter of the questions and the other
+steps are near-ceiling, a total collapse on one inference form surfaces as an
+aggregate between $0.80$ and $0.93$: GPT-4.1 scores $0.834$ overall while
+answering zero of $600$ contrapositive queries correctly. This is the quantity
+rule-at-a-time evaluation cannot produce---not that modus tollens is harder,
+which is established, but what it costs where it sits inside a derivation.
 
 \subsection{Is the gap prompt-inducible? Frontier models and inference-time verification}
 \label{sec:frontier_prompt}
@@ -968,18 +971,6 @@ The core design imposes a two-phase reasoning structure---\emph{verify, then ded
 \end{figure*}
 
 
-
-\subsection{Structured two-phase generation}
-\label{sec:arch}
-Every trained trace is required to open with an explicit verification phase
-before any deduction: \emph{``Step 1: Verify facts''}, followed by either
-``Facts are consistent'' and the derivation, or ``Conflict detected'' and a
-halt. The prior being installed is the \emph{ordering}---validate the premise
-set, then deduce---rather than any particular wording, and \S\ref{sec:shortcut}
-reports how far short of that the trained models fall: the phrase appears on
-$95\%$ of instances with nothing to detect, so its presence carries almost no
-information. Appendix~\ref{app:running} works a contradiction instance through
-each objective.
 
 \subsection{Retracted objectives: LIRE and DPO}
 \label{app:retracted}

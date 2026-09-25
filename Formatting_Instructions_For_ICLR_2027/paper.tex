@@ -573,29 +573,36 @@ halves.
 chain. \emph{Trigger} is the instance whose fact fires the rule (gold
 \texttt{True}); \emph{foil} shares the rule but not the fact (gold
 \texttt{False}), so a policy keying on predicate presence scores $1.000/0.000$.
-Isolated figures are $100$ instances per cell; chain figures are the MT column
-of Table~\ref{tab:chain}.}
+\emph{Paired} scores the two halves of one instance jointly, as
+\textsc{RULEBREAKERS} does, and is measured over all $200$ pairs; $^{\ast}$~marks
+the three models whose halves are $1.000/1.000$ or $0.000/1.000$, which
+determines the paired rate without a further run. $\Delta$ is taken from the
+paired column. Chain figures are the MT column of Table~\ref{tab:chain}.}
 \label{tab:isolated}
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccc}
 \toprule
-& \multicolumn{2}{c}{\textbf{MT in isolation}} & & \\
-\cmidrule(lr){2-3}
-\textbf{Model} & trigger & foil & \textbf{MT in chain} & $\Delta$ \\
+& \multicolumn{3}{c}{\textbf{MT in isolation}} & & \\
+\cmidrule(lr){2-4}
+\textbf{Model} & trigger & foil & paired & \textbf{MT in chain} & $\Delta$ \\
 \midrule
-GPT-4.1     & 1.000 & 1.000 & \textbf{0.000} & $\mathbf{-1.000}$ \\
-GPT-5-mini  & 1.000 & 1.000 & 0.602 & $-0.398$ \\
-GPT-4o      & 0.970 & 0.980 & 0.107 & $-0.863$ \\
-GPT-5-nano  & 0.440 & 1.000 & 0.096 & $-0.344$ \\
-GPT-5.2     & 0.000 & 1.000 & 0.000 & $\phantom{-}0.000$ \\
+GPT-4.1     & 1.000 & 1.000 & 1.000$^{\ast}$ & \textbf{0.000} & $\mathbf{-1.000}$ \\
+GPT-5-mini  & 1.000 & 1.000 & 1.000$^{\ast}$ & 0.602 & $-0.398$ \\
+GPT-4o      & 0.970 & 0.980 & 0.905 & 0.107 & $-0.798$ \\
+GPT-5-nano  & 0.440 & 1.000 & 0.370 & 0.096 & $-0.274$ \\
+GPT-5.2     & 0.000 & 1.000 & 0.000$^{\ast}$ & 0.000 & $\phantom{-}0.000$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Four of the five hold the rule and lose it. GPT-4.1 is the clean case: it
-applies the contrapositive on $100$ of $100$ isolated instances and rejects
-$100$ of $100$ foils, so the capability is present and is not a surface cue---%
-and the same rule, in the same words, is applied correctly $0$ times in $600$
-attempts once two derived steps precede it. GPT-5.2 is the instructive
+Four of the five hold the rule, in whole or in part, and lose it. GPT-4.1 is
+the clean case: it applies the contrapositive on $100$ of $100$ isolated
+instances and rejects $100$ of $100$ foils, so the capability is present and is
+not a surface cue---and the same rule, in the same words, is applied correctly
+$0$ times in $600$ attempts once two derived steps precede it. GPT-4o keeps
+both halves on $181$ of $200$ pairs and drops to $0.107$; GPT-5-nano holds the
+rule only partially ($0.370$ paired, failing the trigger and never the foil,
+the signature of not attempting the contraposition rather than botching it) and
+still drops to $0.096$. GPT-5.2 is the instructive
 exception. It answers \texttt{False} on every isolated MT instance, trigger and
 foil alike, which is a constant on that arm rather than a wrong belief; the rule
 is absent for it, and its chain failure therefore needs no appeal to context.

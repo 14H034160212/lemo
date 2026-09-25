@@ -144,6 +144,10 @@ def main():
         tok_out += ot; tok_in += it; secs += dt; tok_reason += rt
         recs.append({"type": row["type"], "depth": row.get("depth"),
                      "arm": row.get("arm"),
+                     # kept so an arm and its foil can be scored jointly:
+                     # per-arm rates cannot tell "both halves right" from
+                     # "one right in each half"
+                     "group_id": row.get("group_id"),
                      "gold": gold, "pred": preds,
                      "correct": ok, "n": len(gold),
                      "out_tokens": ot, "in_tokens": it,
